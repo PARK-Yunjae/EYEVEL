@@ -11,7 +11,7 @@ create table member(
 
 select * from member;
 
-INSERT INTO member VALUES ('admin','1234','관리자','admin@admin.com','');
+INSERT INTO member VALUES ('admin','1234','관리자','admin@admin.com','nigaoe_ferdinand_cheval.jpg');
 
 create table area(
 	no int auto_increment primary key not null, -- 관광지 고유 넘버
