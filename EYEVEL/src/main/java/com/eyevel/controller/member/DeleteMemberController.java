@@ -13,6 +13,7 @@ public class DeleteMemberController implements Controller {
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
