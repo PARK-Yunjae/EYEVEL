@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>EYEVEL</title>
-</head>
-<body>  
-	박윤재 4번째 테스트
-</body>
-</html> 
+	pageEncoding="UTF-8"%>
+<script>
+	let contextPath = window.location.pathname.substring(0,
+			window.location.pathname.indexOf("/", 2));
+	location.href = contextPath + "/main.do";
+</script>
