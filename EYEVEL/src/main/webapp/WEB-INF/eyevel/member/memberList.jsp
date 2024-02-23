@@ -21,6 +21,7 @@
 		<td>비밀번호</td>
 		<td>이름</td>
 		<td>이메일</td>
+		<td>이미지</td>
 		<td>삭제</td>
 	</tr>
 	<c:forEach var="vo" items="${list}">
@@ -29,6 +30,7 @@
 			<td>${vo.pw}</td>
 			<td>${vo.name}</td>
 			<td>${vo.email}</td>
+			<td>${vo.img}</td>
 			<td><input type="button" value="삭제" class="btn btn-outline-dark"
 				onclick="deleteFn('${vo.id}')"
 				<c:if test="${loginId!=vo.id and loginId!='admin'}"> 

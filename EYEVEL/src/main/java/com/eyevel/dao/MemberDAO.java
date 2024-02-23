@@ -43,5 +43,13 @@ public class MemberDAO {
 		session.close();
 		return list;
 	}
+	//멤버 가입메소드
+	public int memberInsert(Member m) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int cnt = session.insert("memberInsert", m);
+		
+		return cnt;
+	}
+	
 	
 }
