@@ -7,7 +7,8 @@ section h1{
    text-align: center;
    text-shadow: 0 0 10px #0000002d;
    padding:var(--padding);
-   margin-bottom:50px;
+   margin-top:130px;
+   margin-bottom:70px;
 }
 section button{
    margin: 20px auto;
