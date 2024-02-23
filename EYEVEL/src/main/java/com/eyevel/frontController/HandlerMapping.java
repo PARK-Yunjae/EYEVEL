@@ -2,11 +2,8 @@ package com.eyevel.frontController;
 
 import java.util.HashMap;
 
-import com.eyevel.controller.member.JoinMemberController;
-import com.eyevel.controller.member.LoginCheckController;
-import com.eyevel.controller.member.LogoutController;
-import com.eyevel.controller.member.MemberInfoController;
-import com.eyevel.controller.member.MemberListController;
+import com.eyevel.controller.area.*;
+import com.eyevel.controller.member.*;
 
 public class HandlerMapping {
 	private HashMap<String, Controller> mappings;
@@ -14,6 +11,7 @@ public class HandlerMapping {
 	public HandlerMapping() {
 		mappings = new HashMap<String, Controller>();
 		
+		// member
 		mappings.put("/main.do", new MainController());
 		mappings.put("/memberList.do", new MemberListController()); //회원목록
 		mappings.put("/memberJoin.do", new JoinMemberController()); //회원가입
@@ -21,7 +19,9 @@ public class HandlerMapping {
 		mappings.put("/memberLogout.do", new LogoutController()); //로그아웃
 		mappings.put("/memberInfo.do", new MemberInfoController()); //회원정보
 
-		
+		// area
+		mappings.put("/earth.do", new AreaEarthController()); //회원정보
+		mappings.put("/areaContinent.do", new AreaContinentController()); //회원정보
 		
 		
 	}

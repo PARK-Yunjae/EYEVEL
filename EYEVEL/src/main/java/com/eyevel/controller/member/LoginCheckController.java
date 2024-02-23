@@ -24,7 +24,6 @@ public class LoginCheckController implements Controller {
 		}
 		
 		String pw = req.getParameter("pw");
-		String ctx= req.getContextPath();
 		
 		String check = MemberDAO.getInstance().checkLogin(id,pw);
 

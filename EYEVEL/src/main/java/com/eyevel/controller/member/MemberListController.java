@@ -2,7 +2,6 @@ package com.eyevel.controller.member;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import com.eyevel.dao.MemberDAO;
 import com.eyevel.frontController.Controller;
