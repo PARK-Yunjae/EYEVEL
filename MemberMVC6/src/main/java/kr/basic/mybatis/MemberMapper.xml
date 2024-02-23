@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.basic.mybatis.MemberMapper">
+  
+    <select id="memberList" resultType="member">
+       select * from member
+    </select>
+    
+    <insert id="memberInsert" parameterType="member">
+        insert into member(id, pass, name, age, email, phone,oFileName,sFileName)
+        values(
+        #{id},
+        #{pass},
+        #{name},
+        #{age},
+        #{email},
+        #{phone},
+        #{oFileName},
+        #{sFileName}
+        )       
+    </insert>
+     <select id="validMemberId" parameterType="String" resultType="Integer">        
+       select count(*) from member where id=#{id}
+     </select>
+     
+      <select id="checkLogin" parameterType="String" resultType="String">  
+     select name from member where id=#{id} and pass=#{pass};
+        </select>
+        
+     <select id="getMemberNo" parameterType="String" resultType="Integer">  
+     select num from member where id=#{id};
+        </select>
+        
+    <delete id="memberDelete" parameterType="String">  
+        delete from member where id=#{id}
+    </delete>
+    
+    <select id="memberContent" parameterType="Integer" resultType="member">        
+        select * from member where num=#{num}
+    </select>
+    
+    <update id="memberUpdate" parameterType="member">
+         update member 
+         set age=#{age}, email=#{email}, phone=#{phone} 
+         where num=#{num}	 
+    </update>
+    
+  <update id="memberUploadPhoto" parameterType="member">
+    update member set oFileName=#{oFileName}, sFileName=#{sFileName} where num=#{num}	 
+    </update>
+    
+    <select id="memberLogin" parameterType="member" resultType="String">
+        select name from member where id=#{id} and pass=#{pass}       
+    </select>
+</mapper>
