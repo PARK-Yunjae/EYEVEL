@@ -12,6 +12,30 @@
 
 </head>
 <body>
-여기로 옵니다
+
+<h1 class="py-3">회원 목록</h1>
+
+<table class=" py-10 table table-bordered">
+	<tr>
+		<td>아이디</td>
+		<td>비밀번호</td>
+		<td>이름</td>
+		<td>이메일</td>
+		<td>삭제</td>
+	</tr>
+	<c:forEach var="vo" items="${list}">
+		<tr>
+			<td><a href="${ctx}/memberContent.do?num=${vo.id}">${vo.id}</a></td>
+			<td>${vo.pw}</td>
+			<td>${vo.name}</td>
+			<td>${vo.email}</td>
+			<td><input type="button" value="삭제" class="btn btn-outline-dark"
+				onclick="deleteFn('${vo.id}')"
+				<c:if test="${loginId!=vo.id and loginId!='admin'}"> 
+    	              disabled="disabled"
+          	      </c:if>/></td>
+		</tr>
+	</c:forEach>
+</table>
 </body>
 </html>
