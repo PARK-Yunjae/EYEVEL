@@ -11,5 +11,25 @@ function loginExitBtn(){
 }
 
 function loginCheck(form){
-	
+	let id = form.id.value.trim();
+	let pw = form.pw.value.trim();
+	fetch("memberLogin.do", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+		},
+		body: "id=" + id + "&pw=" + pw
+	})
+	.then(response => response.text())
+	.then(data =>{
+		if(data === "아이디값 없음"){
+			alert
+		}
+		if(data === "아이디값 없음"){
+			alert
+		}
+		if(data === "아이디값 없음"){
+			alert
+		}
+	})
 }
