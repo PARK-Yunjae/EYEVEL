@@ -29,7 +29,7 @@ public class JoinMemberController implements Controller {
 		m.setEmail(email);
 		m.setImg(img);
 		
-		int cnt=MemberDAO.getInstance().memberInsert(m);
+		MemberDAO.getInstance().memberInsert(m);
 		
 		return null;
 	}

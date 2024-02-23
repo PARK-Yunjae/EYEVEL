@@ -17,7 +17,7 @@
 <div class="innerBox">
 	<ul class="top_nav">
 		<li class="logo_img">
-               <img src="${ctx }/img/logo.png" alt="page Logo Image">
+               <a href="${ctx}/main.do"><img src="${ctx}/img/logo.png" alt="page Logo Image"></a>
             </li>
             <li>
                <ul class="member">
@@ -28,19 +28,19 @@
             </li>
          </ul>
          <ul class="gnb">
-            <li><a href="">전체</a></li>
-            <li><a href="">아시아</a></li>
-            <li><a href="">아프리카</a></li>
-            <li><a href="">북아메리카</a></li>
-            <li><a href="">남아메리카</a></li>
-            <li><a href="">유럽</a></li>
-            <li><a href="">오세아니아</a></li>
-            <li><a href="">남극</a></li>
+            <li><a href="${ctx}/earth.do">전체</a></li>
+            <li><a href="${ctx}/areaContinent.do?area=asia">아시아</a></li>
+            <li><a href="${ctx}/areaContinent.do?area=africa">아프리카</a></li>
+            <li><a href="${ctx}/areaContinent.do?area=northAmerica">북아메리카</a></li>
+            <li><a href="${ctx}/areaContinent.do?area=southAmerica">남아메리카</a></li>
+            <li><a href="${ctx}/areaContinent.do?area=europe">유럽</a></li>
+            <li><a href="${ctx}/areaContinent.do?area=oceania">오세아니아</a></li>
+            <li><a href="${ctx}/areaContinent.do?area=antarctica">남극</a></li>
 		</ul>
 	</div>
 </header>
 <!-- 모달 보이게 하기 위해서 class 'active' 추가 -->
-<div class="modal modal_login active">
+<div class="modal modal_login">
     <div class="button_close"><i class="fas fa-times"></i></div>
     <h2>로그인</h2>
       <form action="" class="login">
@@ -102,7 +102,7 @@
       </form>
 </div>
 <div class="modal modal_alert">
-	<h2><span><i class="fas fa-exclamation-triangle"></span></i>경고</h2>
+	<h2><span><i class="fas fa-exclamation-triangle"></i></span>경고</h2>
       <p>삭제한 후에는 되돌리기가 불가능합니다.<br>정말 삭제하시겠습니까?</p>
       <div class="button_group">
          <button class="btn1">확인</button>
@@ -110,7 +110,7 @@
       </div>
 </div>
 <div class="modal modal_warning">
-      <h2><span><i class="fas fa-exclamation-triangle"></span></i>경고</h2>
+      <h2><span><i class="fas fa-exclamation-triangle"></i></span>경고</h2>
       <p>이 페이지는 현재 사용할 수 없는 페이지입니다.<br>자세한 내용은 관리자에게 문의 바랍니다.</p>
       <div class="button_group">
          <button class="btn">확인</button>
