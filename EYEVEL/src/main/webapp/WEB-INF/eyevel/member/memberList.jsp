@@ -1,28 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
    <c:set var="ctx" value="${ pageContext.request.contextPath }" />
    
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 <body>
 
-<h1 class="py-3">È¸¿ø ¸ñ·Ï</h1>
+<h1 class="py-3">íšŒì› ëª©ë¡</h1>
 
 <table class=" py-10 table table-bordered">
 	<tr>
-		<td>¾ÆÀÌµğ</td>
-		<td>ºñ¹Ğ¹øÈ£</td>
-		<td>ÀÌ¸§</td>
-		<td>ÀÌ¸ŞÀÏ</td>
-		<td>ÀÌ¹ÌÁö</td>
-		<td>»èÁ¦</td>
+		<td>ì•„ì´ë””</td>
+		<td>ë¹„ë°€ë²ˆí˜¸</td>
+		<td>ì´ë¦„</td>
+		<td>ì´ë©”ì¼</td>
+		<td>ì´ë¯¸ì§€</td>
+		<td>ì‚­ì œ</td>
 	</tr>
 	<c:forEach var="vo" items="${list}">
 		<tr>
@@ -31,7 +31,7 @@
 			<td>${vo.name}</td>
 			<td>${vo.email}</td>
 			<td>${vo.img}</td>
-			<td><input type="button" value="»èÁ¦" class="btn btn-outline-dark"
+			<td><input type="button" value="ì‚­ì œ" class="btn btn-outline-dark"
 				onclick="deleteFn('${vo.id}')"
 				<c:if test="${loginId!=vo.id and loginId!='admin'}"> 
     	              disabled="disabled"
