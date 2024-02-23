@@ -58,7 +58,7 @@
          </div>
          <div class="input">
             <label for="">pw</label><br>
-            <input type="password" placeholder="비밀번호 입력" name="pw">
+            <input type="password" placeholder="비밀번호 입력" name="pw"> 
             <p class="msg pw_msg">비밀번호를 입력해주세요</p>
          </div>
          <div class="button_group input">
