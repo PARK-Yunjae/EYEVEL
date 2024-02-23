@@ -13,7 +13,7 @@ public class MemberListController implements Controller {
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		return null;
+		return "eyevel/member/memberList";
 	}
 
 }
