@@ -1,0 +1,14 @@
+/* admin Page Main */
+
+.admin_list{display: flex;justify-content: center;align-items: center;}
+.admin_list li{
+   cursor: pointer;
+   padding: 40px 50px;
+   box-shadow: 0 6px 10px 1px #2222221c;
+   border-radius: var(--radius);
+   transition: all .3s;
+   text-align: center;
+}
+.admin_list li:first-child{margin-right: 150px;}
+.admin_list li:hover{transform: translateY(-15px);}
+.admin_list li p{font-size: 24px;font-weight: bold;}

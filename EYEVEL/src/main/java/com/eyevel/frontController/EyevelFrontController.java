@@ -21,7 +21,6 @@ public class EyevelFrontController extends HttpServlet {
 		String nextPage = null;
 		HandlerMapping mapping = new HandlerMapping();
 		controller = mapping.getController(command);
-		System.out.println(controller);
 		nextPage = controller.requestHandler(req, res);
 		
 		if(nextPage != null) {
