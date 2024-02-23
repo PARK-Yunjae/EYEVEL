@@ -1,0 +1,27 @@
+/* modal */
+.modal{
+   position: absolute;
+   top:50%;left:50%;
+   transform: translate(-50%, -50%);
+   background: var(--white);
+   padding: 30px 50px;
+   border-radius: var(--radius);
+   box-shadow: 0 3px 5px 1px #22222234;
+   display: none;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+}
+.modal.active{display: flex;}
+.modal p{text-align: center;}
+.modal h2{font-size: var(--font-subTitle);margin-bottom:calc(var(--padding)*2) ;}
+.modal h2>span{color:var(--red)}
+.button_group{display: flex;margin-top:20px;font-weight: bold;}
+.button_group button{font-size: var(--font-content);}
+.btn{background: var(--green);color:var(--white);}
+.btn:hover{background:var(--dark-green);}
+.btn1{background: var(--green);color:var(--white);margin-right: 40px;}
+.btn1:hover{background:var(--dark-green);}
+.btn2{background:var(--light-gray);color:var(--black)}
+.btn2:hover{background: var(--gray); color:var(--white);}
+.button_close{position: absolute;font-size: 20px;top:10px;right:20px;cursor: pointer;}
