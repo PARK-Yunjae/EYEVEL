@@ -40,7 +40,7 @@
 	</div>
 </header>
 <!-- 모달 보이게 하기 위해서 class 'active' 추가 -->
-<div class="modal modal_login active">
+<div class="modal modal_login">
     <div class="button_close"><i class="fas fa-times"></i></div>
     <h2>로그인</h2>
       <form action="" class="login">
