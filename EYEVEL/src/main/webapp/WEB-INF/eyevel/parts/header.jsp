@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/css/header.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/modal.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/loginJoinModal.css">
+<script src="${ctx}/js/loginJoinModal.js" defer></script>
 </head>
 <body>
 <header>
@@ -22,8 +23,14 @@
             <li>
                <ul class="member">
                   <li>Guest 님</li>
-                  <li><a href=""><i class="fas fa-user-alt"></i></a></li>
-                  <li><a href=""><i class="fas fa-sign-out-alt"></i></a></li>
+	                  <li><a onclick=
+	                  	<c:if test="${empty loginId }">"loginModal()"</c:if>
+	                  	<c:if test="${!empty loginId }">"location.href='${ctx}/memberInfo.do'"</c:if>
+	                  ><i class="fas fa-user-alt"></i></a>
+	              </li>
+	              <c:if test="${!empty loginId }">
+	                 <li><a href=""><i class="fas fa-sign-out-alt"></i></a></li>
+	              </c:if>
                </ul>
             </li>
          </ul>
@@ -41,9 +48,9 @@
 </header>
 <!-- 모달 보이게 하기 위해서 class 'active' 추가 -->
 <div class="modal modal_login">
-    <div class="button_close"><i class="fas fa-times"></i></div>
+    <div class="button_close"><a onclick="loginExitBtn()"><i class="fas fa-times"></i></a></div>
     <h2>로그인</h2>
-      <form action="" class="login">
+      <form class="login">
          <div class="input">
             <label for="">id</label><br>
             <input type="text" placeholder="아이디 입력" name="id">
@@ -55,7 +62,7 @@
             <p class="msg pw_msg">비밀번호를 입력해주세요</p>
          </div>
          <div class="button_group input">
-            <input type="button" value="로그인" class="button btn1">
+            <input type="button" value="로그인" class="button btn1" onclick="loginCheck(form)">
             <input type="button" value="회원가입" class="button btn2 ">
          </div>
       </form>
