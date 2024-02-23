@@ -9,14 +9,4 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>EyevelFrontController</display-name>
-    <servlet-name>EyevelFrontController</servlet-name>
-    <servlet-class>com.eyevel.frontController.EyevelFrontController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>EyevelFrontController</servlet-name>
-    <url-pattern>/EyevelFrontController</url-pattern>
-  </servlet-mapping>
 </web-app>
