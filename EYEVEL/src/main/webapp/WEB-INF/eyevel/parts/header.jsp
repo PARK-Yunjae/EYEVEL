@@ -4,10 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>EYEVEL</title>
 </head>
 <body>
-원우연입니다.
-변경정보
-</body>
-</html>
+헤더입니다
+<hr>
