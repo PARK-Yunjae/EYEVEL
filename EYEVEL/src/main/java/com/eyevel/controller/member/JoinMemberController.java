@@ -30,6 +30,7 @@ public class JoinMemberController implements Controller {
 		m.setImg(img);
 		
 		int cnt=MemberDAO.getInstance().memberInsert(m);
+		
 		return null;
 	}
 
