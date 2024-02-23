@@ -50,6 +50,17 @@ public class MemberDAO {
 		
 		return cnt;
 	}
-	
+	//회원 로그인
+    public String checkLogin(String id, String pw) {
+		Member vo = new Member();
+		vo.setId(id);
+		vo.setPw(pw);
+		System.out.println("로그인DAO");
+    	SqlSession session = sqlSessionFactory.openSession();
+    	String name = session.selectOne("checkLogin", vo);
+    	System.out.println(name);
+    	
+       return name;
+    }
 	
 }

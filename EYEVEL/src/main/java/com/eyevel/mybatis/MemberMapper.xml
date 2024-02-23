@@ -23,7 +23,7 @@
      </select>
      
       <select id="checkLogin" parameterType="String" resultType="String">  
-     select name from member where id=#{id} and pass=#{pass};
+     select name from member where id=#{id} and pw=#{pw};
         </select>
         
     <delete id="memberDelete" parameterType="String">  

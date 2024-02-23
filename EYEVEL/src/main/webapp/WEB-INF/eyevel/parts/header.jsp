@@ -40,7 +40,7 @@
 	</div>
 </header>
 <!-- 모달 보이게 하기 위해서 class 'active' 추가 -->
-<div class="modal modal_login">
+<div class="modal modal_login active">
     <div class="button_close"><i class="fas fa-times"></i></div>
     <h2>로그인</h2>
       <form action="" class="login">
@@ -56,7 +56,7 @@
          </div>
          <div class="button_group input">
             <input type="button" value="로그인" class="button btn1">
-            <input type="button" value="회원가입" class="button btn2">
+            <input type="button" value="회원가입" class="button btn2 ">
          </div>
       </form>
 </div>
