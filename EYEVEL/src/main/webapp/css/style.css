@@ -1,0 +1,103 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+:root {
+   --black: #222;
+   --white: #f8f8f8; 
+   --green: #41CE82;
+   --dark-green: #2caf69;
+   --red: #ff6969;
+   --gray:#a8a8a8;
+   --light-gray: #E8e8e8;
+
+   --padding:20px;
+   --radius:10px;
+
+   --font-title:48px;
+   --font-subTitle:36px;
+   --font-content:16px;
+   --font-small:14px;
+}
+
+*{margin:0;padding:0;box-sizing: border-box;}
+*:focus {outline: 0;}
+html{
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+html,body{height: 100%;}
+body{
+   color:var(--black);
+   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+li{list-style: none;}
+a{text-decoration: none; color:var(--black);}
+.innerBox{width: 1200px; padding:var(--padding);margin:0 auto;display: flex;flex-direction: column;justify-content: center; align-items: center;}
+.logo_img{width: 120px;margin-right: calc(var(--padding)*2) ;}
+.logo_img img{width: 100%;}
+button, .button{display: block;text-align: center;padding:10px 30px;cursor: pointer;border-radius: var(--radius);border: none;}
+section{height: 100%;}
+
+/* input */
+.form{display: flex;flex-direction: column;width: 100%;}
+.input{margin:10px 0;position: relative;width: 100%;}
+input{
+   border: none; 
+   border-bottom: 1px solid var(--gray);
+   background: inherit;
+   padding:5px 2px;
+   margin: 5px 0;
+   width: 100%;
+   font-size: var(--font-content);
+}
+.msg{
+   position: absolute;
+   font-size: var(--font-small);
+   color:var(--red);
+   display: none;
+}
+
+.title{
+   font-size: var(--font-subTitle);
+   text-align: center;
+   margin-bottom: 100px;
+}
+
+/* admin Page Main */
+
+.admin_list{display: flex;justify-content: center;align-items: center;}
+.admin_list li{
+   cursor: pointer;
+   padding: 40px 50px;
+   box-shadow: 0 6px 10px 1px #2222221c;
+   border-radius: var(--radius);
+   transition: all .3s;
+   text-align: center;
+}
+.admin_list li:first-child{margin-right: 150px;}
+.admin_list li:hover{transform: translateY(-15px);}
+.image{width: 150px;height: 150px;border-radius: 50%;overflow: hidden;margin-bottom: 50px;}
+.image img{width: 100%;}
+.admin_list li p{font-size: 24px;font-weight: bold;}
+
+table{border-collapse: collapse;text-align: center;}
+th{
+   border-bottom: 2px solid var(--black); 
+   padding:var(--padding);
+}
+td{
+   border-bottom:1px solid var(--gray);
+   border-right:1px solid var(--gray) ;
+   padding:5px 40px;
+}
+td:nth-child(2){width: 50px;height: 50px;}
+td:nth-child(2) img{width: 100%;margin:0;}
+td:last-child{border-right: none;}

@@ -1,0 +1,9 @@
+/* footer */
+footer{background: var(--black);color:var(--white);font-size: var(--font-small);}
+footer .innerBox{display: flex;justify-content: space-between;}
+/* footer logo */
+.footer_logo{display: flex; align-items: end;}
+/* footer nav */
+.footer_nav li:first-child{margin-bottom: var(--padding);}
+footer a{color:var(--white);}
+footer a:hover{color:var(--green)}
