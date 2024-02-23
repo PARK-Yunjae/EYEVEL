@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
-<html style="background-image:linear-gradient(#00000033, #00000033), url('https://picsum.photos/id/74/200/300')">
+<html style="background-image:linear-gradient(#00000033, #00000033), url('https://picsum.photos/id/74/4000/2000')">
 <head>
 <meta charset="UTF-8">
 <title>EYEVEL</title>
