@@ -9,12 +9,13 @@ import com.eyevel.vo.Member;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-//CLS-027 회원가입
-public class JoinMemberController implements Controller {
+
+//CLS-027 : 회원가입
+public class MemberJoinController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
 		String name = req.getParameter("name");

@@ -8,7 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-// CLS-036 : 세계 지도 페이지 이동 컨트롤러
+// CLS-037 : 세계 지도 페이지 이동 컨트롤러
 public class AreaEarthController implements Controller{
 
 	@Override

@@ -10,7 +10,9 @@ import com.eyevel.vo.Member;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-//CLS-034 회원 리스트 확인
+import jakarta.servlet.http.HttpSession;
+
+//CLS-035 : 회원 리스트 확인(관리자용)
 public class MemberListController implements Controller {
 
 	@Override
@@ -20,7 +22,8 @@ public class MemberListController implements Controller {
 		System.out.println("회원목록 불러오기 완료");
 		System.out.println(list);
 		req.setAttribute("list", list);
-		jakarta.servlet.http.HttpSession session = req.getSession();
+		HttpSession session = req.getSession();
+		
 		if (session.getAttribute("log") != null) {
 			String id = (String)session.getAttribute("id");
 			req.setAttribute("id", id);

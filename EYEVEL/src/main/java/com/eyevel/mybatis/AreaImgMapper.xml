@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CLS-021 : 관광지 이미지 테이블에 접근하는 쿼리문을 담은 xml 파일 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eyevel.mybatis.AreaImgMapper">
+
+</mapper>

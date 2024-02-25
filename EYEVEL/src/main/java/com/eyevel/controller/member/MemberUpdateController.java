@@ -10,18 +10,23 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-//CLS-030 : 회원정보
-public class MemberInfoController implements Controller {
+//CLS-032 : 회원정보 업데이트
+public class MemberUpdateController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
 		String id = (String)req.getSession().getAttribute("loginId");
-		Member m = MemberDAO.getInstance().memberContent(id);
+		String name = req.getParameter("name");
+		String email = req.getParameter("email");
 		
-		req.setAttribute("member", m);
+		Member m = new Member();
+		m.setId(id);
+		m.setName(name);
+		m.setEmail(email);
 		
-		return "eyevel/member/info";
+		MemberDAO.getInstance().memberUpdate(m);
+		
+		return "eyevel/member/main";
 	}
 
 }

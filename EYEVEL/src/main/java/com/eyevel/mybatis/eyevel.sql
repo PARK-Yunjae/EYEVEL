@@ -1,3 +1,5 @@
+-- CLS-015 : 데이터 베이스와 테이블 정보를 가진 sql 파일
+
 create database eyevel;
 use eyevel;
 
