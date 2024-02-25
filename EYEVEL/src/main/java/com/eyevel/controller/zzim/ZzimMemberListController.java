@@ -1,4 +1,4 @@
-package com.eyevel.controller.area;
+package com.eyevel.controller.zzim;
 
 import java.io.IOException;
 
@@ -8,13 +8,14 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-// CLS-037 : 관광지 삭제
-public class DeleteAreaController implements Controller{
+//CLS-053 : 유저 찜 리스트
+public class ZzimMemberListController implements Controller{
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		
+
+
 		return null;
 	}
-	
+
 }

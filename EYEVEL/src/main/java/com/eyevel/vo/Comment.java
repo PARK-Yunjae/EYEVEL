@@ -1,4 +1,5 @@
 package com.eyevel.vo;
+
 //CLS-004 댓글 테이블
 public class Comment {
 

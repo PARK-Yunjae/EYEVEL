@@ -1,4 +1,5 @@
 package com.eyevel.vo;
+
 //CLS-001 유저 테이블
 public class Member {
 
@@ -7,7 +8,6 @@ public class Member {
 	private String name;
 	private String email;
 	private String img;
-	
 	
 	public String getId() {
 		return id;

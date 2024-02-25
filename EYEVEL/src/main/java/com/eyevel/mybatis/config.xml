@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- CLS-013 : 파일 저장 불러오기 경로와 db 접속을 해주는 파일 -->
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
@@ -6,7 +8,12 @@
   <properties resource="com/eyevel/mybatis/db.properties"/> 
   
   <typeAliases>
-      <typeAlias type="com.eyevel.vo.Member" alias="member"/>     
+      <typeAlias type="com.eyevel.vo.Member" alias="member"/>    
+      <typeAlias type="com.eyevel.vo.Area" alias="Area"/>     
+      <typeAlias type="com.eyevel.vo.Zzim" alias="Zzim"/>     
+      <typeAlias type="com.eyevel.vo.Comment" alias="Comment"/>     
+      <typeAlias type="com.eyevel.vo.Board" alias="Board"/>     
+      <typeAlias type="com.eyevel.vo.AreaImg" alias="AreaImg"/>     
   </typeAliases> 
   
   <environments default="development">
@@ -22,5 +29,10 @@
   </environments>
   <mappers>
     <mapper resource="com/eyevel/mybatis/MemberMapper.xml"/>
+    <mapper resource="com/eyevel/mybatis/AreaMapper.xml"/>
+    <mapper resource="com/eyevel/mybatis/ZzimMapper.xml"/>
+    <mapper resource="com/eyevel/mybatis/CommentMapper.xml"/>
+    <mapper resource="com/eyevel/mybatis/BoardMapper.xml"/>
+    <mapper resource="com/eyevel/mybatis/AreaImgMapper.xml"/>
   </mappers>
 </configuration>

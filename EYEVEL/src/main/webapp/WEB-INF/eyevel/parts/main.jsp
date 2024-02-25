@@ -6,6 +6,6 @@
       <h1>힘들게 걸어다닐 필요 없이<br>
          어디서든 가고 싶었던 곳을 체험해보세요
       </h1>
-      <button>시작하기</button>
+      <button onclick="location.href='${ctx}/earth.do'">시작하기</button>
 </section>
 <%@ include file="../parts/footer.jsp"%>
