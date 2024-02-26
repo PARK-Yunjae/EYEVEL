@@ -16,7 +16,7 @@
 		#{pw},
 		#{name},
 		#{email},
-		#{img},
+		#{img}
 		)
 	</insert>
 	

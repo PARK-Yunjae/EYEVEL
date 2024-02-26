@@ -16,7 +16,6 @@ crossorigin="anonymous"></script>
     <div style="float : left;">
         <div class="weather_icon"></div>
     </div><br>
-
     <div style="float : right; margin : -5px 0px 0px 60px; font-size : 11pt">
             <div class="temp_min"></div>
             <div class="temp_max"></div>
@@ -25,7 +24,7 @@ crossorigin="anonymous"></script>
             <div class="cloud"></div>
     </div>
     <div style="float : right; margin-top : -45px;">
-        <div class="current_temp" style="font-size : 50pt"></div>
+        <div class="current_temp" style="font-size : 40pt"></div>
         <div class="weather_description" style="font-size : 20pt"></div>
         <div class="city" style="font-size : 13pt"></div>
     </div>
