@@ -9,7 +9,7 @@
 		<button id="africa">아프리카</button>
 		<button id="asia">아시아</button>
 		<button id="oceania">오세아니아</button>
-		<img src="${ctx}/img/worldmap.png" width='1160' />
+		<img src="${ctx}/img/worldmap1.png" width='1160' />
 		<button id="antarctica">남극</button>
 	</div>
 </section>

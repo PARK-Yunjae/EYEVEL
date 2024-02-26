@@ -43,7 +43,7 @@
 				</li>
 			</ul>
 			<ul class="gnb">
-				<li><a href="${ctx}/earth.do">전체</a></li>
+				<li><a href="${ctx}/areaEarth.do">전체</a></li>
 				<li><a href="${ctx}/areaContinent.do?area=asia">아시아</a></li>
 				<li><a href="${ctx}/areaContinent.do?area=africa">아프리카</a></li>
 				<li><a href="${ctx}/areaContinent.do?area=northAmerica">북아메리카</a></li>
