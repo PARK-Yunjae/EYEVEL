@@ -5,7 +5,7 @@
       <div class="innerBox">
          <div class="footer_logo">
             <div class="logo_img">
-               <img src="img/logo_white.png" alt="page Logo Image">
+               <img src="img/logo.png" alt="page Logo Image">
             </div>
             <p>
                본 사이트는 상업적 목적이 아닌 팀 개인의 포트폴리오 용도로 만들어 졌습니다.<br>

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.earthSection .innerBox{position: relative;}
+.earthSection img{
+	width: 100%;
+	filter:brightness(0.95) drop-shadow(0px 3px 5px #22222254);
+	z-index: -1;
+}
+.earthSection button{
+	position: absolute;
+	background: var(--black);
+	color:var(--white);
+	font-size: 24px;
+	font-weight: bold;
+}
+.earthSection button:hover{background:var(--gray);}
+#northAmerica{top:30%;left:12%;}
+#southAmerica{bottom:25%;left:22%}
+#europe{top:20%;left:45%}
+#africa{bottom:42%;left:43%;}
+#asia{top:23%;right: 23%;}
+#oceania{bottom:17%;right: 9%;}
+#antarctica{bottom:5%;right: 30%;}

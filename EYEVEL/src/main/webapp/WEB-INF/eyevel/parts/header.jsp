@@ -113,7 +113,7 @@
 			</div>
 			
 			<div class="input_terms input">
-				<label for="terms">개인정보 이용약관 동의</label> 
+				<label for="join_terms">개인정보 이용약관 동의</label> 
 				<input type="checkbox" name="terms" id="join_terms" value="동의">	
 				<p class="msg terms_msg join_terms_msg">약관에 동의해주세요</p>
 			</div>
