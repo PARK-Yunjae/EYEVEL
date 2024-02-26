@@ -10,7 +10,7 @@ create table member(
 );
 insert into member values ('admin', '1234', '관리자', 'admin@admin.com', 'admin.jpg');
 select * from member;
-
+insert into member values ('test1', '1234', 'test1', 'test@test.com', 'admin.jpg');
 create table area(
 	no int auto_increment primary key not null, -- 관광지 고유 넘버
     name varchar(255) not null, -- 관광지 이름
@@ -71,3 +71,4 @@ create table board(
 );
 
 select * from board;
+insert into board values(null, 1, 1, 'test1', 'title1', 'contents1', '2024-02-26', 1, 2, 1);
