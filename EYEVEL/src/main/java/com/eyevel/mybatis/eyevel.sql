@@ -1,5 +1,3 @@
--- CLS-015 : 데이터 베이스와 테이블 정보를 가진 sql 파일
-
 create database eyevel;
 use eyevel;
 
@@ -34,6 +32,7 @@ create table comment(
     foreign key(member_id) references member(id),
     area_no int not null, -- 관광지 고유 넘버
     foreign key(area_no) references area(no),
+    reg_datetime datetime not null, -- 작성일, 작성시간
     contents varchar(255) not null -- 내용
 );
 
@@ -65,7 +64,7 @@ create table board(
     foreign key(member_id) references member(id),
     title varchar(255) not null, -- 제목
     contents varchar(1000) not null, -- 내용
-    reg_date date not null, -- 작성일
+    reg_date datetime not null, -- 작성일
     hits int not null, -- 조회수
     heart int not null, -- 좋아요
     admin_check int not null -- 관리자 확인 유무

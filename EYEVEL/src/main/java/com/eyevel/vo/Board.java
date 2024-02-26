@@ -10,7 +10,7 @@ public class Board {
 	private String title;
 	private String contents;
 	private String regDate;
-	private String hits;
+	private int hits;
 	private int heart;
 	private int adminCheck;
 
@@ -86,11 +86,11 @@ public class Board {
 		this.adminCheck = adminCheck;
 	}
 
-	public String getHits() {
+	public int getHits() {
 		return hits;
 	}
 
-	public void setHits(String hits) {
+	public void setHits(int hits) {
 		this.hits = hits;
 	}
 

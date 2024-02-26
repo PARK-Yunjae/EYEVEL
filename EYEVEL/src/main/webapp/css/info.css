@@ -4,6 +4,7 @@ input.readonly{
    border-bottom: 1px solid var(--gray);
    border-radius: 0;
 }
+.info_section{background:white;} /* 개발용 백그라운드 */
 .info_section .image{margin-bottom: 0;}
 
 /* 이미지 수정 */
@@ -33,7 +34,9 @@ input.readonly{
 /* 이름 수정 */
 .input_name{display: flex;justify-content: center;align-items: center;}
 .input_name input{width: 40%;display: none;}
+.input_name input.active{width: 40%;display: none;}
 .input_name p{font-size: 24px;font-weight: bold;}
+.input_name p.active{font-size: 24px;font-weight: bold;}
 .input_name>a{margin:0 10px;}
 
 /* 기타 정보 */
