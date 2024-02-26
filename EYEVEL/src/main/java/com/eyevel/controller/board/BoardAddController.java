@@ -16,6 +16,9 @@ public class BoardAddController implements Controller {
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
+		if (req.getParameter("no") == null) {
+			return "eyevel/board/boardAdd";
+		}
 		int no = Integer.parseInt(req.getParameter("no"));
 		int category = Integer.parseInt(req.getParameter("category"));
 		int is_private = Integer.parseInt(req.getParameter("is_private"));
@@ -31,7 +34,7 @@ public class BoardAddController implements Controller {
 		b.setNo(no);
 		b.setCategory(category);
 		b.setIsPrivate(is_private);
-		b.setMemberId(member_id);
+		b.setMember_id(member_id);
 		b.setTitle(title);
 		b.setContents(contents);
 		b.setRegdate(reg_date);

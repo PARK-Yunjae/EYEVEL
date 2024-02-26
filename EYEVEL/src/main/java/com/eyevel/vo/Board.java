@@ -6,10 +6,10 @@ public class Board {
 	private int no;
 	private int category;
 	private int isPrivate;
-	private String memberId;
+	private String member_id;
 	private String title;
 	private String contents;
-	private String regDate;
+	private String reg_date;
 	private int hits;
 	private int heart;
 	private int adminCheck;
@@ -38,12 +38,12 @@ public class Board {
 		this.isPrivate = isPrivate;
 	}
 
-	public String getMemberId() {
-		return memberId;
+	public String getMember_id() {
+		return member_id;
 	}
 
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
+	public void setMember_id(String member_id) {
+		this.member_id = member_id;
 	}
 
 	public String getTitle() {
@@ -62,12 +62,12 @@ public class Board {
 		this.contents = contents;
 	}
 
-	public String getRegdate() {
-		return regDate;
+	public String getReg_date() {
+		return reg_date;
 	}
 
-	public void setRegdate(String regdate) {
-		this.regDate = regdate;
+	public void setRegdate(String reg_date) {
+		this.reg_date = reg_date;
 	}
 
 	public int getHeart() {
@@ -96,9 +96,9 @@ public class Board {
 
 	@Override
 	public String toString() {
-		return "Board [no=" + no + ", category=" + category + ", isPrivate=" + isPrivate + ", memberId=" + memberId
-				+ ", title=" + title + ", contents=" + contents + ", regDate=" + regDate + ", hits=" + hits + ", heart="
-				+ heart + ", adminCheck=" + adminCheck + "]";
+		return "Board [no=" + no + ", category=" + category + ", isPrivate=" + isPrivate + ", member_id=" + member_id
+				+ ", title=" + title + ", contents=" + contents + ", reg_date=" + reg_date + ", hits=" + hits
+				+ ", heart=" + heart + ", adminCheck=" + adminCheck + "]";
 	}
 
 }
