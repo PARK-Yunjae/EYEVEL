@@ -20,6 +20,7 @@ public class BoardDAO {
 	public List<Board> boardList() {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		List<Board> list = session.selectList("boardList");
+		System.out.println(list);
 		session.close();
 		return list;
 	}

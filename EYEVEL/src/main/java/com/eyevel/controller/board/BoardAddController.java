@@ -31,7 +31,7 @@ public class BoardAddController implements Controller {
 		b.setNo(no);
 		b.setCategory(category);
 		b.setIsPrivate(is_private);
-		b.setMemeberId(member_id);
+		b.setMemberId(member_id);
 		b.setTitle(title);
 		b.setContents(contents);
 		b.setRegdate(reg_date);
