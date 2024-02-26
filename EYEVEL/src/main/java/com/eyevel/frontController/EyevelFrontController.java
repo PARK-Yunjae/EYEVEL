@@ -32,6 +32,8 @@ public class EyevelFrontController extends HttpServlet {
 				RequestDispatcher rd = req.getRequestDispatcher(ViewResolver.makeView(nextPage));
 				rd.forward(req, res);
 			}
+		}else {
+			System.out.println("비동기도 들어오나");
 		}
 	}
 

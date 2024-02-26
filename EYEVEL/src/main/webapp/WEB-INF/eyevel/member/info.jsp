@@ -1,19 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
+<link rel="stylesheet" type="text/css" href="${ctx}/css/info.css">
+<script src="${ctx}/js/info.js" defer>
+console.log(${m.name});
+</script>   
    <section class="info_section">
       <div class="innerBox">
          <form action="" method="post">
             <ul class="member_info">
                <li><div class="image"><img src="https://picsum.photos/300/300" alt=""></div></li>
                <li class="input_name">
-                  <input type="text" name="name" value="원래 이름">
-                  <p>이름</p>
-                  <a href=""><i class="fas fa-pen"></i></a>
+                  <input type="text" name="name" id="name_input" value="${member.name}">
+                  <p id="name_p">${member.name}</p>
+                  <a onclick="nameUpdate()"><i class="fas fa-pen"></i></a>
                </li>
                <li class="input">
                   <label for="">아이디</label><br>
-                  <input type="text" value="수정불가 고정값" name="id" class="readonly" readonly>
+                  <input type="text" name="id" class="readonly" value="${member.id}" readonly>
                </li>
                <li class="input">
                   <label for="">비밀번호</label><br>
@@ -22,7 +26,7 @@
                </li>
                <li class="input">
                   <label for="">이메일</label><br>
-                  <input type="text" value="수정불가 고정값" name="email"  class="readonly" readonly>
+                  <input type="text" name="email"  class="readonly" value="${member.email}" readonly>
                </li>
                <li class="button_group">
                   <button class="btn1">확인</button>

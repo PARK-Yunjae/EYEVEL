@@ -11,8 +11,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/css/style.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/header.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/modal.css">
-<link rel="stylesheet" type="text/css"
-	href="${ctx}/css/loginJoinModal.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/css/loginJoinModal.css">
 <script src="${ctx}/js/loginJoinModal.js" defer></script>
 <!-- 날씨 표시를 위한 라이브러리 -->
 <script defer
@@ -113,16 +112,15 @@
 		<h2>회원가입</h2>
 		<form action="${ctx}/memberJoin.do" class="form">
 			<div class="input_name input">
-				<label for="">이름</label><br> <input type="text"
-					placeholder="이름 입력" name="name" id="join_name">
+				<label for="">이름</label><br> 
+				<input type="text" placeholder="이름 입력" name="name" id="join_name">
 				<p class="msg name_msg join_name_msg">이름을 입력해주세요</p>
 			</div>
 			<div class="input_id input">
 				<label for="">id</label><br>
 				<div>
 					<input type="text" placeholder="아이디 입력" name="id" id="join_id">
-					<input type="button" value="중복확인" class="button btn"
-						id="join_idCheck">
+					<input type="button" value="중복확인" class="button btn" id="join_idCheck">
 				</div>
 				<p class="msg id_msg join_id_msg">아이디를 입력해주세요</p>
 			</div>

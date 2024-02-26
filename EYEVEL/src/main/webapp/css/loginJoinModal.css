@@ -10,3 +10,9 @@
 #join_terms{width: 10%;margin:0;padding:0;}
 .terms_msg{bottom:-20px;}
 .join_modal{padding: 30px 80px;}
+
+#join_idCheck{background: var(--red);}
+#join_idCheck:hover{background: #e04d4d;}
+
+#join_idCheck.on{background: var(--green);}
+#join_idCheck.on:hover{background: var(--dark-green);}

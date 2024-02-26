@@ -9,6 +9,8 @@ header.black a{color:var(--black);}
 
 /* top_nav */
 .top_nav{justify-content: space-between;margin-bottom: 35px;align-items: center;}
+.weather_icon{width: 50%;height: 50%;}
+.weather_icon svg{width: 100%;height: 100%;}
 .member{display: flex;}
 .member li{margin-right: var(--padding);}
 .member li:last-child{margin-right: 0;}

@@ -4,7 +4,11 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/css/boardList.css">
 <section class="boardSection">
 	<div class="innerBox">
-		<h2 class="title">게시판</h2>
+    <h2 class="title">게시판</h2>
+         <form action="" class="search">
+         <input type="text" placeholder="검색">
+         <a><i class="fas fa-search"></i></a>
+         </form>
 		<button class="btn" onclick="location.href='${ctx}/boardAdd.do'">글쓰기</button>
 		<ul class="category">
 			<li class="on">전체</li>
