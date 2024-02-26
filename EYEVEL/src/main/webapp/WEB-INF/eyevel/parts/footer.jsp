@@ -18,7 +18,7 @@
          <ul class="footer_nav">
             <li>Menu</li>
             <li><a href="${ctx}/boardList.do">게시판</a></li>
-            <li><a href="">자주 하는 질문</a></li>
+            <li><a href="${ctx}/faqList.do">자주 하는 질문</a></li>
          </ul>
       </div>
    </footer>

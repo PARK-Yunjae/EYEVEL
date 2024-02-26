@@ -33,3 +33,4 @@
 		</ul>
 	</div>
 </section>
+<%@ include file="../parts/footer.jsp"%>
