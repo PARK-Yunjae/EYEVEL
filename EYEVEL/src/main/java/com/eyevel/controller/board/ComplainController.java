@@ -9,13 +9,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 // 
-public class FAQListController implements Controller {
+public class ComplainController implements Controller {
 	
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		
-		return null;
+		return "eyevel/board/complain";
 	}
 
 }
