@@ -14,7 +14,7 @@ public class AreaCityController implements Controller{
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-		return null;
+		return "eyevel/area/city";
 	}
 
 }
