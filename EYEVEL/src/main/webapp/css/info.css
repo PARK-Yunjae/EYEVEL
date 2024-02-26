@@ -1,0 +1,76 @@
+.info_section .innerBox{flex-direction: row;}
+input.readonly{
+   border : none;
+   border-bottom: 1px solid var(--gray);
+   border-radius: 0;
+}
+.info_section .image{margin-bottom: 0;}
+
+/* 이미지 수정 */
+.member_info .image{
+   cursor: pointer;
+   position: relative;
+}
+.member_info .image::after{
+   content: "\f304";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   color:#ffffffce;
+   text-align: center;
+   line-height: 150px;
+   font-size: var(--font-title);
+   position: absolute;
+   top:0;
+   left:0;
+   z-index: 10;
+   width: 100%;
+   height: 100%;
+   background: #22222273;
+   display: none;
+}
+.member_info .image:hover::after{display: block;}
+
+/* 이름 수정 */
+.input_name{display: flex;justify-content: center;align-items: center;}
+.input_name input{width: 40%;display: none;}
+.input_name p{font-size: 24px;font-weight: bold;}
+.input_name>a{margin:0 10px;}
+
+/* 기타 정보 */
+input.readonly:focus{outline: none;}
+.info_section ul{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.member_info li:nth-child(2){margin:20px 0;}
+
+
+/* zzim_list */
+.zzim_list{
+   margin-left: 10%;
+   padding:40px;
+   box-shadow: 0 7px 10px 5px #2222221e;
+   border-radius: var(--radius);
+}
+
+.zzim_list .image{
+   height: 100px;
+   border-radius: 20px;
+   margin-right: 30px;
+}
+#zzim_list>div{
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   margin-top: 35px;
+}
+#zzim_list span{font-size: 28px;margin-left: 30px;cursor: pointer;}
+.zzim_list h3{margin-bottom: 5px;}
+.zzim_list p{margin-bottom: 15px;}
+#zzim_list .fas{transition: all .3s;}
+#zzim_list a:hover .fas{transform: translateX(5px);}
+.zzim_list .content span i{transition: all .3s;}
+.zzim_list .content span i:hover{transform: scale(0.9);}
+.zzim_list .content span i:active{transform: scale(1.1);}

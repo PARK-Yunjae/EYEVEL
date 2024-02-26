@@ -72,6 +72,8 @@ input{
    margin-bottom: 100px;
 }
 
+span{color:var(--red)}
+
 /* button */
 .button_group{display: flex;margin-top:20px;font-weight: bold;}
 .button_group button{font-size: var(--font-content);}
