@@ -9,4 +9,14 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>FAQListController</display-name>
+    <servlet-name>FAQListController</servlet-name>
+    <servlet-class>com.eyevel.controller.board.FAQListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FAQListController</servlet-name>
+    <url-pattern>/FAQListController</url-pattern>
+  </servlet-mapping>
 </web-app>
