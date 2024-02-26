@@ -32,6 +32,7 @@ public class MemberDAO {
 	public int memberInsert(Member m) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		int cnt = session.insert("memberInsert", m);
+		session.commit();
 		session.close();
 		return cnt;
 	}
@@ -73,6 +74,7 @@ public class MemberDAO {
 	public void memberDelete(String id) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		session.selectOne("memberDelete", id);
+		session.commit();
 		session.close();
 
 	}
@@ -81,6 +83,7 @@ public class MemberDAO {
 	public void memberUpdate(Member m) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		session.selectOne("memberUpdate", m);
+		session.commit();
 		session.close();
 	}
 }
