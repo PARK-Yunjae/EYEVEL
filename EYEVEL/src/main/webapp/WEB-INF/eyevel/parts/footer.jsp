@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 <link rel="stylesheet" type="text/css" href="${ctx}/css/footer.css">
 <footer>
       <div class="innerBox">
@@ -15,7 +17,7 @@
          </div>
          <ul class="footer_nav">
             <li>Menu</li>
-            <li><a href="">게시판</a></li>
+            <li><a href="${ctx}/boardList.do">게시판</a></li>
             <li><a href="">자주 하는 질문</a></li>
          </ul>
       </div>
