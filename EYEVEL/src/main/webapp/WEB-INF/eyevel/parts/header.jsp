@@ -14,30 +14,58 @@
 <link rel="stylesheet" type="text/css"
 	href="${ctx}/css/loginJoinModal.css">
 <script src="${ctx}/js/loginJoinModal.js" defer></script>
+<!-- 날씨 표시를 위한 라이브러리 -->
+<script defer
+	src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"
+	integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF"
+	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
+<script defer src="${ctx}/js/weather.js" defer></script>
 </head>
 <body>
 	<header>
 		<div class="innerBox">
 			<ul class="top_nav">
-				<li class="logo_img">
-					<a href="${ctx}/main.do">
-					<img src="${ctx}/img/logo.png" alt="page Logo Image">
-					</a>
+				<li class="logo_img"><a href="${ctx}/main.do"> <img
+						src="${ctx}/img/logo.png" alt="page Logo Image">
+				</a></li>
+				<li>
+					<div style="color: #fff">
+						<div style="float: left;">
+							<div class="weather_icon"></div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div
+						style="float: right; margin: -15px 0px 0px 0px; font-size: 11pt">
+						<div class="temp_min"></div>
+						<div class="temp_max"></div>
+						<div class="humidity"></div>
+						<div class="wind"></div>
+						<div class="cloud"></div>
+					</div>
+					<div style="float: right; margin-top: -45px;">
+						<div class="current_temp" style="font-size: 40pt"></div>
+						<div class="weather_description" style="font-size: 20pt"></div>
+						<div class="city" style="font-size: 13pt"></div>
+					</div>
+
 				</li>
 				<li>
 					<ul class="member">
-						<li>
-							<c:if test="${empty loginId}">Guest 님</c:if> 
-							<c:if test="${!empty loginId}">${name} 님</c:if>
-						</li>
-						<li>
-							<a onclick=
-							<c:if test="${empty loginId}">"loginModal()"</c:if>
+						<li><c:if test="${empty loginId}">Guest 님</c:if> <c:if
+								test="${!empty loginId}">${name} 님</c:if></li>
+						<li><a
+							onclick=<c:if test="${empty loginId}">"loginModal()"</c:if>
 							<c:if test="${!empty loginId}">"location.href='${ctx}/memberInfo.do'"</c:if>>
-							<i class="fas fa-user-alt"></i></a>
-						</li>
+								<i class="fas fa-user-alt"></i>
+						</a></li>
 						<c:if test="${!empty loginId }">
-							<li><a onclick="logoutCheck('${name}')"><i class="fas fa-sign-out-alt"></i></a></li>
+							<li><a onclick="logoutCheck('${name}')"><i
+									class="fas fa-sign-out-alt"></i></a></li>
 						</c:if>
 					</ul>
 				</li>
@@ -62,18 +90,19 @@
 		<h2>로그인</h2>
 		<form class="login">
 			<div class="input">
-				<label for="">id</label><br> 
-				<input type="text" placeholder="아이디 입력" name="id" id="login_id">
+				<label for="">id</label><br> <input type="text"
+					placeholder="아이디 입력" name="id" id="login_id">
 				<p class="msg id_msg login_id_msg">아이디를 입력해주세요</p>
 			</div>
 			<div class="input">
-				<label for="">pw</label><br> 
-				<input type="password" placeholder="비밀번호 입력" name="pw" id="login_pw">
+				<label for="">pw</label><br> <input type="password"
+					placeholder="비밀번호 입력" name="pw" id="login_pw">
 				<p class="msg pw_msg login_pw_msg">비밀번호를 입력해주세요</p>
 			</div>
 			<div class="button_group input">
-				<input type="button" value="로그인" class="button btn1" id="loginCheck"> 
-				<input type="button" value="회원가입" class="button btn2" onclick="joinModal()">
+				<input type="button" value="로그인" class="button btn1" id="loginCheck">
+				<input type="button" value="회원가입" class="button btn2"
+					onclick="joinModal()">
 			</div>
 		</form>
 	</div>
@@ -84,41 +113,43 @@
 		<h2>회원가입</h2>
 		<form action="${ctx}/memberJoin.do" class="form">
 			<div class="input_name input">
-				<label for="">이름</label><br> 
-				<input type="text" placeholder="이름 입력" name="name" id="join_name">
+				<label for="">이름</label><br> <input type="text"
+					placeholder="이름 입력" name="name" id="join_name">
 				<p class="msg name_msg join_name_msg">이름을 입력해주세요</p>
 			</div>
 			<div class="input_id input">
 				<label for="">id</label><br>
 				<div>
 					<input type="text" placeholder="아이디 입력" name="id" id="join_id">
-					<input type="button" value="중복확인" class="button btn" id="join_idCheck">
+					<input type="button" value="중복확인" class="button btn"
+						id="join_idCheck">
 				</div>
 				<p class="msg id_msg join_id_msg">아이디를 입력해주세요</p>
 			</div>
 			<div class="input">
-				<label for="">pw</label><br> 
-				<input type="password" placeholder="비밀번호 입력" name="pw" id="join_pw">
+				<label for="">pw</label><br> <input type="password"
+					placeholder="비밀번호 입력" name="pw" id="join_pw">
 				<p class="msg pw_msg join_pw_msg">비밀번호를 입력해주세요</p>
 			</div>
 			<div class="input">
-				<label for="">pw 확인</label><br> 
-				<input type="password" placeholder="비밀번호 확인" name="pwCheck" id="join_pwCheck">
+				<label for="">pw 확인</label><br> <input type="password"
+					placeholder="비밀번호 확인" name="pwCheck" id="join_pwCheck">
 				<p class="msg pwCheck_msg join_pwCheck_msg">비밀번호를 확인해주세요</p>
 			</div>
 			<div class="input">
-				<label for="">email</label><br> 
-				<input type="email" placeholder="이메일 입력" name="email" id="join_email">
+				<label for="">email</label><br> <input type="email"
+					placeholder="이메일 입력" name="email" id="join_email">
 				<p class="msg email_msg join_email_msg">이메일을 입력해주세요</p>
 			</div>
-			
+
 			<div class="input_terms input">
-				<label for="join_terms">개인정보 이용약관 동의</label> 
-				<input type="checkbox" name="terms" id="join_terms" value="동의">	
+				<label for="join_terms">개인정보 이용약관 동의</label> <input type="checkbox"
+					name="terms" id="join_terms" value="동의">
 				<p class="msg terms_msg join_terms_msg">약관에 동의해주세요</p>
 			</div>
 			<div class="button_group">
-				<input type="button" value="회원가입" class="button btn" onclick="joinCheck(form)">
+				<input type="button" value="회원가입" class="button btn"
+					onclick="joinCheck(form)">
 			</div>
 		</form>
 	</div>
