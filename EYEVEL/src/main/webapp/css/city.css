@@ -1,0 +1,13 @@
+.city_nav{display: flex;justify-content: space-between;margin-bottom: var(--padding);}
+.city_content{display: flex;justify-content: space-between;}
+.city_content .video{
+   width:750px;
+   height: 420px;
+   background: skyblue;
+   margin-right: 60px;
+}
+.comment li{display: flex;}
+.comment .content{display: flex;flex-direction: column;align-items: flex-start;}
+.comment .content>div{display: flex;}
+.comment .content button{align-self: flex-end;background: var(--red);color:var(--white)}
+.comment .content button:hover{align-self: flex-end;background: var(--dark-red);}

@@ -3,3 +3,17 @@
 .boardSection .category li{margin-right: var(--padding);font-weight: bold;color:var(--gray);cursor: pointer;}
 .boardSection .category li.on{color:var(--black)}
 .boardSection .category li:last-child{margin-right: 0;}
+.search{position: relative;align-self: flex-start;}
+.search input{
+   width: 200px;
+   padding-left: 10px;
+   padding-right: 40px;
+}
+.search a{
+   position: absolute;
+   color:var(--gray);
+   top:50%;
+   right:10px;
+   transform: translateY(-50%);
+}
+.search a:hover{color:var(--black)}
