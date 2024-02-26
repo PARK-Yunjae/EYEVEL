@@ -47,7 +47,7 @@ public class HandlerMapping {
 		mappings.put("/boardList.do", new BoardListController()); // 게시판 리스트 확인 (페이징)
 		mappings.put("/boardInfo.do", new BoardInfoController()); // 게시글 확인
 		mappings.put("/boardUpdate.do", new BoardUpdateController()); // 게시글 정보 수정
-		mappings.put("/faqList.do", new FAQListController()); // 자주 하는 질문
+		mappings.put("/complain.do", new ComplainController()); // 자주 하는 질문
 		
 		// zzim
 		mappings.put("/zzimAdd.do", new ZzimAddController()); // 좋아요 추가
