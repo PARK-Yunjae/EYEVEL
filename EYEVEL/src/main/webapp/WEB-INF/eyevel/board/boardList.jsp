@@ -5,7 +5,7 @@
    <section class="boardSection">
       <div class="innerBox">
          <h2 class="title">게시판</h2>
-         <button class="btn">글쓰기</button>
+         <button class="btn" onclick="location.href='${ctx}/boardAdd.do'">글쓰기</button>
          <ul class="category">
             <li class="on">전체</li>
             <li>공지사항</li>
