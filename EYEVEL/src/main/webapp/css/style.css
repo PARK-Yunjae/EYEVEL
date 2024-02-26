@@ -7,6 +7,7 @@
    --green: #41CE82;
    --dark-green: #2caf69;
    --red: #ff6969;
+   --dark-red: #e04d4d;
    --gray:#a8a8a8;
    --light-gray: #E8e8e8;
 
@@ -97,7 +98,7 @@ section .innerBox{
 }
 
 /* table */
-table{border-collapse: collapse;text-align: center;width: 80%;}
+table{border-collapse: collapse;text-align: center;width: 100%;}
 th{border-bottom: 2px solid var(--black); padding:var(--padding);}
 td{
    border-bottom:1px solid var(--gray);
