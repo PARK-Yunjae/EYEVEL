@@ -20,6 +20,7 @@
 				<th>No</th>
 				<th>카테고리</th>
 				<th style="width: 40%;">제목</th>
+				<th>작성자</th>
 				<th>작성일</th>
 				<th>조회수</th>
 				<th>좋아요</th>
@@ -28,7 +29,8 @@
 				<tr>
 					<td>${board.no}</td>
 					<td>${board.category}</td>
-					<td>${board.title}</td>
+					<td><a>${board.title}</a></td>
+					<td>${board.memberId}</td>
 					<td>${board.regdate}</td>
 					<td>${board.hits}</td>
 					<td>${board.heart}</td>

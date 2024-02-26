@@ -6,7 +6,7 @@ public class Board {
 	private int no;
 	private int category;
 	private int isPrivate;
-	private String memeberId;
+	private String memberId;
 	private String title;
 	private String contents;
 	private String regDate;
@@ -38,12 +38,12 @@ public class Board {
 		this.isPrivate = isPrivate;
 	}
 
-	public String getMemeberId() {
-		return memeberId;
+	public String getMemberId() {
+		return memberId;
 	}
 
-	public void setMemeberId(String memeberId) {
-		this.memeberId = memeberId;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 
 	public String getTitle() {
@@ -96,7 +96,7 @@ public class Board {
 
 	@Override
 	public String toString() {
-		return "Board [no=" + no + ", category=" + category + ", isPrivate=" + isPrivate + ", memeberId=" + memeberId
+		return "Board [no=" + no + ", category=" + category + ", isPrivate=" + isPrivate + ", memberId=" + memberId
 				+ ", title=" + title + ", contents=" + contents + ", regDate=" + regDate + ", hits=" + hits + ", heart="
 				+ heart + ", adminCheck=" + adminCheck + "]";
 	}
