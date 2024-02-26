@@ -4,5 +4,51 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eyevel.mybatis.BoardMapper">
+	<select id="boardList" resultType="board">
+		select * from board order by
+		no desc
+	</select>
+
+	<insert id="boardAdd" parameterType="board">
+		insert into board(no,
+		category,
+		is_private, member_id, title, contents, reg_date, hits,
+		heart,
+		admin_check)
+		values(
+		null,
+		#{category},
+		#{is_private},
+		#{member_id},
+		#{title},
+		#{contents},
+		#{reg_date},
+		#{hits},
+		#{heart},
+		#{admin_check}
+		)
+	</insert>
+
+	<select id="boardDetail" parameterType="String"
+		resultType="board">
+		select * from board
+		where no=#{no}
+	</select>
+
+	<delete id="boardDelete" parameterType="String">
+		delete from board where
+		no=#{no}
+	</delete>
+
+	<update id="boardUpdate" parameterType="String">
+		update board set
+		title=#{title},
+		contents=#{contents}
+		where no=#{no}
+	</update>
+
+	<update id="boardCount" parameterType="String">
+		update board set hits = hits + 1 where no=#{no}
+	</update>
 
 </mapper>
