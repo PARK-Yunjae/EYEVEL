@@ -21,18 +21,28 @@ function loginExitBtn() {
 }
 
 // 로그인 id 값 변경시
-document.getElementById("login_id").addEventListener("keyup", () => {
+document.getElementById("login_id").addEventListener("keyup", (e) => {
 	document.querySelector(".login_id_msg").style.display = "none";
+	if(e.code === 'Enter'){
+		loginCheck();
+	}
 })
 
 // 로그인 pw 값 변경시
-document.getElementById("login_pw").addEventListener("keyup", () => {
+document.getElementById("login_pw").addEventListener("keyup", (e) => {
 	document.querySelector(".login_pw_msg").style.display = "none";
+	if(e.code === 'Enter'){
+		loginCheck();
+	}
 })
 
-// 로그인 비동기 체크
+// 로그인 비동기 체크 - 클릭
 document.getElementById("loginCheck").addEventListener("click", () => {
+	loginCheck();
+})
 
+// 로그인 비동기 체크 함수
+function loginCheck() {
 	let id = document.getElementById("login_id").value.trim();
 	let pw = document.getElementById("login_pw").value.trim();
 	// id값이 비어 있다면
@@ -65,7 +75,7 @@ document.getElementById("loginCheck").addEventListener("click", () => {
 				location.href = contextPath + "/memberLogin.do?id=" + id + "&pw=" + pw;
 			}
 		})
-})
+}
 
 // 회원가입 모달 버튼 활성화 - 그리고 로그인 버튼 숨기기
 function joinModal() {	
@@ -111,16 +121,19 @@ function joinCheck(form){
 	}
 	if (pw === "") {
 		document.querySelector(".join_pw_msg").innerHTML = "비밀번호를 입력해 주세요";
+		document.querySelector(".join_pw_msg").style.color = "#ff6969";
 		document.querySelector(".join_pw_msg").style.display = "block";
 		return false;
 	}
 	if (pwCheck === "") {
 		document.querySelector(".join_pwCheck_msg").innerHTML = "비밀번호를 입력해 주세요";
+		document.querySelector(".join_pwCheck_msg").style.color = "#ff6969";
 		document.querySelector(".join_pwCheck_msg").style.display = "block";
 		return false;
 	}
 	if (pwCheck !== pw) {
 		document.querySelector(".join_pwCheck_msg").innerHTML = "비밀번호가 일치해야 합니다";
+		document.querySelector(".join_pwCheck_msg").style.color = "#ff6969";
 		document.querySelector(".join_pw_msg").style.display = "none";
 		document.querySelector(".join_pwCheck_msg").style.display = "block";
 		return false;
@@ -128,11 +141,13 @@ function joinCheck(form){
 	if(pwCheck === pw){
 		if(!form.pw.value.match(/^[A-Za-z0-9]{4,20}$/)){
 			document.querySelector(".join_pwCheck_msg").innerHTML = "비밀번호에 영어,숫자가 포함되어야 합니다.";
+			document.querySelector(".join_pwCheck_msg").style.color = "#ff6969";
 			document.querySelector(".join_pw_msg").style.display = "none";
 			document.querySelector(".join_pwCheck_msg").style.display = "block";
 			return false;
 		}else {
 			document.querySelector(".join_pwCheck_msg").innerHTML = "사용 가능한 비밀번호 입니다.";
+			document.querySelector(".join_pwCheck_msg").style.color = "skyblue";
 			document.querySelector(".join_pw_msg").style.display = "none";
 			document.querySelector(".join_pwCheck_msg").style.display = "block";
 		}
@@ -172,20 +187,21 @@ document.getElementById("join_name").addEventListener("keyup", () => {
 document.getElementById("join_id").addEventListener("keyup", () => {
 	idCheckPass = false;
 	document.getElementById("join_id").style.border = "";
+	document.querySelector("#join_idCheck").classList.remove("on");
 	document.querySelector(".join_id_msg").style.display = "none";
 })
 
-// 회원가입 name 값 변경시
+// 회원가입 pw 값 변경시
 document.getElementById("join_pw").addEventListener("keyup", () => {
 	document.querySelector(".join_pw_msg").style.display = "none";
 })
 
-// 회원가입 name 값 변경시
+// 회원가입 pwCheck 값 변경시
 document.getElementById("join_pwCheck").addEventListener("keyup", () => {
 	document.querySelector(".join_pwCheck_msg").style.display = "none";
 })
 
-// 회원가입 name 값 변경시
+// 회원가입 email 값 변경시
 document.getElementById("join_email").addEventListener("keyup", () => {
 	document.querySelector(".join_email_msg").style.display = "none";
 })
@@ -196,6 +212,7 @@ document.getElementById("join_idCheck").addEventListener("click", () =>{
 	// id값이 비어 있다면
 	if (id === "") {
 		document.querySelector(".join_id_msg").innerHTML= "아이디를 입력해주세요";
+		document.querySelector(".join_id_msg").style.color = "#ff6969";
 		document.querySelector(".join_id_msg").style.display = "block";
 		return false;
 	}
@@ -212,13 +229,17 @@ document.getElementById("join_idCheck").addEventListener("click", () =>{
 			if (data == '0') {
 				idCheckPass = true;
 				document.querySelector(".join_id_msg").innerHTML = "ID 사용 가능합니다";
+				document.querySelector(".join_id_msg").style.color = "skyblue";
+				document.querySelector("#join_idCheck").classList.add("on");
 				document.getElementById("join_id").style.border = "1px solid blue";
 				document.querySelector(".join_id_msg").style.display = "block";
 				return false;
 			}
 			else{
 				document.querySelector(".join_id_msg").innerHTML = "중복 ID가 존재합니다";
+				document.querySelector(".join_id_msg").style.color = "#ff6969";
 				document.querySelector(".join_id_msg").style.display = "block";
+				document.querySelector("#join_idCheck").classList.remove("on");
 				document.getElementById("join_id").style.border = "1px solid red";
 				return false;
 			}

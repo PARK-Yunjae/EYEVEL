@@ -15,7 +15,7 @@ public class BoardAddController implements Controller{
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		
-		return null;
+		return "eyevel/board/boardAdd";
 	}
 
 }
