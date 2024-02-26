@@ -16,7 +16,6 @@ crossorigin="anonymous"></script>
     <div style="float : left;">
         <div class="weather_icon"></div>
     </div><br>
-
     <div style="float : right; margin : -5px 0px 0px 60px; font-size : 11pt">
             <div class="temp_min"></div>
             <div class="temp_max"></div>
