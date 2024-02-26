@@ -6,4 +6,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eyevel.mybatis.AreaMapper">
 
+<select id="areaContent" parameterType="String" resultType="Area">
+		select * from area where name=#{id}
+</select>
 </mapper>

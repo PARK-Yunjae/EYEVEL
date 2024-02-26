@@ -10,7 +10,8 @@
             <div class="zzimBtn"><i class="far fa-heart"></i></div>
          </div>
          <div class="city_content">
-            <div class="video"></div>
+            <div class="video"><iframe width="750" height="420" src="https://www.youtube.com/embed/viIhOorr11I?si=aOuXe9YNoefW62Jm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
             <ul class="tourist">
                <li>
                   <h2><span class="red" style="margin-right:10px"><i class="fas fa-map-pin"></i></span>이 지역의 볼거리</h2>
