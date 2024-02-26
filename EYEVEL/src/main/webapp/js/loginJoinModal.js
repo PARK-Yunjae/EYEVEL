@@ -109,9 +109,33 @@ function joinCheck(form){
 		document.querySelector(".join_id_msg").style.display = "block";
 		return false;
 	}
-	if (pw === "" || pwCheck === "") {
+	if (pw === "") {
+		document.querySelector(".join_pw_msg").innerHTML = "비밀번호를 입력해 주세요";
 		document.querySelector(".join_pw_msg").style.display = "block";
 		return false;
+	}
+	if (pwCheck === "") {
+		document.querySelector(".join_pwCheck_msg").innerHTML = "비밀번호를 입력해 주세요";
+		document.querySelector(".join_pwCheck_msg").style.display = "block";
+		return false;
+	}
+	if (pwCheck !== pw) {
+		document.querySelector(".join_pwCheck_msg").innerHTML = "비밀번호가 일치해야 합니다";
+		document.querySelector(".join_pw_msg").style.display = "none";
+		document.querySelector(".join_pwCheck_msg").style.display = "block";
+		return false;
+	}
+	if(pwCheck === pw){
+		if(!form.pw.value.match(/^[A-Za-z0-9]{4,20}$/)){
+			document.querySelector(".join_pwCheck_msg").innerHTML = "비밀번호에 영어,숫자가 포함되어야 합니다.";
+			document.querySelector(".join_pw_msg").style.display = "none";
+			document.querySelector(".join_pwCheck_msg").style.display = "block";
+			return false;
+		}else {
+			document.querySelector(".join_pwCheck_msg").innerHTML = "사용 가능한 비밀번호 입니다.";
+			document.querySelector(".join_pw_msg").style.display = "none";
+			document.querySelector(".join_pwCheck_msg").style.display = "block";
+		}
 	}
 	if (pwCheck === "") {
 		document.querySelector(".join_pwCheck_msg").style.display = "block";
@@ -135,6 +159,7 @@ function joinCheck(form){
 		alert("중복 ID 체크 해주세요");
 		return false;
 	}
+	alert("회원가입 완료");
 	form.submit();
 }
 

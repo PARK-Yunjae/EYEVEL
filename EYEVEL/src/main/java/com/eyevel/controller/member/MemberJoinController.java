@@ -20,7 +20,6 @@ public class MemberJoinController implements Controller {
 		String pw = req.getParameter("pw");
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
-		String img = req.getParameter("img");
 		
 		//맴버 객체에 받아온 정보를 입력
 		Member m = new Member();
@@ -28,11 +27,11 @@ public class MemberJoinController implements Controller {
 		m.setPw(pw);
 		m.setName(name);
 		m.setEmail(email);
-		m.setImg(img);
+		m.setImg("profile.png");
 		
 		MemberDAO.getInstance().memberInsert(m);
 		
-		return null;
+		return "eyevel/parts/main";
 	}
 
 }
