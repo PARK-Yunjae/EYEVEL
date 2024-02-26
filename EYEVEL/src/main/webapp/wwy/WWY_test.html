@@ -78,9 +78,9 @@
 		const genAI = new GoogleGenerativeAI(API_KEY);
 		const generationConfig = {
 			stopSequences: ["red"],
-			maxOutputTokens: 3000,
-			temperature: 0.5,
-			topP: 0.1,
+			maxOutputTokens: 1024,
+			temperature: 0.8,
+			topP: 1,
 			topK: 16,
 		};
 		async function run() {
