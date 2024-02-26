@@ -16,6 +16,7 @@ public class BoardAddController implements Controller {
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
+		int no = Integer.parseInt(req.getParameter("no"));
 		int category = Integer.parseInt(req.getParameter("category"));
 		int is_private = Integer.parseInt(req.getParameter("is_private"));
 		String member_id = req.getParameter("id");
@@ -27,6 +28,7 @@ public class BoardAddController implements Controller {
 		int admin_check = Integer.parseInt(req.getParameter("admin_check"));
 
 		Board b = new Board();
+		b.setNo(no);
 		b.setCategory(category);
 		b.setIsPrivate(is_private);
 		b.setMemeberId(member_id);
@@ -39,7 +41,7 @@ public class BoardAddController implements Controller {
 
 		BoardDAO.getInstance().boardAdd(b);
 
-		return "eyevel/board/boardAdd";
+		return "eyevel/parts/main";
 	}
 
 }

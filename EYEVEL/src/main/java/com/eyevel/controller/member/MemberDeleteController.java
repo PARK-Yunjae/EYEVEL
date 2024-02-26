@@ -18,7 +18,7 @@ public class MemberDeleteController implements Controller {
 		
 		MemberDAO.getInstance().memberDelete(id);
 		
-		return "eyevel/member/main";
+		return "eyevel/main";
 	}
 
 }

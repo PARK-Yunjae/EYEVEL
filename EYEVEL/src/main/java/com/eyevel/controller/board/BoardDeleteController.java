@@ -18,7 +18,7 @@ public class BoardDeleteController implements Controller {
 
 		BoardDAO.getInstance().boardDelete(no);
 
-		return "eyevel/board/main";
+		return "eyevel/main";
 	}
 
 }
