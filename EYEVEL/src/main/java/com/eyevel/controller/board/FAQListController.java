@@ -8,14 +8,14 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-//CLS-048 : 게시판 리스트 확인 (페이징)
-public class BoardListController implements Controller{
-
+// 
+public class FAQListController implements Controller {
+	
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
-
-		return "eyevel/board/boardList";
+		
+		
+		return null;
 	}
 
 }
