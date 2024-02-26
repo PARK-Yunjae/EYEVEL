@@ -1,0 +1,5 @@
+.boardSection button{align-self: flex-end;}
+.boardSection .category{display: flex;align-self: flex-start;margin-bottom: var(--padding);}
+.boardSection .category li{margin-right: var(--padding);font-weight: bold;color:var(--gray);cursor: pointer;}
+.boardSection .category li.on{color:var(--black)}
+.boardSection .category li:last-child{margin-right: 0;}
