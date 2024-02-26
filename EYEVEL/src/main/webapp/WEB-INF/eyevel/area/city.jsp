@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
+
 <link rel="stylesheet" type="text/css" href="${ctx}/css/city.css">
+
 <section class="city_section">
       <div class="innerBox">
          <div class="city_nav">
@@ -10,7 +12,7 @@
             <div class="zzimBtn"><i class="far fa-heart"></i></div>
          </div>
          <div class="city_content">
-            <div class="video"><iframe width="750" height="420" src="https://www.youtube.com/embed/viIhOorr11I?si=aOuXe9YNoefW62Jm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="video"><iframe width="750" height="420" src="https://www.youtube.com/embed/viIhOorr11I?si=${area.link_url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <ul class="tourist">
                <li>
@@ -20,8 +22,8 @@
                      <div>
                         <div class="image"><img src="https://picsum.photos/310/310" alt=""></div>
                         <div class="content">
-                           <h3>북아메리카</h3>
-                           <p>긴 관광지 이름 매우 김</p>
+                           <h3>${area.name}</h3>
+                           <p>${area.contents}</p>
                            <div>
                               <a href="해당 관광지(도시)페이지">파노라마 뷰 보러가기 <i class="fas fa-arrow-right"></i></a>
                            </div>

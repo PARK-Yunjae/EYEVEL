@@ -15,11 +15,12 @@ public class AreaCityController implements Controller{
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		System.out.println("도시로 이동중");
 		String id = req.getParameter("id");
 		Area city = AreaDAO.getInstance().areaContents(id);
 		
-		req.setAttribute("content", city);
-
+		req.setAttribute("area", city);
+		System.out.println(city);
 		return "eyevel/area/city";
 	}
 
