@@ -2,6 +2,7 @@ package com.eyevel.controller.comment;
 
 import java.io.IOException;
 
+import com.eyevel.dao.CommentDAO;
 import com.eyevel.frontController.Controller;
 
 import jakarta.servlet.ServletException;
@@ -13,9 +14,13 @@ public class CommentDeleteController implements Controller{
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		int no = Integer.parseInt(req.getParameter("no"));
+		System.out.println(no);
+		CommentDAO.getInstance().commentDelete(no);
 
-
-		return null;
+		String ctx = req.getContextPath();
+		return "redirect:" + ctx + "/areaCity.do?id="+req.getParameter("areaId");
 	}
 
 }

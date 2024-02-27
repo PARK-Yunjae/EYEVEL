@@ -46,6 +46,12 @@ create table comment(
     contents varchar(255) not null -- 내용
 );
 
+insert into comment(null,'test1','1','2024-02-27','댓글입니다');
+insert into comment(null,'test1','1','2024-02-27','댓글입니다2');
+insert into comment(null,'test1','2','2024-02-27','댓글입니다');
+insert into comment(null,'test1','3','2024-02-27','댓글입니다');
+
+
 select * from comment;
 
 create table zzim(
@@ -54,6 +60,7 @@ create table zzim(
     member_id varchar(20) not null, -- 유저 ID
     foreign key(member_id) references member(id)
 );
+
 
 select * from zzim;
 

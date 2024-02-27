@@ -11,6 +11,7 @@
    cursor: pointer;
    font-size: var(--font-subTitle);
    color:var(--red);
+
 }
 .zzimBtn:hover{transform: scale(1.1);}
 .zzimBtn:active{transform: scale(0.9);}

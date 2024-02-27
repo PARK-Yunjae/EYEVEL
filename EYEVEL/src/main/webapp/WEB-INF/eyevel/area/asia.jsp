@@ -5,9 +5,9 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/css/earth.css">
 <section class="earthSection">
 	<div class="innerBox">
-		<button id="seoul" onclick="location.href='${ctx}/areaCity.do?id=1835847'">서울</button>
-		<button id="tokyo" onclick="location.href='${ctx}/areaCity.do?id=1850147'">도쿄</button>
-		<button id="delhi" onclick="location.href='${ctx}/areaCity.do?id=1273294'">델리</button>
+		<button id="seoul" onclick="location.href='${ctx}/areaCity.do?no=1&loginId=${loginId}'">서울</button>
+<%-- 		<button id="tokyo" onclick="location.href='${ctx}/areaCity.do?id=1850147&loginId=${loginId}'">도쿄</button>
+		<button id="delhi" onclick="location.href='${ctx}/areaCity.do?id=1273294&loginId=${loginId}'">델리</button> --%>
 		<img src="${ctx}/img/worldmap1.png"/>
 	</div>
 </section>

@@ -15,9 +15,9 @@ public class AreaDAO {
 		return instance;
 	}
 	
-	public Area areaContents(int id){
+	public Area areaContents(int no){
 		SqlSession session = MybatisConfig.getInstance().openSession();
-		Area a = session.selectOne("areaContent",id);
+		Area a = session.selectOne("areaContent",no);
 		session.close();
 		return a;
 	}
