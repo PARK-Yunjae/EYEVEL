@@ -12,7 +12,7 @@
             <div class="input_info">
                <div class="input_title">
                   <label for="title">제목</label><br>
-                  <input type="text" name="title" placeholder="제목을 입력해주세요" id="title" class="title">
+                  <input type="text" name="title" placeholder="제목을 입력해주세요" id="title">
                </div>
                <div class="input_date">
                   <label for="date">작성일</label><br>
