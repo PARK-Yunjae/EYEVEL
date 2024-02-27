@@ -15,7 +15,7 @@ var weatherIcon = {
     '13' : 'far fa-snowflake',
     '50' : 'fas fa-smog'
 };
-
+  
 // 날씨 api
  var apiURI = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey;
 $.ajax({
