@@ -81,4 +81,5 @@ create table board(
 );
 
 select * from board;
+
 insert into board values(null, 1, 1, 'test1', 'title1', 'contents1', '2024-02-26', 1, 2, 1);

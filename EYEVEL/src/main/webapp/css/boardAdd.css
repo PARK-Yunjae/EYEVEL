@@ -18,7 +18,7 @@
 
 /* 공지사항 체크 */
 .notice_check{
-   display: none;
+   display: block;
    justify-content: flex-start;
    margin-bottom: var(--padding);
 }
