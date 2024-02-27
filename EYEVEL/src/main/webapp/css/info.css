@@ -89,8 +89,8 @@ input.readonly:focus{outline: none;}
 #zzim_list span{font-size: 28px;margin-left: 30px;cursor: pointer;}
 .zzim_list h3{margin-bottom: 5px;}
 .zzim_list p{margin-bottom: 15px;}
-#zzim_list .fas{transition: all .3s;}
-#zzim_list a:hover .fas{transform: translateX(5px);}
-.zzim_list .content span i{transition: all .3s;}
-.zzim_list .content span i:hover{transform: scale(0.9);}
-.zzim_list .content span i:active{transform: scale(1.1);}
+#zzim_list .fa-arrow-right{transition: all .3s;}
+#zzim_list a:hover .fa-arrow-right{transform: translateX(5px);}
+.zzim_list .content span .fa-heart{transition: all .3s;}
+.zzim_list .content span .fa-heart:hover{transform: scale(1.1);}
+.zzim_list .content span .fa-heart:active{transform: scale(0.9);}

@@ -1,0 +1,71 @@
+.addAreaSection form{width: 70%;}
+
+/* 날씨 이미지 삽입 */
+.image_box{
+   margin:var(--padding) 0;
+   padding: var(--padding);
+   border: 1px solid var(--gray);
+   border-radius: 5px;
+   margin-bottom: 50px;;
+}
+.image_box .msg{bottom:-20px;left:0;}
+.image_box input[type=file]{display: none;}
+.image_box label{
+   display: block;
+   width: 100px;
+   height: 100px;
+   background: gray;
+   cursor: pointer;
+   position: relative;
+   margin-top: 25px;
+}
+.image_box label .image{
+   width: 100%;
+   height: 100%;
+   border-radius: 0;
+}
+.image_box label img{width: 100%;}
+.image_box>div{display: flex;justify-content: space-around;}
+.image_am{position: relative;padding-bottom: var(--padding);border-bottom: 1px solid gray;}
+.image_am::before{
+   position: absolute;
+   content: "\f185";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   color:rgb(235, 114, 77);
+   font-size: var(--font-subTitle);
+   top:-10px;
+   left:-10px;
+}
+.image_box label::after{
+   position: absolute;
+   content: "\f185";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   color:var(--gray);
+   font-size: 25px;
+   top:-30px;
+   left:50%;
+   transform: translateX(-50%);
+}
+.image_pm{margin-top:var(--padding);position: relative;}
+.image_pm::before{
+   position: absolute;
+   content: "\f186";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   color:rgb(255, 183, 50);
+   font-size: var(--font-subTitle);
+   top:-10px;
+   left:-10px;
+}
+.image_box label.cloudy::after{content:"\f0c2"}
+.image_box label.rain::after{content:"\f73d"}
+.image_box label.snow::after{content:"\f2dc"}
+
+input.readonly:focus{outline: none;}
+input.readonly{border: none;border-bottom: 1px solid var(--gray);border-radius: none;}
+.addAreaSection textarea{margin-bottom: 10px;}
+.addAreaSection input[type=button]{
+   margin-top:var(--padding);
+}
