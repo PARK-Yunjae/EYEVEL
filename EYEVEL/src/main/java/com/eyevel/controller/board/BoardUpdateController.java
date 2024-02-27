@@ -15,7 +15,7 @@ public class BoardUpdateController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		int no = (Integer) req.getSession().getAttribute("no");
+		int no = Integer.parseInt(req.getParameter("no"));
 		String title = req.getParameter("title");
 		String contents = req.getParameter("contents");
 
@@ -25,7 +25,7 @@ public class BoardUpdateController implements Controller {
 
 		BoardDAO.getInstance().boardUpdate(no);
 
-		return "eyevel/board/main";
+		return "eyevel/board/boardList";
 	}
 
 }

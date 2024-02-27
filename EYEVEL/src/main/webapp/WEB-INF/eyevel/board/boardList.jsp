@@ -29,7 +29,7 @@
 				<tr>
 					<td>${board.no}</td>
 					<td>${board.category}</td>
-					<td>${board.title}</td>
+					<td><a href="${ctx}/boardInfo.do?no=${board.no}">${board.title}</a></td>
 					<td>${board.member_id}</td>
 					<td>${board.reg_date}</td>
 					<td>${board.hits}</td>
