@@ -9,7 +9,14 @@
 			<input type="text" placeholder="검색"> <a><i
 				class="fas fa-search"></i></a>
 		</form>
-		<button class="btn" onclick="location.href='${ctx}/boardAdd.do'">글쓰기</button>
+		<button class="btn"
+			onclick="location.href='${ctx}/boardAdd.do'
+			<c:if test="${loginId!=null}"> 
+			loginId='${loginId}'
+			</c:if>
+			<c:if test="${loginId eq null}"> 
+			loginId=
+			</c:if>">글쓰기</button>
 		<ul class="category">
 			<li class="on">전체</li>
 			<li>공지사항</li>
@@ -28,7 +35,14 @@
 			<c:forEach var="board" items="${list}">
 				<tr>
 					<td>${board.no}</td>
-					<td>${board.category}</td>
+					<td>
+					<c:if test="${board.category eq 0}">
+					공지
+					</c:if>
+					<c:if test="${board.category eq 1}">
+					건의
+					</c:if>
+					</td>
 					<td><a href="${ctx}/boardInfo.do?no=${board.no}">${board.title}</a></td>
 					<td>${board.member_id}</td>
 					<td>${board.reg_date}</td>
