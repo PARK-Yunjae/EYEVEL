@@ -1,6 +1,12 @@
 create database eyevel;
 use eyevel;
 
+drop table member;
+drop table area;
+drop table zzim;
+drop table comment;
+drop table board;
+drop table area_img;
 
 create table member(
 	id varchar(20) primary key not null, -- 유저 ID

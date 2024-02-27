@@ -45,7 +45,7 @@ a{text-decoration: none; color:var(--black);cursor: pointer;}
 .logo_img{width: 120px;margin-right: calc(var(--padding)*2) ;}
 .logo_img img{width: 100%;}
 button, .button{display: block;text-align: center;padding:10px 30px;cursor: pointer;border-radius: var(--radius);border: none;}
-section{height: 100%;}
+
 
 /* input */
 .form{display: flex;flex-direction: column;width: 100%;}
@@ -127,3 +127,15 @@ td:last-child{border-right: none;}
 td a:hover{color:var(--gray)}
 .remove_icon{margin-left: 15px; color:#e63535;}
 .remove_icon:hover{color:var(--red);}
+
+textarea{
+   font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+   width: 100%;
+
+   margin:var(--padding) 0;
+   font-size: var(--font-content);
+   padding:10px;
+   border: 1px solid var(--gray);
+   border-radius: 5px;
+   resize: none;
+}
