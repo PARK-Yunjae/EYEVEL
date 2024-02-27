@@ -7,7 +7,23 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="street.js"></script>
+    <style>
+    html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map,
+#pano {
+  float: left;
+  height: 100%;
+  width: 50%;
+}
+    
+    </style>
   </head>
   <body>
     <div id="map"></div>

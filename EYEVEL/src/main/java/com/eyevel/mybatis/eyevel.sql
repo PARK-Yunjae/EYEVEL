@@ -23,7 +23,10 @@ create table area(
     lat float not null, -- 위도
     id int not null -- 관광지 ID
 );
-insert into area(name, contents, link_url, lon, lat, id) values("seoul","서울은 대한민국의 수도로, 전통과 현대가 공존하는 도시입니다. 고궁, 전통시장, 한강의 아름다운 풍경과 함께 최첨단 건축물, 쇼핑몰, 세계적인 음식 문화를 경험할 수 있습니다. 역사적 명소와 문화의 거리, 다채로운 먹거리와 쇼핑, 활기찬 나이트라이프까지, 서울은 방문객에게 잊지 못할 추억을 선사합니다.","viIhOorr11I?si=aOuXe9YNoefW62Jm",0,0,0);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("seoul","서울은 대한민국의 수도로, 전통과 현대가 공존하는 도시입니다. 고궁, 전통시장, 한강의 아름다운 풍경과 함께 최첨단 건축물, 쇼핑몰, 세계적인 음식 문화를 경험할 수 있습니다. 역사적 명소와 문화의 거리, 다채로운 먹거리와 쇼핑, 활기찬 나이트라이프까지, 서울은 방문객에게 잊지 못할 추억을 선사합니다.","viIhOorr11I?si=aOuXe9YNoefW62Jm",0,0,0,0,0,0);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("도쿄","도쿄는 일본의 수도로, 놀라운 기술, 전통과 현대 문화의 완벽한 조화를 경험할 수 있는 세계적인 메트로폴리스입니다. 고즈넉한 신사와 정원에서부터 번화한 시부야와 긴자의 쇼핑가, 미슐랭 스타 레스토랑까지, 도쿄는 다양한 매력을 지닌 도시입니다. 애니메이션과 패션의 중심지로도 유명하며, 방문객들은 전통과 혁신이 어우러진 도쿄의 독특한 분위기를 만끽할 수 있습니다.","viIhOorr11I?si=aOuXe9YNoefW62Jm",0,0,0,139.6917,35.6895,1850147);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("델리","인도 델리입니다","-Xlzej8RTTU?si=-39hgQMewDeuAYd2",0,0,0,77.2167,28.6667,1273294);
+
 select * from area;
 
 create table comment(
