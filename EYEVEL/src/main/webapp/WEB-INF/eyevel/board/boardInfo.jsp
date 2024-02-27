@@ -3,8 +3,8 @@
 <%@ include file="../parts/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/boardInfo.css">
 <section>
-	<form method="post">
-		<div class="innerBox">
+	<div class="innerBox">
+		<form method="post">
 			<div class="board_info">
 				<a href="${ctx}/boardList.do">뒤로가기</a>
 				<h2>${board.title}</h2>
@@ -31,7 +31,7 @@
 				</div>
 				<div class="board_content">${board.contents}</div>
 			</div>
-		</div>
-	</form>
+		</form>
+	</div>
 </section>
 <%@ include file="../parts/footer.jsp"%>
