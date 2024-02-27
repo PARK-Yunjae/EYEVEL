@@ -18,7 +18,7 @@
 	src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"
 	integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF"
 	crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+<script defer src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
 <script defer src="${ctx}/js/weather.js" defer></script>

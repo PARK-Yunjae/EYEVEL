@@ -1,6 +1,7 @@
 package com.eyevel.controller.board;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 import com.eyevel.dao.BoardDAO;
 import com.eyevel.frontController.Controller;
@@ -16,13 +17,19 @@ public class BoardAddController implements Controller {
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
+		if (req.getParameter("no") == null) {
+			return "eyevel/board/boardAdd";
+		}
+		if (req.getParameter("member_id").equals(null)) {
+			return "eyevel/board/boardList";
+		}
 		int no = Integer.parseInt(req.getParameter("no"));
 		int category = Integer.parseInt(req.getParameter("category"));
 		int is_private = Integer.parseInt(req.getParameter("is_private"));
-		String member_id = req.getParameter("id");
+		String member_id = req.getParameter("member_id");
 		String title = req.getParameter("title");
 		String contents = req.getParameter("contents");
-		String reg_date = req.getParameter("reg_date");
+		LocalDate reg_date = LocalDate.now();
 		int hits = Integer.parseInt(req.getParameter("hits"));
 		int heart = Integer.parseInt(req.getParameter("heart"));
 		int admin_check = Integer.parseInt(req.getParameter("admin_check"));
@@ -31,10 +38,10 @@ public class BoardAddController implements Controller {
 		b.setNo(no);
 		b.setCategory(category);
 		b.setIsPrivate(is_private);
-		b.setMemberId(member_id);
+		b.setMember_id(member_id);
 		b.setTitle(title);
 		b.setContents(contents);
-		b.setRegdate(reg_date);
+		b.setRegdate(reg_date.toString());
 		b.setHits(hits);
 		b.setHeart(heart);
 		b.setAdminCheck(admin_check);

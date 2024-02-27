@@ -28,10 +28,10 @@
 		)
 	</insert>
 
-	<select id="boardDetail" parameterType="String"
-		resultType="Board">
-		select * from board
-		where no=#{no}
+
+	<select id="boardDetail" parameterType="Integer"
+		resultType="board">
+		select * from board where no=#{no}
 	</select>
 
 	<delete id="boardDelete" parameterType="String">
@@ -47,7 +47,8 @@
 	</update>
 
 	<update id="boardCount" parameterType="String">
-		update board set hits = hits + 1 where no=#{no}
+		update board set hits =
+		hits + 1 where no=#{no}
 	</update>
 
 </mapper>
