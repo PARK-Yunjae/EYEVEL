@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/boardInfo.css">
-<section>
+<section class="boardAddSection">
 	<div class="innerBox">
 		<form method="post">
 			<div class="board_info">
@@ -20,8 +20,8 @@
 					</div>
 					<div class="edit">
 						<p class="board_heart_count">${board.heart}</p>
-						<span><i class="far fa-heart"></i></span> <i
-							class="fas fa-ellipsis-v"></i>
+						<span><i class="far fa-heart icon"></i></span> <i
+							class="fas fa-ellipsis-v icon"></i>
 						<!-- class on 추가시 수정/삭제 보임 -->
 						<div class="edit_box">
 							<a href="${ctx}/boardUpdate.do">수정</a> 
