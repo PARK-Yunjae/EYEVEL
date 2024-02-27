@@ -4,5 +4,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eyevel.mybatis.ZzimMapper">
-
+<select id="ZzimMemberList" parameterType="Zzim" resultType="Zzim">
+select * from zzim where member_id=#{member_id} and area_no=#{area_no}
+</select>
+<insert id="ZzimAdd" parameterType="Zzim">
+insert into zzim values(#{area_no},#{member_id})
+</insert>
+<delete id="ZzimDelete" parameterType="Zzim">
+delete from zzim where area_no=#{area_no} and member_id=#{member_id}
+</delete>
 </mapper>

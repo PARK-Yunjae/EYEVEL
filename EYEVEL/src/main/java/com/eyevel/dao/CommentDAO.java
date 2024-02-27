@@ -1,5 +1,12 @@
 package com.eyevel.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.eyevel.util.MybatisConfig;
+import com.eyevel.vo.Comment;
+
 //CLS-010 댓글테이블 에서 값을 가져오는 클래스
 public class CommentDAO {
 	
@@ -7,6 +14,31 @@ public class CommentDAO {
 
 	public static CommentDAO getInstance() {
 		return instance;
+	}
+
+	public List<Comment> commentList(int no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		List<Comment> c = session.selectList("commentList",no);
+		session.close();
+
+		return c;
+	}
+
+	public void commentAdd(Comment c) {
+		
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.insert("commentAdd", c);
+		session.commit();
+		session.close();
+		
+	}
+
+	public void commentDelete(int no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.delete("commentDelete", no);
+		session.commit();
+		session.close();
+		
 	}
 	
 }
