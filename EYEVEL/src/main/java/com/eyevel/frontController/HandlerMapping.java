@@ -20,7 +20,7 @@ public class HandlerMapping {
 		mappings.put("/main.do", new MainController());
 		
 		// member
-		mappings.put("/memberList.do", new MemberListController()); //회원목록
+		mappings.put("/memberList.do", new AdminMemberListController()); //회원목록
 		mappings.put("/memberJoin.do", new MemberJoinController()); //회원가입
 		mappings.put("/memberLogin.do", new MemberLoginController()); //로그인
 		mappings.put("/memberLogout.do", new MemberLogoutController()); //로그아웃
@@ -48,7 +48,7 @@ public class HandlerMapping {
 		mappings.put("/boardList.do", new BoardListController()); // 게시판 리스트 확인 (페이징)
 		mappings.put("/boardInfo.do", new BoardInfoController()); // 게시글 확인
 		mappings.put("/boardUpdate.do", new BoardUpdateController()); // 게시글 정보 수정
-		mappings.put("/complain.do", new ComplainController()); // 자주 하는 질문
+		mappings.put("/boardComplain.do", new BoardComplainController()); // 자주 하는 질문
 		
 		// zzim
 		mappings.put("/zzimAdd.do", new ZzimAddController()); // 좋아요 추가
@@ -61,7 +61,11 @@ public class HandlerMapping {
 		mappings.put("/commentList.do", new CommentListController()); // 댓글 목록 (관리자)
 		
 		// admin
-		mappings.put("/adminMain.do", new AdminMainController()); // 좋아요 추가
+		mappings.put("/adminMain.do", new AdminMainController()); // 관리자 메인
+		mappings.put("/adminAreaList.do", new AdminAreaListController()); // 관리자 관광지 관리
+		mappings.put("/adminAreaAdd.do", new AdminAreaAddController()); // 관광지 추가
+		mappings.put("/adminAreaInfo.do", new AdminAreaInfoControlle()); // 관광지 수정
+		
 	}
 	
 	public Controller getController(String key) {

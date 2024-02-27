@@ -1,4 +1,4 @@
-package com.eyevel.controller.member;
+package com.eyevel.controller.admin;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 //CLS-035 : 회원 리스트 확인(관리자용)
-public class MemberListController implements Controller {
+public class AdminMemberListController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -31,7 +31,7 @@ public class MemberListController implements Controller {
 		} else {
 			req.setAttribute("id", null);
 		}	
-		return "eyevel/member/memberList";
+		return "eyevel/admin/adminMemberList";
 	}
 
 }

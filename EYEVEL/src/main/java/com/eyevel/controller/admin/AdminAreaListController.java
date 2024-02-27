@@ -8,13 +8,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-// CLS-060 : 관리자 메인
-public class AdminMainController implements Controller{
+// CLS-062 : 관리자 관광지 리스트
+public class AdminAreaListController implements Controller{
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-		return "eyevel/admin/adminMain";
+		return "eyevel/admin/adminAreaList";
 	}
 
 }

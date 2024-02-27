@@ -20,9 +20,6 @@ public class BoardDAO {
 	public List<Board> boardList() {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		List<Board> list = session.selectList("boardList");
-		System.out.println("list=" + list);
-		System.out.println("size=" + list.size());
-		System.out.println(list);
 		session.close();
 		return list;
 	}
@@ -66,5 +63,13 @@ public class BoardDAO {
 		session.update("boardCount", no);
 		session.commit();
 		session.close();
+	}
+	
+//	자주 묻는 질문 가져오기
+	public List<Board> boardQnAList() {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		List<Board> list = session.selectList("boardQnAList");
+		session.close();
+		return list;
 	}
 }
