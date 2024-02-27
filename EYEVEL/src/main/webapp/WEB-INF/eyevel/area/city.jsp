@@ -36,12 +36,13 @@
 		<div class="city_nav">
 			<h2>${area.name}</h2>
 			<h3>현지 시각 22:00</h3>
-			<a
-				href='${ctx}/<c:if test="${zzim eq null}">zzimAdd.do?no=${area.no}&id=${loginId}</c:if><c:if test="${zzim ne null}">zzimDelete.do?no=${area.no}&id=${loginId}</c:if>'>
+			
+			<a href='${ctx}/<c:if test="${zzim eq null}">zzimAdd.do?no=${area.no}&id=${loginId}</c:if><c:if test="${zzim ne null}">zzimDelete.do?no=${area.no}&id=${loginId}</c:if>'>
 				<div class="zzimBtn">
 					<i class="fa<c:if test="${zzim eq null}">r</c:if> fa-heart"></i>
 				</div>
 			</a>
+			
 		</div>
 		<div class="city_content">
 			<div class="video">

@@ -21,7 +21,7 @@ public class ZzimAddController implements Controller{
 		ZzimDAO.getInstance().zzimAdd(checkZzim);
 		
 		String ctx = req.getContextPath();
-		return "redirect:" + ctx + "/areaCity.do?no="+req.getParameter("no");
+		return "redirect:" + ctx + "/areaCity.do?no="+checkZzim.getArea_no();
 	}
 
 }

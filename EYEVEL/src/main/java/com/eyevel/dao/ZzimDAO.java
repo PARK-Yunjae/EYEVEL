@@ -31,6 +31,7 @@ public class ZzimDAO {
 
 	public void zzimAdd(Zzim checkZzim) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
+		System.out.println(checkZzim);
 		session.insert("ZzimAdd",checkZzim);
 		session.commit();
 		session.close();
