@@ -12,7 +12,7 @@
             <div class="input_info">
                <div class="input_title">
                   <label for="title">제목</label><br>
-                  <input type="text" name="title" placeholder="제목을 입력해주세요" id="title" class="title">
+                  <input type="text" name="title" placeholder="제목을 입력해주세요" id="title">
                </div>
                <div class="input_date">
                   <label for="date">작성일</label><br>
@@ -24,7 +24,7 @@
                </div>
             </div>
             <label for="contents">내용</label>
-            <textarea name="contents" placeholder="내용을 입력해주세요" id="contents" class="contents"></textarea>
+            <textarea name="contents" placeholder="내용을 입력해주세요" id="contents"></textarea>
             <!-- class에 on 추가시 보임 -->
             <c:if test="${loginId eq 'admin'}">
 				<div class="notice_check">
