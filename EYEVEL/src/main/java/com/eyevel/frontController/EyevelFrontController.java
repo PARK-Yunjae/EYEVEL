@@ -2,6 +2,7 @@ package com.eyevel.frontController;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,6 +11,7 @@ import java.io.IOException;
 
 // CLS-025 : 실제 페이지 이동과 처리를 담당하는 서블릿
 @WebServlet("*.do")
+@MultipartConfig
 public class EyevelFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

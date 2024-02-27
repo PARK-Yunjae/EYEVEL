@@ -20,7 +20,7 @@ function loginExitBtn() {
 	document.querySelector(".modal_login").classList.remove("active");
 }
 
-// 로그인 id 값 변경시
+// 로그인 id 값 변경시 - 거기에 엔터일땐 넘어가게
 document.getElementById("login_id").addEventListener("keyup", (e) => {
 	document.querySelector(".login_id_msg").style.display = "none";
 	if(e.code === 'Enter'){

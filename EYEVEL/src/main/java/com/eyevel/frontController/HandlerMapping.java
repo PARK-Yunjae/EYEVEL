@@ -2,6 +2,7 @@ package com.eyevel.frontController;
 
 import java.util.HashMap;
 
+import com.eyevel.controller.admin.*;
 import com.eyevel.controller.area.*;
 import com.eyevel.controller.board.*;
 import com.eyevel.controller.comment.*;
@@ -55,9 +56,12 @@ public class HandlerMapping {
 		mappings.put("/zzimMemberList.do", new ZzimMemberListController()); // 유저 찜 리스트
 		
 		// comment
-		mappings.put("/commentAdd.do", new CommentAddController()); // 좋아요 추가
-		mappings.put("/commentDelete.do", new CommentDeleteController()); // 좋아요 추가
-		mappings.put("/commentList.do", new CommentListController()); // 좋아요 추가
+		mappings.put("/commentAdd.do", new CommentAddController()); // 댓글 추가
+		mappings.put("/commentDelete.do", new CommentDeleteController()); // 댓글 삭제
+		mappings.put("/commentList.do", new CommentListController()); // 댓글 목록 (관리자)
+		
+		// admin
+		mappings.put("/adminMain.do", new AdminMainController()); // 좋아요 추가
 	}
 	
 	public Controller getController(String key) {

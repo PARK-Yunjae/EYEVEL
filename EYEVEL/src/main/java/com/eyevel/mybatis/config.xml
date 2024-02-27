@@ -8,7 +8,7 @@
   <properties resource="com/eyevel/mybatis/db.properties"/> 
   
   <typeAliases>
-      <typeAlias type="com.eyevel.vo.Member" alias="member"/>    
+      <typeAlias type="com.eyevel.vo.Member" alias="Member"/>    
       <typeAlias type="com.eyevel.vo.Area" alias="Area"/>     
       <typeAlias type="com.eyevel.vo.Zzim" alias="Zzim"/>     
       <typeAlias type="com.eyevel.vo.Comment" alias="Comment"/>     
