@@ -9,6 +9,7 @@ input.readonly{
 
 /* 이미지 수정 */
 .member_info .image{
+   display: block;
    cursor: pointer;
    position: relative;
 }
@@ -30,7 +31,7 @@ input.readonly{
    display: none;
 }
 .member_info .image:hover::after{display: block;}
-
+.member_info #img{display:none;}
 /* 이름 수정 */
 .input_name{display: flex;justify-content: center;align-items: center;}
 .input_name input{width: 40%;display: none;}

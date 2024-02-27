@@ -38,6 +38,7 @@ public class Board {
 		this.isPrivate = isPrivate;
 	}
 
+
 	public String getMember_id() {
 		return member_id;
 	}

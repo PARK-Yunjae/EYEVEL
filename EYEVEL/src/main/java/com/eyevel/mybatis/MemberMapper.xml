@@ -38,7 +38,7 @@
 
 	<update id="memberUpdate" parameterType="member">
 		update member
-		set name=#{name}, email=#{email}
+		set name=#{name}, email=#{email}, img=#{img}
 		where id=#{id}
 	</update>
 

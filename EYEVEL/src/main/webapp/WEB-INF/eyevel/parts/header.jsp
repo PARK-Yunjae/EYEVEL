@@ -57,14 +57,18 @@
 					<ul class="member">
 						<li><c:if test="${empty loginId}">Guest 님</c:if> <c:if
 								test="${!empty loginId}">${name} 님</c:if></li>
-						<li><a
-							onclick=<c:if test="${empty loginId}">"loginModal()"</c:if>
-							<c:if test="${!empty loginId}">"location.href='${ctx}/memberInfo.do'"</c:if>>
+						<li>
+							<a onclick=<c:if test="${empty loginId}">"loginModal()"</c:if>
+									   <c:if test="${!empty loginId && loginId ne 'admin'}">"location.href='${ctx}/memberInfo.do'"</c:if>
+									   <c:if test="${!empty loginId && loginId eq 'admin'}">"location.href='${ctx}/adminMain.do'"</c:if>>
 								<i class="fas fa-user-alt"></i>
 						</a></li>
 						<c:if test="${!empty loginId }">
-							<li><a onclick="logoutCheck('${name}')"><i
-									class="fas fa-sign-out-alt"></i></a></li>
+							<li>
+								<a onclick="logoutCheck('${name}')">
+								<i class="fas fa-sign-out-alt"></i>
+								</a>
+							</li>
 						</c:if>
 					</ul>
 				</li>
