@@ -7,7 +7,8 @@
 	</script>
 </c:if>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/boardInfo.css">
-<section>
+<script src="${ctx}/js/boardInfo.js" defer></script>
+<section class="boardAddSection">
 	<div class="innerBox">
 		<form method="post">
 			<div class="board_info">
@@ -25,8 +26,8 @@
 					</div>
 					<div class="edit">
 						<p class="board_heart_count">${board.heart}</p>
-						<span><i class="far fa-heart"></i></span> <i
-							class="fas fa-ellipsis-v"></i>
+						<span><i class="far fa-heart icon"></i></span> <i
+							class="fas fa-ellipsis-v icon" onclick="clickBox()"></i>
 						<!-- class on 추가시 수정/삭제 보임 -->
 						<div class="edit_box">
 							<a href="${ctx}/boardUpdate.do">수정</a> 

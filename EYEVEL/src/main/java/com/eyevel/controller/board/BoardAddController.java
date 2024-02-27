@@ -16,39 +16,38 @@ public class BoardAddController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
-		if (req.getParameter("no") == null) {
+		String ctx = req.getContextPath();
+		if (req.getParameter("title") == null) {
 			return "eyevel/board/boardAdd";
 		}
-		if (req.getParameter("member_id").equals(null)) {
-			return "eyevel/board/boardList";
-		}
-		int no = Integer.parseInt(req.getParameter("no"));
-		int category = Integer.parseInt(req.getParameter("category"));
+		int category = 0;
 		int is_private = Integer.parseInt(req.getParameter("is_private"));
-		String member_id = req.getParameter("member_id");
+		String member_id = (String) req.getSession().getAttribute("loginId");
 		String title = req.getParameter("title");
 		String contents = req.getParameter("contents");
 		LocalDate reg_date = LocalDate.now();
-		int hits = Integer.parseInt(req.getParameter("hits"));
-		int heart = Integer.parseInt(req.getParameter("heart"));
 		int admin_check = Integer.parseInt(req.getParameter("admin_check"));
-
+		System.out.println(req.getParameter("notice"));
+		if(req.getParameter("notice") == null) {
+			category = 1;
+		} else {
+			category = 0;
+		}
 		Board b = new Board();
-		b.setNo(no);
 		b.setCategory(category);
-		b.setIsPrivate(is_private);
+		b.setIs_private(is_private);
 		b.setMember_id(member_id);
 		b.setTitle(title);
 		b.setContents(contents);
 		b.setRegdate(reg_date.toString());
-		b.setHits(hits);
-		b.setHeart(heart);
-		b.setAdminCheck(admin_check);
+		b.setHits(0);
+		b.setHeart(0);
+		b.setAdmin_check(admin_check);
 
+		System.out.println(b);
 		BoardDAO.getInstance().boardAdd(b);
 
-		return "eyevel/parts/main";
+		return "redirect:" + ctx + "/boardList" + ".do";
 	}
 
 }
