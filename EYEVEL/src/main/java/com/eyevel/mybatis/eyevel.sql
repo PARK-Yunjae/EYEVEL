@@ -1,6 +1,12 @@
 create database eyevel;
 use eyevel;
 
+drop table member;
+drop table area;
+drop table zzim;
+drop table comment;
+drop table board;
+drop table area_img;
 
 create table member(
 	id varchar(20) primary key not null, -- 유저 ID
@@ -82,4 +88,5 @@ create table board(
 );
 
 select * from board;
+
 insert into board values(null, 1, 1, 'test1', 'title1', 'contents1', '2024-02-26', 1, 2, 1);

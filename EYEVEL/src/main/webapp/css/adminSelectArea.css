@@ -1,0 +1,9 @@
+.continent_nav{display: flex;align-items: center;margin-top:-20px;padding-bottom: 20px;}
+.continent_nav li{cursor: pointer;}
+.continent_nav.gnb li::after{background: var(--black);}
+
+.adminSelectSection .select_image{
+   width: 100%;
+}
+.select_image img{width: 100%;filter:brightness(0.5);}
+

@@ -28,7 +28,6 @@
 		)
 	</insert>
 
-
 	<select id="boardDetail" parameterType="Integer"
 		resultType="board">
 		select * from board where no=#{no}
