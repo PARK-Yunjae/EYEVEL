@@ -1,3 +1,4 @@
+.boardAddSection form{width: 100%;}
 /* 뒤로가기 */
 .board_info>a{display: inline-block;margin-bottom: var(--padding);}
 .board_info>a::before{
@@ -37,10 +38,10 @@
 /* 수정 */
 .edit{display: flex;justify-content: center;align-items: center;font-size: 20px;position: relative;}
 .edit p{margin-right: 5px;}
-.edit span i{cursor: pointer;transition: all .3s;}
-.edit span i:hover{transform: scale(1.1);}
-.edit span i:active{transform: scale(0.9);}
-.edit>i{margin-left: 15px;cursor: pointer;}
+.edit span .icon{cursor: pointer;transition: all .3s;}
+.edit span .icon:hover{transform: scale(1.1);}
+.edit span .icon:active{transform: scale(0.9);}
+.edit>.icon{margin-left: 15px;cursor: pointer;}
 .edit .fa-ellipsis-v{color:var(--gray)}
 
 .edit_box{

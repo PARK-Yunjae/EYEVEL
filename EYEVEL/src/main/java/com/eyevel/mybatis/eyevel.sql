@@ -1,6 +1,7 @@
 create database eyevel;
 use eyevel;
 
+
 create table member(
 	id varchar(20) primary key not null, -- 유저 ID
     pw varchar(20) not null, -- 유저 PW
