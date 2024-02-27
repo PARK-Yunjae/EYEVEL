@@ -15,6 +15,7 @@ public class BoardUpdateController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		String ctx = req.getContextPath();
 		int no = Integer.parseInt(req.getParameter("no"));
 		String title = req.getParameter("title");
 		String contents = req.getParameter("contents");
@@ -25,7 +26,7 @@ public class BoardUpdateController implements Controller {
 
 		BoardDAO.getInstance().boardUpdate(no);
 
-		return "eyevel/board/boardList";
+		return "redirect:" + ctx + "/boardList" + ".do";
 	}
 
 }

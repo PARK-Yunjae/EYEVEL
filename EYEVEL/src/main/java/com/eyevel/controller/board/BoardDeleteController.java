@@ -14,11 +14,12 @@ public class BoardDeleteController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		String ctx = req.getContextPath();
 		int no = Integer.parseInt(req.getParameter("no"));
 
 		BoardDAO.getInstance().boardDelete(no);
 
-		return "eyevel/board/boardList";
+		return "redirect:" + ctx + "/boardList" + ".do";
 	}
 
 }
