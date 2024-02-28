@@ -21,7 +21,7 @@ public class ZzimDeleteController implements Controller{
 		ZzimDAO.getInstance().zzimDelete(checkZzim);
 		
 		String ctx = req.getContextPath();
-		return "redirect:" + ctx + "/areaCity.do?no="+req.getParameter("no");
+		return "redirect:" + ctx + "/areaCity.do?no="+checkZzim.getArea_no();
 	}
 
 }
