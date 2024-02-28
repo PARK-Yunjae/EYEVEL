@@ -22,7 +22,6 @@ public class AdminAreaListController implements Controller{
 		}
 		
 		ArrayList<Area> list =  (ArrayList<Area>) AreaDAO.getInstance().areaList();
-		req.setAttribute("list", list);
 		
 		//페이징
 		int size = list.size();

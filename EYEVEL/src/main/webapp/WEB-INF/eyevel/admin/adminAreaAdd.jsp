@@ -41,37 +41,37 @@
                         <img src=
                         <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
                			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-                         alt="am_weather_clear" class="">
+                         alt="am_weather_clear" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="AmweatherClear" id="am_weather_clear">
+                  <input type="file" name="AmweatherClear" accept="image/*" id="am_weather_clear">
                   <label for="am_weather_cloudy" class="cloudy">
                      <div class="image">
                      <img src=
                         <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
                			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="am_weather_cloudy">
+               			alt="am_weather_cloudy" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="AmweatherCloudy" id="am_weather_cloudy">
+                  <input type="file" name="AmweatherCloudy" accept="image/*" id="am_weather_cloudy">
                   <label for="am_weather_rain" class="rain">
                   	<div class="image">
                      <img src=
                         <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
                			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="am_weather_rain">
+               			alt="am_weather_rain" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="AmweatherRain" id="am_weather_rain">
+                  <input type="file" name="AmweatherRain" accept="image/*" id="am_weather_rain">
                   <label for="am_weather_snow" class="snow">
                   	<div class="image">	
                      <img src=
                         <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
                			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="am_weather_snow">
+               			alt="am_weather_snow" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="AmweatherSnow" id="am_weather_snow">
+                  <input type="file" name="AmweatherSnow" accept="image/*" id="am_weather_snow">
                </div>
                <div class="image_pm">
                   <label for="pm_weather_clear">
@@ -79,37 +79,37 @@
                      <img src=
                         <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
                			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="pm_weather_clear">
+               			alt="pm_weather_clear" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="PmweatherClear" id="pm_weather_clear">
+                  <input type="file" name="PmweatherClear" accept="image/*" id="pm_weather_clear">
                   <label for="pm_weather_cloudy" class="cloudy">
                      <div class="image">
                      <img src=
                         <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
                			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="pm_weather_cloudy">
+               			alt="pm_weather_cloudy" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="PmweatherCloudy" id="pm_weather_cloudy">
+                  <input type="file" name="PmweatherCloudy" accept="image/*" id="pm_weather_cloudy">
                   <label for="pm_weather_rain" class="rain">
                      <div class="image">
                      <img src=
                         <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
                			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="pm_weather_rain">
+               			alt="pm_weather_rain" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="PmweatherRain" id="pm_weather_rain">
+                  <input type="file" name="PmweatherRain" accept="image/*" id="pm_weather_rain">
                   <label for="pm_weather_snow" class="snow">
                      <div class="image">
                      <img src=
                         <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
                			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="pm_weather_snow">
+               			alt="pm_weather_snow" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="PmweatherSnow" id="pm_weather_snow">
+                  <input type="file" name="PmweatherSnow" accept="image/*" id="pm_weather_snow">
                </div>
                <p class="msg area_img_msg">이미지를 모두 넣어주세요</p>
             </div>
