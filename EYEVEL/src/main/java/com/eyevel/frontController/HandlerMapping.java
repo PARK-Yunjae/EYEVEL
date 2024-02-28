@@ -62,6 +62,7 @@ public class HandlerMapping {
 		mappings.put("/adminAreaList.do", new AdminAreaListController()); // 관리자 관광지 관리
 		mappings.put("/adminAreaAdd.do", new AdminAreaAddController()); // 관광지 추가
 		mappings.put("/adminAreaInfo.do", new AdminAreaInfoControlle()); // 관광지 수정
+		mappings.put("/adminAreaSelect.do", new AdminAreaSelectController()); // 관광지 선택
 		
 	}
 	
