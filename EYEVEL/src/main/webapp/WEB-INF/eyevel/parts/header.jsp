@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/css/modal.css">
 <link rel="stylesheet" type="text/css"
 	href="${ctx}/css/loginJoinModal.css">
+<script src="${ctx}/js/modal.js" defer></script>
 <script src="${ctx}/js/loginJoinModal.js" defer></script>
 <!-- 날씨 표시를 위한 라이브러리 -->
 <script defer
