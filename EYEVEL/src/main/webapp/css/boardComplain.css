@@ -47,9 +47,14 @@
 	text-align: left;
 }
 
+.complain_title_arrow{transition: all .3s;}
+.complain_title_arrow.on{transform: rotate(180deg);}
 .complain_contents{
 	background:#f8f8f8;
 	padding: var(--padding);
 	padding-left: 10.5%;
 	display: none;
+}
+.complain_contents.on{
+	display: block;
 }

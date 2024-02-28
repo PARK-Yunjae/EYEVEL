@@ -51,6 +51,7 @@ public class AdminAreaListController implements Controller{
 		}
 		req.setAttribute("list", arr);
 		req.setAttribute("size", size);
+		req.setAttribute("page", nowPage);
 		req.setAttribute("startPage", startPage);
 		req.setAttribute("endPage", endPage);
 		req.setAttribute("totalPage", totalPage);

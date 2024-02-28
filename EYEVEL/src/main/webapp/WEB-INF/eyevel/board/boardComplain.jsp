@@ -8,14 +8,14 @@
 	<div class="innerBox">
 		<h2 class="title">자주 하는 질문</h2>
 		<div id="categoryList">
-			<div class="complain_category">전체</div>
+			<div class="complain_category on">전체</div>
 			<div class="complain_category">계정</div>
 			<div class="complain_category">게시판</div>
 			<div class="complain_category">관광지</div>
 			<div class="complain_category">기타</div>
 		</div>
 		<c:forEach var="list" items="${list}">
-			<div class="complain_main ${list.category} on">
+			<div class="complain_main cate${list.category} on">
 				<div class="complain_title">
 					<div class="complain_category_text">
 						<c:if test="${list.category eq '91'}">계정</c:if>
@@ -25,7 +25,7 @@
 					</div>
 					<div class="complain_title_text">${list.title }</div>
 					<div class="complain_title_arrow">
-						<i class="fas fa-arrow-left"></i>
+						<i class="fas fa-chevron-down"></i>
 					</div>
 				</div>
 				<div class="complain_contents">${list.contents}</div>
