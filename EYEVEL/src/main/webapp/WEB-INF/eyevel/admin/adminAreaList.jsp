@@ -45,7 +45,6 @@
 			<c:if test="${totalPage>endPage}">
 				<li class="end" onclick="location.href='${ctx}/adminAreaList.do?page=${startPage+3}&start=${startPage+3}'"><i class="fas fa-chevron-right"></i></li>
 			</c:if>
-
          </ul>
       </div>
    </section>

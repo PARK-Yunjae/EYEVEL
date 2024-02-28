@@ -1,4 +1,6 @@
 // 관광지 이미지 수정 시 미리보기
+let images = document.querySelectorAll('.weather_img');
+
 function readURL(input) {
 	updatePass = true;
 	if (input.files && input.files[0]) {
