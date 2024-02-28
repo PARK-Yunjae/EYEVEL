@@ -68,6 +68,7 @@ create table comment(
     contents varchar(255) not null -- 내용
 );
 
+
 insert into comment(null,'test1','1','2024-02-27','댓글입니다');
 insert into comment(null,'test1','1','2024-02-27','댓글입니다2');
 insert into comment(null,'test1','2','2024-02-27','댓글입니다');
