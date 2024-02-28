@@ -1,8 +1,11 @@
 package com.eyevel.controller.area;
 
 import java.io.IOException;
+import java.util.List;
 
+import com.eyevel.dao.AreaDAO;
 import com.eyevel.frontController.Controller;
+import com.eyevel.vo.Area;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,6 +18,9 @@ public class AreaContinentController implements Controller{
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String area = req.getParameter("area");
 		
+		List<Area> list = AreaDAO.getInstance().areaContinentList(area);
+		System.out.println(list);
+		req.setAttribute("list", list);
 		
 		return "eyevel/area/"+area;
 	}
