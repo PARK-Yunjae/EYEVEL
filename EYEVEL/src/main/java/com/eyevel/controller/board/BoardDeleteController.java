@@ -15,10 +15,10 @@ public class BoardDeleteController implements Controller {
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// 잘못된 접근 시 메인으로 보내기?
-		if(req.getSession().getAttribute("loginId") == null) {
+		if (req.getSession().getAttribute("loginId") == null) {
 			return "eyevel/parts/main";
 		}
-		
+
 		String ctx = req.getContextPath();
 		int no = Integer.parseInt(req.getParameter("no"));
 

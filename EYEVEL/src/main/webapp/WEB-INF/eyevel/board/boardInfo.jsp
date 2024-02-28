@@ -25,8 +25,8 @@
 							class="fas fa-ellipsis-v icon" onclick="clickBox()"></i>
 						<!-- class on 추가시 수정/삭제 보임 -->
 						<div class="edit_box">
-							<a href="${ctx}/boardUpdate.do">수정</a> 
-							<a href="${ctx}/boardDelete.do">삭제</a>
+							<a href="${ctx}/boardUpdate.do?no=${board.no}">수정</a> 
+							<a href="${ctx}/boardDelete.do?no=${board.no}">삭제</a>
 						</div>
 					</div>
 				</div>

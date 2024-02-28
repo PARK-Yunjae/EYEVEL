@@ -33,12 +33,12 @@
 		select * from board where no=#{no}
 	</select>
 
-	<delete id="boardDelete" parameterType="String">
+	<delete id="boardDelete" parameterType="Board">
 		delete from board where
 		no=#{no}
 	</delete>
 
-	<update id="boardUpdate" parameterType="String">
+	<update id="boardUpdate" parameterType="Board">
 		update board set
 		title=#{title},
 		contents=#{contents}
