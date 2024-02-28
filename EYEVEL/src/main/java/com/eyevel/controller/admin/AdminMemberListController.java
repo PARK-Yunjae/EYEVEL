@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import com.eyevel.dao.MemberDAO;
 import com.eyevel.frontController.Controller;
+import com.eyevel.vo.Area;
 import com.eyevel.vo.Member;
 
 import jakarta.servlet.ServletException;
@@ -26,7 +27,7 @@ public class AdminMemberListController implements Controller {
 		ArrayList<Member> list = (ArrayList<Member>)MemberDAO.getInstance().memberList();
 		System.out.println("회원목록 불러오기 완료");
 		System.out.println(list);
-		req.setAttribute("list", list);
+
 		HttpSession session = req.getSession();
 		
 		if (session.getAttribute("log") != null) {
@@ -36,6 +37,39 @@ public class AdminMemberListController implements Controller {
 		} else {
 			req.setAttribute("id", null);
 		}	
+		
+		//페이징
+		int size = list.size();
+		int pageCut = 5;
+		int nowPage = 1;
+		if(req.getParameter("page")!=null){
+			nowPage = Integer.parseInt(req.getParameter("page"));
+		}
+		int startContent = (nowPage-1)*pageCut;
+		int endContent = startContent+pageCut;
+		if(endContent>size){
+			endContent = size;
+		}
+		int totalPage = size/pageCut;
+		if(size%pageCut>0) totalPage+=1;
+		
+		int startPage = 1;
+		if(req.getParameter("start")!=null){
+			startPage = Integer.parseInt(req.getParameter("start"));
+		}
+		int endPage = startPage+2;
+		if(endPage>totalPage) endPage=totalPage;
+		
+		ArrayList<Member> arr = new ArrayList<Member>();
+		for(int i =startContent; i<endContent; i++) {
+			arr.add(list.get(i));
+		}
+		req.setAttribute("list", arr);
+		req.setAttribute("size", size);
+		req.setAttribute("startPage", startPage);
+		req.setAttribute("endPage", endPage);
+		req.setAttribute("totalPage", totalPage);
+		
 		return "eyevel/admin/adminMemberList";
 	}
 

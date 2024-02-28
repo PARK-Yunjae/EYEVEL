@@ -20,6 +20,7 @@
 						</div>
 					</div>
 					<div class="edit">
+						<p>조회수 : ${board.hits}</p>
 						<p class="board_heart_count">${board.heart}</p>
 						<span><i class="far fa-heart icon"></i></span> <i
 							class="fas fa-ellipsis-v icon" onclick="clickBox()"></i>

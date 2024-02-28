@@ -36,13 +36,15 @@
 			</c:forEach>
          </table>
          <ul class="paging">
-            <li onclick="location.href=''"><i class="fas fa-chevron-left"></i></li>
-            <li onclick="location.href=''">1</li>
-            <li onclick="location.href=''">2</li>
-            <li onclick="location.href=''">3</li>
-            <li onclick="location.href=''">4</li>
-            <li onclick="location.href=''">5</li>
-            <li onclick="location.href=''"><i class="fas fa-chevron-right"></i></li>
+            <c:if test="${startPage>3}">
+            	<li class="start" onclick="location.href='${ctx}/memberList.do?page=${startPage-3}&start=${startPage-3}'"><i class="fas fa-chevron-left"></i></li>
+			</c:if>
+			<c:forEach var="i" begin="${startPage}" end="${endPage}">
+            	<li onclick="location.href='${ctx}/memberList.do?page=${i}&start=${startPage}'">${i}</li>
+			</c:forEach>
+			<c:if test="${totalPage>endPage}">
+				<li class="end" onclick="location.href='${ctx}/memberList.do?page=${startPage+3}&start=${startPage+3}'"><i class="fas fa-chevron-right"></i></li>
+			</c:if>
          </ul>
       </div>
 </section>
