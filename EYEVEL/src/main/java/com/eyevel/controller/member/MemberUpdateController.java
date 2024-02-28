@@ -37,11 +37,21 @@ public class MemberUpdateController implements Controller {
 		String email = req.getParameter("email");
 		String img = FileUtil.uploadFile(req, saveDirectory, id);
 		
+		if(img == null) {
+			img = req.getParameter("basicImg");
+		}
+		
 		Member m = new Member();
 		m.setId(id);
 		m.setName(name);
 		m.setEmail(email);
 		m.setImg(img);
+		
+		// 이름 수정 시 페이지에 보여주는 이름도 변경
+		String oldName = (String)req.getSession().getAttribute("name");
+		if(!oldName.equals(name)) {
+			req.getSession().setAttribute("name", name);
+		};
 		
 		MemberDAO.getInstance().memberUpdate(m);
 		

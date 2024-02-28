@@ -48,7 +48,7 @@
                          alt="am_weather_clear" class="weather_img">
                   	 </div>
                   </label>
-                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="am_weather_clear" onchange="readURL(this, '0')">
+                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg1" onchange="readURL(this, '0')">
                   <label for="am_weather_cloudy" class="cloudy">
                      <div class="image">
                      <img src=
@@ -57,7 +57,7 @@
                			alt="am_weather_cloudy" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="am_weather_cloudy" onchange="readURL(this, '1')">
+                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg2" onchange="readURL(this, '1')">
                   <label for="am_weather_rain" class="rain">
                   	<div class="image">
                      <img src=
@@ -66,7 +66,7 @@
                			alt="am_weather_rain" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="am_weather_rain" onchange="readURL(this, '2')">
+                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg3" onchange="readURL(this, '2')">
                   <label for="am_weather_snow" class="snow">
                   	<div class="image">	
                      <img src=
@@ -75,7 +75,7 @@
                			alt="am_weather_snow" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="am_weather_snow" onchange="readURL(this, '3')">
+                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg4" onchange="readURL(this, '3')">
                </div>
                <div class="image_pm">
                   <label for="pm_weather_clear">
@@ -86,7 +86,7 @@
                			alt="pm_weather_clear" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="pm_weather_clear" onchange="readURL(this, '4')">
+                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg5" onchange="readURL(this, '4')">
                   <label for="pm_weather_cloudy" class="cloudy">
                      <div class="image">
                      <img src=
@@ -95,7 +95,7 @@
                			alt="pm_weather_cloudy" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="pm_weather_cloudy" onchange="readURL(this, '5')">
+                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg6" onchange="readURL(this, '5')">
                   <label for="pm_weather_rain" class="rain">
                      <div class="image">
                      <img src=
@@ -104,7 +104,7 @@
                			alt="pm_weather_rain" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="pm_weather_rain" onchange="readURL(this, '6')">
+                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg7" onchange="readURL(this, '6')">
                   <label for="pm_weather_snow" class="snow">
                      <div class="image">
                      <img src=
@@ -113,7 +113,7 @@
                			alt="pm_weather_snow" class="weather_img">
                      </div>
                   </label>
-                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="pm_weather_snow" onchange="readURL(this, '7')">
+                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg8" onchange="readURL(this, '7')">
                </div>
                <p class="msg area_img_msg">이미지를 모두 넣어주세요</p>
             </div>
