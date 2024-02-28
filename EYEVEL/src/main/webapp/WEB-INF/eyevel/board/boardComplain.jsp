@@ -32,7 +32,7 @@
 					</div>
 					<div class="complain_title_text">${list.title }</div>
 					<div class="complain_title_arrow">
-						<i class="complain_arrow fa-solid fa-arrow-left"></i>
+						<i class="fas fa-arrow-left arrow"></i>
 					</div>
 				</div>
 				<div class="complain_contents">${list.contents}</div>
