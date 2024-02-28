@@ -1,0 +1,4 @@
+/**
+ * 
+ */
+sessionStorage.getItem('list');

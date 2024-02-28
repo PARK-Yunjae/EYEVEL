@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
-
+<script defer src="${ctx}/js/continent.js" defer></script>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/earth.css">
 <section class="earthSection">
 	<div class="innerBox">
@@ -13,3 +13,4 @@
 	</div>
 </section>
 <%@ include file="../parts/footer.jsp"%>
+
