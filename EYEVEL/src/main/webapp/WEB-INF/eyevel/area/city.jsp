@@ -24,17 +24,11 @@
 		});
 	}
 </script>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<jsp:useBean id="now" class="java.util.Date" />
-<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="today" />
-<%-- <fmt:parseDate var="dateFmt" pattern="yyyy-MM-dd HH:mm:ss"
-	value="${c.reg_datetime}" />
-<fmt:formatDate var="dateTempParse" pattern="yyyy-MM-dd"
-	value="$dateFmt}" /> --%>
 <section class="city_section">
 	<div class="innerBox">
 		<div class="city_nav">
 			<h2>${area.name}</h2>
+		<div>
 			<h3>
 				<a href="//24timezones.com/Seoul/time" style="text-decoration: none"
 					class="clock24"
@@ -50,11 +44,13 @@
 			<li>
 	
 				<div class="weather_description" style="font-size: 20pt"></div>
-			</li> <a
+			</li>
+			</div>
+			<c:if test="${loginId ne null}"> <a
 				href='${ctx}/<c:if test="${zzim eq null}">zzimAdd.do?no=${area.no}&id=${loginId}</c:if><c:if test="${zzim ne null}">zzimDelete.do?no=${area.no}&id=${loginId}</c:if>'>
 				<div class="zzimBtn">
 					<i class="fa<c:if test="${zzim eq null}">r</c:if> fa-heart"></i>
-				</div>
+				</div></c:if>
 			</a>
 
 		</div>
