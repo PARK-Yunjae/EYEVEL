@@ -7,7 +7,6 @@
 <section class="boardSection">
 	<div class="innerBox">
 		<h2 class="title">자주 하는 질문</h2>
-		<hr>
 		<div id="categoryList">
 			<div class="complain_category">전체</div>
 			<div class="complain_category">계정</div>
@@ -15,12 +14,6 @@
 			<div class="complain_category">관광지</div>
 			<div class="complain_category">기타</div>
 		</div>
-		<hr>
-		<div class="complain_banner">
-			<div class="complain_banner_category">카테고리</div>
-			<div class="complain_banner_board">제목</div>
-		</div>
-		<hr>
 		<c:forEach var="list" items="${list}">
 			<div class="complain_main ${list.category} on">
 				<div class="complain_title">
