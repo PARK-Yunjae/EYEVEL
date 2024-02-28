@@ -22,7 +22,7 @@ public class AreaContinentController implements Controller{
 		System.out.println(list);
 		req.setAttribute("list", list);
 		
-		return "eyevel/area/"+area;
+		return "eyevel/area/" +area;
 	}
 
 }
