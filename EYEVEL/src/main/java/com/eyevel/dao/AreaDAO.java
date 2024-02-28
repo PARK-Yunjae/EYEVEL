@@ -2,6 +2,8 @@ package com.eyevel.dao;
 
 
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.eyevel.util.MybatisConfig;
@@ -22,4 +24,11 @@ public class AreaDAO {
 		return a;
 	}
 	
+	//관광지 리스트를 가져오는 메소드
+	public List<Area> areaList(){
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		List<Area> list = session.selectList("areaList");
+		session.close();
+		return list;
+	}
 }

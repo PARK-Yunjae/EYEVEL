@@ -15,7 +15,6 @@
          <h2 class="title">유저 관리</h2>
          <table class="less_padding">
             <tr>
-               <th>No</th>
                <th>프로필</th>
                <th>이름</th>
                <th>아이디</th>
@@ -26,13 +25,13 @@
 			<c:forEach var="vo" items="${list}">
 				<tr>
 	               	<td><img src="http://localhost:8080//IMAGES/${vo.img}" alt="user profile image"></td>
-					<td><a href="${ctx}/memberInfo.do?id=${vo.id}">${vo.id}</a></td>
+					<td>${vo.id}</td>
 					<td>${vo.pw}</td>
 					<td>${vo.name}</td>
 					<td>${vo.email}</td>
 					<td>
-	                  <a href=""><i class="fas fa-pen"></i></a>
-	                  <a href="" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
+	                  <a href="${ctx}/memberInfo.do?id=${vo.id}"><i class="fas fa-pen"></i></a>
+	                  <a href="${ctx}/memberDelete.do?id=${vo.id}" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
 					</tr>
 			</c:forEach>
          </table>

@@ -35,8 +35,8 @@
 				<li class="input"><label for="">이메일</label><br> 
 					<input type="text" name="email" class="readonly" value="${member.email}" readonly></li>
 				<li class="button_group">
-					<input type="button" class="btn1 button" value="확인" onclick="memberUpdateCheck(form,'${member.pw}')" >
-					<input type="button" class="btn2 button" value="취소" onclick="location.href='${ctx}/main.do'">
+					<input type="button" class="btn1 button" value="수정하기" onclick="memberUpdateCheck(form,'${member.pw}')" >
+					<input type="button" class="btn2 button" value="회원탈퇴" onclick="location.href='${ctx}/main.do'">
 				</li>
 			</ul>
 		</form>

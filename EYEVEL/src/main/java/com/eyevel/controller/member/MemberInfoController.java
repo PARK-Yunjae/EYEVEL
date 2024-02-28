@@ -19,8 +19,12 @@ public class MemberInfoController implements Controller {
 		if(req.getSession().getAttribute("loginId") == null) {
 			return "eyevel/parts/main";
 		}
-		
 		String id = (String)req.getSession().getAttribute("loginId");
+		
+		if(req.getSession().getAttribute("loginId").equals("admin")) {
+			id = req.getParameter("id");
+		}
+
 		Member m = MemberDAO.getInstance().memberContent(id);
 		
 		req.setAttribute("member", m);

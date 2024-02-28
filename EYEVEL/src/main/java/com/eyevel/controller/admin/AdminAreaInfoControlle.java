@@ -2,7 +2,9 @@ package com.eyevel.controller.admin;
 
 import java.io.IOException;
 
+import com.eyevel.dao.AreaDAO;
 import com.eyevel.frontController.Controller;
+import com.eyevel.vo.Area;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,7 +20,12 @@ public class AdminAreaInfoControlle implements Controller{
 			return "eyevel/parts/main";
 		}
 		
-		return "eyevel/admin/adminAreaInfo";
+		int no = Integer.parseInt(req.getParameter("no"));
+		
+		Area vo = AreaDAO.getInstance().areaContents(no); 
+		req.setAttribute("vo", vo);
+		
+		return "eyevel/admin/adminAreaAdd";
 	}
 
 }
