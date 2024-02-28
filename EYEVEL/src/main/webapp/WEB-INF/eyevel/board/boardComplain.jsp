@@ -20,7 +20,7 @@
 					${list.title }
 				</div>
 				<div id="complain_title_arrow">
-					${list.title }
+					<i class="fa-solid fa-arrow-left"></i>
 				</div>
 			</div>
 			<div id="complain_contents">
