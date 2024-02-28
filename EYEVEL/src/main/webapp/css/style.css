@@ -121,8 +121,8 @@ td:last-child{border-right: none;}
 .paging li{padding:5px 10px;border-right: 1px solid var(--gray);cursor: pointer;}
 .paging li:hover{background: var(--light-gray);}
 .paging a{width: 100%;height: 100%;display: block;}
-.paging li:last-child, .paging li:first-child{border-right: none;background: var(--black);color: var(--white);}
-.paging li:last-child:hover, .paging li:first-child:hover{background: var(--gray);}
+.paging .start, .paging .end{border-right: none;background: var(--black);color: var(--white);}
+.paging .start:hover, .paging .end:hover{background: var(--gray);}
 
 td a:hover{color:var(--gray)}
 .remove_icon{margin-left: 15px; color:#e63535;}

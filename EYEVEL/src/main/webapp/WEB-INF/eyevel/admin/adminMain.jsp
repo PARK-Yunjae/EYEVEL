@@ -15,13 +15,13 @@
 	<div class="innerBox">
 		<h2 class="title">관리 페이지</h2>
 		<ul class="admin_list">
-			<li>
-				<div class="image" onclick="location.href='${ctx}/memberList.do'">
+			<li onclick="location.href='${ctx}/memberList.do'">
+				<div class="image">
 				<img src="https://picsum.photos/300/300" alt="유저이미지"></div>
 				<p>유저 관리</p>
 			</li>
-			<li>
-				<div class="image" onclick="location.href='${ctx}/adminAreaList.do'">
+			<li onclick="location.href='${ctx}/adminAreaList.do'">
+				<div class="image">
 				<img src="https://picsum.photos/200/200" alt="관광지이미지"></div>
 				<p>관광지 관리</p>
 			</li>

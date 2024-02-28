@@ -22,25 +22,30 @@
                <th>동영상 링크</th>
                <th>관리</th>
             </tr>
+            <c:forEach var="vo" items="${list}">
             <tr>
-               <td>1</td>
-               <td>아시아</td>
-               <td>서울</td>
-               <td>https://www.youtube.com/watch?v=VTsGRGeBj98</td>
+               <td>${vo.no}</td>
+               <td>${vo.continent}</td>
+               <td>${vo.name}</td>
+               <td>${vo.link_url}</td>
                <td>
-                  <a href="${ctx}/adminAreaInfo.do"><i class="fas fa-pen"></i></a>
-                  <a href="" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
+                  <a href="${ctx}/adminAreaInfo.do?no=${vo.no}"><i class="fas fa-pen"></i></a>
+                  <a href="${ctx}/adminDelete.do?no=${vo.no}" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
                </td>
             </tr>
+            </c:forEach>
          </table>
          <ul class="paging">
-            <li onclick="location.href=''"><i class="fas fa-chevron-left"></i></li>
-            <li onclick="location.href=''">1</li>
-            <li onclick="location.href=''">2</li>
-            <li onclick="location.href=''">3</li>
-            <li onclick="location.href=''">4</li>
-            <li onclick="location.href=''">5</li>
-            <li onclick="location.href=''"><i class="fas fa-chevron-right"></i></li>
+         	<c:if test="${startPage>3}">
+            	<li class="start" onclick="location.href='${ctx}/adminAreaList.do?page=${startPage-3}&start=${startPage-3}'"><i class="fas fa-chevron-left"></i></li>
+			</c:if>
+			<c:forEach var="i" begin="${startPage}" end="${endPage}">
+            	<li onclick="location.href='${ctx}/adminAreaList.do?page=${i}&start=${startPage}'">${i}</li>
+			</c:forEach>
+			<c:if test="${totalPage>endPage}">
+				<li class="end" onclick="location.href='${ctx}/adminAreaList.do?page=${startPage+3}&start=${startPage+3}'"><i class="fas fa-chevron-right"></i></li>
+			</c:if>
+
          </ul>
       </div>
    </section>

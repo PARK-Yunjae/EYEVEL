@@ -50,9 +50,13 @@ public class BoardDAO {
 	}
 
 //	보드 수정
-	public void boardUpdate(int no) {
+	public void boardUpdate(int no, String title, String contents) {
+		Board b = new Board();
+		b.setNo(no);
+		b.setTitle(title);
+		b.setContents(contents);
 		SqlSession session = MybatisConfig.getInstance().openSession();
-		session.selectOne("boardUpdate", no);
+		session.selectOne("boardUpdate", b);
 		session.commit();
 		session.close();
 	}
@@ -64,7 +68,7 @@ public class BoardDAO {
 		session.commit();
 		session.close();
 	}
-	
+
 //	자주 묻는 질문 가져오기
 	public List<Board> boardQnAList() {
 		SqlSession session = MybatisConfig.getInstance().openSession();

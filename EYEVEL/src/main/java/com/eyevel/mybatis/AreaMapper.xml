@@ -9,4 +9,8 @@
 <select id="areaContent" parameterType="Integer" resultType="Area">
 		select * from area where no=#{no}
 </select>
+
+<select id="areaList" resultType="Area">
+		select * from area
+</select>
 </mapper>
