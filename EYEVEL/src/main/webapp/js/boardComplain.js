@@ -8,12 +8,9 @@ complain_arrow.forEach((e, i) => {
 	e.addEventListener("click", () => {
 		if(arrowPass){
 			complain_contents[i].style.display = "block";
-			console.log(arrow[i].className);
-			arrow[i].children.classList.remove("fa-arrow-left");
 			arrowPass = false;
 		}else{
 			complain_contents[i].style.display = "none";
-			arrow[i].children.classList.remove("fa-arrow-down");
 			arrowPass = true;
 		}
 	});
