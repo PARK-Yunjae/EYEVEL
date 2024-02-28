@@ -21,7 +21,7 @@ public class BoardComplainController implements Controller {
 		
 		req.setAttribute("list", list);
 		
-		return "eyevel/board/complain";
+		return "eyevel/board/boardComplain";
 	}
 
 }
