@@ -31,16 +31,18 @@ document.getElementById("login_id").addEventListener("keyup", (e) => {
 	document.querySelector(".login_id_msg").style.display = "none";
 	if (e.code === 'Enter') {
 		loginCheck();
+		loginPass = false;
 	}
 })
 
 // 로그인 pw 값 변경시
 document.getElementById("login_pw").addEventListener("keyup", (e) => {
+	if (e.code === 'Enter' && loginPass) {
+		loginCheck();
+		loginPass = false;
+	}
 	loginPass = true;
 	document.querySelector(".login_pw_msg").style.display = "none";
-	if (e.code === 'Enter') {
-		loginCheck();
-	}
 })
 
 let loginPass = true;

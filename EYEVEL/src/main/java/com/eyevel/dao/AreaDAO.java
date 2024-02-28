@@ -38,4 +38,11 @@ public class AreaDAO {
 		session.close();
 		return list;
 	}
+	
+	public void areaAdd(Area a) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.insert("areaAdd", a);
+		session.commit();
+		session.close();
+	}
 }

@@ -14,7 +14,7 @@
 			<ul class="member_info">
 				<li>
 					<label for="img" class="image">
-						<img src='http://localhost:8080//IMAGES/${member.img}' id="profileImg" alt="이미지">
+						<img src='http://localhost:8080//IMAGES/profile/${member.img}' id="profileImg" alt="이미지">
 					</label>
 					<input type="file" name="img" id="img" accept="image/*" onchange="readURL(this)">
 				</li>
