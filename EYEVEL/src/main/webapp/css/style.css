@@ -119,6 +119,7 @@ td:last-child{border-right: none;}
    border-radius: 5px;
 }
 .paging li{padding:5px 10px;border-right: 1px solid var(--gray);cursor: pointer;}
+.paging li.on{background: var(--light-gray);}
 .paging li:hover{background: var(--light-gray);}
 .paging a{width: 100%;height: 100%;display: block;}
 .paging .start, .paging .end{border-right: none;background: var(--black);color: var(--white);}

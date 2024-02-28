@@ -40,7 +40,7 @@
             	<li class="start" onclick="location.href='${ctx}/adminAreaList.do?page=${startPage-3}&start=${startPage-3}'"><i class="fas fa-chevron-left"></i></li>
 			</c:if>
 			<c:forEach var="i" begin="${startPage}" end="${endPage}">
-            	<li onclick="location.href='${ctx}/adminAreaList.do?page=${i}&start=${startPage}'">${i}</li>
+            	<li onclick="location.href='${ctx}/adminAreaList.do?page=${i}&start=${startPage}'" <c:if test="${i == page}">class="on"</c:if>>${i}</li>
 			</c:forEach>
 			<c:if test="${totalPage>endPage}">
 				<li class="end" onclick="location.href='${ctx}/adminAreaList.do?page=${startPage+3}&start=${startPage+3}'"><i class="fas fa-chevron-right"></i></li>
