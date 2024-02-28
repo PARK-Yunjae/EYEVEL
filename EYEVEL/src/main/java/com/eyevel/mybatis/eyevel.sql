@@ -90,3 +90,15 @@ create table board(
 select * from board;
 
 insert into board values(null, 1, 1, 'test1', 'title1', 'contents1', '2024-02-26', 1, 2, 1);
+
+
+
+-- 자주 묻는 더미 질문
+insert into board values(null, 90, 1, 'admin', '질문1', '답변1', '2024-02-26', 1, 2, 1);
+insert into board values(null, 90, 1, 'admin', '질문2', '답변2', '2024-02-26', 1, 2, 1);
+insert into board values(null, 91, 1, 'admin', '질문3', '답변3', '2024-02-26', 1, 2, 1);
+insert into board values(null, 91, 1, 'admin', '질문4', '답변4', '2024-02-26', 1, 2, 1);
+insert into board values(null, 91, 1, 'admin', '질문5', '답변5', '2024-02-26', 1, 2, 1);
+insert into board values(null, 92, 1, 'admin', '질문6', '답변6', '2024-02-26', 1, 2, 1);
+insert into board values(null, 93, 1, 'admin', '질문7', '답변7', '2024-02-26', 1, 2, 1);
+insert into board values(null, 94, 1, 'admin', '질문8', '답변8', '2024-02-26', 1, 2, 1);

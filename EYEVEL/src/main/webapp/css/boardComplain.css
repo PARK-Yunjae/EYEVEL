@@ -13,3 +13,11 @@
 	padding: 10px;
 	flex: 1;
 }
+
+#complain_title{
+	border: 1px solid red;
+}
+
+#complain_contents{
+	border: 1px solid blue;
+}

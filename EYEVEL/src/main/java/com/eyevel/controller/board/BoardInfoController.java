@@ -15,6 +15,7 @@ public class BoardInfoController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
 		int no = -1;
 		if (req.getParameter("no") == null) {
 			return "eyevel/board/boardList";
