@@ -4,6 +4,9 @@ let complain_contents = document.querySelectorAll(".complain_contents");
 let arrow = document.querySelectorAll(".complain_title_arrow");
 let arrowPass = true;
 
+document.querySelector('header').classList.add('black');
+document.querySelector('html').style.background="none";
+
 complain_arrow.forEach((e, i) => {
 	e.addEventListener("click", () => {
 		if(arrowPass){
