@@ -45,7 +45,7 @@
 		where no=#{no}
 	</update>
 
-	<update id="boardCount" parameterType="String">
+	<update id="boardCount" parameterType="Board">
 		update board set hits =
 		hits + 1 where no=#{no}
 	</update>
