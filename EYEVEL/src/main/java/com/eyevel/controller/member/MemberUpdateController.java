@@ -32,7 +32,7 @@ public class MemberUpdateController implements Controller {
 		}
 		System.out.println("saveDirectory = " + saveDirectory);
 		
-		String id = (String)req.getSession().getAttribute("loginId");
+		String id = req.getParameter("id");
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
 		String img = FileUtil.uploadFile(req, saveDirectory, id);

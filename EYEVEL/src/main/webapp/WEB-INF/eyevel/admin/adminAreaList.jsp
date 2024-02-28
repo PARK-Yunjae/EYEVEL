@@ -13,7 +13,7 @@
 <section>
       <div class="innerBox">
          <h2 class="title">관광지 관리</h2>
-         <button class="btn" style="align-self: flex-end;" onclick="location.href='${ctx}/adminAreaAdd.do'">관광지 추가</button>
+         <button class="btn" style="align-self: flex-end;" onclick="location.href='${ctx}/adminAreaSelect.do'">관광지 추가</button>
          <table>
             <tr>
                <th>No</th>
