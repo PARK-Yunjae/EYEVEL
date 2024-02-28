@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
+<c:if test="${empty loginId}">
+	<script>
+		location.href="${ctx}/main.do";
+	</script>
+</c:if>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/boardAdd.css">
 <script src="${ctx}/js/boardAdd.js" defer></script>
    <section>

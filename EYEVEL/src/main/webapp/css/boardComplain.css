@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+#categoryList {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+}
+
+#category {
+	background-color: gray;
+	color: white;
+	text-align : center;
+	padding: 10px;
+	flex: 1;
+}
+
+#complain_title{
+	border: 1px solid red;
+}
+
+#complain_contents{
+	border: 1px solid blue;
+}

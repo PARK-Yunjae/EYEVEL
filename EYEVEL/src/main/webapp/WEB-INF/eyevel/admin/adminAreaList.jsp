@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
+<c:if test="${empty loginId || loginId ne 'admin'}">
+	<script>
+		location.href="${ctx}/main.do";
+	</script>
+</c:if>
 <script>
 	document.querySelector('header').classList.add('black');
 	document.querySelector('html').style.background="none";
@@ -8,7 +13,7 @@
 <section>
       <div class="innerBox">
          <h2 class="title">관광지 관리</h2>
-         <button class="btn" style="align-self: flex-end;">관광지 추가</button>
+         <button class="btn" style="align-self: flex-end;" onclick="location.href='${ctx}/adminAreaAdd.do'">관광지 추가</button>
          <table>
             <tr>
                <th>No</th>
@@ -23,7 +28,7 @@
                <td>서울</td>
                <td>https://www.youtube.com/watch?v=VTsGRGeBj98</td>
                <td>
-                  <a href=""><i class="fas fa-pen"></i></a>
+                  <a href="${ctx}/adminAreaInfo.do"><i class="fas fa-pen"></i></a>
                   <a href="" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
                </td>
             </tr>

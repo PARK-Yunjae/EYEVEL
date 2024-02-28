@@ -19,6 +19,11 @@ public class MemberUpdateController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		// 잘못된 접근 시 메인으로 보내기?
+		if(req.getSession().getAttribute("loginId") == null) {
+			return "eyevel/parts/main";
+		}
+		
 		String saveDirectory = req.getServletContext().getInitParameter("saveDirectory"); //add?파일?
 		// 해당 경로에 폴더가 없으면 만들어줌 Uploads로 
 		Path saveDirPath = Paths.get(saveDirectory);
@@ -30,7 +35,7 @@ public class MemberUpdateController implements Controller {
 		String id = (String)req.getSession().getAttribute("loginId");
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
-		String img = FileUtil.uploadFile(req, saveDirectory);
+		String img = FileUtil.uploadFile(req, saveDirectory, id);
 		
 		Member m = new Member();
 		m.setId(id);

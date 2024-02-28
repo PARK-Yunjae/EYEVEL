@@ -15,7 +15,11 @@ public class MemberInfoController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
+		// 잘못된 접근 시 메인으로 보내기?
+		if(req.getSession().getAttribute("loginId") == null) {
+			return "eyevel/parts/main";
+		}
+		
 		String id = (String)req.getSession().getAttribute("loginId");
 		Member m = MemberDAO.getInstance().memberContent(id);
 		
