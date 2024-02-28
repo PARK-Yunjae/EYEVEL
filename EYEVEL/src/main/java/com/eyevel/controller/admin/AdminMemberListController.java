@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import com.eyevel.dao.MemberDAO;
 import com.eyevel.frontController.Controller;
-import com.eyevel.vo.Area;
 import com.eyevel.vo.Member;
 
 import jakarta.servlet.ServletException;
