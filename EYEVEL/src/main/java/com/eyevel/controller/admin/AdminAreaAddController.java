@@ -7,10 +7,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import com.eyevel.dao.AreaDAO;
+import com.eyevel.dao.AreaImgDAO;
 import com.eyevel.dao.MemberDAO;
 import com.eyevel.frontController.Controller;
 import com.eyevel.util.FileUtil;
 import com.eyevel.vo.Area;
+import com.eyevel.vo.AreaImg;
 import com.eyevel.vo.Member;
 
 import jakarta.servlet.ServletException;
@@ -36,8 +38,7 @@ public class AdminAreaAddController implements Controller {
 			req.setAttribute("continentName", continentName);
 		} else {
 			String continentName = req.getParameter("continentName");
-			String saveDirectory = req.getServletContext().getInitParameter("saveDirectory") + "/area/" + continentName
-					+ "/"; // add?파일?
+			String saveDirectory = req.getServletContext().getInitParameter("saveDirectory")+"/area/"+ continentName + "/"; // add?파일?
 			// 해당 경로에 폴더가 없으면 만들어줌 Uploads로
 			Path saveDirPath = Paths.get(saveDirectory);
 			if (!Files.isDirectory(saveDirPath)) {
@@ -49,13 +50,6 @@ public class AdminAreaAddController implements Controller {
 			int area_id = Integer.parseInt(req.getParameter("area_id"));
 			String area_url = req.getParameter("area_url");
 			ArrayList<String> imgs = FileUtil.multipleFile(req, saveDirectory, area_name);
-			System.out.println(imgs.size());
-			String img = "";
-			for (int i=0 ; i<imgs.size() ; i++) {
-				img += imgs.get(i) + "/";
-			}
-			
-			img = img.substring(0, img.length() - 1);
 
 			String contents = req.getParameter("area_contents");
 			int x = Integer.parseInt(req.getParameter("x"));
@@ -70,8 +64,24 @@ public class AdminAreaAddController implements Controller {
 			a.setDir_X(x);
 			a.setDir_Y(y);
 			a.setId(area_id);
-			System.out.println(a);
 			AreaDAO.getInstance().areaAdd(a);
+			
+			// 이미지 테이블에 넣기
+			int area_no = AreaDAO.getInstance().areaGetNo(area_id);
+			
+			ArrayList<AreaImg> aiList = new ArrayList<AreaImg>();
+			
+			for(int i=0 ; i<imgs.size() ; i++) {
+				AreaImg ai = new AreaImg();
+				ai.setArea_No(area_no);
+				ai.setWeather(i);
+				ai.setImg(imgs.get(i));
+				
+				aiList.add(ai);
+				aiList.get(i);
+			}
+			
+			AreaImgDAO.getInstance().addAreaImg(aiList);
 		}
 
 		return "eyevel/admin/adminAreaAdd";
