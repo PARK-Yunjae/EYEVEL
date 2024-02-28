@@ -39,10 +39,19 @@ public class AreaDAO {
 		return list;
 	}
 	
+	// 관광지 추가
 	public void areaAdd(Area a) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		session.insert("areaAdd", a);
 		session.commit();
 		session.close();
+	}
+	
+	// 관광지 넘버 가져오기
+	public int areaGetNo(int id) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		int cnt = session.selectOne("areaGetNo", id);
+		session.close();
+		return cnt;
 	}
 }

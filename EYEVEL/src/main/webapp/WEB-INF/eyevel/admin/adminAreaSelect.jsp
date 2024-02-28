@@ -23,7 +23,7 @@
 			<li onclick="selectContinent('oceania')">오세아니아</li>
 			<li onclick="selectContinent('antarctica')">남극</li>
 		</ul>
-		<div class="select_image area1">
+		<div class="select_image asia">
 			<img id="select_img" src="${ctx}/img/worldmap1.png" alt="지구 이미지">
 		</div>
 	</div>
