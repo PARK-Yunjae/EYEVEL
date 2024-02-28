@@ -35,7 +35,8 @@
 	<div class="innerBox">
 		<div class="city_nav">
 			<h2>${area.name}</h2>
-			<h3>현지 시각 22:00</h3>
+			<h3><a href="//24timezones.com/Seoul/time" style="text-decoration: none" class="clock24" id="tz24-1709088500-c1235-eyJob3VydHlwZSI6IjI0Iiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIxIiwic2hvd3RpbWV6b25lIjoiMSIsInR5cGUiOiJkIiwibGFuZyI6ImVuIn0=" title="Seoul time" target="_blank">현재시각</a>
+<script type="text/javascript" src="//w.24timezones.com/l.js" async></script></h3>
 			
 			<a href='${ctx}/<c:if test="${zzim eq null}">zzimAdd.do?no=${area.no}&id=${loginId}</c:if><c:if test="${zzim ne null}">zzimDelete.do?no=${area.no}&id=${loginId}</c:if>'>
 				<div class="zzimBtn">
