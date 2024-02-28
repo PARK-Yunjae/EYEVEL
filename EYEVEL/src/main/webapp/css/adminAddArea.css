@@ -64,8 +64,8 @@
 .image_box label.snow::after{content:"\f2dc"}
 
 input.readonly:focus{outline: none;}
-input.readonly{border: none;border-bottom: 1px solid var(--gray);border-radius: none;}
-.addAreaSection textarea{margin-bottom: 10px;}
+input.readonly{border: none;border-bottom: 1px solid var(--gray);border-radius: 0;}
+.addAreaSection textarea{margin-bottom: 10px;height: 100px;}
 .addAreaSection input[type=button]{
    margin-top:var(--padding);
 }

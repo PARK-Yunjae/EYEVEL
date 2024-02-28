@@ -76,7 +76,6 @@ public class MemberDAO {
 		session.selectOne("memberDelete", id);
 		session.commit();
 		session.close();
-
 	}
 	
 	// 맴버 업데이트

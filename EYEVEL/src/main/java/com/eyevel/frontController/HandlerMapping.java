@@ -35,10 +35,7 @@ public class HandlerMapping {
 		mappings.put("/areaEarth.do", new AreaEarthController()); // 전체
 		mappings.put("/areaContinent.do", new AreaContinentController()); // 대륙
 		mappings.put("/areaCity.do", new AreaCityController()); // 관광지 상세 정보 (맴버용) 
-		mappings.put("/areaAdd.do", new AreaAddController()); // 관광지 추가 (관리자)
 		mappings.put("/areaDelete.do", new AreaDeleteController()); // 관광지 삭제 (관리자)
-		mappings.put("/areaList.do", new AreaListController()); // 관광지 리스트 확인 (관리자)
-		mappings.put("/areaInfo.do", new AreaInfoController()); // 관광지 상세 정보 (관리자)
 		mappings.put("/areaUpdate.do", new AreaUpdateController()); // 관광지 정보 업데이트 (관리자)
 		mappings.put("/areaUploadImg.do", new AreaUploadImgController()); // 관광지 이미지 업로드 (관리자)
 

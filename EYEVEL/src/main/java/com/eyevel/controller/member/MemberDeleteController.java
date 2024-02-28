@@ -18,8 +18,11 @@ public class MemberDeleteController implements Controller {
 		if(req.getSession().getAttribute("loginId") == null) {
 			return "eyevel/parts/main";
 		}
-		
 		String id = (String) req.getSession().getAttribute("loginId");
+		
+		if(req.getSession().getAttribute("loginId").equals("admin")) {
+			id = req.getParameter("id");
+		}
 		
 		MemberDAO.getInstance().memberDelete(id);
 		
