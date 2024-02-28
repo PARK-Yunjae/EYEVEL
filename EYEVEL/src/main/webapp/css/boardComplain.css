@@ -1,23 +1,86 @@
 @charset "UTF-8";
 
+/* 카테고리 */
 #categoryList {
 	width: 80%;
 	margin: 0 auto;
 	display: flex;
 }
 
-#category {
-	background-color: gray;
-	color: white;
+.complain_category {
+	margin: 5px;
+	width: 80%;
+	background-color: var(--black);
+	color: var(--white);
 	text-align : center;
 	padding: 10px;
 	flex: 1;
 }
 
-#complain_title{
-	border: 1px solid red;
+.complain_category:hover {
+	background-color: var(--gray);
+	cursor: pointer;
 }
 
-#complain_contents{
+/* 베너? */
+.complain_banner{
+	font-size: 20px;
+	padding: 10px;
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+}
+
+.complain_banner_no{
+	width: 50px;
+}
+
+.complain_banner_category{
+	width: 100px;
+	text-align: center;
+}
+
+.complain_banner_board{
+	width: 80%;
+	text-align: center;
+	flex: 1;
+}
+
+/* 본문 */
+
+.complain_main{
+	width: 100%;
+	display:none;
+}
+
+.complain_main.on{
+	display:block;
+}
+
+.complain_title{
+	padding: 15px;
+	font-size: 20px;
+	width: 80%;
+	border: 1px solid red;
+	display: flex;
+	justify-content: space-between;
+	text-align: left;
+}
+
+.complain_category_text{
+	width: 100px;
+	text-align: center;
+}
+
+.complain_title_text{
+	width: 100%;
+	text-align: left;
+}
+
+.complain_contents{
+	padding: 15px;
+	display: none;
+	font-size: 20px;
+	width: 80%;
 	border: 1px solid blue;
 }
