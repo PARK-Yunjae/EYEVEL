@@ -7,6 +7,6 @@
 <mapper namespace="com.eyevel.mybatis.AreaMapper">
 
 <select id="areaContent" parameterType="Integer" resultType="Area">
-		select * from area where id=#{id}
+		select * from area where no=#{no}
 </select>
 </mapper>
