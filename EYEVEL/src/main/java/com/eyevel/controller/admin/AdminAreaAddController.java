@@ -8,12 +8,10 @@ import java.util.ArrayList;
 
 import com.eyevel.dao.AreaDAO;
 import com.eyevel.dao.AreaImgDAO;
-import com.eyevel.dao.MemberDAO;
 import com.eyevel.frontController.Controller;
 import com.eyevel.util.FileUtil;
 import com.eyevel.vo.Area;
 import com.eyevel.vo.AreaImg;
-import com.eyevel.vo.Member;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -36,6 +34,8 @@ public class AdminAreaAddController implements Controller {
 			req.setAttribute("x", x);
 			req.setAttribute("y", y);
 			req.setAttribute("continentName", continentName);
+
+			return "eyevel/admin/adminAreaAdd";
 		} else {
 			String continentName = req.getParameter("continentName");
 			String saveDirectory = req.getServletContext().getInitParameter("saveDirectory")+"/area/"+ continentName + "/"; // add?파일?
@@ -66,8 +66,10 @@ public class AdminAreaAddController implements Controller {
 			a.setId(area_id);
 			AreaDAO.getInstance().areaAdd(a);
 			
-			// 이미지 테이블에 넣기
-			int area_no = AreaDAO.getInstance().areaGetNo(area_id);
+			// 이미지 테이블에 넣기 - 임시
+			
+			int area_no = AreaDAO.getInstance().areaList().size()-1;
+			System.out.println(area_no);
 			
 			ArrayList<AreaImg> aiList = new ArrayList<AreaImg>();
 			
@@ -79,12 +81,15 @@ public class AdminAreaAddController implements Controller {
 				
 				aiList.add(ai);
 				aiList.get(i);
+				System.out.println(i);
 			}
-			
+			System.out.println("여긴 지나가니");
 			AreaImgDAO.getInstance().addAreaImg(aiList);
+			
+			String ctx = req.getContextPath();
+			return "redirect:" + ctx + "/adminAreaList.do";
 		}
 
-		return "eyevel/admin/adminAreaAdd";
 	}
 
 }
