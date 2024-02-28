@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/boardList.css">
+<script src="${ctx}/js/boardList.js"></script>
 <section class="boardSection">
 	<div class="innerBox">
 		<h2 class="title">게시판</h2>
@@ -20,7 +21,7 @@
 		<ul class="category">
 			<li class="on">전체</li>
 			<li>공지사항</li>
-			<li>카테고리</li>
+			<li>건의사항</li>
 		</ul>
 		<table>
 			<tr>
