@@ -1,50 +1,19 @@
 @charset "UTF-8";
 
 /* 카테고리 */
-#categoryList {
-	width: 80%;
-	margin: 0 auto;
-	display: flex;
-}
+#categoryList {width: 100%;display: flex;padding-bottom: var(--padding);border-bottom: 3px solid var(--black);}
 
 .complain_category {
-	margin: 5px;
-	width: 80%;
-	background-color: var(--black);
-	color: var(--white);
+	font-size: 20px;
+	margin-right: var(--padding);
+	color: var(--gray);
+	font-weight: bold;
 	text-align : center;
 	padding: 10px;
-	flex: 1;
-}
-
-.complain_category:hover {
-	background-color: var(--gray);
 	cursor: pointer;
 }
-
-/* 베너? */
-.complain_banner{
-	font-size: 20px;
-	padding: 10px;
-	width: 80%;
-	margin: 0 auto;
-	display: flex;
-}
-
-.complain_banner_no{
-	width: 50px;
-}
-
-.complain_banner_category{
-	width: 100px;
-	text-align: center;
-}
-
-.complain_banner_board{
-	width: 80%;
-	text-align: center;
-	flex: 1;
-}
+.complain_category.on{color: var(--black);}
+.complain_category:hover {color: var(--black);}
 
 /* 본문 */
 
@@ -58,29 +27,29 @@
 }
 
 .complain_title{
-	padding: 15px;
+	padding:var(--padding) 10px;
 	font-size: 20px;
-	width: 80%;
-	border: 1px solid red;
+	border-bottom: 1px solid var(--gray);
 	display: flex;
 	justify-content: space-between;
 	text-align: left;
 }
-
 .complain_category_text{
+	color:var(--dark-green);
+	border-right: 1px solid var(--gray);
 	width: 100px;
 	text-align: center;
 }
 
 .complain_title_text{
 	width: 100%;
+	padding:0 var(--padding);
 	text-align: left;
 }
 
 .complain_contents{
-	padding: 15px;
+	background:#f8f8f8;
+	padding: var(--padding);
+	padding-left: 10.5%;
 	display: none;
-	font-size: 20px;
-	width: 80%;
-	border: 1px solid blue;
 }
