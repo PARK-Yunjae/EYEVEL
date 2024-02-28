@@ -24,7 +24,7 @@ public class MemberUpdateController implements Controller {
 			return "eyevel/parts/main";
 		}
 		
-		String saveDirectory = req.getServletContext().getInitParameter("saveDirectory"); //add?파일?
+		String saveDirectory = req.getServletContext().getInitParameter("saveDirectory") + "/profile/"; //add?파일?
 		// 해당 경로에 폴더가 없으면 만들어줌 Uploads로 
 		Path saveDirPath = Paths.get(saveDirectory);
 		if (!Files.isDirectory(saveDirPath)) {

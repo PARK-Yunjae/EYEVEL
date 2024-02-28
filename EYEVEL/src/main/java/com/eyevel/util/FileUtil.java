@@ -78,7 +78,7 @@ public class FileUtil {
 	}
 
 	// multiple 속성 추가로 2개 이상의 파일 업로드
-	public static ArrayList<String> multipleFile(HttpServletRequest req, String sDirectory)
+	public static ArrayList<String> multipleFile(HttpServletRequest req, String sDirectory, String area_name)
 			throws ServletException, IOException {
 		// 파일명 저장을 위한 컬렉션 생성
 		ArrayList<String> listFileName = new ArrayList<>();
@@ -87,7 +87,7 @@ public class FileUtil {
 		Collection<Part> parts = req.getParts();
 		for (Part part : parts) {
 			// 파일이 아니라면 업로드의 대상이 아니므로 무시
-			if (!part.getName().equals("ofile"))
+			if (!part.getName().equals("weatherImg"))
 				continue;
 
 			// Part 객체의 헤더값 중 content-disposition 읽어오기

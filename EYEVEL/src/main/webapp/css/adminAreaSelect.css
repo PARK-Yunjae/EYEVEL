@@ -5,5 +5,5 @@
 .adminSelectSection .select_image{
    width: 100%;
 }
+.select_image{border: 10px solid blue;}
 .select_image img{width: 100%;filter:brightness(0.5);}
-
