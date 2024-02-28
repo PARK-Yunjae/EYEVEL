@@ -13,4 +13,8 @@
 <select id="areaList" resultType="Area">
 		select * from area
 </select>
+
+<select id="areaContinentList" parameterType="String" resultType="Area">
+select * from area where continent=#{area}
+</select>
 </mapper>

@@ -31,4 +31,11 @@ public class AreaDAO {
 		session.close();
 		return list;
 	}
+
+	public List<Area> areaContinentList(String area) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		List<Area> list = session.selectList("areaContinentList",area);
+		session.close();
+		return list;
+	}
 }
