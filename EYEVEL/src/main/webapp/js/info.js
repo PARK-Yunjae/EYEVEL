@@ -3,6 +3,9 @@ let nameClick = false;
 // 수정하기 버튼 중복 방지?
 let updatePass = true;
 
+// 탈퇴하기 버튼 중복 방지
+let deletePass = true;
+
 // 이름 변경 활성화 비활성화 함수
 function nameOnOff(){
 	updatePass = true;
@@ -75,7 +78,8 @@ function memberUpdateCheck(form,pw){
 		updatePass = true;
 		return false;
 	}
-	form.submit();
+	modalMsg("잠깐","정말 수정하시겠습니까?<br>수정 전 정보는 사라지게 됩니다.",form);
+	updatePass = true;	
 }
 
 // pw 값 변경시
@@ -83,3 +87,28 @@ document.querySelector(".info_pw_msg").addEventListener("keyup", () =>{
 	updatePass = true;
 	document.querySelector(".info_pw_msg").style.display = "none";
 })
+
+//회원 탈퇴 전 체크
+function memberDeleteCheck(form,pw){
+	if(!deletePass){
+		return false;
+	}
+	deletePass = false;
+	
+	if(form.pw.value.trim() == ""){
+		console.log("비번입력 안함");
+		document.querySelector(".info_pw_msg").innerHTML = "비밀번호를 입력해주세요";
+		document.querySelector(".info_pw_msg").style.display = "block";
+		updatePass = true;
+		return false;
+	}
+	else if(form.pw.value != pw){
+		console.log("비번틀림");
+		document.querySelector(".info_pw_msg").innerHTML = "비밀번호가 틀렸습니다";
+		document.querySelector(".info_pw_msg").style.display = "block";
+		updatePass = true;
+		return false;
+	}
+	modalMsg("잠깐","정말 탈퇴하시겠습니까?<br>탈퇴 후 정보는 모두 사라지게 됩니다.",form);
+	deletePass = true;	
+}
