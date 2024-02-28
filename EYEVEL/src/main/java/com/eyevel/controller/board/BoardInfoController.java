@@ -22,7 +22,7 @@ public class BoardInfoController implements Controller {
 		} else {
 			no = Integer.parseInt(req.getParameter("no"));
 		}
-
+		BoardDAO.getInstance().boardCount(no);
 		Board b = BoardDAO.getInstance().boardDetail(no);
 		req.setAttribute("board", b);
 
