@@ -30,7 +30,7 @@ public class MemberUpdateController implements Controller {
 		String id = (String)req.getSession().getAttribute("loginId");
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
-		String img = FileUtil.uploadFile(req, saveDirectory);
+		String img = FileUtil.uploadFile(req, saveDirectory, id);
 		
 		Member m = new Member();
 		m.setId(id);

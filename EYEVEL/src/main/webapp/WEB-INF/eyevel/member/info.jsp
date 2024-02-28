@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
+<c:if test="${empty loginId}">
+	<script>
+		location.href="${ctx}/main.do";
+	</script>
+</c:if>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/info.css">
 <script src="${ctx}/js/info.js" defer></script>
 <section class="info_section">
@@ -17,7 +22,7 @@
 					<input type="text" name="name" id="name_input" value="${member.name}">
 					<p id="name_p">${member.name}</p> 
 					<a onclick="nameUpdate()">
-					<i class="fas fa-pen"></i></a>
+					<i id="input_name_i"class="fas fa-pen"></i></a>
 				</li>
 				<li class="input">
 					<label for="">아이디</label><br> 

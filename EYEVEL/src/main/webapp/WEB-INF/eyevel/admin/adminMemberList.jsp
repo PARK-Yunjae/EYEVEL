@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
+<c:if test="${empty loginId || loginId ne 'admin'}">
+	<script>
+		location.href="${ctx}/main.do";
+	</script>
+</c:if>
 <script>
 	document.querySelector('header').classList.add('black');
 	document.querySelector('html').style.background="none";
@@ -18,18 +23,18 @@
                <th>이메일</th>
                <th>관리</th>
             </tr>
-            <tr>
-               <td>1</td>
-               <td><img src="https://picsum.photos/100/100" alt="user profile image"></td>
-               <td>이름</td>
-               <td>아이디</td>
-               <td>패스워드</td>
-               <td>이메일</td>
-               <td>
-                  <a href=""><i class="fas fa-pen"></i></a>
-                  <a href="" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
-               </td>
-            </tr>
+			<c:forEach var="vo" items="${list}">
+				<tr>
+	               	<td><img src="http://localhost:8080//IMAGES/${vo.img}" alt="user profile image"></td>
+					<td><a href="${ctx}/memberInfo.do?id=${vo.id}">${vo.id}</a></td>
+					<td>${vo.pw}</td>
+					<td>${vo.name}</td>
+					<td>${vo.email}</td>
+					<td>
+	                  <a href=""><i class="fas fa-pen"></i></a>
+	                  <a href="" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
+					</tr>
+			</c:forEach>
          </table>
          <ul class="paging">
             <li onclick="location.href=''"><i class="fas fa-chevron-left"></i></li>

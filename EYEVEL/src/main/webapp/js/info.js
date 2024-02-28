@@ -1,16 +1,21 @@
 let nameClick = false;
 
-// 연필버튼 클릭시 마다 input -> p -> input 변경
-function nameUpdate() {
+// 이름 변경 활성화 비활성화 함수
+function nameOnOff(){
 	let input = document.getElementById("name_input");
 	let p = document.getElementById("name_p");
+	let i = document.getElementById("input_name_i");
 
 	if (!nameClick) {
+		i.classList.remove("fa-pen");
+		i.classList.add("fa-check");
 		input.style.display = "block";
 		p.style.display = "none";
 		nameClick = true;
 	}
 	else {
+		i.classList.remove("fa-check");
+		i.classList.add("fa-pen");
 		input.style.display = "none";
 		p.innerHTML = input.value;
 		p.style.display = "block";
@@ -18,6 +23,17 @@ function nameUpdate() {
 	}
 }
 
+// 연필버튼 클릭시 마다 input -> p -> input 변경
+function nameUpdate() {
+	nameOnOff();
+}
+
+// 이름 변경시에 엔터를 누르면
+document.getElementById("name_input").addEventListener("keyup", e =>{
+	if(e.code == "Enter"){
+		nameOnOff();
+	}
+})
 // 프로필 이미지 수정 시 미리보기
 
 function readURL(input) {

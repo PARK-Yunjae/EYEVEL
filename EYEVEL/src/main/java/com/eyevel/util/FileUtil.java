@@ -34,7 +34,7 @@ public class FileUtil {
 		}
 	}
 	//파일 업로드
-	public static String uploadFile(HttpServletRequest req, String sDirectory) 
+	public static String uploadFile(HttpServletRequest req, String sDirectory, String id) 
 			throws ServletException, IOException {
 		//Part 객체를 통해 서버로 전송된 파일명 읽어오기 
 		Part part = req.getPart("img");					
@@ -45,12 +45,13 @@ public class FileUtil {
         System.out.println("partHeader="+ partHeader);
          
         //헤더값에서 파일명 잘라내기
-        String[] phArr = partHeader.split("filename=");
-        String originalFileName = phArr[1].trim().replace("\"", "");
+//        String[] phArr = partHeader.split("filename=");
+//      String originalFileName = phArr[1].trim().replace("\"", "");
+     	String originalFileName = id + ".png";
 		
 		//전송된 파일이 있다면 디렉토리에 저장
 		if (!originalFileName.isEmpty()) {				
-			part.write(sDirectory+ File.separator +originalFileName);
+			part.write(sDirectory+ File.separator +id+".png");
 		}
 		 
 		//원본 파일명 반환

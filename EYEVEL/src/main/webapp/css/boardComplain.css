@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+#categoryList {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+}
+
+#category {
+	background-color: gray;
+	color: white;
+	text-align : center;
+	padding: 10px;
+	flex: 1;
+}
