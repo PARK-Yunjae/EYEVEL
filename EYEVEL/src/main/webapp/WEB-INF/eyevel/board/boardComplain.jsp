@@ -15,11 +15,16 @@
 		    </div>
 		<hr>
 		<c:forEach var="list" items="${list}">
-			<div id="title">
-				 제목
+			<div id="complain_title">
+				<div id="complain_title_text">
+					${list.title }
+				</div>
+				<div id="complain_title_arrow">
+					${list.title }
+				</div>
 			</div>
-			<div id="contents">
-				 내용
+			<div id="complain_contents">
+				 ${list.contents}
 			</div>
 		</c:forEach>
 	</div>

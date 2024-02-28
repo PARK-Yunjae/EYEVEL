@@ -4,15 +4,16 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eyevel.mybatis.CommentMapper">
-<select id="commentList" parameterType="Integer" resultType="Comment">
+	<select id="commentList" parameterType="Integer"
+		resultType="Comment">
 		select * from comment where area_no=#{no}
-</select>
-<insert id="commentAdd" parameterType="Comment">
-insert into 
-comment(member_id,area_no,reg_datetime,contents)
-values(#{member_id},#{area_no},#{reg_datetime},#{contents})
-</insert>
-<delete id="commentDelete" parameterType="Integer">
-delete from comment where no=#{no}
-</delete>
+	</select>
+	<insert id="commentAdd" parameterType="Comment">
+		insert into
+		comment(member_id,area_no,reg_datetime,contents)
+		values(#{member_id},#{area_no},#{reg_datetime},#{contents})
+	</insert>
+	<delete id="commentDelete" parameterType="Integer">
+		delete from comment where no=#{no}
+	</delete>
 </mapper>
