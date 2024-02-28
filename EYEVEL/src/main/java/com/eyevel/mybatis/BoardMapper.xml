@@ -50,6 +50,11 @@
 		hits + 1 where no=#{no}
 	</update>
 
+	<select id="boardCategory" parameterType="Board">
+		select * from board
+		where category=#{category}
+	</select>
+
 	<select id="boardQnAList" resultType="Board">
 		select * from board where <![CDATA[category >= 90]]>;
 	</select>
