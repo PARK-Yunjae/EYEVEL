@@ -98,6 +98,7 @@ public class FileUtil {
 			// 헤더값에서 파일명 잘라내기
 			String[] phArr = partHeader.split("filename=");
 			String originalFileName = phArr[1].trim().replace("\"", "");
+			originalFileName = originalFileName.substring(0, originalFileName.length()-4);
 
 			// 전송된 파일이 있다면 디렉토리에 저장
 			if (!originalFileName.isEmpty()) {
