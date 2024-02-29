@@ -17,4 +17,13 @@
 <select id="areaContinentList" parameterType="String" resultType="Area">
 select * from area where continent=#{area}
 </select>
+
+<insert id="areaAdd" parameterType="Area">
+	insert into area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
+	values(#{name},#{contents},#{link_url},#{continent},#{dir_X},#{dir_Y},#{lon},#{lat},#{id});
+</insert>
+
+<select id="areaGetNo" parameterType="Integer" resultType="Integer">
+	select no from area where id = #{id}
+</select>
 </mapper>

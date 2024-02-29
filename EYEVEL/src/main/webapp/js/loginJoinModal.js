@@ -1,6 +1,5 @@
 // 중복 id 체크 용
 let idCheckPass = false;
-
 // ctx
 let contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));
 
@@ -13,11 +12,17 @@ function loginModal() {
 	document.querySelector(".login_id_msg").style.display = "none";
 	document.querySelector(".login_pw_msg").style.display = "none";
 	document.querySelector(".modal_login").classList.add("active");
+	
+	//검은배경
+	overlay = document.createElement('div');
+    overlay.setAttribute('class', 'overlay');
+    document.body.appendChild(overlay);
 }
 
 // 로그인 모달에서 닫기 버튼을 클릭 시 
 function loginExitBtn() {
 	document.querySelector(".modal_login").classList.remove("active");
+	document.body.removeChild(overlay);
 }
 
 // 로그인 id 값 변경시 - 거기에 엔터일땐 넘어가게
@@ -26,16 +31,18 @@ document.getElementById("login_id").addEventListener("keyup", (e) => {
 	document.querySelector(".login_id_msg").style.display = "none";
 	if (e.code === 'Enter') {
 		loginCheck();
+		loginPass = false;
 	}
 })
 
 // 로그인 pw 값 변경시
 document.getElementById("login_pw").addEventListener("keyup", (e) => {
+	if (e.code === 'Enter' && loginPass) {
+		loginCheck();
+		loginPass = false;
+	}
 	loginPass = true;
 	document.querySelector(".login_pw_msg").style.display = "none";
-	if (e.code === 'Enter') {
-		loginCheck();
-	}
 })
 
 let loginPass = true;
@@ -73,12 +80,13 @@ function loginCheck() {
 		.then(response => response.text())
 		.then(data => {
 			if (data === "로그인 실패") {
-				alert("로그인 실패");	
+				modalMsg("로그인 실패", "로그인에 실패하였습니다.<br>다시 한 번 시도해주세요.");
 				loginPass = true;
 				return false;
 			}
 			else if (data === "로그인 성공") {
-				alert("로그인 성공");
+				alert('로그인 성공');
+				document.body.removeChild(overlay);
 				location.href = contextPath + "/memberLogin.do?id=" + id + "&pw=" + pw;
 			}
 		})
@@ -101,11 +109,13 @@ function joinModal() {
 
 	document.querySelector(".modal_login").classList.remove("active");
 	document.querySelector(".join_modal").classList.add("active");
+	
 }
 
 // 회원가입 모달에서 닫기 버튼을 클릭 시 
 function joinExitBtn() {
 	document.querySelector(".join_modal").classList.remove("active");
+	document.body.removeChild(overlay);
 }
 
 let joinPass = true;
@@ -188,6 +198,7 @@ function joinCheck(form) {
 		return false;
 	}
 	alert("회원가입 완료");
+	document.body.removeChild(overlay);
 	form.submit();
 }
 

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import com.eyevel.dao.MemberDAO;
 import com.eyevel.frontController.Controller;
-import com.eyevel.vo.Area;
 import com.eyevel.vo.Member;
 
 import jakarta.servlet.ServletException;
@@ -66,6 +65,7 @@ public class AdminMemberListController implements Controller {
 		}
 		req.setAttribute("list", arr);
 		req.setAttribute("size", size);
+		req.setAttribute("page", nowPage);
 		req.setAttribute("startPage", startPage);
 		req.setAttribute("endPage", endPage);
 		req.setAttribute("totalPage", totalPage);

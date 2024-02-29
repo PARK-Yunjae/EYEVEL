@@ -24,7 +24,7 @@ public class MemberUpdateController implements Controller {
 			return "eyevel/parts/main";
 		}
 		
-		String saveDirectory = req.getServletContext().getInitParameter("saveDirectory"); //add?파일?
+		String saveDirectory = req.getServletContext().getInitParameter("saveDirectory") + "/profile/"; //add?파일?
 		// 해당 경로에 폴더가 없으면 만들어줌 Uploads로 
 		Path saveDirPath = Paths.get(saveDirectory);
 		if (!Files.isDirectory(saveDirPath)) {
@@ -37,11 +37,21 @@ public class MemberUpdateController implements Controller {
 		String email = req.getParameter("email");
 		String img = FileUtil.uploadFile(req, saveDirectory, id);
 		
+		if(img == null) {
+			img = req.getParameter("basicImg");
+		}
+		
 		Member m = new Member();
 		m.setId(id);
 		m.setName(name);
 		m.setEmail(email);
 		m.setImg(img);
+		
+		// 이름 수정 시 페이지에 보여주는 이름도 변경
+		String oldName = (String)req.getSession().getAttribute("name");
+		if(!oldName.equals(name)) {
+			req.getSession().setAttribute("name", name);
+		};
 		
 		MemberDAO.getInstance().memberUpdate(m);
 		

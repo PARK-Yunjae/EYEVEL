@@ -4,5 +4,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eyevel.mybatis.AreaImgMapper">
-
+	
+	<insert id="addAreaImg" parameterType="AreaImg">
+		insert into area_img(area_no, weather, img)
+		value(#{area_no},#{weather},#{img});
+	</insert>
+	
 </mapper>

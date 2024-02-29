@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/css/modal.css">
 <link rel="stylesheet" type="text/css"
 	href="${ctx}/css/loginJoinModal.css">
+<script src="${ctx}/js/modal.js" defer></script>
 <script src="${ctx}/js/loginJoinModal.js" defer></script>
 <!-- 날씨 표시를 위한 라이브러리 -->
 <script defer
@@ -143,24 +144,16 @@
 		</form>
 	</div>
 	<div class="modal modal_alert">
-		<h2>
-			<span><i class="fas fa-exclamation-triangle"></i></span>경고
-		</h2>
-		<p>
-			삭제한 후에는 되돌리기가 불가능합니다.<br>정말 삭제하시겠습니까?
-		</p>
+		<h2></h2>
+		<p></p>
 		<div class="button_group">
 			<button class="btn1">확인</button>
 			<button class="btn2">취소</button>
 		</div>
 	</div>
 	<div class="modal modal_warning">
-		<h2>
-			<span><i class="fas fa-exclamation-triangle"></i></span>경고
-		</h2>
-		<p>
-			이 페이지는 현재 사용할 수 없는 페이지입니다.<br>자세한 내용은 관리자에게 문의 바랍니다.
-		</p>
+		<h2></h2>
+		<p></p>
 		<div class="button_group">
 			<button class="btn">확인</button>
 		</div>
