@@ -33,7 +33,7 @@ public class CommentAddController implements Controller{
 		CommentDAO.getInstance().commentAdd(c);
 		
 		String ctx = req.getContextPath();
-		return "redirect:" + ctx + "/areaCity.do?id="+req.getParameter("areaId");
+		return "redirect:" + ctx + "/areaCity.do?no="+areaNo;
 	}
 
 }

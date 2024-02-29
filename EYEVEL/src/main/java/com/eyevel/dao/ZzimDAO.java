@@ -36,5 +36,13 @@ public class ZzimDAO {
 		session.commit();
 		session.close();
 	}
+
+	public void zzimDeletebyId(String id) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.delete("ZzimDeleteById",id);
+		session.commit();
+		session.close();
+		
+	}
 	
 }
