@@ -31,7 +31,7 @@ function modalMsgWarning(titleMsg, contentMsg){
 	})
 }
 
-function modalMsgForm(titleMsg, contentMsg, form){
+function modalCheck(titleMsg, contentMsg, func){
 	let title = document.querySelector('.modal_alert h2');
 	let content = document.querySelector('.modal_alert p');
 	title.innerHTML = warningIcon+titleMsg;
@@ -41,6 +41,7 @@ function modalMsgForm(titleMsg, contentMsg, form){
 	
 	if(overlay==null) createOverlay();
 
+	//취소
 	document.querySelector('.modal_alert .btn2').addEventListener('click', e=>{
 		document.querySelector('.modal_alert').classList.remove('active');
 		if(overlayCheck) {
@@ -50,37 +51,7 @@ function modalMsgForm(titleMsg, contentMsg, form){
 		overlayCheck = false;
 	})
 	
-	document.querySelector('.modal_alert .btn1').addEventListener('click', e=>{
-		document.querySelector('.modal_alert').classList.remove('active');
-		if(overlayCheck) document.body.removeChild(overlay);
-		overlayCheck = false;
-		overlay=null;
-		
-		form.submit();
-	})
-}
-
-let test = null;
-function modalMsgTest(titleMsg, contentMsg){
-	let title = document.querySelector('.modal_alert h2');
-	let content = document.querySelector('.modal_alert p');
-	title.innerHTML = warningIcon+titleMsg;
-	content.innerHTML=contentMsg;
-	
-	document.querySelector('.modal_alert').classList.add('active');
-	
-	if(overlay==null) createOverlay();
-
-	document.querySelector('.modal_alert .btn2').addEventListener('click', e=>{
-		document.querySelector('.modal_alert').classList.remove('active');
-		if(overlayCheck) {
-			document.body.removeChild(overlay);
-			overlay=null;
-		}
-		overlayCheck = false;
-		test = "취소";
-	})
-	
+	//확인
 	document.querySelector('.modal_alert .btn1').addEventListener('click', e=>{
 		document.querySelector('.modal_alert').classList.remove('active');
 		if(overlayCheck) {
@@ -89,11 +60,8 @@ function modalMsgTest(titleMsg, contentMsg){
 		}
 		
 		overlayCheck = false;
-		test = "확인";
+		func();
 	})
-	
-	console.log(test);
-	return test;
 }
 /*
 function modalMsg(titleMsg, contentMsg, url){
