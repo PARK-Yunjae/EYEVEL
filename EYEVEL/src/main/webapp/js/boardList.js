@@ -1,44 +1,55 @@
 // 헤더 배경 변경 - 화이트
 document.querySelector('header').classList.add('black');
-document.querySelector('html').style.background="none";
+document.querySelector('html').style.background = "none";
 
 // 카테고리 변경
-document.addEventListener("DOMContentLoaded", function() {
-	console.log("이벤트 발생")
-	let categoryItems = document.querySelectorAll(".category li");
-	categoryItems.forEach(function(item) {
-		item.addEventListener("click", function() {
-			categoryItems.forEach(function(item) {
-				item.classList.remove("on");
-			});
-			this.classList.add("on");
+let categoryItems = document.querySelectorAll(".category li");
+
+categoryItems.forEach(e => {
+	e.addEventListener("click", () => {
+		categoryItems.forEach(f => {
+			if (f.classList.item(1) == "on") {
+				f.classList.remove("on");
+			}
 		})
+		e.classList.add("on");
 	})
 })
 
+// 윈도우 로드시 카테고리 값이 있다면
+function categoryChange(category) {
+	categoryItems.forEach(f => {
+		if (f.classList.item(1) == "on") {
+			f.classList.remove("on");
+		}
+	})
+	let thisCategory = document.querySelector("." + category);
+	thisCategory.classList.add("on");
+}
 
 // 검색 시도 - 엔터
 
-document.getElementById("searchText").addEventListener("keyup", (e) =>{
+document.getElementById("searchText").addEventListener("keyup", (e) => {
 	console.log("들어왔니1")
-	if(e.code === 'Enter'){
-		console.log("들어왔니1");
+	console.log(e.code);
+	if (e.code === 13) {
+		console.log("들어왔니2");
 		alert("멈춰2");
 		boardSearchText();
 	}
 })
 
 // 검색 시도 - 검색 버튼 클릭시 
-function boardSearchText(){
+function boardSearchText() {
 	// ctx
 	let contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));
 
 	// 카테고리 받아오기
 	let categoryItems = document.querySelectorAll(".category li");
 	let category;
-	
-	categoryItems.forEach( e => {
-		if(e.classList.item(1) == "on"){
+
+	categoryItems.forEach(e => {
+		if (e.classList.item(1) == "on") {
 			category = e.classList.item(0);
 		}
 	})
@@ -46,5 +57,5 @@ function boardSearchText(){
 	console.log(searchText);
 	console.log(category);
 	alert("멈춰");
-	location.href = contextPath + "/boardList.do?searchText=" + searchText + "&category="+category;
+	location.href = contextPath + "/boardList.do?searchText=" + searchText + "&category=" + category;
 }

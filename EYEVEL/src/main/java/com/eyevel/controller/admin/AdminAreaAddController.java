@@ -48,7 +48,11 @@ public class AdminAreaAddController implements Controller {
 
 			String area_name = req.getParameter("area_name");
 			int area_id = Integer.parseInt(req.getParameter("area_id"));
-			String area_url = req.getParameter("area_url");
+			String area_url = req.getParameter("area_url").trim();
+			// url 주소 앞 자르기
+			if(area_url.indexOf("https://youtu.be/") != -1) {
+				area_url = area_url.replace("https://youtu.be/", "");
+			}
 			ArrayList<String> imgs = FileUtil.multipleFile(req, saveDirectory, area_name);
 
 			String contents = req.getParameter("area_contents");

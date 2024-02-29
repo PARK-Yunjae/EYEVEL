@@ -3,12 +3,12 @@
 <%@ include file="../parts/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/boardList.css">
 <script src="${ctx}/js/boardList.js" defer></script>
-<section class="boardSection">
+<section class="boardSection" onload="categoryChange(${category})">
 	<div class="innerBox">
 		<h2 class="title">게시판</h2>
 		<form action="" class="search">
 			
-			<input type="text" id="searchText" placeholder="검색" 
+			<input type="text" id="searchText" placeholder="검색" onkeypress="boardSearchText()"
 				<c:if test="${!empty searchText}">
 					value="${searchText}"
 				</c:if>
