@@ -9,6 +9,8 @@
 	<div class="citys">
 	<ul>
 	<c:forEach var="city" items="${list}">
+	<div class="${city.name} lon" value="${city.lon}" ></div>
+	<div class="${city.name} lat" value="${city.lat}" ></div>
 	<li>		
 	<button id="${city.name}" onclick="location.href='${ctx}/areaCity.do?no=${city.no }&loginId=${loginId}'" style="top:${city.dir_X}px;left:${city.dir_Y}px;">${city.name}</button>
 	</li>

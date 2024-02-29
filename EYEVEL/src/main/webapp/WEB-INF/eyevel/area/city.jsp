@@ -24,10 +24,13 @@
 		});
 	}
 </script>
+<script defer src="${ctx}/js/city.js" defer></script>
+<div class="location" data-lon="${area.lon}" data-lat="${area.lat}" ></div>
+
 <section class="city_section">
 	<div class="innerBox">
 		<div class="city_nav">
-			<h2>${area.name}</h2>
+			<h2>${area.name}<div class="description"></div></h2>
 		<div>
 			<h3>
 				<a href="//24timezones.com/Seoul/time" style="text-decoration: none"
@@ -36,15 +39,7 @@
 					title="Seoul time" target="_blank">현재시각</a>
 				<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
 			</h3>
-			<div style="color: #fff">
-					<div style="float: left;">
-						<div class="weather_icon"></div>
-					</div>
-				</div>
-			<li>
-	
-				<div class="weather_description" style="font-size: 20pt"></div>
-			</li>
+
 			</div>
 			<c:if test="${loginId ne null}"> <a
 				href='${ctx}/<c:if test="${zzim eq null}">zzimAdd.do?no=${area.no}&id=${loginId}</c:if><c:if test="${zzim ne null}">zzimDelete.do?no=${area.no}&id=${loginId}</c:if>'>

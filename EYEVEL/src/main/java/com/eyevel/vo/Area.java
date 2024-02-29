@@ -10,8 +10,8 @@ public class Area {
 	private String continent;
 	private int dir_X;
 	private int dir_Y;
-	private int lon;
-	private int lat;
+	private double lon;
+	private double lat;
 	private int id;
 
 	public int getNo() {
@@ -38,19 +38,19 @@ public class Area {
 		this.link_url = link_url;
 	}
 
-	public int getLon() {
+	public double getLon() {
 		return lon;
 	}
 
-	public void setLon(int lon) {
+	public void setLon(double lon) {
 		this.lon = lon;
 	}
 
-	public int getLat() {
+	public double getLat() {
 		return lat;
 	}
 
-	public void setLat(int lat) {
+	public void setLat(double lat) {
 		this.lat = lat;
 	}
 
