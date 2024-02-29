@@ -24,7 +24,7 @@
 			<li onclick="selectContinent('antarctica')">남극</li>
 		</ul>
 		<div class="select_image asia">
-			<img id="select_img" src="${ctx}/img/worldmap1.png" alt="지구 이미지">
+			<img class="select_img" src="${ctx}/img/continent/asia.png" alt="지구 이미지">
 		</div>
 	</div>
 </section>
