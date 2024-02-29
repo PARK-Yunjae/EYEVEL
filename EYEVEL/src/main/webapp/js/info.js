@@ -78,7 +78,7 @@ function memberUpdateCheck(form,pw){
 		updatePass = true;
 		return false;
 	}
-	modalMsg("잠깐","정말 수정하시겠습니까?<br>수정 전 정보는 사라지게 됩니다.",form);
+	modalMsgForm("잠깐","정말 수정하시겠습니까?<br>수정 전 정보는 사라지게 됩니다.",form);
 	updatePass = true;	
 }
 

@@ -24,7 +24,7 @@
    height: 100%;
    border-radius: 0;
 }
-.image_box label img{width: 100%;}
+.image_box label img{width: 100%;height:100%; object-fit: cover;}
 .image_box>div{display: flex;justify-content: space-around;}
 .image_am{position: relative;padding-bottom: var(--padding);border-bottom: 1px solid gray;}
 .image_am::before{
