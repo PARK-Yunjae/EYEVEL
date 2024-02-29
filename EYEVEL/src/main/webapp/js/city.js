@@ -30,6 +30,7 @@ const getWeather = (lat, lon) => {
 				var htmlTag = document.documentElement;
 				// 배경 이미지 스타일 변경
 				htmlTag.style.backgroundImage = "linear-gradient(#00000033, #00000033), url('/EYEVEL/img/weather/"+name+"/"+selectedimg+".jpg')";
+				return;
 			}
 		}
 		)
