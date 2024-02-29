@@ -17,12 +17,12 @@
 		<ul class="admin_list">
 			<li onclick="location.href='${ctx}/memberList.do'">
 				<div class="image">
-				<img src="https://picsum.photos/300/300" alt="유저이미지"></div>
+				<img src="http://localhost:8080/IMAGES/profile/admin.png" alt="유저이미지"></div>
 				<p>유저 관리</p>
 			</li>
 			<li onclick="location.href='${ctx}/adminAreaList.do'">
 				<div class="image">
-				<img src="https://picsum.photos/200/200" alt="관광지이미지"></div>
+				<img src="https://picsum.photos/id/142/200/200" alt="관광지이미지"></div>
 				<p>관광지 관리</p>
 			</li>
 		</ul>
