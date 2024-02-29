@@ -105,7 +105,7 @@ ul.comment .content{
 
 ul.comment .content>div{display: flex;margin-bottom: 10px;align-items: center;justify-content: center;}
 ul.comment .content>div h4{margin-right: 10px;}
-ul.comment .content>div p{color:#494949;}
+ul.comment .content>div p{color:#777;}
 ul.comment .content>p{padding-right:100px;}
 ul.comment button{align-self: flex-end;background: var(--red);color:var(--white)}
 ul.comment button:hover{align-self: flex-end;background: var(--dark-red);}
