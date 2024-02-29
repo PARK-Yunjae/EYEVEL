@@ -80,7 +80,7 @@ function loginCheck() {
 		.then(response => response.text())
 		.then(data => {
 			if (data === "로그인 실패") {
-				modalMsg("로그인 실패", "로그인에 실패하였습니다.<br>다시 한 번 시도해주세요.");
+				modalMsgWarning("로그인 실패", "로그인에 실패하였습니다.<br>다시 한 번 시도해주세요.");
 				loginPass = true;
 				return false;
 			}

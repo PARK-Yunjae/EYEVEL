@@ -21,8 +21,9 @@ public class AreaContinentController implements Controller{
 		List<Area> list = AreaDAO.getInstance().areaContinentList(area);
 		System.out.println(list);
 		req.setAttribute("list", list);
+		req.setAttribute("area", area);
 		
-		return "eyevel/area/" +area;
+		return "eyevel/area/continent";
 	}
 
 }

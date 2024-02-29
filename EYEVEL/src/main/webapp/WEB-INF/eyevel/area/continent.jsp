@@ -7,16 +7,15 @@
 <section class="earthSection">
 	<div class="innerBox">
 	<div class="citys">
-	<c:forEach var="city" items="${list}">
 	<ul>
+	<c:forEach var="city" items="${list}">
 	<li>		
 	<button id="${city.name}" onclick="location.href='${ctx}/areaCity.do?no=${city.no }&loginId=${loginId}'" style="top:${city.dir_X}px;left:${city.dir_Y}px;">${city.name}</button>
 	</li>
-	</ul>
 	</c:forEach>
+	</ul>
 	</div>
-
-		<img src="${ctx}/img/worldmap1.png"/>
+		<img src="${ctx}/img/continent/${area}.png"/>
 	</div>
 </section>
 <%@ include file="../parts/footer.jsp"%>

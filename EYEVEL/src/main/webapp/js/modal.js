@@ -11,7 +11,7 @@ function createOverlay(){
     overlayCheck = true;	
 }
 
-function modalMsg(titleMsg, contentMsg){
+function modalMsgWarning(titleMsg, contentMsg){
 	let title = document.querySelector('.modal_warning h2');
 	let content = document.querySelector('.modal_warning p');
 	title.innerHTML = warningIcon+titleMsg;
