@@ -3,6 +3,7 @@ package com.eyevel.controller.member;
 import java.io.IOException;
 
 import com.eyevel.dao.MemberDAO;
+import com.eyevel.dao.ZzimDAO;
 import com.eyevel.frontController.Controller;
 
 import jakarta.servlet.ServletException;
@@ -25,6 +26,7 @@ public class MemberDeleteController implements Controller {
 		}
 		
 		MemberDAO.getInstance().memberDelete(id);
+		ZzimDAO.getInstance().zzimDeletebyId(id);
 		
 		return "eyevel/main";
 	}
