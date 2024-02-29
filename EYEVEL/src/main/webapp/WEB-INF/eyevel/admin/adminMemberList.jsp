@@ -5,10 +5,7 @@
 				location.href = "${ctx}/main.do";
 			</script>
 		</c:if>
-		<script>
-			document.querySelector('header').classList.add('black');
-			document.querySelector('html').style.background = "none";
-		</script>
+<script src="${ctx}/js/adminMemberList.js" defer></script>
 		<section>
 			<div class="innerBox">
 				<h2 class="title">유저 관리</h2>
@@ -31,7 +28,7 @@
 							<td>
 								<a href="${ctx}/memberInfo.do?id=${vo.id}"><i class="fas fa-pen"></i></a>
                 <c:if test="${vo.id ne 'admin' }">
-								  <a href="${ctx}/memberDelete.do?id=${vo.id}" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
+								  <a onclick="memberDelteModal('${vo.id}')" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
                 </c:if>
               </td>
 						</tr>

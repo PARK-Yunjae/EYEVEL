@@ -10,7 +10,6 @@ modalMsgWarning("확인","관광지 위치를 확인하기 위해<br>관광지�
 
 continent_nav_li.forEach(e=>{
 	e.addEventListener('click', ()=>{
-		select_btn.remove('on');
 		continent_nav_li.forEach(en=>{
 			en.classList.remove('on');
 		})

@@ -23,13 +23,13 @@ public class AreaDeleteController implements Controller{
 		}
 		int no = Integer.parseInt(req.getParameter("no"));
 		
-		AreaDAO.getInstance().areaDelete(no);
 		//댓글 삭제
 		CommentDAO.getInstance().areaCommentDelete(no);
 		//area이미지 삭제
 		AreaImgDAO.getInstance().deleteAreaImg(no);
 		//찜목록 삭제
 		ZzimDAO.getInstance().zzimDeletebyNo(no);
+		AreaDAO.getInstance().areaDelete(no);
 		
 		String ctx = req.getContextPath();
 		

@@ -36,7 +36,7 @@
 					<input type="text" name="email" class="readonly" value="${member.email}" readonly></li>
 				<li class="button_group">
 					<input type="button" class="btn1 button" value="수정하기" onclick="memberUpdateCheck(form,'${member.pw}')" >
-					<input type="button" class="btn2 button" value="회원탈퇴" onclick="memberDeleteCheck(form,'${member.pw}')">
+					<input type="button" class="btn2 button" value="회원탈퇴" onclick="memberDeleteCheck(form,'${member.pw}','${member.id }')">
 				</li>
 			</ul>
 		</form>

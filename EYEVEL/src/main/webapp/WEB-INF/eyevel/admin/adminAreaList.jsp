@@ -6,10 +6,7 @@
 		location.href="${ctx}/main.do";
 	</script>
 </c:if>
-<script>
-	document.querySelector('header').classList.add('black');
-	document.querySelector('html').style.background="none";
-</script>
+<script src="${ctx}/js/adminAreaList.js" defer></script>
 <section>
       <div class="innerBox">
          <h2 class="title">관광지 관리</h2>
@@ -30,7 +27,7 @@
                <td>${vo.link_url}</td>
                <td>
                   <a href="${ctx}/adminAreaInfo.do?no=${vo.no}"><i class="fas fa-pen"></i></a>
-                  <a href="${ctx}/areaDelete.do?no=${vo.no}" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
+                  <a onclick="areaDelteModal(${vo.no})" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
                </td>
             </tr>
             </c:forEach>

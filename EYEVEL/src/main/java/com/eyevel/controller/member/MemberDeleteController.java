@@ -9,6 +9,7 @@ import com.eyevel.frontController.Controller;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 //CLS-031 : 회원삭제
 public class MemberDeleteController implements Controller {
@@ -21,14 +22,22 @@ public class MemberDeleteController implements Controller {
 		}
 		String id = (String) req.getSession().getAttribute("loginId");
 		
-		if(req.getSession().getAttribute("loginId").equals("admin")) {
+		HttpSession session = req.getSession();
+		String ctx = req.getContextPath();
+		
+		if(session.getAttribute("loginId").equals("admin")) {
 			id = req.getParameter("id");
 		}
 		
-		MemberDAO.getInstance().memberDelete(id);
 		ZzimDAO.getInstance().zzimDeletebyId(id);
+		MemberDAO.getInstance().memberDelete(id);
 		
-		return "eyevel/main";
+		if(session.getAttribute("loginId").equals("admin")) {
+			return "redirect:"+ctx+"/memberList.do";
+		}else {
+			session.setAttribute("loginId", null);			
+		}
+		return "eyevel/parts/main";
 	}
 
 }
