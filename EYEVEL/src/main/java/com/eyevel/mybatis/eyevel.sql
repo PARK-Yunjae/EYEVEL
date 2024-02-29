@@ -32,7 +32,7 @@ create table area(
 );
 
 insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Seoul","서울은 대한민국의 수도로, 전통과 현대가 공존하는 도시입니다. 고궁, 전통시장, 한강의 아름다운 풍경과 함께 최첨단 건축물, 쇼핑몰, 세계적인 음식 문화를 경험할 수 있습니다. 역사적 명소와 문화의 거리, 다채로운 먹거리와 쇼핑, 활기찬 나이트라이프까지, 서울은 방문객에게 잊지 못할 추억을 선사합니다.","viIhOorr11I?si=aOuXe9YNoefW62Jm","asia",315,730,126.9778,37.5683,1835847);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Tokyo","도쿄는 일본의 수도로, 놀라운 기술, 전통과 현대 문화의 완벽한 조화를 경험할 수 있는 세계적인 메트로폴리스입니다. 고즈넉한 신사와 정원에서부터 번화한 시부야와 긴자의 쇼핑가, 미슐랭 스타 레스토랑까지, 도쿄는 다양한 매력을 지닌 도시입니다. 애니메이션과 패션의 중심지로도 유명하며, 방문객들은 전통과 혁신이 어우러진 도쿄의 독특한 분위기를 만끽할 수 있습니다.","viIhOorr11I?si=aOuXe9YNoefW62Jm","asia",320,845,139.6917,35.6895,1850147);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Tokyo","도쿄는 일본의 수도로, 놀라운 기술, 전통과 현대 문화의 완벽한 조화를 경험할 수 있는 세계적인 메트로폴리스입니다. 고즈넉한 신사와 정원에서부터 번화한 시부야와 긴자의 쇼핑가, 미슐랭 스타 레스토랑까지, 도쿄는 다양한 매력을 지닌 도시입니다. 애니메이션과 패션의 중심지로도 유명하며, 방문객들은 전통과 혁신이 어우러진 도쿄의 독특한 분위기를 만끽할 수 있습니다.","iHSK0Jq8GDs?si=DsrIotXWkxfX1I2g","asia",320,845,139.6917,35.6895,1850147);
 insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Delhi","인도 델리입니다","-Xlzej8RTTU?si=-39hgQMewDeuAYd2","asia",455,460,77.2167,28.6667,1273294);
 
 insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Paris","프랑스 파리입니다","WHNNHAoaZD4?si=bcO4MTWWc_BgOm6m","europe",355,320,2.3488,48.8534,2988507);
@@ -89,20 +89,18 @@ select * from zzim;
 create table area_img(
 	area_no int not null, -- 관광지 고유 넘버
     foreign key(area_no) references area(no),
-    weather int not null, -- 날씨 속성값
+    weather varchar(10) not null, -- 날씨 속성값
     img varchar(255) not null -- 이미지 파일명
 );
 
-insert into area_img values(1,'Clear','gwanghwamun_suuny');
+insert into area_img values(1,'Clear','gwanghwamun_sunny');
 insert into area_img values(1,'Clouds','gwanghwamun_cloudy');
 insert into area_img values(1,'Snow','gwanghwamun_snowy');
 insert into area_img values(1,'Rain','gwanghwamun_rainy');
-
 insert into area_img values(2,'Clear','Tokyo station_sunny');
 insert into area_img values(2,'Clouds','Tokyo station_cloudy');
 insert into area_img values(2,'Snow','Tokyo station_snowy');
 insert into area_img values(2,'Rain','Tokyo station_rainy');
-
 insert into area_img values(3,'Clear','Taj Mahal_sunny');
 insert into area_img values(3,'Clouds','Taj Mahal_cloudy');
 insert into area_img values(3,'Snow','Taj Mahal_snowy');
@@ -115,10 +113,10 @@ insert into area_img values(5,'Clear','bigben_sunny');
 insert into area_img values(5,'Clouds','bigben_cloudy');
 insert into area_img values(5,'Snow','bigben_snowy');
 insert into area_img values(5,'Rain','bigben_rainy');
-insert into area_img values(6,'Clear','Warsaw_sunny');
-insert into area_img values(6,'Clouds','Warsaw_cloudy');
-insert into area_img values(6,'Snow','Warsaw_snowy');
-insert into area_img values(6,'Rain','Warsaw_rainy');
+insert into area_img values(6,'Clear','warsaw_sunny');
+insert into area_img values(6,'Clouds','warsaw_cloudy');
+insert into area_img values(6,'Snow','warsaw_snowy');
+insert into area_img values(6,'Rain','warsaw_rainy');
 insert into area_img values(7,'Clear','old Quebec_sunny');
 insert into area_img values(7,'Clouds','old Quebec_cloudy');
 insert into area_img values(7,'Snow','old Quebec_snowy');
@@ -131,10 +129,10 @@ insert into area_img values(9,'Clear','Chichen Itza_sunny');
 insert into area_img values(9,'Clouds','Chichen Itza_cloudy');
 insert into area_img values(9,'Snow','Chichen Itza_snowy');
 insert into area_img values(9,'Rain','Chichen Itza_rainy');
-insert into area_img values(10,'Clear','Mar del Plata_sunnysunny');
-insert into area_img values(10,'Clouds','Mar del Plata_sunnycloudy');
-insert into area_img values(10,'Snow','Mar del Plata_sunnysnowy');
-insert into area_img values(10,'Rain','Mar del Plata_sunnyrainy');
+insert into area_img values(10,'Clear','Mar del Plata_sunny');
+insert into area_img values(10,'Clouds','Mar del Plata_cloudy');
+insert into area_img values(10,'Snow','Mar del Plata_snowy');
+insert into area_img values(10,'Rain','Mar del Plata_rainy');
 insert into area_img values(11,'Clear','miraflores_sunny');
 insert into area_img values(11,'Clouds','miraflores_cloudy');
 insert into area_img values(11,'Snow','miraflores_snowy');
@@ -167,6 +165,7 @@ insert into area_img values(18,'Clear','Antarctica_sunny');
 insert into area_img values(18,'Clouds','Antarctica_cloudy');
 insert into area_img values(18,'Snow','Antarctica_snowy');
 insert into area_img values(18,'Rain','Antarctica_rainy');
+
 
 select * from area_img;
 
