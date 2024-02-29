@@ -43,5 +43,4 @@ document.querySelector(".select_image").addEventListener("click", e => {
 select_btn.addEventListener("click", e => {
 	let continentName = select_image.classList.item(1);
 	location.href = contextPath + "/adminAreaAdd.do?x=" + offX + "&y=" + offY + "&continentName=" + continentName;
-	select_btn.remove('on');
 })
