@@ -1,6 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+// 줄바꿈
+pageContext.setAttribute("br", "<br/>");
+pageContext.setAttribute("cn", "\n");
+%>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/boardInfo.css">
 <script src="${ctx}/js/boardInfo.js" defer></script>
 <section class="boardAddSection">
@@ -22,16 +27,15 @@
 					<div class="edit">
 						<p>조회수 : ${board.hits}</p>
 						<p class="board_heart_count">${board.heart}</p>
-						<span><i class="far fa-heart icon"></i></span> <i
-							class="fas fa-ellipsis-v icon" onclick="clickBox()"></i>
+						<span><i class="far fa-heart icon"></i></span> <i class="fas fa-ellipsis-v icon" onclick="clickBox()"></i>
 						<!-- class on 추가시 수정/삭제 보임 -->
 						<div class="edit_box">
-							<a href="${ctx}/boardUpdate.do?no=${board.no}">수정</a> 
+							<a href="${ctx}/boardUpdate.do?no=${board.no}">수정</a>
 							<a href="${ctx}/boardDelete.do?no=${board.no}">삭제</a>
 						</div>
 					</div>
 				</div>
-				<div class="board_content">${board.contents}</div>
+				<div class="board_content">${fn:replace(board.contents, cn, br)}</div>
 			</div>
 		</form>
 	</div>
