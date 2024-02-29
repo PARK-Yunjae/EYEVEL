@@ -2,13 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/boardList.css">
-<script src="${ctx}/js/boardList.js"></script>
+<script src="${ctx}/js/boardList.js" defer></script>
 <section class="boardSection">
 	<div class="innerBox">
 		<h2 class="title">게시판</h2>
 		<form action="" class="search">
-			<input type="text" placeholder="검색"> <a><i
-				class="fas fa-search"></i></a>
+			
+			<input type="text" id="searchText" placeholder="검색" 
+				<c:if test="${!empty searchText}">
+					value="${searchText}"
+				</c:if>
+			> 
+				<a onclick="boardSearchText()"><i class="fas fa-search"></i></a>
 		</form>
 		<button class="btn"
 			onclick="location.href='${ctx}/boardAdd.do'
@@ -19,9 +24,9 @@
 			loginId=
 			</c:if>">글쓰기</button>
 		<ul class="category">
-			<li class="on">전체</li>
-			<li>공지사항</li>
-			<li>건의사항</li>
+			<li class="all on">전체</li>
+			<li class="notice">공지사항</li>
+			<li class="complain">건의사항</li>
 		</ul>
 		<table>
 			<tr>
@@ -33,6 +38,13 @@
 				<th>조회수</th>
 				<th>좋아요</th>
 			</tr>
+			<c:if test="${empty list }">
+				<tr>
+					<td>
+						<h2>아무 글이 없습니다</h2>
+					</td>
+				</tr>
+			</c:if>
 			<c:forEach var="board" items="${list}">
 				<tr>
 					<td>${board.no}</td>
@@ -54,13 +66,13 @@
 		</table>
 		<ul class="paging">
 			<c:if test="${startPage>3}">
-				<li class="start" onclick="location.href='${ctx}/boardList.do?page=${startPage-3}&start=${startPage-3}'"><i class="fas fa-chevron-left"></i></li>
+				<li class="start" onclick="location.href='${ctx}/boardList.do?page=${startPage-3}&start=${startPage-3}&searchText=${searchText}&category=${category}'"><i class="fas fa-chevron-left"></i></li>
 			</c:if>
 			<c:forEach var="i" begin="${startPage}" end="${endPage}">
-				<li onclick="location.href='${ctx}/boardList.do?page=${i}&start=${startPage}'"<c:if test="${i==page}">class="on"</c:if>>${i}</li>
+				<li onclick="location.href='${ctx}/boardList.do?page=${i}&start=${startPage}&searchText=${searchText}&category=${category}'"<c:if test="${i==page}">class="on"</c:if>>${i}</li>
 			</c:forEach>
 			<c:if test="${totalPage>endPage}">
-				<li class="end" onclick="location.href='${ctx}/boardList.do?page=${startPage+3}&start=${startPage+3}'"><i class="fas fa-chevron-right"></i></li>
+				<li class="end" onclick="location.href='${ctx}/boardList.do?page=${startPage+3}&start=${startPage+3}&searchText=${searchText}&category=${category}'"><i class="fas fa-chevron-right"></i></li>
 			</c:if>
 		</ul>
 	</div>

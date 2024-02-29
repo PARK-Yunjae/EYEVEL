@@ -21,9 +21,9 @@
 					</div>
 					<div class="edit">
 						<p>조회수 : ${board.hits}</p>
-						<p class="board_heart_count">${board.heart}</p>
 						<span><i class="far fa-heart icon"></i></span> <i
 							class="fas fa-ellipsis-v icon" onclick="clickBox()"></i>
+						<p class="board_heart_count">${board.heart}</p>
 						<!-- class on 추가시 수정/삭제 보임 -->
 						<div class="edit_box">
 							<a href="${ctx}/boardUpdate.do?no=${board.no}">수정</a> 

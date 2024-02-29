@@ -1,5 +1,6 @@
 package com.eyevel.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -73,6 +74,20 @@ public class BoardDAO {
 	public List<Board> boardQnAList() {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		List<Board> list = session.selectList("boardQnAList");
+		session.close();
+		return list;
+	}
+	
+//	검색 리스트 가져오기
+	public List<Board> boardSearchList(HashMap<String, String> strs) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		List<Board> list = null;
+		if(strs.get("category").equals("-1")) {
+			String searchText = strs.get("searchText");
+			list = session.selectList("boardSearchList", searchText);
+		}else {
+			list = session.selectList("boardSearchCategoryList", strs);
+		}
 		session.close();
 		return list;
 	}

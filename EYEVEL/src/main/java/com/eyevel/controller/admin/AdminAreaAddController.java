@@ -80,10 +80,8 @@ public class AdminAreaAddController implements Controller {
 				ai.setImg(imgs.get(i));
 				
 				aiList.add(ai);
-				aiList.get(i);
-				System.out.println(i);
 			}
-			System.out.println("여긴 지나가니");
+
 			AreaImgDAO.getInstance().addAreaImg(aiList);
 			
 			String ctx = req.getContextPath();
