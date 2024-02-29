@@ -24,7 +24,7 @@
             </tr>
 			<c:forEach var="vo" items="${list}">
 				<tr>
-	               	<td><img src="http://localhost:8080//IMAGES/${vo.img}" alt="user profile image"></td>
+	               	<td><img src="http://localhost:8080//IMAGES/profile/${vo.img}" alt="user profile image"></td>
 					<td>${vo.id}</td>
 					<td>${vo.pw}</td>
 					<td>${vo.name}</td>
