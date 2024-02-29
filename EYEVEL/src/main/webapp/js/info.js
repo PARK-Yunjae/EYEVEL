@@ -9,6 +9,12 @@ let updatePass = true;
 // 탈퇴하기 버튼 중복 방지
 let deletePass = true;
 
+// 테스트 용
+window.onload = function(){
+	let img = document.querySelector("#profileImg");
+	console.log(img);
+}
+
 // 이름 변경 활성화 비활성화 함수
 function nameOnOff(){
 	updatePass = true;
@@ -81,7 +87,8 @@ function memberUpdateCheck(form,pw){
 		updatePass = true;
 		return false;
 	}
-	modalMsgForm("잠깐","정말 수정하시겠습니까?<br>수정 전 정보는 사라지게 됩니다.",form);
+	let sendForm = function(){form.submit()};
+	modalCheck("잠깐","정말 수정하시겠습니까?<br>수정 전 정보는 사라지게 됩니다.",sendForm);
 	updatePass = true;	
 }
 
@@ -112,7 +119,7 @@ function memberDeleteCheck(form,pw){
 		deletePass = true;
 		return false;
 	}
-	let testCheck = modalMsgTest("잠깐","정말 탈퇴하시겠습니까?<br>탈퇴 후 정보는 모두 사라지게 됩니다.");
-	console.log(testCheck);
+	let deleteFun = function(){location.href=contextPath+'/main.do';}
+	modalCheck("잠깐","정말 탈퇴하시겠습니까?<br>탈퇴 후 정보는 모두 사라지게 됩니다.",deleteFun);
 	deletePass = true;	
 }

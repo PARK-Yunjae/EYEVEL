@@ -3,7 +3,6 @@ let idCheckPass = false;
 // ctx
 let contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));
 
-
 // 로그인 버튼 클릭 시 - 혹시 모르니 값 초기화
 function loginModal() {
 	console.log("로그인 모달 오픈 시도");
@@ -12,11 +11,11 @@ function loginModal() {
 	document.querySelector(".login_id_msg").style.display = "none";
 	document.querySelector(".login_pw_msg").style.display = "none";
 	document.querySelector(".modal_login").classList.add("active");
-	
-	//검은배경
+
+	// 검은배경
 	overlay = document.createElement('div');
-    overlay.setAttribute('class', 'overlay');
-    document.body.appendChild(overlay);
+	overlay.setAttribute('class', 'overlay');
+	document.body.appendChild(overlay);
 }
 
 // 로그인 모달에서 닫기 버튼을 클릭 시 
@@ -109,7 +108,6 @@ function joinModal() {
 
 	document.querySelector(".modal_login").classList.remove("active");
 	document.querySelector(".join_modal").classList.add("active");
-	
 }
 
 // 회원가입 모달에서 닫기 버튼을 클릭 시 
@@ -121,11 +119,11 @@ function joinExitBtn() {
 let joinPass = true;
 // 회원가입 버튼 클릭 시
 function joinCheck(form) {
-	if(!joinPass){
+	if (!joinPass) {
 		return false;
 	}
 	joinPass = false;
-	
+
 	console.log("회원가입 체크");
 	let name = form.join_name.value.trim();
 	let id = form.join_id.value.trim();
@@ -162,7 +160,7 @@ function joinCheck(form) {
 		return false;
 	}
 	if (pwCheck === pw) {
-		if (!form.pw.value.match(/^[A-Za-z0-9]{4,20}$/)) {
+		if (!form.pw.value.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]){4,20}$/)) {
 			document.querySelector(".join_pwCheck_msg").innerHTML = "비밀번호에 영어,숫자가 포함되어야 합니다.";
 			document.querySelector(".join_pwCheck_msg").style.color = "#ff6969";
 			document.querySelector(".join_pw_msg").style.display = "none";
@@ -194,6 +192,7 @@ function joinCheck(form) {
 		return false;
 	}
 	if (!idCheckPass) {
+		console.log("들어옵니까");
 		alert("중복 ID 체크 해주세요");
 		return false;
 	}
@@ -245,7 +244,6 @@ document.getElementById("join_idCheck").addEventListener("click", () => {
 		document.querySelector(".join_id_msg").style.display = "block";
 		return false;
 	}
-
 	fetch("validIdCheck.do", {
 		method: "POST",
 		headers: {

@@ -37,10 +37,6 @@ public class MemberUpdateController implements Controller {
 		String email = req.getParameter("email");
 		String img = FileUtil.uploadFile(req, saveDirectory, id);
 		
-		if(img == null) {
-			img = req.getParameter("basicImg");
-		}
-		
 		Member m = new Member();
 		m.setId(id);
 		m.setName(name);
@@ -55,6 +51,11 @@ public class MemberUpdateController implements Controller {
 		
 		MemberDAO.getInstance().memberUpdate(m);
 		
+		// 관리자 일때는 관리자 맴버 리스트로
+		if(req.getSession().getAttribute("loginId").equals("admin")) {
+			return "eyevel/admin/adminMemberList";
+		}
+		// 아닐때는
 		return "eyevel/parts/main";
 	}
 

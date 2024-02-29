@@ -46,9 +46,9 @@ public class FileUtil {
 		System.out.println("partHeader=" + partHeader);
 
 		// 헤더값에서 파일명 잘라내기
-//        String[] phArr = partHeader.split("filename=");
-//      String originalFileName = phArr[1].trim().replace("\"", "");
-		String originalFileName = id + ".png";
+        String[] phArr = partHeader.split("filename=");
+		String originalFileName = phArr[1].trim().replace("\"", "");
+//		String originalFileName = id + ".png";
 
 		// 전송된 파일이 있다면 디렉토리에 저장
 		if (!originalFileName.isEmpty()) {
@@ -56,7 +56,7 @@ public class FileUtil {
 		}
 
 		// 원본 파일명 반환
-		return originalFileName;
+		return id + ".png";
 	}
 
 	// 파일명 변경
