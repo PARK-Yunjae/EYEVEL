@@ -30,7 +30,10 @@
 							<td>${vo.email}</td>
 							<td>
 								<a href="${ctx}/memberInfo.do?id=${vo.id}"><i class="fas fa-pen"></i></a>
-								<a href="${ctx}/memberDelete.do?id=${vo.id}" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
+                <c:if test="${vo.id ne 'admin' }">
+								  <a href="${ctx}/memberDelete.do?id=${vo.id}" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
+                </c:if>
+              </td>
 						</tr>
 					</c:forEach>
 				</table>

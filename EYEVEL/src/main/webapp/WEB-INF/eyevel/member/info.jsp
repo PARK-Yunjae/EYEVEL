@@ -11,7 +11,6 @@
 <section class="info_section">
 	<div class="innerBox">
 		<form action="${ctx}/memberUpdate.do" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="basicImg" value="${member.img }">
 			<ul class="member_info">
 				<li>
 					<label for="img" class="image">
