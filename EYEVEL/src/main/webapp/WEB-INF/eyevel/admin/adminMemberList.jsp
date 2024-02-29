@@ -25,9 +25,9 @@
 			<c:forEach var="vo" items="${list}">
 				<tr>
 	               	<td><img src="http://localhost:8080//IMAGES/${vo.img}" alt="user profile image"></td>
+					<td>${vo.name}</td>
 					<td>${vo.id}</td>
 					<td>${vo.pw}</td>
-					<td>${vo.name}</td>
 					<td>${vo.email}</td>
 					<td>
 	                  <a href="${ctx}/memberInfo.do?id=${vo.id}"><i class="fas fa-pen"></i></a>
