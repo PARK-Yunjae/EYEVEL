@@ -93,16 +93,14 @@ create table area_img(
     img varchar(255) not null -- 이미지 파일명
 );
 
-insert into area_img values(1,'Clear','gwanghwamun_suuny');
+insert into area_img values(1,'Clear','gwanghwamun_sunny');
 insert into area_img values(1,'Clouds','gwanghwamun_cloudy');
 insert into area_img values(1,'Snow','gwanghwamun_snowy');
 insert into area_img values(1,'Rain','gwanghwamun_rainy');
-
 insert into area_img values(2,'Clear','Tokyo station_sunny');
 insert into area_img values(2,'Clouds','Tokyo station_cloudy');
 insert into area_img values(2,'Snow','Tokyo station_snowy');
 insert into area_img values(2,'Rain','Tokyo station_rainy');
-
 insert into area_img values(3,'Clear','Taj Mahal_sunny');
 insert into area_img values(3,'Clouds','Taj Mahal_cloudy');
 insert into area_img values(3,'Snow','Taj Mahal_snowy');
@@ -115,10 +113,10 @@ insert into area_img values(5,'Clear','bigben_sunny');
 insert into area_img values(5,'Clouds','bigben_cloudy');
 insert into area_img values(5,'Snow','bigben_snowy');
 insert into area_img values(5,'Rain','bigben_rainy');
-insert into area_img values(6,'Clear','Warsaw_sunny');
-insert into area_img values(6,'Clouds','Warsaw_cloudy');
-insert into area_img values(6,'Snow','Warsaw_snowy');
-insert into area_img values(6,'Rain','Warsaw_rainy');
+insert into area_img values(6,'Clear','warsaw_sunny');
+insert into area_img values(6,'Clouds','warsaw_cloudy');
+insert into area_img values(6,'Snow','warsaw_snowy');
+insert into area_img values(6,'Rain','warsaw_rainy');
 insert into area_img values(7,'Clear','old Quebec_sunny');
 insert into area_img values(7,'Clouds','old Quebec_cloudy');
 insert into area_img values(7,'Snow','old Quebec_snowy');
@@ -131,10 +129,10 @@ insert into area_img values(9,'Clear','Chichen Itza_sunny');
 insert into area_img values(9,'Clouds','Chichen Itza_cloudy');
 insert into area_img values(9,'Snow','Chichen Itza_snowy');
 insert into area_img values(9,'Rain','Chichen Itza_rainy');
-insert into area_img values(10,'Clear','Mar del Plata_sunnysunny');
-insert into area_img values(10,'Clouds','Mar del Plata_sunnycloudy');
-insert into area_img values(10,'Snow','Mar del Plata_sunnysnowy');
-insert into area_img values(10,'Rain','Mar del Plata_sunnyrainy');
+insert into area_img values(10,'Clear','Mar del Plata_sunny');
+insert into area_img values(10,'Clouds','Mar del Plata_cloudy');
+insert into area_img values(10,'Snow','Mar del Plata_snowy');
+insert into area_img values(10,'Rain','Mar del Plata_rainy');
 insert into area_img values(11,'Clear','miraflores_sunny');
 insert into area_img values(11,'Clouds','miraflores_cloudy');
 insert into area_img values(11,'Snow','miraflores_snowy');
@@ -167,6 +165,7 @@ insert into area_img values(18,'Clear','Antarctica_sunny');
 insert into area_img values(18,'Clouds','Antarctica_cloudy');
 insert into area_img values(18,'Snow','Antarctica_snowy');
 insert into area_img values(18,'Rain','Antarctica_rainy');
+
 
 select * from area_img;
 
