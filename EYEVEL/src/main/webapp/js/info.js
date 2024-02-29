@@ -1,3 +1,6 @@
+document.querySelector('header').classList.add('black');
+document.querySelector('html').style.background="none";
+
 let nameClick = false;
 
 // 수정하기 버튼 중복 방지?
@@ -99,16 +102,17 @@ function memberDeleteCheck(form,pw){
 		console.log("비번입력 안함");
 		document.querySelector(".info_pw_msg").innerHTML = "비밀번호를 입력해주세요";
 		document.querySelector(".info_pw_msg").style.display = "block";
-		updatePass = true;
+		deletePass = true;
 		return false;
 	}
 	else if(form.pw.value != pw){
 		console.log("비번틀림");
 		document.querySelector(".info_pw_msg").innerHTML = "비밀번호가 틀렸습니다";
 		document.querySelector(".info_pw_msg").style.display = "block";
-		updatePass = true;
+		deletePass = true;
 		return false;
 	}
-	modalMsg("잠깐","정말 탈퇴하시겠습니까?<br>탈퇴 후 정보는 모두 사라지게 됩니다.",form);
+	let testCheck = modalMsgTest("잠깐","정말 탈퇴하시겠습니까?<br>탈퇴 후 정보는 모두 사라지게 됩니다.");
+	console.log(testCheck);
 	deletePass = true;	
 }

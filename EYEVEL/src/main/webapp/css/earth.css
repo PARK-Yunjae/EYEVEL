@@ -20,3 +20,50 @@
 #asia{top:23%;right: 23%;}
 #oceania{bottom:17%;right: 9%;}
 #antarctica{bottom:5%;right: 30%;}
+
+/* 관광지 버튼 */
+.city_btn{position: absolute;z-index: 99;}
+.city_btn h2{margin-bottom: 5px;}
+.city_btn .image{display: block;width: 80px;height: 80px;transition: all .3s ;}
+.city_btn:hover .image{margin-top:10px;}
+.city_btn:active .image{margin-top:20px;}
+.city_btn .image:hover::after{bottom:0;right:50%;}
+.city_btn:hover .talkbubble_left{display: block;}
+.city_btn .image::after{
+   position: absolute;
+   content:"";
+   display: block;
+   width: 0px;
+   height: 0px;
+   border-top: 40px solid var(--green);
+   border-left: 20px solid transparent;
+   border-right: 20px solid transparent;
+   z-index: 100;
+   bottom:0;right:50%;
+   transform: translateX(50%);
+}
+.talkbubble_left, .talkbubble_right {
+   position: absolute;
+   width: 250px;
+   top:0px;
+   padding:var(--padding);
+   background:var(--white);
+   -moz-border-radius: 10px;
+   -webkit-border-radius: 10px;
+   border-radius: 10px;
+   box-shadow: 0 2px 5px 1px #22222221;
+   display: none;
+}
+.talkbubble_left{left:-300px;}
+.talkbubble_right {right:-300px;}
+.talkbubble_left::before,.talkbubble_right::before {
+   content: "";
+   position: absolute;
+   top: 26px;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-bottom: 13px solid transparent;
+}
+.talkbubble_left::before{border-left: 26px solid var(--white);left: 100%;}
+.talkbubble_right::before {border-right: 26px solid var(--white);right: 100%;}
