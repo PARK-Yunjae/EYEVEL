@@ -4,22 +4,23 @@ package com.eyevel.vo;
 public class AreaImg {
 
 	private int area_no;
-	private int weather;
+	private String weather;
 	private String img;
 
-	public int getArea_No() {
+
+	public int getArea_no() {
 		return area_no;
 	}
 
-	public void setArea_No(int area_no) {
+	public void setArea_no(int area_no) {
 		this.area_no = area_no;
 	}
 
-	public int getWeather() {
+	public String getWeather() {
 		return weather;
 	}
 
-	public void setWeather(int weather) {
+	public void setWeather(String weather) {
 		this.weather = weather;
 	}
 

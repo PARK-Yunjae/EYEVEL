@@ -5,6 +5,9 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/css/city.css">
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a495181d358f544f386983af5609309d"></script>
+	<!-- 위도와 경도에 따른 일출 일몰시간을 계산해주는 npm -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.8.0/suncalc.min.js"></script>
+	
 <script>
 	function openPanorama() {
 		document.querySelector(".city_section").style.display = "none";
@@ -25,15 +28,17 @@
 	}
 </script>
 <script defer src="${ctx}/js/city.js" defer></script>
-<div class="location" data-lon="${area.lon}" data-lat="${area.lat}" ></div>
-
+<div class="location" data-lon="${area.lon}" data-lat="${area.lat}" data-name="${area.name}" ></div>
+ <c:forEach var="w" items="${img}" >
+<div class="areaimg" data-img="${w.img}" data-weather="${w.weather}" ></div>
+ </c:forEach>
 <section class="city_section">
 	<div class="innerBox">
 		<div class="city_nav">
 			<h2>${area.name}<div class="description"></div></h2>
 		<div>
 			<h3>
-				<a href="//24timezones.com/Seoul/time" style="text-decoration: none"
+				<a href="//24timezones.com/${area.name}/time" style="text-decoration: none"
 					class="clock24"
 					id="tz24-1709088500-c1235-eyJob3VydHlwZSI6IjI0Iiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIxIiwic2hvd3RpbWV6b25lIjoiMSIsInR5cGUiOiJkIiwibGFuZyI6ImVuIn0="
 					title="Seoul time" target="_blank">현재시각</a>
@@ -51,7 +56,7 @@
 		</div>
 		<div class="city_content">
 			<div class="video">
-				<iframe width="750" height="420"
+				<iframe width="850" height="476"
 					src="https://www.youtube.com/embed/${area.link_url}"
 					title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 			</div>

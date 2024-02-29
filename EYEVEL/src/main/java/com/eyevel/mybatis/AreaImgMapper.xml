@@ -10,8 +10,14 @@
 		value(#{area_no},#{weather},#{img});
 	</insert>
 	
+
+	<select id="getAreaimgList" parameterType="Integer" resultType="AreaImg">
+	select * from area_img where area_no=#{no}
+	</select>
+
 	<delete id="deleteAreaImg" parameterType="Integer">
 		delete from area_img where area_no=#{area_no}
 	</delete>
+
 	
 </mapper>
