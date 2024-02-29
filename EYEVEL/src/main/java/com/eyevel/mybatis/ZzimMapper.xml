@@ -17,4 +17,8 @@
 		<delete id="ZzimDeleteById" parameterType="String">
 		delete from zzim where member_id=#{member_id}
 	</delete>
+		
+	<delete id="ZzimDeleteByNo" parameterType="Integer">
+		delete from zzim where area_no=#{area_no}
+	</delete>
 </mapper>

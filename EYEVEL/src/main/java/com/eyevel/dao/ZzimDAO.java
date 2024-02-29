@@ -45,4 +45,12 @@ public class ZzimDAO {
 		
 	}
 	
+	//관광지 넘버로 찜목록 삭제
+	public void zzimDeletebyNo(int area_no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.delete("ZzimDeleteByNo",area_no);
+		session.commit();
+		session.close();
+	}
+	
 }

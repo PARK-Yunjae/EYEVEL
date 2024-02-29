@@ -16,4 +16,8 @@
 	<delete id="commentDelete" parameterType="Integer">
 		delete from comment where no=#{no}
 	</delete>
+	
+	<delete id="araeCommentDelete" parameterType="Integer">
+		delete from comment where area_no=#{area_no}
+	</delete>
 </mapper>
