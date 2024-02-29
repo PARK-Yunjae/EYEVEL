@@ -37,10 +37,10 @@
 				<tr>
 					<td>${board.no}</td>
 					<td>
-					<c:if test="${board.category eq 0}">
+					<c:if test="${board.category eq '0'}">
 					공지
 					</c:if>
-					<c:if test="${board.category eq 1}">
+					<c:if test="${board.category eq '1'}">
 					건의
 					</c:if>
 					</td>
