@@ -29,7 +29,7 @@ function modalMsgWarning(titleMsg, contentMsg){
 	})
 }
 
-function modalMsg(titleMsg, contentMsg, form){
+function modalMsgForm(titleMsg, contentMsg, form){
 	let title = document.querySelector('.modal_alert h2');
 	let content = document.querySelector('.modal_alert p');
 	title.innerHTML = warningIcon+titleMsg;
