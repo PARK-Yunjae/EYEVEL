@@ -6,6 +6,12 @@ let updatePass = true;
 // 탈퇴하기 버튼 중복 방지
 let deletePass = true;
 
+// 테스트 용
+window.onload = function(){
+	let img = document.querySelector("#profileImg");
+	console.log(img);
+}
+
 // 이름 변경 활성화 비활성화 함수
 function nameOnOff(){
 	updatePass = true;

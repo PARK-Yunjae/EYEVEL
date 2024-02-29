@@ -73,7 +73,8 @@ public class MemberDAO {
 	// 회원 삭제? 탈퇴?
 	public void memberDelete(String id) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
-		session.selectOne("memberDelete", id);
+		System.out.println("맴버 삭제 id = " + id);
+		session.delete("memberDelete", id);
 		session.commit();
 		session.close();
 	}

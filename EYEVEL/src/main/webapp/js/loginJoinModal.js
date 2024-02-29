@@ -194,6 +194,7 @@ function joinCheck(form) {
 		return false;
 	}
 	if (!idCheckPass) {
+		console.log("들어옵니까");
 		alert("중복 ID 체크 해주세요");
 		return false;
 	}
