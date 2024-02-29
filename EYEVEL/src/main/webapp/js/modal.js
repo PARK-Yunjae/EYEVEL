@@ -23,9 +23,11 @@ function modalMsgWarning(titleMsg, contentMsg){
 
 	document.querySelector('.modal_warning .btn').addEventListener('click', e=>{
 		document.querySelector('.modal_warning').classList.remove('active');
-		if(overlayCheck) document.body.removeChild(overlay);
+		if(overlayCheck) {
+			document.body.removeChild(overlay);
+			overlay=null;
+		}
 		overlayCheck = false;
-		overlay=null;
 	})
 }
 
@@ -41,9 +43,11 @@ function modalMsgForm(titleMsg, contentMsg, form){
 
 	document.querySelector('.modal_alert .btn2').addEventListener('click', e=>{
 		document.querySelector('.modal_alert').classList.remove('active');
-		if(overlayCheck) document.body.removeChild(overlay);
+		if(overlayCheck) {
+			document.body.removeChild(overlay);
+			overlay=null;
+		}
 		overlayCheck = false;
-		overlay=null;
 	})
 	
 	document.querySelector('.modal_alert .btn1').addEventListener('click', e=>{
@@ -56,7 +60,41 @@ function modalMsgForm(titleMsg, contentMsg, form){
 	})
 }
 
+let test = null;
+function modalMsgTest(titleMsg, contentMsg){
+	let title = document.querySelector('.modal_alert h2');
+	let content = document.querySelector('.modal_alert p');
+	title.innerHTML = warningIcon+titleMsg;
+	content.innerHTML=contentMsg;
+	
+	document.querySelector('.modal_alert').classList.add('active');
+	
+	if(overlay==null) createOverlay();
 
+	document.querySelector('.modal_alert .btn2').addEventListener('click', e=>{
+		document.querySelector('.modal_alert').classList.remove('active');
+		if(overlayCheck) {
+			document.body.removeChild(overlay);
+			overlay=null;
+		}
+		overlayCheck = false;
+		test = "취소";
+	})
+	
+	document.querySelector('.modal_alert .btn1').addEventListener('click', e=>{
+		document.querySelector('.modal_alert').classList.remove('active');
+		if(overlayCheck) {
+			document.body.removeChild(overlay);
+			overlay=null;
+		}
+		
+		overlayCheck = false;
+		test = "확인";
+	})
+	
+	console.log(test);
+	return test;
+}
 /*
 function modalMsg(titleMsg, contentMsg, url){
 	title.innerHTML = titleMsg;
