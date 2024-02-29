@@ -22,7 +22,7 @@
 #antarctica{bottom:5%;right: 30%;}
 
 /* 관광지 버튼 */
-.city_btn{position: absolute;z-index: 99;}
+.city_btn{position: absolute;z-index: 99;margin-top:-105px;margin-left:-20px;}
 .city_btn h2{margin-bottom: 5px;}
 .city_btn .image{display: block;width: 80px;height: 80px;transition: all .3s ;}
 .city_btn:hover .image{margin-top:10px;}

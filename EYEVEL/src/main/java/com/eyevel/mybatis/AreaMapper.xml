@@ -26,4 +26,8 @@ select * from area where continent=#{area}
 <select id="areaGetNo" parameterType="Integer" resultType="Integer">
 	select no from area where id = #{id}
 </select>
+
+<delete id="areaDelete" parameterType="Integer">
+	delete from area where no=#{no}
+</delete>
 </mapper>

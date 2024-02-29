@@ -30,7 +30,7 @@
                <td>${vo.link_url}</td>
                <td>
                   <a href="${ctx}/adminAreaInfo.do?no=${vo.no}"><i class="fas fa-pen"></i></a>
-                  <a href="${ctx}/adminDelete.do?no=${vo.no}" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
+                  <a href="${ctx}/areaDelete.do?no=${vo.no}" class="remove_icon"><i class="fas fa-trash-alt"></i></a>
                </td>
             </tr>
             </c:forEach>

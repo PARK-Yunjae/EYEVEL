@@ -10,4 +10,8 @@
 		value(#{area_no},#{weather},#{img});
 	</insert>
 	
+	<delete id="deleteAreaImg" parameterType="Integer">
+		delete from area_img where area_no=#{area_no}
+	</delete>
+	
 </mapper>
