@@ -16,6 +16,7 @@
 <script src="${ctx}/js/modal.js" defer></script>
 <script src="${ctx}/js/loginJoinModal.js" defer></script>
 <!-- 날씨 표시를 위한 라이브러리 -->
+<!--
 <script defer
 	src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"
 	integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF"
@@ -24,6 +25,7 @@
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
 <script defer src="${ctx}/js/weather.js" defer></script>
+  -->
 </head>
 <body>
 	<header>
@@ -32,6 +34,7 @@
 				<li class="logo_img"><a href="${ctx}/main.do"> <img
 						src="${ctx}/img/logo.png" alt="page Logo Image">
 				</a></li>
+				<!--
 				<li>
 					<div style="color: #fff">
 						<div style="float: left;">
@@ -42,6 +45,7 @@
 				<li>
 					<div class="weather_description" style="font-size: 20pt"></div>
 				</li>
+				  -->
 				<li>
 					<ul class="member">
 						<li><c:if test="${empty loginId}">Guest 님</c:if> <c:if
