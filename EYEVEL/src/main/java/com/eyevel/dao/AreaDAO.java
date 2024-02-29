@@ -54,4 +54,12 @@ public class AreaDAO {
 		session.close();
 		return cnt;
 	}
+	
+	//관광지 삭제
+	public void areaDelete(int no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.insert("areaDelete", no);
+		session.commit();
+		session.close();
+	}
 }

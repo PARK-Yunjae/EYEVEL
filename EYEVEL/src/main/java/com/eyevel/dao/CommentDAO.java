@@ -41,4 +41,12 @@ public class CommentDAO {
 		
 	}
 	
+	//관광지의 댓글 삭제
+	public void areaCommentDelete(int area_no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.delete("commentDelete", area_no);
+		session.commit();
+		session.close();
+	}
+	
 }

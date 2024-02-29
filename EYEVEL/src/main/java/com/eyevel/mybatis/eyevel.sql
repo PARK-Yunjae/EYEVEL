@@ -187,6 +187,16 @@ create table board(
 select * from board;
 
 insert into board values(null, 1, 1, 'test1', 'title1', 'contents1', '2024-02-26', 1, 2, 1);
+insert into board values(null, 0, 1, 'test1', 'title2', 'contents2', '2024-02-26', 1, 2, 1);
+insert into board values(null, 0, 1, 'admin', 'title3', 'contents3', '2024-02-26', 1, 2, 1);
+insert into board values(null, 0, 1, 'admin', 'title4', 'contents4', '2024-02-26', 1, 2, 1);
+insert into board values(null, 0, 1, 'admin', 'title5', 'contents5', '2024-02-26', 1, 2, 1);
+insert into board values(null, 0, 1, 'admin', 'title6', 'contents6', '2024-02-26', 1, 2, 1);
+insert into board values(null, 1, 1, 'admin', 'title7', 'contents7', '2024-02-26', 1, 2, 1);
+insert into board values(null, 1, 1, 'admin', 'title8', 'contents8', '2024-02-26', 1, 2, 1);
+insert into board values(null, 1, 1, 'admin', 'title9', 'contents9', '2024-02-26', 1, 2, 1);
+insert into board values(null, 1, 1, 'admin', 'title10', 'contents10', '2024-02-26', 1, 2, 1);
+insert into board values(null, 1, 1, 'admin', 'title11', 'contents11', '2024-02-26', 1, 2, 1);
 
 
 

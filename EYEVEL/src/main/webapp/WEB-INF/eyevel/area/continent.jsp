@@ -12,7 +12,17 @@
 	<div class="${city.name} lon" value="${city.lon}" ></div>
 	<div class="${city.name} lat" value="${city.lat}" ></div>
 	<li>		
-	<button id="${city.name}" onclick="location.href='${ctx}/areaCity.do?no=${city.no }&loginId=${loginId}'" style="top:${city.dir_X}px;left:${city.dir_Y}px;">${city.name}</button>
+		<div class="city_btn" style="top:${city.dir_X}px;left:${city.dir_Y}px;">
+            <div class="talkbubble_left">
+               <h2>${city.name}</h2>${city.contents}
+            </div>
+            <div class="talkbubble_right">
+               <h2>${city.name}</h2>${city.contents}
+            </div>
+            <a class="image"  id="${city.name}" onclick="location.href='${ctx}/areaCity.do?no=${city.no }&loginId=${loginId}'" >
+               <img src="https://picsum.photos/200/200" alt="">
+            </a>
+		</div>
 	</li>
 	</c:forEach>
 	</ul>

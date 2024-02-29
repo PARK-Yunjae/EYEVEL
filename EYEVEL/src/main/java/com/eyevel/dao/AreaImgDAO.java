@@ -35,4 +35,12 @@ public class AreaImgDAO {
 		return list;
 	}
 	
+	//관광지의 이미지 파일 삭제
+	public void deleteAreaImg(int area_no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.insert("deleteAreaImg", area_no);
+		session.commit();
+		session.close();
+	}
+	
 }

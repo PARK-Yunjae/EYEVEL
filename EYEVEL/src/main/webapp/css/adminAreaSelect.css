@@ -5,5 +5,28 @@
 
 .adminSelectSection .select_image{
    width: 100%;
+   position: relative;
 }
 .select_image img{width: 100%;filter:brightness(0.5);}
+
+.select_btn{
+   position: absolute;
+   background: var(--green);
+   color:var(--white);
+   font-size: var(--font-content);
+   z-index: 100;
+   margin-top:-60px;
+   margin-left:-60px;
+   display: none;
+}
+.select_btn.on{display: block;}
+.select_btn::before{
+   content: "\f00d";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   position: absolute;
+   color:var(--green);
+   bottom:-30px;
+   left:50%;
+   transform: translateX(-50%);
+}

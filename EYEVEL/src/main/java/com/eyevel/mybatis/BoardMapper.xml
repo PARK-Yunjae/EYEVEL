@@ -58,4 +58,15 @@
 	<select id="boardQnAList" resultType="Board">
 		select * from board where <![CDATA[category >= 90]]>;
 	</select>
+	
+	<!-- 카테고리 구분 없이 제목 or 내용을 전체 검색 -->
+	<select id="boardSearchList" parameterType="String" resultType="Board">
+		select * from board where <![CDATA[category < 90]]> and (title like CONCAT('%', #{searchText}, '%') or contents like CONCAT('%', #{searchText}, '%'));
+	</select>
+	
+	<!-- 카테고리 선택 시 카테고리 안에서 제목 or 내용을 검색 -->
+	<select id="boardSearchCategoryList" parameterType="Map" resultType="Board">
+		select * from board where category like CONCAT('%', #{category}, '%') 
+		and (title like CONCAT('%', #{searchText}, '%') or contents like CONCAT('%', #{searchText}, '%'));
+	</select>
 </mapper>

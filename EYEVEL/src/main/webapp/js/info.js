@@ -99,7 +99,7 @@ document.querySelector(".info_pw_msg").addEventListener("keyup", () =>{
 })
 
 //회원 탈퇴 전 체크
-function memberDeleteCheck(form,pw){
+function memberDeleteCheck(form,pw,id){
 	if(!deletePass){
 		return false;
 	}
@@ -119,7 +119,7 @@ function memberDeleteCheck(form,pw){
 		deletePass = true;
 		return false;
 	}
-	let deleteFun = function(){location.href=contextPath+'/main.do';}
+	let deleteFun = function(){location.href=contextPath+'/memberDelete.do?id='+id;}
 	modalCheck("잠깐","정말 탈퇴하시겠습니까?<br>탈퇴 후 정보는 모두 사라지게 됩니다.",deleteFun);
 	deletePass = true;	
 }
