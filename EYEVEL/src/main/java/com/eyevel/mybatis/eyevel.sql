@@ -35,24 +35,24 @@ insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) v
 insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Tokyo","도쿄는 일본의 수도로, 놀라운 기술, 전통과 현대 문화의 완벽한 조화를 경험할 수 있는 세계적인 메트로폴리스입니다. 고즈넉한 신사와 정원에서부터 번화한 시부야와 긴자의 쇼핑가, 미슐랭 스타 레스토랑까지, 도쿄는 다양한 매력을 지닌 도시입니다. 애니메이션과 패션의 중심지로도 유명하며, 방문객들은 전통과 혁신이 어우러진 도쿄의 독특한 분위기를 만끽할 수 있습니다.","viIhOorr11I?si=aOuXe9YNoefW62Jm","asia",320,845,139.6917,35.6895,1850147);
 insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Delhi","인도 델리입니다","-Xlzej8RTTU?si=-39hgQMewDeuAYd2","asia",455,460,77.2167,28.6667,1273294);
 
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Paris","프랑스 파리입니다","WHNNHAoaZD4?si=bcO4MTWWc_BgOm6m","europe",165,475,2.3488,48.8534,2988507);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("London","영국 런던입니다","G5V4wBjR880?si=PndS_YaRq_f2FhnD","europe",100,480,-0.1257,51.5085,2643743);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Warsaw","폴란드 바르샤바입니다","FcjeOHCLaDQ?si=6LkLU63AhNeBPp23","europe",150,590,21.0614,52.2331,7531926);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Paris","프랑스 파리입니다","WHNNHAoaZD4?si=bcO4MTWWc_BgOm6m","europe",355,320,2.3488,48.8534,2988507);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("London","영국 런던입니다","G5V4wBjR880?si=PndS_YaRq_f2FhnD","europe",415,380,-0.1257,51.5085,2643743);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Warsaw","폴란드 바르샤바입니다","FcjeOHCLaDQ?si=6LkLU63AhNeBPp23","europe",370,510,21.0614,52.2331,7531926);
 
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Quebec","퀘벡입니다","b0skYkjbZto?si=ytqkvMKBdiNnPww4","northAmerica",140,250,-71.9991,52.0002,6115047);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Los Angeles","LA입니다","o-U7UlZ6vcA?si=Y0NMpejwHHJfUyBt","northAmerica",220,110,-118.2437,34.0522,5368361);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Merida","메리다입니다","_h5SnqZVtD4?si=RatABxh1e9eNJu-B","northAmerica",300,195,-89.6167,20.9667,3523349);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Quebec","퀘벡입니다","b0skYkjbZto?si=ytqkvMKBdiNnPww4","northAmerica",205,615,-71.9991,52.0002,6115047);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Los Angeles","LA입니다","o-U7UlZ6vcA?si=Y0NMpejwHHJfUyBt","northAmerica",340,325,-118.2437,34.0522,5368361);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Merida","메리다입니다","_h5SnqZVtD4?si=RatABxh1e9eNJu-B","northAmerica",470,530,-89.6167,20.9667,3523349);
 
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Buenos Aires","아르헨티나","oTDXnAXw66Y?si=IMh5o3iO29UqiQKn","southAmerica",500,200,-58.3772,-34.6132,3435910);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Lima","페루 리마입니다","dk-NdzCrxvw?si=XnlFFt_iXXhOtlGh","southAmerica",370,270,-77.0282,-12.0432,3936456);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Cascavel","브라질 카스카벨입니다","5R3eZqy-_gc?si=6kwg0u7q1b64HaQn","southAmerica",440,330,-53.4553,-24.9558,3466779);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Buenos Aires","아르헨티나","oTDXnAXw66Y?si=IMh5o3iO29UqiQKn","southAmerica",410,575,-58.3772,-34.6132,3435910);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Lima","페루 리마입니다","dk-NdzCrxvw?si=XnlFFt_iXXhOtlGh","southAmerica",220,510,-77.0282,-12.0432,3936456);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Cascavel","브라질 카스카벨입니다","5R3eZqy-_gc?si=6kwg0u7q1b64HaQn","southAmerica",280,700,-53.4553,-24.9558,3466779);
 
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Nairobi","케냐 나이로비입니다","RNPk-cx5NgE?si=TxMoCC-zOGS8sKP7","africa",370,600,36.8167,-1.2833,184745);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Cairo","이집트 카이로입니다","6OhdZ9TurMs?si=Vm_DokeGFZeKTDJF","africa",270,570,31.2497,30.0626,360630);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Nairobi","케냐 나이로비입니다","RNPk-cx5NgE?si=TxMoCC-zOGS8sKP7","africa",280,670,36.8167,-1.2833,184745);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Cairo","이집트 카이로입니다","6OhdZ9TurMs?si=Vm_DokeGFZeKTDJF","africa",110,570,31.2497,30.0626,360630);
 insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Cape Town","남아프리카공화국 케이프타운입니다","69DzEF_RAcA?si=wESARcCaGB1FF0GN","africa",500,500,18.4232,-33.9258,3369157);
 
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Sydney","호주 시드니입니다","2QVwEWIKMI8?si=Vd3gdmeuiUqdvpPq","oceania",440,940,151.2073,-33.8679,2147714);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Christchurch","뉴질랜드 크라이스트처치입니다","JuKUY0yKeaI?si=KYu45NJQ3vJf-pX1","oceania",510,1000,172.6333,-43.5333,2192362);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Sydney","호주 시드니입니다","2QVwEWIKMI8?si=Vd3gdmeuiUqdvpPq","oceania",265,640,151.2073,-33.8679,2147714);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Christchurch","뉴질랜드 크라이스트처치입니다","JuKUY0yKeaI?si=KYu45NJQ3vJf-pX1","oceania",460,835,172.6333,-43.5333,2192362);
 
 insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Antarctica","남극 펭귄입니다","OfO6zxvhtBg?si=uacMkJOK2moZadJA","antarctica",500,500,18.4232,-33.9258,6255152);
 select * from area;
@@ -68,10 +68,10 @@ create table comment(
 );
 
 
-insert into comment(null,'test1','1','2024-02-27','댓글입니다');
-insert into comment(null,'test1','1','2024-02-27','댓글입니다2');
-insert into comment(null,'test1','2','2024-02-27','댓글입니다');
-insert into comment(null,'test1','3','2024-02-27','댓글입니다');
+insert into comment values(null,'test1','1','2024-02-27','댓글입니다');
+insert into comment values(null,'test1','1','2024-02-27','댓글입니다2');
+insert into comment values(null,'test1','2','2024-02-27','댓글입니다');
+insert into comment values(null,'test1','3','2024-02-27','댓글입니다');
 
 
 select * from comment;
@@ -92,6 +92,81 @@ create table area_img(
     weather int not null, -- 날씨 속성값
     img varchar(255) not null -- 이미지 파일명
 );
+
+insert into area_img values(1,'Clear','gwanghwamun_suuny');
+insert into area_img values(1,'Clouds','gwanghwamun_cloudy');
+insert into area_img values(1,'Snow','gwanghwamun_snowy');
+insert into area_img values(1,'Rain','gwanghwamun_rainy');
+
+insert into area_img values(2,'Clear','Tokyo station_sunny');
+insert into area_img values(2,'Clouds','Tokyo station_cloudy');
+insert into area_img values(2,'Snow','Tokyo station_snowy');
+insert into area_img values(2,'Rain','Tokyo station_rainy');
+
+insert into area_img values(3,'Clear','Taj Mahal_sunny');
+insert into area_img values(3,'Clouds','Taj Mahal_cloudy');
+insert into area_img values(3,'Snow','Taj Mahal_snowy');
+insert into area_img values(3,'Rain','Taj Mahal_rainy');
+insert into area_img values(4,'Clear','Triumphal Arch_sunny');
+insert into area_img values(4,'Clouds','Triumphal Arch_cloudy');
+insert into area_img values(4,'Snow','Triumphal Arch_snowy');
+insert into area_img values(4,'Rain','Triumphal Arch_rainy');
+insert into area_img values(5,'Clear','bigben_sunny');
+insert into area_img values(5,'Clouds','bigben_cloudy');
+insert into area_img values(5,'Snow','bigben_snowy');
+insert into area_img values(5,'Rain','bigben_rainy');
+insert into area_img values(6,'Clear','Warsaw_sunny');
+insert into area_img values(6,'Clouds','Warsaw_cloudy');
+insert into area_img values(6,'Snow','Warsaw_snowy');
+insert into area_img values(6,'Rain','Warsaw_rainy');
+insert into area_img values(7,'Clear','old Quebec_sunny');
+insert into area_img values(7,'Clouds','old Quebec_cloudy');
+insert into area_img values(7,'Snow','old Quebec_snowy');
+insert into area_img values(7,'Rain','old Quebec_rainy');
+insert into area_img values(8,'Clear','disneyland_sunny');
+insert into area_img values(8,'Clouds','disneyland_cloudy');
+insert into area_img values(8,'Snow','disneyland_snowy');
+insert into area_img values(8,'Rain','disneyland_rainy');
+insert into area_img values(9,'Clear','Chichen Itza_sunny');
+insert into area_img values(9,'Clouds','Chichen Itza_cloudy');
+insert into area_img values(9,'Snow','Chichen Itza_snowy');
+insert into area_img values(9,'Rain','Chichen Itza_rainy');
+insert into area_img values(10,'Clear','Mar del Plata_sunnysunny');
+insert into area_img values(10,'Clouds','Mar del Plata_sunnycloudy');
+insert into area_img values(10,'Snow','Mar del Plata_sunnysnowy');
+insert into area_img values(10,'Rain','Mar del Plata_sunnyrainy');
+insert into area_img values(11,'Clear','miraflores_sunny');
+insert into area_img values(11,'Clouds','miraflores_cloudy');
+insert into area_img values(11,'Snow','miraflores_snowy');
+insert into area_img values(11,'Rain','miraflores_rainy');
+insert into area_img values(12,'Clear','iguazu_sunny');
+insert into area_img values(12,'Clouds','iguazu_cloudy');
+insert into area_img values(12,'Snow','iguazu_snowy');
+insert into area_img values(12,'Rain','iguazu_rainy');
+insert into area_img values(13,'Clear','Nairobi National Park_sunny');
+insert into area_img values(13,'Clouds','Nairobi National Park_cloudy');
+insert into area_img values(13,'Snow','Nairobi National Park_snowy');
+insert into area_img values(13,'Rain','Nairobi National Park_rainy');
+insert into area_img values(14,'Clear','pyramid_sunny');
+insert into area_img values(14,'Clouds','pyramid_cloudy');
+insert into area_img values(14,'Snow','pyramid_snowy');
+insert into area_img values(14,'Rain','pyramid_rainy');
+insert into area_img values(15,'Clear','Cape of Good Hope_sunny');
+insert into area_img values(15,'Clouds','Cape of Good Hope_cloudy');
+insert into area_img values(15,'Snow','Cape of Good Hope_snowy');
+insert into area_img values(15,'Rain','Cape of Good Hope_rainy');
+insert into area_img values(16,'Clear','Opera House_sunny');
+insert into area_img values(16,'Clouds','Opera House_cloudy');
+insert into area_img values(16,'Snow','Opera House_snowy');
+insert into area_img values(16,'Rain','Opera House_rainy');
+insert into area_img values(17,'Clear','Orana Wildlife Park_sunny');
+insert into area_img values(17,'Clouds','Orana Wildlife Park_cloudy');
+insert into area_img values(17,'Snow','Orana Wildlife Park_snowy');
+insert into area_img values(17,'Rain','Orana Wildlife Park_rainy');
+insert into area_img values(18,'Clear','Antarctica_sunny');
+insert into area_img values(18,'Clouds','Antarctica_cloudy');
+insert into area_img values(18,'Snow','Antarctica_snowy');
+insert into area_img values(18,'Rain','Antarctica_rainy');
 
 select * from area_img;
 

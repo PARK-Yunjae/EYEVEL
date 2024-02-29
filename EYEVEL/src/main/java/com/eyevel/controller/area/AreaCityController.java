@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.util.List;
 
 import com.eyevel.dao.AreaDAO;
+import com.eyevel.dao.AreaImgDAO;
 import com.eyevel.dao.CommentDAO;
 import com.eyevel.dao.ZzimDAO;
 import com.eyevel.frontController.Controller;
 import com.eyevel.vo.Area;
+import com.eyevel.vo.AreaImg;
 import com.eyevel.vo.Comment;
 import com.eyevel.vo.Zzim;
 
@@ -28,12 +30,16 @@ public class AreaCityController implements Controller{
 		checkZzim.setArea_no(no);
 		checkZzim.setMember_id(req.getParameter("loginId"));
 		Zzim z = ZzimDAO.getInstance().zzimMemeberList(checkZzim);
+		List<AreaImg> img = AreaImgDAO.getInstance().getimg(no);
+		
 		System.out.println("도시정보 :" + city);
 		System.out.println("댓글 수 : "+c.size());
 		System.out.println("찜 여부 : " + z);
+		System.out.println("이미지파일 : " +img);
 		req.setAttribute("area", city);
 		req.setAttribute("clist", c);
 		req.setAttribute("zzim", z);
+		req.setAttribute("img", img);
 		return "eyevel/area/city";
 	}
 

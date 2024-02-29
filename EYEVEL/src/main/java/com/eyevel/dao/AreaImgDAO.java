@@ -1,6 +1,7 @@
 package com.eyevel.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -25,6 +26,13 @@ public class AreaImgDAO {
 			session.commit();
 		}
 		session.close();
+	}
+
+	public List<AreaImg> getimg(int no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		List<AreaImg> list = session.selectList("getAreaimgList", no);
+		session.close();
+		return list;
 	}
 	
 }
