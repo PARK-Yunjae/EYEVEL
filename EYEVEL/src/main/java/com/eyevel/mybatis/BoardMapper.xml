@@ -66,7 +66,8 @@
 	
 	<!-- 카테고리 선택 시 카테고리 안에서 제목 or 내용을 검색 -->
 	<select id="boardSearchCategoryList" parameterType="Map" resultType="Board">
-		select * from board where category like CONCAT('%', #{category}, '%') 
+		select * from board 
+		where (<![CDATA[category < 90]]> and category like CONCAT('%', #{category}, '%') )
 		and (title like CONCAT('%', #{searchText}, '%') or contents like CONCAT('%', #{searchText}, '%'));
 	</select>
 </mapper>

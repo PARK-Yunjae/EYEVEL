@@ -37,8 +37,8 @@ public class AdminAreaAddController implements Controller {
 
 			return "eyevel/admin/adminAreaAdd";
 		} else {
-			String continentName = req.getParameter("continentName");
-			String saveDirectory = req.getServletContext().getInitParameter("saveDirectory")+"/area/"+ continentName + "/"; // add?파일?
+			String area_name = req.getParameter("area_name");
+			String saveDirectory = req.getServletContext().getInitParameter("saveDirectory")+"/area/"+ area_name +"/"; // add?파일?
 			// 해당 경로에 폴더가 없으면 만들어줌 Uploads로
 			Path saveDirPath = Paths.get(saveDirectory);
 			if (!Files.isDirectory(saveDirPath)) {
@@ -46,7 +46,6 @@ public class AdminAreaAddController implements Controller {
 			}
 			System.out.println("saveDirectory = " + saveDirectory);
 
-			String area_name = req.getParameter("area_name");
 			int area_id = Integer.parseInt(req.getParameter("area_id"));
 			String area_url = req.getParameter("area_url").trim();
 			// url 주소 앞 자르기
