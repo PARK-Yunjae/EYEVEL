@@ -13,6 +13,7 @@ import com.eyevel.vo.Member;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 //CLS-032 : 회원정보 업데이트
 public class MemberUpdateController implements Controller {
@@ -24,6 +25,7 @@ public class MemberUpdateController implements Controller {
 			return "eyevel/parts/main";
 		}
 		
+		HttpSession session = req.getSession();
 		String saveDirectory = req.getServletContext().getInitParameter("saveDirectory") + "/profile/"; //add?파일?
 		// 해당 경로에 폴더가 없으면 만들어줌 Uploads로 
 		Path saveDirPath = Paths.get(saveDirectory);
@@ -44,16 +46,18 @@ public class MemberUpdateController implements Controller {
 		m.setImg(img);
 		
 		// 이름 수정 시 페이지에 보여주는 이름도 변경
-		String oldName = (String)req.getSession().getAttribute("name");
-		if(!oldName.equals(name)) {
-			req.getSession().setAttribute("name", name);
+		String oldName = (String)session.getAttribute("name");
+		if(!oldName.equals(name) && !session.getAttribute("loginId").equals("admin")) {
+			session.setAttribute("name", name);
 		};
 		
 		MemberDAO.getInstance().memberUpdate(m);
 		
+		String ctx = req.getContextPath();
+		
 		// 관리자 일때는 관리자 맴버 리스트로
 		if(req.getSession().getAttribute("loginId").equals("admin")) {
-			return "eyevel/admin/adminMemberList";
+			return "redirect:"+ctx+"/memberList.do";
 		}
 		// 아닐때는
 		return "eyevel/parts/main";

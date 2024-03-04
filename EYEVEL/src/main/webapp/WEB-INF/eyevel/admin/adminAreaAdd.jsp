@@ -21,20 +21,17 @@
             <input type="hidden" name="continentName" value="${continentName}"> 
             <div class="input">
                <label for="area_name">관광지 이름</label>
-               <input type="text" id="area_name" name="area_name" placeholder="관광지 이름 입력"
-               	<c:if test="${vo ne null}">value="${vo.name}" class="readonly" readonly</c:if>>
+               <input type="text" id="area_name" name="area_name" placeholder="관광지 이름 입력">
                <p class="msg area_name_msg">이름을 입력해주세요</p>
             </div>
             <div class="input">
                <label for="area_id">관광지 아이디</label>
-               <input type="number" id="area_id" name="area_id" placeholder="관광지 아이디 입력"
-               <c:if test="${vo ne null}">value="${vo.id}" class="readonly" readonly</c:if>>
+               <input type="number" id="area_id" name="area_id" placeholder="관광지 아이디 입력">
                <p class="msg area_id_msg">아이디를 입력해주세요</p>
             </div>
             <div class="input">
                <label for="area_url">동영상 URL</label>
-               <input type="text" id="area_url" name="area_url" placeholder="관광지 동영상 URL 입력"
-               <c:if test="${vo ne null}">value="${vo.link_url}"</c:if>>
+               <input type="text" id="area_url" name="area_url" placeholder="관광지 동영상 URL 입력">
                <p class="msg area_url_msg">url을 입력해주세요</p>
             </div>
             <p>관광지 배경 이미지</p>
@@ -42,37 +39,25 @@
                <div class="image_am">
                   <label for="weatherImg am_weather_clear">
                   	<div class="image">
-                        <img src=
-                        <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
-               			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-                         alt="am_weather_clear" class="weather_img">
+                        <img src="${ctx}/img/noImage.png" alt="am_weather_clear" class="weather_img">
                   	 </div>
                   </label>
                   <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg am_weather_clear" onchange="readURL(this, '0')">
                   <label for="weatherImg am_weather_cloudy" class="cloudy">
                      <div class="image">
-                     <img src=
-                        <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
-               			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="am_weather_cloudy" class="weather_img">
+                     <img src="${ctx}/img/noImage.png" alt="am_weather_cloudy" class="weather_img">
                      </div>
                   </label>
                   <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg am_weather_cloudy" onchange="readURL(this, '1')">
                   <label for="weatherImg am_weather_rain" class="rain">
                   	<div class="image">
-                     <img src=
-                        <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
-               			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="am_weather_rain" class="weather_img">
+                     <img src="${ctx}/img/noImage.png" alt="am_weather_rain" class="weather_img">
                      </div>
                   </label>
                   <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg am_weather_rain" onchange="readURL(this, '2')">
                   <label for="weatherImg am_weather_snow" class="snow">
                   	<div class="image">	
-                     <img src=
-                        <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
-               			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="am_weather_snow" class="weather_img">
+                     <img src="${ctx}/img/noImage.png" alt="am_weather_snow" class="weather_img">
                      </div>
                   </label>
                   <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg am_weather_snow" onchange="readURL(this, '3')">
@@ -80,37 +65,25 @@
                <div class="image_pm">
                   <label for="weatherImg pm_weather_clear">
                      <div class="image">
-                     <img src=
-                        <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
-               			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="pm_weather_clear" class="weather_img">
+                     <img src="${ctx}/img/noImage.png" alt="pm_weather_clear" class="weather_img">
                      </div>
                   </label>
                   <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg pm_weather_clear" onchange="readURL(this, '4')">
                   <label for="weatherImg pm_weather_cloudy" class="cloudy">
                      <div class="image">
-                     <img src=
-                        <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
-               			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="pm_weather_cloudy" class="weather_img">
+                     <img src="${ctx}/img/noImage.png" alt="pm_weather_cloudy" class="weather_img">
                      </div>
                   </label>
                   <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg pm_weather_cloudy" onchange="readURL(this, '5')">
                   <label for="weatherImg pm_weather_rain" class="rain">
                      <div class="image">
-                     <img src=
-                        <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
-               			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="pm_weather_rain" class="weather_img">
+                     <img src= "${ctx}/img/noImage.png" alt="pm_weather_rain" class="weather_img">
                      </div>
                   </label>
                   <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg pm_weather_rain" onchange="readURL(this, '6')">
                   <label for="weatherImg pm_weather_snow" class="snow">
                      <div class="image">
-                     <img src=
-                        <c:if test="${vo eq null}">"${ctx}/img/noImage.png"</c:if>
-               			<c:if test="${vo ne null}">"${ctx}/img/${img}"</c:if>
-               			alt="pm_weather_snow" class="weather_img">
+                     <img src="${ctx}/img/noImage.png" alt="pm_weather_snow" class="weather_img">
                      </div>
                   </label>
                   <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg pm_weather_snow" onchange="readURL(this, '7')">
@@ -119,9 +92,7 @@
             </div>
             <div class="input">
                <p>관광지 설명</p>
-               <textarea id="area_contents" name="area_contents" placeholder="관광지 설명 입력">
-               <c:if test="${vo ne null}">${vo.contents}</c:if>
-               </textarea>
+               <textarea id="area_contents" name="area_contents" placeholder="관광지 설명 입력"><c:if test="${vo ne null}">${vo.contents}</c:if></textarea>
                <p class="msg area_contents_msg">관광지 설명을 입력해주세요</p>
             </div>
             <input type="button" class="button btn" value="등록하기" onclick="adminAreaAddCheck(form)">
