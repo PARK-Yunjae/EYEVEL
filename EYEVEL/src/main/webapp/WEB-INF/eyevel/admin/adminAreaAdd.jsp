@@ -119,9 +119,7 @@
             </div>
             <div class="input">
                <p>관광지 설명</p>
-               <textarea id="area_contents" name="area_contents" placeholder="관광지 설명 입력">
-               <c:if test="${vo ne null}">${vo.contents}</c:if>
-               </textarea>
+               <textarea id="area_contents" name="area_contents" placeholder="관광지 설명 입력"><c:if test="${vo ne null}">${vo.contents}</c:if></textarea>
                <p class="msg area_contents_msg">관광지 설명을 입력해주세요</p>
             </div>
             <input type="button" class="button btn" value="등록하기" onclick="adminAreaAddCheck(form)">
