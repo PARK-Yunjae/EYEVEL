@@ -7,25 +7,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.8.0/suncalc.min.js"></script>
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a495181d358f544f386983af5609309d"></script>
-	<!-- 위도와 경도에 따른 일출 일몰시간을 계산해주는 npm -->
+	    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&callback=initialize&v=weekly"
+      defer
+    ></script>
 	
 <script>
 	function openPanorama() {
-		document.querySelector(".city_section").style.display = "none";
-		// 일단 로드뷰를 넣을 곳을 만들어 둠
-		var roadviewContainer = document.getElementById("roadview");
-		roadviewContainer.style.display = "block";
-		roadviewContainer.style.width = "50%";
-		roadviewContainer.style.height = "100vh";
-		var roadview = new kakao.maps.Roadview(roadviewContainer); //로드뷰 객체
-		var roadviewClient = new kakao.maps.RoadviewClient(); //좌표로부터 로드뷰 파노ID를 가져올 로드뷰 helper객체
+	    document.querySelector(".city_section").style.display = "none";
+	    let lat = parseFloat(document.querySelector(".location").dataset.lat);
+	    let lon = parseFloat(document.querySelector(".location").dataset.lon);
+	    
+	    const location = { lat: lat, lng: lon };
+	    const map = new google.maps.Map(document.getElementById("map"), {
+	      center: location,
+	      zoom: 14,
+	    });
+	    
+	    const panorama = new google.maps.StreetViewPanorama(
+	      document.getElementById("pano"), {
+	        position: location,
+	        pov: {
+	          heading: 34,
+	          pitch: 10,
+	        },
+	      }
+	    );
 
-		var position = new kakao.maps.LatLng(37.5683, 126.9778);
-
-		// 특정 위치의 좌표와 가까운 로드뷰의 panoId를 추출하여 로드뷰를 띄운다.
-		roadviewClient.getNearestPanoId(position, 50, function(panoId) {
-			roadview.setPanoId(panoId, position); //panoId와 중심좌표를 통해 로드뷰 실행
-		});
+	    map.setStreetView(panorama);
 	}
 </script>
 <script defer src="${ctx}/js/city.js" defer></script>
@@ -33,6 +42,7 @@
  <c:forEach var="w" items="${img}" >
 <div class="areaimg" data-img="${w.img}" data-weather="${w.weather}" ></div>
  </c:forEach>
+ <div id = "map">
 <section class="city_section">
 	<div class="innerBox">
 		<div class="city_nav">
@@ -121,4 +131,5 @@
 		</div>
 	</div>
 </section>
+</div>
 <%@ include file="../parts/footer.jsp"%>
