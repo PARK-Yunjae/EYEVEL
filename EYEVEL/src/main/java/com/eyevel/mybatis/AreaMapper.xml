@@ -14,10 +14,6 @@
 		select * from area
 </select>
 
-<select id="areaListByZzim" parameterType="Integer" resultType="Area">
-		select * from area where no=#{area_no}
-</select>
-
 <select id="areaContinentList" parameterType="String" resultType="Area">
 select * from area where continent=#{area}
 </select>
@@ -36,5 +32,9 @@ select * from area where continent=#{area}
 </delete>
 
 <update id="areaUpdate" parameterType="Area">
+	update area
+	set
+	link_url=#{link_url}, contents=#{contents}
+	where no=#{no}
 </update>
 </mapper>
