@@ -63,14 +63,22 @@
 				</li>
 			</ul>
 			<ul class="gnb">
-				<li><a href="${ctx}/areaEarth.do">전체</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=asia">아시아</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=africa">아프리카</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=northAmerica">북아메리카</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=southAmerica">남아메리카</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=europe">유럽</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=oceania">오세아니아</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=antarctica">남극</a></li>
+				<li <c:if test="${area eq 'all'}">class="on"</c:if>>
+				<a href="${ctx}/areaEarth.do?area=all">전체</a></li>
+				<li <c:if test="${area eq 'asia'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=asia">아시아</a></li>
+				<li <c:if test="${area eq 'africa'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=africa">아프리카</a></li>
+				<li <c:if test="${area eq 'northAmerica'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=northAmerica">북아메리카</a></li>
+				<li <c:if test="${area eq 'southAmerica'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=southAmerica">남아메리카</a></li>
+				<li <c:if test="${area eq 'europe'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=europe">유럽</a></li>
+				<li <c:if test="${area eq 'oceania'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=oceania">오세아니아</a></li>
+				<li <c:if test="${area eq 'antarctica'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=antarctica">남극</a></li>
 			</ul>
 		</div>
 	</header>

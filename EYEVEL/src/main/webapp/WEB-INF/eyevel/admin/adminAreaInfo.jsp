@@ -39,7 +39,8 @@
                         alt="am_weather_clear" class="weather_img">
                   	 </div>
                   </label>
-                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg am_weather_clear" onchange="readURL(this, '0')">
+                  <input type="file" name="weatherImg" accept="image/*" class="am_weather" 
+                  id="weatherImg am_weather_clear" onchange="readURL(this, '0')">
                   <label for="weatherImg am_weather_cloudy" class="cloudy">
                      <div class="image">
                      <img src="http://localhost:8080/IMAGES/area/${vo.name}/${imgList.get(1).img}.jpg"
@@ -99,7 +100,7 @@
                <textarea id="area_contents" name="area_contents" placeholder="관광지 설명 입력">${vo.contents}</textarea>
                <p class="msg area_contents_msg">관광지 설명을 입력해주세요</p>
             </div>
-            <input type="button" class="button btn" value="등록하기" onclick="adminAreaAddCheck(form)">
+            <input type="button" class="button btn" value="수정하기" onclick="adminAreaAddCheck(form)">
          </form>
       </div>
    </section>

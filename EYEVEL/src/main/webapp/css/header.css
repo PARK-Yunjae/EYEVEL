@@ -44,5 +44,6 @@ header.black .top_nav .logo_img{background-image: url('../img/logo.png');}
    opacity: 0;
    transition: all .3s;
 }
+.gnb li.on:after{opacity: 1;}
 .gnb li:hover:after{opacity: 1;}
 header.black .gnb{display: none;}
