@@ -1,3 +1,7 @@
+// 헤더 배경 변경 - 화이트
+document.querySelector('header').classList.add('black');
+document.querySelector('html').style.background = "none";
+
 let boxClick = false;
 
 function clickBox() {

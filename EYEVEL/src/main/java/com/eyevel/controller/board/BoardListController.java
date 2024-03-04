@@ -19,10 +19,9 @@ public class BoardListController implements Controller {
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 //		보드 목록 불러오기 - 검색 없을시
 		ArrayList<Board> list = null;
-		if(req.getParameter("searchText") == null) {
+		if(req.getParameter("category") == null) {
 			list = (ArrayList<Board>) BoardDAO.getInstance().boardList();
 			System.out.println("보드 목록 불러오기 완료");
-			System.out.println(list);
 			req.setAttribute("list", list);
 		}
 // 		검색 값이 있는 페이지 필요 할 시
@@ -31,8 +30,8 @@ public class BoardListController implements Controller {
 			String category = req.getParameter("category");
 			req.setAttribute("searchText", searchText);
 			req.setAttribute("category", category);
-			System.out.println("searchText = " + searchText);
-			System.out.println("category = " + category);
+			System.out.println("searchText="+searchText);
+			System.out.println("category="+category);
 			
 			if(category.equals("notice")) {
 				category = "0";

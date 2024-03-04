@@ -31,7 +31,6 @@ function selectContinent(continent) {
 document.querySelector(".select_img").addEventListener("click", e => {
 	// ctx
 	let contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));
-	console.log("")
 	
 	select_btn.classList.add('on');
 	select_btn.style.top=e.offsetY+'px';
@@ -39,8 +38,12 @@ document.querySelector(".select_img").addEventListener("click", e => {
 	
 	offX = e.offsetX;
 	offY = e.offsetY;
+	
+	console.log("offsetX="+offX);
+	console.log("offsetY="+offY);
 })
 
+// 선택 완료 눌렀을 시 페이지 이동
 select_btn.addEventListener("click", e => {
 	let continentName = select_image.classList.item(1);
 	location.href = contextPath + "/adminAreaAdd.do?x=" + offX + "&y=" + offY + "&continentName=" + continentName;

@@ -1,3 +1,7 @@
+// 헤더 배경 변경 - 화이트
+document.querySelector('header').classList.add('black');
+document.querySelector('html').style.background = "none";
+
 let checkClick = true;
 
 // 글쓰기에서 등록 버튼 클릭 시

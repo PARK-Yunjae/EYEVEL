@@ -20,13 +20,6 @@ public class ZzimDAO {
 		session.close();
 		return z;
 	}
-	
-	public Zzim zzimMemberListById(Zzim zzim) {
-		SqlSession session = MybatisConfig.getInstance().openSession();
-		Zzim z = session.selectOne("ZzimMemberList",zzim);
-		session.close();
-		return z;
-	}
 
 	public void zzimDelete(Zzim checkZzim) {
 		SqlSession session = MybatisConfig.getInstance().openSession();

@@ -131,7 +131,6 @@ function joinCheck(form) {
 	let pwCheck = form.join_pwCheck.value.trim();
 	let email = form.join_email.value.trim();
 	let terms = form.join_terms.checked;
-
 	if (name === "") {
 		document.querySelector(".join_name_msg").style.display = "block";
 		return false;
@@ -160,7 +159,8 @@ function joinCheck(form) {
 		return false;
 	}
 	if (pwCheck === pw) {
-		if (!form.pw.value.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]){4,20}$/)) {
+		console.log(pwCheck);
+		if (!form.pw.value.match(/^(?=.*[a-zA-Z])(?=.*[0-9]).{4,25}$/)) {
 			document.querySelector(".join_pwCheck_msg").innerHTML = "비밀번호에 영어,숫자가 포함되어야 합니다.";
 			document.querySelector(".join_pwCheck_msg").style.color = "#ff6969";
 			document.querySelector(".join_pw_msg").style.display = "none";
