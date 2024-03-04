@@ -12,7 +12,7 @@
 	<div class="${city.name} lon" value="${city.lon}" ></div>
 	<div class="${city.name} lat" value="${city.lat}" ></div>
 	<li>		
-		<div class="city_btn" style="top:${city.dir_X}px;left:${city.dir_Y}px;">
+		<div class="city_btn" style="top:${city.dir_Y}px;left:${city.dir_X}px;">
             <div class="talkbubble_left">
                <h2>${city.name}</h2>${city.contents}
             </div>
