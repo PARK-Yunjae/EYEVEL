@@ -16,3 +16,33 @@
 
 #join_idCheck.on{background: var(--green);}
 #join_idCheck.on:hover{background: var(--dark-green);}
+.input_terms>label{
+	margin-right: 40px;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none
+}
+.label_terms::after{
+	position: absolute;
+   	top:50%;
+   	right:0;
+   	transform: translateY(-50%);
+   	cursor: pointer;
+   	content: "";
+   	display: block;
+   	width: 20px;
+   	height: 20px;
+   	border: 2px solid var(--dark-green);
+   	border-radius:50%;
+}
+#join_terms:checked + .label_terms::after{
+   content: "\f00c";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   text-align: center;
+   line-height: 20px;
+   color:var(--white);
+   background: var(--dark-green);
+}
+#join_terms{display: none;}
