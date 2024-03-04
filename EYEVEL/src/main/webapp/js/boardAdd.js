@@ -21,3 +21,14 @@ function boardAddCheck(form) {
 		checkClick = false;
 	}
 }
+
+// 글쓰기에서 qna목록 선택 시 
+document.querySelector(".category_select_option").addEventListener("change", () =>{
+	let category = document.querySelector(".category_select_option");
+	console.log(category.value)
+	if(category.value === "qna"){
+		document.querySelector(".qna_select").style.display = "flex";
+	}else{
+		document.querySelector(".qna_select").style.display = "none";
+	}
+})
