@@ -62,7 +62,9 @@
 				</div>
 				<div class="input_member">
 					<label for="member">작성자</label><br>
-					<input type="text" name="member" id="member" value="${name}" readonly>
+					<input type="text" name="member" id="member" value=
+					<c:if test="${empty board.member_id}">"${name}"</c:if>
+					<c:if test="${!empty board.member_id}">"${board.member_id}"</c:if> readonly>
 				</div>
 			</div>
 			<label for="contents">내용</label>

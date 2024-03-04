@@ -31,7 +31,7 @@ pageContext.setAttribute("cn", "\n");
 						<span id="like_btn"><i class="far fa-heart icon"></i></span>
 						<p class="board_heart_count">${board.heart}</p>
 					</div>
-					<c:if test="${!empty loginId}">
+					<c:if test="${loginId eq board.member_id || loginId eq 'admin'}">
 						<button id="board_info_option">
 							<i class="fas fa-ellipsis-v icon"></i>
 						</button>
