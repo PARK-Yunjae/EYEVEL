@@ -31,9 +31,7 @@
 	<header>
 		<div class="innerBox">
 			<ul class="top_nav">
-				<li class="logo_img"><a href="${ctx}/main.do"> <img
-						src="${ctx}/img/logo.png" alt="page Logo Image">
-				</a></li>
+				<li class="logo_img" onclick="location.href='${ctx}/main.do'"></li>
 				<!--
 				<li>
 					<div style="color: #fff">

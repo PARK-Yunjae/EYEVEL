@@ -60,7 +60,7 @@ const getWeather = (lat, lon) => {
 				if(isDaytime){
 				htmlTag.style.backgroundImage = "linear-gradient(#00000033, #00000033), url('/EYEVEL/img/weather/"+name+"/"+selectedimg+".jpg')";					
 				}else{
-				htmlTag.style.backgroundImage = "linear-gradient(#00000033, #00000033), url('/EYEVEL/img/weather/"+name+"/"+selectedimg+"_nigth.jpg')";					
+				htmlTag.style.backgroundImage = "linear-gradient(#00000033, #00000033), url('/EYEVEL/img/weather/"+name+"/"+selectedimg+"_night.jpg')";					
 				}
 				return;
 			}
