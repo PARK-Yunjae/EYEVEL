@@ -14,7 +14,14 @@ public class ZzimDAO {
 		return instance;
 	}
 
-	public Zzim zzimMemeberList(Zzim zzim) {
+	public Zzim zzimMemberList(Zzim zzim) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		Zzim z = session.selectOne("ZzimMemberList",zzim);
+		session.close();
+		return z;
+	}
+	
+	public Zzim zzimMemberListById(Zzim zzim) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		Zzim z = session.selectOne("ZzimMemberList",zzim);
 		session.close();

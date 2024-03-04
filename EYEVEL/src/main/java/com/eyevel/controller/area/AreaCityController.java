@@ -29,7 +29,7 @@ public class AreaCityController implements Controller{
 		Zzim checkZzim = new Zzim();
 		checkZzim.setArea_no(no);
 		checkZzim.setMember_id(req.getParameter("loginId"));
-		Zzim z = ZzimDAO.getInstance().zzimMemeberList(checkZzim);
+		Zzim z = ZzimDAO.getInstance().zzimMemberList(checkZzim);
 		List<AreaImg> img = AreaImgDAO.getInstance().getimg(no);
 		
 		System.out.println("도시정보 :" + city);
