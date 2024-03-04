@@ -16,42 +16,23 @@
 .input_date input, .input_member input{border:none; border-bottom: 1px solid var(--gray);border-radius: 0;}
 .input_date input:focus, .input_member input:focus{outline: none;}
 
-/* 공지사항 체크 */
-.notice_check{
-   display: block;
-   justify-content: flex-start;
-   margin-bottom: var(--padding);
+/* 카테고리 선택 */
+.category_select{
+	display: flex;
 }
-.notice_check.on{display: flex;}
-.notice_check label{
-   margin-right: var(--padding);
-   color:var(--dark-green);
-   position: relative;
-   font-weight: bold;
+
+/* 글쓰기 관리자 모드 qna 클릭 시  */
+.qna_select{
+	display: none;
 }
-.notice_label::after{
-   position: absolute;
-   top:50%;
-   right:-40px;
-   transform: translateY(-50%);
-   cursor: pointer;
-   content: "";
-   display: block;
-   width: 20px;
-   height: 20px;
-   border: 2px solid var(--dark-green);
-   border-radius:50%;
+.qna_select.on{
+	display: flex;
 }
-#notice:checked + .notice_label::after{
-   content: "\f00c";
-   font-family: "Font Awesome 5 Free";
-   font-weight: 900;
-   text-align: center;
-   line-height: 20px;
-   color:var(--white);
-   background: var(--dark-green);
+.qna_label{
+	width : 50px;
 }
-#notice{display: none;}
+
+
 .add_board input[type=button]{
    width: 150px;
    align-self: flex-end;

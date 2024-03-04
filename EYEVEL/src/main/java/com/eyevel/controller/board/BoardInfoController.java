@@ -3,8 +3,10 @@ package com.eyevel.controller.board;
 import java.io.IOException;
 
 import com.eyevel.dao.BoardDAO;
+import com.eyevel.dao.MemberDAO;
 import com.eyevel.frontController.Controller;
 import com.eyevel.vo.Board;
+import com.eyevel.vo.Member;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,6 +27,10 @@ public class BoardInfoController implements Controller {
 		BoardDAO.getInstance().boardCount(no);
 		Board b = BoardDAO.getInstance().boardDetail(no);
 		req.setAttribute("board", b);
+		// 프로필 이미지도 가져오기
+		String id = (String)req.getSession().getAttribute("loginId");
+		Member m = MemberDAO.getInstance().memberContent(id);
+		req.setAttribute("member", m);
 
 		return "eyevel/board/boardInfo";
 	}

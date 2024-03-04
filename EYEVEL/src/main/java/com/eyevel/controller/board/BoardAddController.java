@@ -38,11 +38,24 @@ public class BoardAddController implements Controller {
 		String fnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 		String reg_date = fnow;
 		int admin_check = Integer.parseInt(req.getParameter("admin_check"));
-		System.out.println(req.getParameter("notice"));
-		if (req.getParameter("notice") == null) {
+
+		// 건의사항
+		if (req.getParameter("category") == null || req.getParameter("category").equals("complain")) {
 			category = 1;
-		} else {
+		}
+		// 공지
+		else if (req.getParameter("category").equals("notice")) {
 			category = 0;
+		}
+		// 자주 묻는 질문
+		else {
+			switch (req.getParameter("qna")) {
+			case "90": category = 90; break;
+			case "91": category = 91; break; 
+			case "92": category = 92; break;
+			case "93": category = 93; break;
+			case "94": category = 94; break;
+			}
 		}
 		Board b = new Board();
 		b.setCategory(category);
