@@ -19,5 +19,8 @@
 		delete from area_img where area_no=#{area_no}
 	</delete>
 
+	<select id="getAreaImgListWithoutNight" parameterType="Integer" resultType="AreaImg">
+	select distinct * from area_img where area_no =#{no} and img not like '%_night';
+	</select>
 	
 </mapper>

@@ -1,10 +1,13 @@
 package com.eyevel.controller.admin;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.eyevel.dao.AreaDAO;
+import com.eyevel.dao.AreaImgDAO;
 import com.eyevel.frontController.Controller;
 import com.eyevel.vo.Area;
+import com.eyevel.vo.AreaImg;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,9 +26,12 @@ public class AdminAreaInfoControlle implements Controller{
 		int no = Integer.parseInt(req.getParameter("no"));
 		
 		Area vo = AreaDAO.getInstance().areaContents(no); 
+		ArrayList<AreaImg> imgList = (ArrayList<AreaImg>) AreaImgDAO.getInstance().getimgWithoutNight(no);
+		
+		req.setAttribute("imgList", imgList);
 		req.setAttribute("vo", vo);
 		
-		return "eyevel/admin/adminAreaAdd";
+		return "eyevel/admin/adminAreaInfo";
 	}
 
 }
