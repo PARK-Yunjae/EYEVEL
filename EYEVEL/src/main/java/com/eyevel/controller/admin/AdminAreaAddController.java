@@ -75,12 +75,12 @@ public class AdminAreaAddController implements Controller {
 			System.out.println(area_no);
 			
 			ArrayList<AreaImg> aiList = new ArrayList<AreaImg>();
-			String[] weathers = {"clear","Clouds","Snow","Rain"};
+			String[] weathers = {"Clear","Clouds","Snow","Rain"};
 			// 테이블은 4개만 올라가도록 수정해야함.
-			for(int i=0 ; i<imgs.size() ; i++) {
+			for(int i=0 ; i<4 ; i++) {
 				AreaImg ai = new AreaImg();
 				ai.setArea_no(area_no);
-				ai.setWeather(weathers[i/2]);
+				ai.setWeather(weathers[i]);
 				ai.setImg(imgs.get(i));
 				
 				aiList.add(ai);

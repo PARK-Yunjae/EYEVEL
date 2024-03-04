@@ -12,16 +12,17 @@ function loginModal() {
 	document.querySelector(".login_pw_msg").style.display = "none";
 	document.querySelector(".modal_login").classList.add("active");
 
-	// 검은배경
-	overlay = document.createElement('div');
-	overlay.setAttribute('class', 'overlay');
-	document.body.appendChild(overlay);
+	if(overlay==null) createOverlay();
 }
 
 // 로그인 모달에서 닫기 버튼을 클릭 시 
 function loginExitBtn() {
 	document.querySelector(".modal_login").classList.remove("active");
-	document.body.removeChild(overlay);
+	if(overlayCheck) {
+		document.body.removeChild(overlay);
+		overlay=null;
+	}
+	overlayCheck = false;
 }
 
 // 로그인 id 값 변경시 - 거기에 엔터일땐 넘어가게
@@ -105,7 +106,10 @@ function joinModal() {
 	document.querySelector(".join_pwCheck_msg").style.display = "none";
 	document.querySelector(".join_email_msg").style.display = "none";
 	document.querySelector(".join_terms_msg").style.display = "none";
-
+	document.getElementById("join_id").style.border = "1px solid #a8a8a8";
+	
+	document.querySelector("#join_idCheck").classList.remove("on");
+	document.querySelector("#join_idCheck").value="중복확인";
 	document.querySelector(".modal_login").classList.remove("active");
 	document.querySelector(".join_modal").classList.add("active");
 }
@@ -113,7 +117,11 @@ function joinModal() {
 // 회원가입 모달에서 닫기 버튼을 클릭 시 
 function joinExitBtn() {
 	document.querySelector(".join_modal").classList.remove("active");
-	document.body.removeChild(overlay);
+	if(overlayCheck) {
+		document.body.removeChild(overlay);
+		overlay=null;
+	}
+	overlayCheck = false;
 }
 
 let joinPass = true;
@@ -168,7 +176,7 @@ function joinCheck(form) {
 			return false;
 		} else {
 			document.querySelector(".join_pwCheck_msg").innerHTML = "사용 가능한 비밀번호 입니다.";
-			document.querySelector(".join_pwCheck_msg").style.color = "skyblue";
+			document.querySelector(".join_pwCheck_msg").style.color = "#41CE82";
 			document.querySelector(".join_pw_msg").style.display = "none";
 			document.querySelector(".join_pwCheck_msg").style.display = "block";
 		}
@@ -212,6 +220,7 @@ document.getElementById("join_id").addEventListener("keyup", () => {
 	joinPass = true;
 	idCheckPass = false;
 	document.getElementById("join_id").style.border = "";
+	document.querySelector("#join_idCheck").value="중복확인";
 	document.querySelector("#join_idCheck").classList.remove("on");
 	document.querySelector(".join_id_msg").style.display = "none";
 })
@@ -256,9 +265,10 @@ document.getElementById("join_idCheck").addEventListener("click", () => {
 			if (data == '0') {
 				idCheckPass = true;
 				document.querySelector(".join_id_msg").innerHTML = "ID 사용 가능합니다";
-				document.querySelector(".join_id_msg").style.color = "skyblue";
+				document.querySelector(".join_id_msg").style.color = "#41CE82";
 				document.querySelector("#join_idCheck").classList.add("on");
-				document.getElementById("join_id").style.border = "1px solid blue";
+				document.querySelector("#join_idCheck").value="확인완료";
+				document.getElementById("join_id").style.border = "1px solid #2caf69";
 				document.querySelector(".join_id_msg").style.display = "block";
 				return false;
 			}
@@ -266,8 +276,9 @@ document.getElementById("join_idCheck").addEventListener("click", () => {
 				document.querySelector(".join_id_msg").innerHTML = "중복 ID가 존재합니다";
 				document.querySelector(".join_id_msg").style.color = "#ff6969";
 				document.querySelector(".join_id_msg").style.display = "block";
+				document.querySelector("#join_idCheck").value="중복확인";
 				document.querySelector("#join_idCheck").classList.remove("on");
-				document.getElementById("join_id").style.border = "1px solid red";
+				document.getElementById("join_id").style.border = "1px solid #ff6969";
 				return false;
 			}
 		})

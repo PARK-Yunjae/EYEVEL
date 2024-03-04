@@ -58,7 +58,15 @@ public class AreaDAO {
 		session.commit();
 		session.close();
 	}
-
+	
+	// 관광지 업데이트
+	public void areaUpdate(Area a) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.insert("areaUpdate", a);
+		session.commit();
+		session.close();
+	}
+	
 	// 관광지 넘버 가져오기
 	public int areaGetNo(int id) {
 		SqlSession session = MybatisConfig.getInstance().openSession();

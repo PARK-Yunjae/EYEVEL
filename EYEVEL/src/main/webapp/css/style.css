@@ -42,8 +42,6 @@ body{
 li{list-style: none;}
 a{text-decoration: none; color:var(--black);cursor: pointer;}
 .innerBox{width: 1200px; padding:var(--padding);margin:0 auto;}
-.logo_img{width: 120px;margin-right: calc(var(--padding)*2) ;}
-.logo_img img{width: 100%;}
 button, .button{display: block;text-align: center;padding:10px 30px;cursor: pointer;border-radius: var(--radius);border: none;}
 
 

@@ -6,11 +6,25 @@ header a{color:var(--white);}
 
 header.black .innerBox>ul{color:var(--black);text-shadow:none;}
 header.black a{color:var(--black);}
+header.black .top_nav .logo_img{background-image: url('../img/logo.png');}
 
 /* top_nav */
 .top_nav{justify-content: space-between;margin-bottom: 35px;align-items: center;}
-.weather_icon{width: 50%;height: 50%;}
-.weather_icon svg{width: 100%;height: 100%;}
+
+/* logo */
+.logo_img{width: 120px;height: 70px;}
+.top_nav .logo_img{
+	cursor:pointer;
+	background-image: url('../img/logo_white.png');
+	background-repeat: no-repeat;
+   	background-position: center center;
+   	-webkit-background-size: contain;
+  	-moz-background-size: contain;
+  	-o-background-size: contain;
+   	background-size: contain;
+}
+.logo_img img{width: 100%;}
+
 .member{display: flex;}
 .member li{margin-right: var(--padding);}
 .member li:last-child{margin-right: 0;}

@@ -31,9 +31,7 @@
 	<header>
 		<div class="innerBox">
 			<ul class="top_nav">
-				<li class="logo_img"><a href="${ctx}/main.do"> <img
-						src="${ctx}/img/logo.png" alt="page Logo Image">
-				</a></li>
+				<li class="logo_img" onclick="location.href='${ctx}/main.do'"></li>
 				<!--
 				<li>
 					<div style="color: #fff">
@@ -137,8 +135,8 @@
 			</div>
 
 			<div class="input_terms input">
-				<label for="join_terms">개인정보 이용약관 동의</label> <input type="checkbox"
-					name="terms" id="join_terms" value="동의">
+				<input type="checkbox" name="terms" id="join_terms" value="동의">
+				<label for="join_terms" class="label_terms">개인정보 이용약관 동의</label>
 				<p class="msg terms_msg join_terms_msg">약관에 동의해주세요</p>
 			</div>
 			<div class="button_group">
