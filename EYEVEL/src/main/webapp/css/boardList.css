@@ -17,3 +17,12 @@
    transform: translateY(-50%);
 }
 .search a:hover{color:var(--black)}
+
+/* on이 붙었을 때만 보여주기 */
+.boardList.on{
+	display: block;
+}
+.boardList{
+	display: none;
+}
+

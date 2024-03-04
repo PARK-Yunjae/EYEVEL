@@ -33,16 +33,11 @@
 				</div>
 				<div class="input_date">
 					<label for="date">작성일</label><br>
-					<input type="text" name="date" id="date" readonly>
+					<input type="text" name="date" id="date" value="${date}" readonly>
 				</div>
 				<div class="input_member">
 					<label for="member">작성자</label><br>
-					<c:if test="${board.title eq null}">
-						<input type="text" name="member" id="member" readonly>
-					</c:if>
-					<c:if test="${board.title ne null}">
-						<input type="text" name="member" id="member" value="${board.member_id}" readonly>
-					</c:if>
+					<input type="text" name="member" id="member" value="${name}" readonly>
 				</div>
 			</div>
 			<label for="contents">내용</label>

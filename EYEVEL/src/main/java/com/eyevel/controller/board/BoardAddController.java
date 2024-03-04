@@ -24,6 +24,9 @@ public class BoardAddController implements Controller {
 
 		String ctx = req.getContextPath();
 		if (req.getParameter("title") == null) {
+			LocalDateTime now = LocalDateTime.now();
+			String fnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+			req.setAttribute("date", fnow);
 			return "eyevel/board/boardAdd";
 		}
 		int category = 0;

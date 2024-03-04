@@ -3,30 +3,31 @@
 <%@ include file="../parts/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/boardList.css">
 <script src="${ctx}/js/boardList.js" defer></script>
-<section class="boardSection" onload="categoryChange(${category})">
+<section class="boardSection">
 	<div class="innerBox">
 		<h2 class="title">게시판</h2>
-		<form action="" class="search">
-			
-			<input type="text" id="searchText" placeholder="검색" onkeypress="boardSearchText()"
+		<div class="search">
+			<input type="text" id="searchText" placeholder="검색"
 				<c:if test="${!empty searchText}">
 					value="${searchText}"
 				</c:if>
 			> 
 				<a onclick="boardSearchText()"><i class="fas fa-search"></i></a>
-		</form>
-		<button class="btn"
-			onclick="location.href='${ctx}/boardAdd.do'
-			<c:if test="${loginId!=null}"> 
-			loginId='${loginId}'
-			</c:if>
-			<c:if test="${loginId eq null}"> 
-			loginId=
-			</c:if>">글쓰기</button>
+		</div>
+		<button class="btn" onclick="boardAddCheck('${loginId}')">글쓰기</button>
 		<ul class="category">
-			<li class="all on">전체</li>
-			<li class="notice">공지사항</li>
-			<li class="complain">건의사항</li>
+			<li class=
+				<c:if test="${category ne 'all'}">"all"</c:if>
+				<c:if test="${category eq 'all'}">"all on"</c:if>
+			>전체</li>
+			<li class=
+				<c:if test="${category ne 'notice'}">"notice"</c:if>
+				<c:if test="${category eq 'notice'}">"notice on"</c:if>
+			>공지사항</li>
+			<li class=
+				<c:if test="${category ne 'complain'}">"complain"</c:if>
+				<c:if test="${category eq 'complain'}">"complain on"</c:if>
+			>건의사항</li>
 		</ul>
 		<table>
 			<tr>
