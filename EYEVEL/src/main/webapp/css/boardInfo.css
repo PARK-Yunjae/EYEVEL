@@ -1,4 +1,4 @@
-.boardAddSection form{width: 100%;}
+.boardAddSection .board_info{width: 100%;}
 /* 뒤로가기 */
 .board_info>a{display: inline-block;margin-bottom: var(--padding);}
 .board_info>a::before{
@@ -37,10 +37,10 @@
 
 /* 수정 */
 .edit{display: flex;justify-content: center;align-items: center;font-size: 20px;position: relative;}
-.edit p{margin-right: 5px;}
-.edit span .icon{cursor: pointer;transition: all .3s;}
-.edit span .icon:hover{transform: scale(1.1);}
-.edit span .icon:active{transform: scale(0.9);}
+.edit p{margin-right: 5px; padding-right: 10px;}
+.edit .like span .icon{cursor: pointer;transition: all .3s;}
+.edit .like span .icon:hover{transform: scale(1.1);}
+.edit .like span .icon:active{transform: scale(0.9);}
 .edit>.icon{margin-left: 15px;cursor: pointer;}
 .edit .fa-ellipsis-v{color:var(--gray)}
 
@@ -69,3 +69,12 @@
 
 /* 게시글 내용 */
 .board_content{line-height: 30px;}
+
+/* 좋아요 버튼 */
+.like{
+	display: flex;
+}
+/* 옵션 버튼 */
+#board_info_option{
+	background: white;
+}
