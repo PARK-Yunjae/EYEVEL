@@ -14,6 +14,10 @@
 		select * from area
 </select>
 
+<select id="areaListByZzim" parameterType="Integer" resultType="Area">
+		select * from area where no=#{area_no}
+</select>
+
 <select id="areaContinentList" parameterType="String" resultType="Area">
 select * from area where continent=#{area}
 </select>
@@ -30,4 +34,7 @@ select * from area where continent=#{area}
 <delete id="areaDelete" parameterType="Integer">
 	delete from area where no=#{no}
 </delete>
+
+<update id="areaUpdate" parameterType="Area">
+</update>
 </mapper>

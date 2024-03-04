@@ -3,6 +3,7 @@ footer{background: var(--black);color:var(--white);font-size: var(--font-small);
 footer .innerBox{display: flex;justify-content: space-between;}
 /* footer logo */
 .footer_logo{display: flex; align-items: end;}
+.footer_logo .logo_img{margin-right:40px;}
 .footer_logo img{
 	filter: invert(75%);
 	-webkit-user-select:none;

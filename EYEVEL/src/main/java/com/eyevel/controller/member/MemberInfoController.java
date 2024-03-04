@@ -1,10 +1,13 @@
 package com.eyevel.controller.member;
 
 import java.io.IOException;
+import java.util.List;
 
+import com.eyevel.dao.AreaDAO;
 import com.eyevel.dao.MemberDAO;
 import com.eyevel.dao.ZzimDAO;
 import com.eyevel.frontController.Controller;
+import com.eyevel.vo.Area;
 import com.eyevel.vo.Member;
 import com.eyevel.vo.Zzim;
 
@@ -30,11 +33,12 @@ public class MemberInfoController implements Controller {
 		Member m = MemberDAO.getInstance().memberContent(id);
 
 		Zzim checkZzim = new Zzim();
-		checkZzim.setMember_id(req.getParameter("loginId"));
-		Zzim z = ZzimDAO.getInstance().zzimMemberListById(checkZzim);
-		req.setAttribute("zzim", z);
+		checkZzim.setMember_id((String) req.getSession().getAttribute("loginId"));
+		List<Zzim> z = ZzimDAO.getInstance().zzimMemberListById(checkZzim);
+		List<Area> a = AreaDAO.getInstance().areaListByZzim(z);
 		req.setAttribute("member", m);
-		System.out.println(z);
+		req.setAttribute("zzim", z);
+		req.setAttribute("area", a);
 
 		return "eyevel/member/info";
 	}
