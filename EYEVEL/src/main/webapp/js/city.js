@@ -29,7 +29,7 @@ const getWeather = (lat, lon) => {
 				console.log(selectedimg);
 				var htmlTag = document.documentElement;
 				// 배경 이미지 스타일 변경
-				console.log(isDaytime ? '낮입니다' : ' 밤입니다');
+			console.log(isDaytime ? '낮입니다' : ' 밤입니다');
 				if (isDaytime) {
 					htmlTag.style.backgroundImage = "linear-gradient(#00000033, #00000033), url('/EYEVEL/img/weather/" + name + "/" + selectedimg + ".jpg')";
 				} else {
@@ -54,19 +54,24 @@ function fetchTimeZone(latitude, longitude) {
 		.then(data => {
 			const localTimeOffset = data.dstOffset + data.rawOffset;
 			const localTime = new Date((timestamp + localTimeOffset) * 1000);
-			let suntimes = SunCalc.getTimes(localTime, latitude, longitude);
-			isDaytime = Date.now() >= suntimes.sunrise && Date.now() <= suntimes.sunset;
+/*		            let suntimes = SunCalc.getTimes(localTime, latitude, longitude);
+						isDaytime = Date.now() >= suntimes.sunrise && Date.now() <= suntimes.sunset;
+						*/
+			const hour = localTime.getUTCHours(); // UTC 시간을 기준으로 시간을 가져옵니다.
+			console.log(hour);
+			// 오전 6시 이후 및 오후 6시 이후를 기준으로 낮/밤 결정
+			isDaytime = hour >= 6 && hour < 18;
 			console.log(isDaytime ? '낮입니다' : ' 밤입니다');
 			document.getElementById("localTime").innerText = localTime.toISOString().substring(11, 16); // Display HH:MM:SS
 		})
 		.catch(error => console.error('Error fetching time zone information:', error));
-
-	getWeather(lat, lon);
+		
+		getWeather(lat, lon);
 }
 
 //0.5초마다 반복해서 시간표시기능 실행
 
-fetchTimeZone(lat, lon);
+	fetchTimeZone(lat, lon);
 
 
 
