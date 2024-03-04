@@ -32,6 +32,8 @@ const getWeather = (lat, lon) => {
 				htmlTag.style.backgroundImage = "linear-gradient(#00000033, #00000033), url('/EYEVEL/img/weather/"+name+"/"+selectedimg+".jpg')";
 				return;
 			}
+			
+			
 		}
 		)
 	})
