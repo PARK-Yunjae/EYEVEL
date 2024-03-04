@@ -10,6 +10,7 @@ modalMsgWarning("확인","관광지 위치를 확인하기 위해<br>관광지�
 
 continent_nav_li.forEach(e=>{
 	e.addEventListener('click', ()=>{
+		select_btn.classList.remove('on');
 		continent_nav_li.forEach(en=>{
 			en.classList.remove('on');
 		})
@@ -27,7 +28,7 @@ function selectContinent(continent) {
 }
 
 // 클릭 했을때 좌표 확인하는 이벤트
-document.querySelector(".select_image").addEventListener("click", e => {
+document.querySelector(".select_img").addEventListener("click", e => {
 	// ctx
 	let contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));
 	

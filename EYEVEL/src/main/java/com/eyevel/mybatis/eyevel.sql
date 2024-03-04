@@ -31,30 +31,31 @@ create table area(
     id int not null -- 관광지 ID
 );
 
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Seoul","서울은 대한민국의 수도로, 전통과 현대가 공존하는 도시입니다. 고궁, 전통시장, 한강의 아름다운 풍경과 함께 최첨단 건축물, 쇼핑몰, 세계적인 음식 문화를 경험할 수 있습니다. 역사적 명소와 문화의 거리, 다채로운 먹거리와 쇼핑, 활기찬 나이트라이프까지, 서울은 방문객에게 잊지 못할 추억을 선사합니다.","viIhOorr11I?si=aOuXe9YNoefW62Jm","asia",315,730,126.9778,37.5683,1835847);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Tokyo","도쿄는 일본의 수도로, 놀라운 기술, 전통과 현대 문화의 완벽한 조화를 경험할 수 있는 세계적인 메트로폴리스입니다. 고즈넉한 신사와 정원에서부터 번화한 시부야와 긴자의 쇼핑가, 미슐랭 스타 레스토랑까지, 도쿄는 다양한 매력을 지닌 도시입니다. 애니메이션과 패션의 중심지로도 유명하며, 방문객들은 전통과 혁신이 어우러진 도쿄의 독특한 분위기를 만끽할 수 있습니다.","iHSK0Jq8GDs?si=DsrIotXWkxfX1I2g","asia",320,845,139.6917,35.6895,1850147);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Delhi","인도 델리입니다","-Xlzej8RTTU?si=-39hgQMewDeuAYd2","asia",455,460,77.2167,28.6667,1273294);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Seoul","서울은 대한민국의 수도로, 전통과 현대가 공존하는 도시입니다. 고궁, 전통시장, 한강의 아름다운 풍경과 함께 최첨단 건축물, 쇼핑몰, 세계적인 음식 문화를 경험할 수 있습니다. 역사적 명소와 문화의 거리, 다채로운 먹거리와 쇼핑, 활기찬 나이트라이프까지, 서울은 방문객에게 잊지 못할 추억을 선사합니다.","viIhOorr11I?si=aOuXe9YNoefW62Jm","asia",730,315,126.9778,37.5683,1835847);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Tokyo","도쿄는 일본의 수도로, 놀라운 기술, 전통과 현대 문화의 완벽한 조화를 경험할 수 있는 세계적인 메트로폴리스입니다. 고즈넉한 신사와 정원에서부터 번화한 시부야와 긴자의 쇼핑가, 미슐랭 스타 레스토랑까지, 도쿄는 다양한 매력을 지닌 도시입니다. 애니메이션과 패션의 중심지로도 유명하며, 방문객들은 전통과 혁신이 어우러진 도쿄의 독특한 분위기를 만끽할 수 있습니다.","iHSK0Jq8GDs?si=DsrIotXWkxfX1I2g","asia",845,320,139.6917,35.6895,1850147);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Delhi","인도 델리입니다","-Xlzej8RTTU?si=-39hgQMewDeuAYd2","asia",460,455,77.2167,28.6667,1273294);
 
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Paris","프랑스 파리입니다","WHNNHAoaZD4?si=bcO4MTWWc_BgOm6m","europe",355,320,2.3488,48.8534,2988507);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("London","영국 런던입니다","G5V4wBjR880?si=PndS_YaRq_f2FhnD","europe",415,380,-0.1257,51.5085,2643743);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Warsaw","폴란드 바르샤바입니다","FcjeOHCLaDQ?si=6LkLU63AhNeBPp23","europe",370,510,21.0614,52.2331,7531926);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Paris","프랑스 파리입니다","WHNNHAoaZD4?si=bcO4MTWWc_BgOm6m","europe",320,355,2.3488,48.8534,2988507);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("London","영국 런던입니다","G5V4wBjR880?si=PndS_YaRq_f2FhnD","europe",380,415,-0.1257,51.5085,2643743);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Warsaw","폴란드 바르샤바입니다","FcjeOHCLaDQ?si=6LkLU63AhNeBPp23","europe",510,370,21.0614,52.2331,7531926);
 
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Quebec","퀘벡입니다","b0skYkjbZto?si=ytqkvMKBdiNnPww4","northAmerica",205,615,-71.9991,52.0002,6115047);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Los Angeles","LA입니다","o-U7UlZ6vcA?si=Y0NMpejwHHJfUyBt","northAmerica",340,325,-118.2437,34.0522,5368361);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Merida","메리다입니다","_h5SnqZVtD4?si=RatABxh1e9eNJu-B","northAmerica",470,530,-89.6167,20.9667,3523349);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Quebec","퀘벡입니다","b0skYkjbZto?si=ytqkvMKBdiNnPww4","northAmerica",615,205,-71.9991,52.0002,6115047);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Los Angeles","LA입니다","o-U7UlZ6vcA?si=Y0NMpejwHHJfUyBt","northAmerica",325,340,-118.2437,34.0522,5368361);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Merida","메리다입니다","_h5SnqZVtD4?si=RatABxh1e9eNJu-B","northAmerica",530,470,-89.6167,20.9667,3523349);
 
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Buenos Aires","아르헨티나","oTDXnAXw66Y?si=IMh5o3iO29UqiQKn","southAmerica",410,575,-58.3772,-34.6132,3435910);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Lima","페루 리마입니다","dk-NdzCrxvw?si=XnlFFt_iXXhOtlGh","southAmerica",220,510,-77.0282,-12.0432,3936456);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Cascavel","브라질 카스카벨입니다","5R3eZqy-_gc?si=6kwg0u7q1b64HaQn","southAmerica",280,700,-53.4553,-24.9558,3466779);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Buenos Aires","아르헨티나","oTDXnAXw66Y?si=IMh5o3iO29UqiQKn","southAmerica",575,410,-58.3772,-34.6132,3435910);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Lima","페루 리마입니다","dk-NdzCrxvw?si=XnlFFt_iXXhOtlGh","southAmerica",510,220,-77.0282,-12.0432,3936456);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Cascavel","브라질 카스카벨입니다","5R3eZqy-_gc?si=6kwg0u7q1b64HaQn","southAmerica",700,280,-53.4553,-24.9558,3466779);
 
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Nairobi","케냐 나이로비입니다","RNPk-cx5NgE?si=TxMoCC-zOGS8sKP7","africa",280,670,36.8167,-1.2833,184745);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Cairo","이집트 카이로입니다","6OhdZ9TurMs?si=Vm_DokeGFZeKTDJF","africa",110,570,31.2497,30.0626,360630);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Nairobi","케냐 나이로비입니다","RNPk-cx5NgE?si=TxMoCC-zOGS8sKP7","africa",670,280,36.8167,-1.2833,184745);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Cairo","이집트 카이로입니다","6OhdZ9TurMs?si=Vm_DokeGFZeKTDJF","africa",570,110,31.2497,30.0626,360630);
 insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Cape Town","남아프리카공화국 케이프타운입니다","69DzEF_RAcA?si=wESARcCaGB1FF0GN","africa",500,500,18.4232,-33.9258,3369157);
 
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Sydney","호주 시드니입니다","2QVwEWIKMI8?si=Vd3gdmeuiUqdvpPq","oceania",265,640,151.2073,-33.8679,2147714);
-insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Christchurch","뉴질랜드 크라이스트처치입니다","JuKUY0yKeaI?si=KYu45NJQ3vJf-pX1","oceania",460,835,172.6333,-43.5333,2192362);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Sydney","호주 시드니입니다","2QVwEWIKMI8?si=Vd3gdmeuiUqdvpPq","oceania",640,265,151.2073,-33.8679,2147714);
+insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Christchurch","뉴질랜드 크라이스트처치입니다","JuKUY0yKeaI?si=KYu45NJQ3vJf-pX1","oceania",835,460,172.6333,-43.5333,2192362);
 
 insert into area(name, contents, link_url,continent,dir_X,dir_Y, lon, lat, id) values("Antarctica","남극 펭귄입니다","OfO6zxvhtBg?si=uacMkJOK2moZadJA","antarctica",500,500,18.4232,-33.9258,6255152);
+
 select * from area;
 
 create table comment(

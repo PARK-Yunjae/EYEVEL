@@ -3,10 +3,11 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ include file="../parts/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/city.css">
+<!-- suncalc 라이브러리. 일출일몰계산 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.8.0/suncalc.min.js"></script>
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a495181d358f544f386983af5609309d"></script>
 	<!-- 위도와 경도에 따른 일출 일몰시간을 계산해주는 npm -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.8.0/suncalc.min.js"></script>
 	
 <script>
 	function openPanorama() {
@@ -37,14 +38,8 @@
 		<div class="city_nav">
 			<h2>${area.name}<div class="description"></div></h2>
 		<div>
-			<h3>
-				<a href="//24timezones.com/${area.name}/time" style="text-decoration: none"
-					class="clock24"
-					id="tz24-1709088500-c1235-eyJob3VydHlwZSI6IjI0Iiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIxIiwic2hvd3RpbWV6b25lIjoiMSIsInR5cGUiOiJkIiwibGFuZyI6ImVuIn0="
-					title="Seoul time" target="_blank">현재시각</a>
-				<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
-			</h3>
-
+			<h3>현재시간
+			<div id="localTime">Loading...</div></h3>
 			</div>
 			<c:if test="${loginId ne null}"> <a
 				href='${ctx}/<c:if test="${zzim eq null}">zzimAdd.do?no=${area.no}&id=${loginId}</c:if><c:if test="${zzim ne null}">zzimDelete.do?no=${area.no}&id=${loginId}</c:if>'>
