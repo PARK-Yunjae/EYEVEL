@@ -1,5 +1,7 @@
 package com.eyevel.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.eyevel.util.MybatisConfig;
@@ -16,14 +18,21 @@ public class ZzimDAO {
 
 	public Zzim zzimMemberList(Zzim zzim) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
-		Zzim z = session.selectOne("ZzimMemberList",zzim);
+		Zzim z = session.selectOne("ZzimMemberList", zzim);
+		session.close();
+		return z;
+	}
+
+	public List<Zzim> zzimMemberListById(Zzim zzim) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		List<Zzim> z = session.selectList("ZzimMemberListById", zzim);
 		session.close();
 		return z;
 	}
 
 	public void zzimDelete(Zzim checkZzim) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
-		session.delete("ZzimDelete",checkZzim);
+		session.delete("ZzimDelete", checkZzim);
 		session.commit();
 		session.close();
 
@@ -32,25 +41,25 @@ public class ZzimDAO {
 	public void zzimAdd(Zzim checkZzim) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		System.out.println(checkZzim);
-		session.insert("ZzimAdd",checkZzim);
+		session.insert("ZzimAdd", checkZzim);
 		session.commit();
 		session.close();
 	}
 
 	public void zzimDeletebyId(String id) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
-		session.delete("ZzimDeleteById",id);
+		session.delete("ZzimDeleteById", id);
 		session.commit();
 		session.close();
-		
+
 	}
-	
+
 	//관광지 넘버로 찜목록 삭제
 	public void zzimDeletebyNo(int area_no) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
-		session.delete("ZzimDeleteByNo",area_no);
+		session.delete("ZzimDeleteByNo", area_no);
 		session.commit();
 		session.close();
 	}
-	
+
 }

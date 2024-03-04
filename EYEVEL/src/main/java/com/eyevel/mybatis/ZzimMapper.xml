@@ -8,7 +8,7 @@
 		resultType="Zzim">
 		select * from zzim where member_id=#{member_id} and area_no=#{area_no}
 	</select>
-	<select id="ZzimMemberListById" parameterType="Zzim">
+	<select id="ZzimMemberListById" parameterType="Zzim" resultType="Zzim">
 		select * from zzim where member_id=#{member_id}
 	</select>
 	<insert id="ZzimAdd" parameterType="Zzim">

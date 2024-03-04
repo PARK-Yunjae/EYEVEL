@@ -91,6 +91,7 @@ input.readonly:focus{outline: none;}
 .zzim_list p{margin-bottom: 15px;}
 #zzim_list .fa-arrow-right{transition: all .3s;}
 #zzim_list a:hover .fa-arrow-right{transform: translateX(5px);}
+.zzim_list .content {text-overflow: ellipsis;}
 .zzim_list .content span .fa-heart{transition: all .3s;}
 .zzim_list .content span .fa-heart:hover{transform: scale(1.1);}
 .zzim_list .content span .fa-heart:active{transform: scale(0.9);}
