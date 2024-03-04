@@ -22,7 +22,7 @@
 			</li>
 			<li onclick="location.href='${ctx}/adminAreaList.do'">
 				<div class="image">
-				<img src="https://picsum.photos/id/142/200/200" alt="관광지이미지"></div>
+				<img src="${ctx}/img/weather/Seoul/gwanghwamun_sunny.jpg" alt="관광지이미지"></div>
 				<p>관광지 관리</p>
 			</li>
 		</ul>

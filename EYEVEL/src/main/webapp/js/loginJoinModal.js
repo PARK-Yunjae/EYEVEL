@@ -12,16 +12,17 @@ function loginModal() {
 	document.querySelector(".login_pw_msg").style.display = "none";
 	document.querySelector(".modal_login").classList.add("active");
 
-	// 검은배경
-	overlay = document.createElement('div');
-	overlay.setAttribute('class', 'overlay');
-	document.body.appendChild(overlay);
+	if(overlay==null) createOverlay();
 }
 
 // 로그인 모달에서 닫기 버튼을 클릭 시 
 function loginExitBtn() {
 	document.querySelector(".modal_login").classList.remove("active");
-	document.body.removeChild(overlay);
+	if(overlayCheck) {
+		document.body.removeChild(overlay);
+		overlay=null;
+	}
+	overlayCheck = false;
 }
 
 // 로그인 id 값 변경시 - 거기에 엔터일땐 넘어가게
@@ -113,7 +114,11 @@ function joinModal() {
 // 회원가입 모달에서 닫기 버튼을 클릭 시 
 function joinExitBtn() {
 	document.querySelector(".join_modal").classList.remove("active");
-	document.body.removeChild(overlay);
+	if(overlayCheck) {
+		document.body.removeChild(overlay);
+		overlay=null;
+	}
+	overlayCheck = false;
 }
 
 let joinPass = true;
