@@ -8,26 +8,26 @@
 유럽
 파리 : 2988507 - "lon":2.295038,"lat":2.295038 - Triumphal Arch
 런던 : 2643743 - "lon":-0.124636,"lat":51.500722 - bigben
-바르샤바 : 7531926 - "lon":21.0614,"lat":52.2331 - warsaw
+바르샤바 : 7531926 - "lon":21.014124,"lat":52.247741 - warsaw
 
 북중미
-퀘벡 : 6115047 - "lon":-71.9991,"lat":52.0002 - old Quebec
-Los Angeles : 5368361 - "lon":-118.2437,"lat":34.0522 - disneyland
-메리다 : 3523349 - "lon":-89.6167,"lat":20.9667 - Chichen Itza
+퀘벡 : 6115047 - "lon":-71.205463,"lat":46.812909 - old Quebec
+Los Angeles : 5368361 - "lon":-117.918952,"lat":33.812100 - disneyland
+메리다 : 3523349 - "lon":-88.567800,"lat":20.684264 - Chichen Itza
 
 남미
-부에노스 아이레스 : 3435910 - "lon":-58.3772,"lat":-34.6132 - Mar Del Plata
-리마 : 3936456 - "lon":-77.0282,"lat":-12.0432 - miraflores
-카스카벨 : 3466779 - "lon":-53.4553,"lat":-24.9558 - iguazu
+부에노스 아이레스 : 3435910 - "lon":-57.532559,"lat":-38.012128 - Mar Del Plata
+리마 : 3936456 - "lon":-77.046271,"lat":-12.121535 - miraflores
+카스카벨 : 3466779 - "lon":-54.434885,"lat":-25.692329 - iguazu
 
 아프리카
-나이로비 : 184745 - "lon":36.8167,"lat":-1.2833 - Nairobi National Park
-카이로 : 360630 - "lon":31.2497,"lat":30.0626 - pyramid
-케이프타운 : 3369157 - "lon":18.4232,"lat":-33.9258 - Cape of Good Hope
+나이로비 : 184745 - "lon":36.861034,"lat":-1.382533 - Nairobi National Park
+카이로 : 360630 - "lon":31.132487,"lat":29.977285 - pyramid
+케이프타운 : 3369157 - "lon":18.473985,"lat":-34.356829 - Cape of Good Hope
 
 오세아니아
-시드니 : 2147714 - "lon":151.2073,"lat":-33.8679 - Opera House
-크라이스트처치 : 2192362 - "lon":172.6333,"lat":-43.5333 - Orana Wildlife Park
+시드니 : 2147714 - "lon":151.215339,"lat":-33.856775 - Opera House
+크라이스트처치 : 2192362 - "lon":172.463070,"lat":-43.467099 - Orana Wildlife Park
 
 그 외
-남극 : 6255152 - "lon":16.4063,"lat":-78.1586 - Antarctica
+남극 : 6255152 - "lon":39.263208,"lat":-69.030411 - Antarctica
