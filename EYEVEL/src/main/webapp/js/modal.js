@@ -11,7 +11,7 @@ function createOverlay(){
     overlayCheck = true;	
 }
 
-function modalMsgWarning(titleMsg, contentMsg){
+function modalMsgWarning(titleMsg, contentMsg, check){
 	let title = document.querySelector('.modal_warning h2');
 	let content = document.querySelector('.modal_warning p');
 	title.innerHTML = warningIcon+titleMsg;
@@ -23,11 +23,11 @@ function modalMsgWarning(titleMsg, contentMsg){
 
 	document.querySelector('.modal_warning .btn').addEventListener('click', e=>{
 		document.querySelector('.modal_warning').classList.remove('active');
-		if(overlayCheck) {
+		if(overlayCheck && !check) {
 			document.body.removeChild(overlay);
 			overlay=null;
+			overlayCheck = false;
 		}
-		overlayCheck = false;
 	})
 }
 

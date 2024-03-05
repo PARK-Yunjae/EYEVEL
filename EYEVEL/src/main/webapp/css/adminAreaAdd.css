@@ -69,3 +69,12 @@ input.readonly{border: none;border-bottom: 1px solid var(--gray);border-radius: 
 .addAreaSection input[type=button]{
    margin-top:var(--padding);
 }
+
+
+@media screen and (max-width: 1200px) {
+	.addAreaSection form{width: 100%;}
+}
+@media screen and (max-width: 900px) {
+	.image_box>div{flex-wrap: wrap;}
+	.image_box>div label{width: 45%;margin-top: 60px;}
+}

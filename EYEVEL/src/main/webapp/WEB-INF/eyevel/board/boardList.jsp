@@ -33,7 +33,7 @@
 			<tr>
 				<th>No</th>
 				<th>카테고리</th>
-				<th style="width: 40%;">제목</th>
+				<th class="board_title">제목</th>
 				<th>작성자</th>
 				<th>작성일</th>
 				<th>조회수</th>
