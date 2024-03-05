@@ -51,10 +51,11 @@
 			<h3>현재시간
 			<div id="localTime">Loading...</div></h3>
 			</div>
-			<c:if test="${loginId ne null}"> <a
-				href='${ctx}/<c:if test="${zzim eq null}">zzimAdd.do?no=${area.no}&id=${loginId}</c:if><c:if test="${zzim ne null}">zzimDelete.do?no=${area.no}&id=${loginId}</c:if>'>
-				<div class="zzimBtn">
-					<i class="fa<c:if test="${zzim eq null}">r</c:if> fa-heart"></i>
+			<c:if test="${loginId ne null}">
+			 <div class="zzimBtn" >
+			 <span onclick="likeBtnCheck('${area.no}')">
+					<i id="Zzim" class="fa-heart fa<c:if test="${zzim eq null}">r</c:if>"></i>			 
+			 </span>
 				</div></c:if>
 			</a>
 
@@ -80,7 +81,7 @@
 								<h3>${area.name}</h3>
 								<p>${area.contents}</p>
 								<div>
-									<a href="javascript:void(0)" onclick="openPanorama()">파노라마
+									<a href="javascript:void(0)" onclick="openPanorama()" class="panorama_btn">파노라마
 										뷰 보러가기 <i class="fas fa-arrow-right"></i>
 									</a>
 								</div>
@@ -131,5 +132,11 @@
 		</div>
 	</div>
 </section>
+</div>
+<div class="modal modal_panorama">
+	<h2 class="title">지역이름</h2>
+	<p>짧은 설명</p>
+	<div class="panorama"></div>
+	<i class="fas fa-times" onclick="closePanorama()"></i>
 </div>
 <%@ include file="../parts/footer.jsp"%>

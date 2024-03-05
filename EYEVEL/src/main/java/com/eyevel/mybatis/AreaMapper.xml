@@ -37,8 +37,8 @@ select * from area where continent=#{area}
 
 <update id="areaUpdate" parameterType="Area">
 	update area
-    set
-    link_url=#{link_url}, contents=#{contents}
-    where no=#{no}
+	set
+	link_url=#{link_url}, contents=#{contents}
+	where no=#{no}
 </update>
 </mapper>

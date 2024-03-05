@@ -13,6 +13,8 @@ public class AreaEarthController implements Controller{
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		String area = req.getParameter("area");
+		req.setAttribute("area", area);
 		
 		return "eyevel/area/earth";
 	}

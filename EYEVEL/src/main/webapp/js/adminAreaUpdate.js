@@ -34,21 +34,7 @@ function adminAreaAddCheck(form){
 		document.querySelector(".area_url_msg").style.display = "block";
 		return false;
 	}
-	
-	let am_weather = document.querySelectorAll(".am_weather");
-	let amCheck = false;
-	
-	am_weather.forEach(e =>{
-		console.log(e.value);
-		if(!e.value.trim()){
-			amCheck = true;
-		}
-	})
-	
-	if(amCheck){
-		document.querySelector(".area_img_msg").style.display = "block";
-		return false;
-	}
+
 	
 	if(!form.area_contents.value.trim()){
 		document.querySelector(".area_contents_msg").style.display = "block";
@@ -80,7 +66,6 @@ document.getElementById("area_url").addEventListener("keyup", () =>{
 
 // 관광지 배경 이미지 값 변경될 때
 let am_weather = document.querySelectorAll(".am_weather");
-let amCheck = false;
 	
 am_weather.forEach(e =>{
 	// 관광지 배경 이미지 값 변경될 때

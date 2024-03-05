@@ -1,5 +1,5 @@
 document.querySelector('header').classList.add('black');
-document.querySelector('html').style.background="none";
+document.querySelector('html').style.background = "none";
 
 let nameClick = false;
 
@@ -10,15 +10,15 @@ let updatePass = true;
 let deletePass = true;
 
 // 테스트 용
-window.onload = function(){
+window.onload = function() {
 	let img = document.querySelector("#profileImg");
 	console.log(img);
 }
 
 // 이름 변경 활성화 비활성화 함수
-function nameOnOff(){
+function nameOnOff() {
 	updatePass = true;
-	
+
 	let input = document.getElementById("name_input");
 	let p = document.getElementById("name_p");
 	let i = document.getElementById("input_name_i");
@@ -46,8 +46,8 @@ function nameUpdate() {
 }
 
 // 이름 변경시에 엔터를 누르면
-document.getElementById("name_input").addEventListener("keyup", e =>{
-	if(e.code == "Enter"){
+document.getElementById("name_input").addEventListener("keyup", e => {
+	if (e.code == "Enter") {
 		nameOnOff();
 	}
 })
@@ -67,59 +67,78 @@ function readURL(input) {
 }
 
 // 업데이트 전 체크
-function memberUpdateCheck(form,pw){
-	if(!updatePass){
+function memberUpdateCheck(form, pw) {
+	if (!updatePass) {
 		return false;
 	}
 	updatePass = false;
-	
-	if(form.pw.value.trim() == ""){
+
+	if (form.pw.value.trim() == "") {
 		console.log("비번입력 안함");
 		document.querySelector(".info_pw_msg").innerHTML = "비밀번호를 입력해주세요";
 		document.querySelector(".info_pw_msg").style.display = "block";
 		updatePass = true;
 		return false;
 	}
-	else if(form.pw.value != pw){
+	else if (form.pw.value != pw) {
 		console.log("비번틀림");
 		document.querySelector(".info_pw_msg").innerHTML = "비밀번호가 틀렸습니다";
 		document.querySelector(".info_pw_msg").style.display = "block";
 		updatePass = true;
 		return false;
 	}
-	let sendForm = function(){form.submit()};
-	modalCheck("잠깐","정말 수정하시겠습니까?<br>수정 전 정보는 사라지게 됩니다.",sendForm);
-	updatePass = true;	
+	let sendForm = function() { form.submit() };
+	modalCheck("잠깐", "정말 수정하시겠습니까?<br>수정 전 정보는 사라지게 됩니다.", sendForm);
+	updatePass = true;
 }
 
 // pw 값 변경시
-document.querySelector(".info_pw_msg").addEventListener("keyup", () =>{
+document.querySelector(".info_pw_msg").addEventListener("keyup", () => {
 	updatePass = true;
 	document.querySelector(".info_pw_msg").style.display = "none";
 })
 
 //회원 탈퇴 전 체크
-function memberDeleteCheck(form,pw,id){
-	if(!deletePass){
+function memberDeleteCheck(form, pw, id) {
+	if (!deletePass) {
 		return false;
 	}
 	deletePass = false;
-	
-	if(form.pw.value.trim() == ""){
+
+	if (form.pw.value.trim() == "") {
 		console.log("비번입력 안함");
 		document.querySelector(".info_pw_msg").innerHTML = "비밀번호를 입력해주세요";
 		document.querySelector(".info_pw_msg").style.display = "block";
 		deletePass = true;
 		return false;
 	}
-	else if(form.pw.value != pw){
+	else if (form.pw.value != pw) {
 		console.log("비번틀림");
 		document.querySelector(".info_pw_msg").innerHTML = "비밀번호가 틀렸습니다";
 		document.querySelector(".info_pw_msg").style.display = "block";
 		deletePass = true;
 		return false;
 	}
-	let deleteFun = function(){location.href=contextPath+'/memberDelete.do?id='+id;}
-	modalCheck("잠깐","정말 탈퇴하시겠습니까?<br>탈퇴 후 정보는 모두 사라지게 됩니다.",deleteFun);
-	deletePass = true;	
+	let deleteFun = function() { location.href = contextPath + '/memberDelete.do?id=' + id; }
+	modalCheck("잠깐", "정말 탈퇴하시겠습니까?<br>탈퇴 후 정보는 모두 사라지게 됩니다.", deleteFun);
+	deletePass = true;
+}
+
+// 좋아요 버튼 눌렀을 시
+function zzimBtnCheck(no) {
+	let heart = document.querySelector("#heart");
+	let url;
+	if (heart.classList.item(2) == "fa") {
+		url = "zzimDelete.do";
+		heart.classList.remove("fa");
+		heart.classList.add("far");
+	}
+	fetch(url, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+		},
+		body: "no=" + no
+	})
+		.then(response => response.text())
 }

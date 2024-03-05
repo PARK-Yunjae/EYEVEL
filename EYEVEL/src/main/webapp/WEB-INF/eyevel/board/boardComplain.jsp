@@ -23,7 +23,7 @@ pageContext.setAttribute("cn", "\n");
 		<c:forEach var="list" items="${list}">
 			<div class="complain_main cate${list.category} on">
 				<div class="complain_title">
-					<div class="complain_category_text"><c:if test="${list.category eq '91'}">계정</c:if>
+					<div class="complain_category_text">
 						<c:if test="${list.category eq '90'}">전체</c:if>
 						<c:if test="${list.category eq '91'}">계정</c:if>
 						<c:if test="${list.category eq '92'}">게시판</c:if>
