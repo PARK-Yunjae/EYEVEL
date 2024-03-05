@@ -70,5 +70,11 @@
 .talkbubble_right::before {border-right: 26px solid var(--white);right: 100%;}
 
 @media screen and (max-width: 900px) {
-	.earthSection img{display: none;}
+	.city_background_img{display: none;}
+	.earthSection ul{display: flex;flex-direction: column;}
+	.city_btn{
+		position: static;
+		
+	}
+	.talkbubble_left, .talkbubble_right {display: block;}
 }
