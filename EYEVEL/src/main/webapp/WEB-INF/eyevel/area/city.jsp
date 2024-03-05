@@ -122,9 +122,8 @@
 								<p>${c.reg_datetime}</p>
 							</div>
 							<p>${c.contents}</p>
-							<button
-								onclick="location.href='${ctx}/commentDelete.do?no=${c.no}&areaId=${area.id}'"
-								<c:if test="${c.member_id ne loginId}">style="display:none"</c:if>>삭제</button>
+							<button onclick="location.href='${ctx}/commentDelete.do?no=${c.no}&areaNo=${area.no}'"
+						<c:if test="${c.member_id ne loginId && loginId ne 'admin'}">style="display:none"</c:if>>삭제</button>
 						</div>
 					</li>
 				</c:forEach>
