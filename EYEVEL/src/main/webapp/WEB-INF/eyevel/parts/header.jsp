@@ -3,7 +3,7 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html
-	style="background-image: linear-gradient(#00000033, #00000033), url('https://picsum.photos/id/74/4000/2000')">
+	style="background-image: linear-gradient(#00000033, #00000033), url('${ctx}/img/background.jpg')">
 <head>
 <meta charset="UTF-8">
 <title>EYEVEL</title>
