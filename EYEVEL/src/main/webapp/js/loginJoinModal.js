@@ -200,8 +200,9 @@ function joinCheck(form) {
 		return false;
 	}
 	if (!idCheckPass) {
-		console.log("들어옵니까");
-		alert("중복 ID 체크 해주세요");
+		document.querySelector(".join_id_msg").innerHTML = "중복 ID 체크 해주세요";
+		document.querySelector(".join_id_msg").style.color = "#ff6969";
+		document.querySelector(".join_id_msg").style.display = "block";
 		return false;
 	}
 	alert("회원가입 완료");
@@ -245,6 +246,7 @@ document.getElementById("join_email").addEventListener("keyup", () => {
 
 // 중복 id 체크 - 비동기
 document.getElementById("join_idCheck").addEventListener("click", () => {
+	joinPass = true;
 	let id = document.getElementById("join_id").value.trim();
 	// id값이 비어 있다면
 	if (id === "") {

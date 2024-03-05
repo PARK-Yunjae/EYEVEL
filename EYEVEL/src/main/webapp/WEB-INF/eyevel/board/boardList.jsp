@@ -17,8 +17,8 @@
 		<button class="btn" onclick="boardAddCheck('${loginId}')">글쓰기</button>
 		<ul class="category">
 			<li class=
-				<c:if test="${category ne 'all'}">"all"</c:if>
-				<c:if test="${category eq 'all'}">"all on"</c:if>
+				<c:if test="${!empty category && category ne 'all'}">"all"</c:if>
+				<c:if test="${empty category || category eq 'all'}">"all on"</c:if>
 			>전체</li>
 			<li class=
 				<c:if test="${category ne 'notice'}">"notice"</c:if>

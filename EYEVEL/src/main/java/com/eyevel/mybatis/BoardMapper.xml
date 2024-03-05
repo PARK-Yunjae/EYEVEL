@@ -5,7 +5,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eyevel.mybatis.BoardMapper">
 	<select id="boardList" resultType="Board">
-		select * from board where <![CDATA[category < 90]]>;
+		select * from board where <![CDATA[category < 90]]> order by no desc;
 	</select>
 
 	<insert id="boardAdd" parameterType="Board">
@@ -61,13 +61,27 @@
 	
 	<!-- 카테고리 구분 없이 제목 or 내용을 전체 검색 -->
 	<select id="boardSearchList" parameterType="String" resultType="Board">
-		select * from board where <![CDATA[category < 90]]> and (title like CONCAT('%', #{searchText}, '%') or contents like CONCAT('%', #{searchText}, '%'));
+		select * from board 
+		where <![CDATA[category < 90]]> and 
+		(title like CONCAT('%', #{searchText}, '%') or contents like CONCAT('%', #{searchText}, '%'))
+		order by no desc;
 	</select>
 	
 	<!-- 카테고리 선택 시 카테고리 안에서 제목 or 내용을 검색 -->
 	<select id="boardSearchCategoryList" parameterType="Map" resultType="Board">
 		select * from board 
 		where (<![CDATA[category < 90]]> and category like CONCAT('%', #{category}, '%') )
-		and (title like CONCAT('%', #{searchText}, '%') or contents like CONCAT('%', #{searchText}, '%'));
+		and (title like CONCAT('%', #{searchText}, '%') or contents like CONCAT('%', #{searchText}, '%'))
+		order by no desc;
 	</select>
+	
+	<!-- 게시글에서 좋아요를 누르면 1추가 -->
+	<update id="addBoardHeart" parameterType="Integer">
+		update board set heart = heart + 1 where no = #{no};
+	</update>
+	
+	<!-- 게시글에서 좋아요를 누르면 1삭제 -->
+	<update id="deleteBoardHeart" parameterType="Integer">
+		update board set heart = heart - 1 where no = #{no};
+	</update>
 </mapper>
