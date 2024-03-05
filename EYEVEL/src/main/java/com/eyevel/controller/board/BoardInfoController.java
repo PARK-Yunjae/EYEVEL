@@ -1,6 +1,7 @@
 package com.eyevel.controller.board;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import com.eyevel.dao.BoardDAO;
 import com.eyevel.dao.BoardLikeDAO;
@@ -29,12 +30,15 @@ public class BoardInfoController implements Controller {
 		BoardDAO.getInstance().boardCount(no);
 		Board b = BoardDAO.getInstance().boardDetail(no);
 		req.setAttribute("board", b);
-		// 프로필 이미지도 가져오기
-		String id = (String)req.getSession().getAttribute("loginId");
+		// 프로필 이미지도 가져오기 - 여기는 게시글을 남긴 유저
+		String id = b.getMember_id();
 		Member m = MemberDAO.getInstance().memberContent(id);
 		req.setAttribute("member", m);
-		// 좋아요 버튼 눌렀으면 같이 보내주자
-		BoardLike bl = BoardLikeDAO.getInstance().getMyBoardLike(no);
+		// 좋아요 버튼 눌렀으면 같이 보내주자 - 여기는 로그인을 한 유저
+		HashMap<String, String> myLike = new HashMap<String, String>();
+		myLike.put("board_no", no + "");
+		myLike.put("member_id", (String)req.getSession().getAttribute("loginId"));
+		BoardLike bl = BoardLikeDAO.getInstance().getMyBoardLike(myLike);
 		if(bl != null) req.setAttribute("boardlike", bl);
 		
 		return "eyevel/board/boardInfo";

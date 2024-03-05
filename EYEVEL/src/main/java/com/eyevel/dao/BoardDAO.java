@@ -77,18 +77,34 @@ public class BoardDAO {
 		session.close();
 		return list;
 	}
-	
+
 //	검색 리스트 가져오기
 	public List<Board> boardSearchList(HashMap<String, String> strs) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		List<Board> list = null;
-		if(strs.get("category").equals("-1")) {
+		if (strs.get("category").equals("-1")) {
 			String searchText = strs.get("searchText");
 			list = session.selectList("boardSearchList", searchText);
-		}else {
+		} else {
 			list = session.selectList("boardSearchCategoryList", strs);
 		}
 		session.close();
 		return list;
+	}
+
+// 게시판에서 좋아요를 누르면 추가
+	public void addBoardLike(int no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.update("addBoardHeart", no);
+		session.commit();
+		session.close();
+	}
+
+// 	게시판에서 좋아요를 누르면 삭제
+	public void deleteBoardLike(int no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.update("deleteBoardHeart", no);
+		session.commit();
+		session.close();
 	}
 }

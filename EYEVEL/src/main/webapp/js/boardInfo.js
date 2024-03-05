@@ -16,7 +16,11 @@ function optionCheck(){
 }
 
 // 좋아요 버튼 눌렀을 시 
-function likeBtnCheck(no){
+function likeBtnCheck(no,loginId){
+	// 로그인 안한 유저는 못함
+	if(loginId == ""){
+		return false;
+	}
 	let heart = document.querySelector("#heart");
 	let heart_count = document.querySelector(".board_heart_count");
 	let url;
@@ -24,13 +28,13 @@ function likeBtnCheck(no){
 		url = "validAddBoardLike.do";
 		heart.classList.remove("far");
 		heart.classList.add("fa");
-		heart_count.value = heart_count.value - 1;
+		heart_count.innerHTML = parseInt(heart_count.innerHTML) + 1;
 	}
 	else if(heart.classList.item(2) == "fa"){
 		url = "validDeleteBoardLike.do";
 		heart.classList.remove("fa");
 		heart.classList.add("far");
-		heart_count.value = heart_count.value + 1;
+		heart_count.innerHTML = parseInt(heart_count.innerHTML) - 1;
 	}
 	
 	fetch(url, {
@@ -40,5 +44,4 @@ function likeBtnCheck(no){
 		},
 		body: "no="+no
 	})
-	.then(response => response.text())
 }

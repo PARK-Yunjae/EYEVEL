@@ -2,6 +2,7 @@ package com.eyevel.controller.boardLike;
 
 import java.io.IOException;
 
+import com.eyevel.dao.BoardDAO;
 import com.eyevel.dao.BoardLikeDAO;
 import com.eyevel.frontController.Controller;
 import com.eyevel.vo.BoardLike;
@@ -15,7 +16,7 @@ public class VaildAddBoardLikeController implements Controller{
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		
+		// boardLike
 		int no = Integer.parseInt(req.getParameter("no"));
 		String id = (String)req.getSession().getAttribute("loginId");
 		
@@ -23,6 +24,9 @@ public class VaildAddBoardLikeController implements Controller{
 		bl.setBoard_no(no);
 		bl.setMember_id(id);
 		BoardLikeDAO.getInstance().addBoardLike(bl);
+		System.out.println("여기까지");
+		// board
+		BoardDAO.getInstance().addBoardLike(bl.getBoard_no());
 		return null;
 	}
 

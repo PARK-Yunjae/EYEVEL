@@ -5,8 +5,8 @@
 <mapper namespace="com.eyevel.mybatis.BoardLikeMapper">
 	
 	<!-- 게시글 볼때 내 좋아요가 있으면 가져감 -->
-	<select id="getMyBoardLike" parameterType="Integer" resultType="BoardLike">
-		select * from boardLike where board_no=#{board_no}
+	<select id="getMyBoardLike" parameterType="Map" resultType="BoardLike">
+		select * from boardLike where board_no like #{board_no} and member_id like #{member_id}
 	</select>
 
 	<!-- 좋아요 추가 -->
@@ -16,7 +16,7 @@
 	
 	<!-- 좋아요 삭제 -->
 	<delete id="deleteBoardLike" parameterType="BoardLike">
-		delete from boardLike where board_no like #{board_no} and member_id like #{member_id}
+		delete from boardLike where board_no = #{board_no} and member_id like #{member_id}
 	</delete>
 	
 	

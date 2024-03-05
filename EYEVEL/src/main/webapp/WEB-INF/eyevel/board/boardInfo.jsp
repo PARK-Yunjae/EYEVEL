@@ -28,7 +28,7 @@ pageContext.setAttribute("cn", "\n");
 				<div class="edit">
 					<p>조회수 : ${board.hits}</p>
 					<div class="like">
-						<span id="like_btn" onclick="likeBtnCheck('${board.no}')">
+						<span id="like_btn" onclick="likeBtnCheck('${board.no}','${loginId}')">
 							<i id="heart"class=
 							<c:if test="${empty boardlike}">"fa-heart icon far "</c:if>
 							<c:if test="${!empty boardlike}">"fa-heart icon fa "</c:if>
