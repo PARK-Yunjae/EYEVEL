@@ -47,22 +47,31 @@ function likeBtnCheck(no,loginId){
 }
 
 // 댓글 버튼 클릭 시 
-function boardCommentCheck(loginId,board_no){
+function boardCommentCheck(form){
 	// 로그인 안한 유저는 못함
-	if(loginId == ""){
+	if(form.id.value == ""){
 		modalCheck("경고", "로그인이 필요합니다",loginModal);
 		return false;
 	}
-	let boardComment = document.getElementById("board_info_comment");
-	fetch("vaildInsertBoardComment.do", {
-		method: "POST",
-		headers:{
-			"Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8"
-		},
-		body: "loginId="+loginId+"&board_no="+board_no+"&boardComment="+boardComment
-	})
-	.then(response => response.text())
-	.then(bc => {
-
-	})
+	console.log(form.id.value);
+	console.log(form.board_info_comment.value);
+	// 내용이 없는 경우
+	if(form.board_info_comment.value.trim() == ""){
+		document.querySelector(".board_info_msg").style.display = "block";
+		return false;
+	}
+	form.submit();
 }
+
+// 댓글 입력란에서 엔터 시  
+document.getElementById("board_info_comment").addEventListener("keyup", e =>{
+	
+	if (e.code == "Enter") {
+		let form = document.getElementById("board_comment_form");
+		boardCommentCheck(form);
+	}else {
+		document.querySelector(".board_info_msg").style.display = "none";
+	}
+		
+})
+
