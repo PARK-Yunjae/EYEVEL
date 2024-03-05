@@ -125,19 +125,23 @@ function memberDeleteCheck(form, pw, id) {
 }
 
 // 좋아요 버튼 눌렀을 시
-function zzimBtnCheck(no) {
-	let heart = document.querySelector("#heart");
-	let url;
-	if (heart.classList.item(2) == "fa") {
-		url = "zzimDelete.do";
-		heart.classList.remove("fa");
-		heart.classList.add("far");
-	}
-	fetch(url, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
-		},
-		body: "no=" + no
+let zzimBtns = document.querySelectorAll(".zzim_btn");
+let hearts = document.querySelectorAll("#heart");
+zzimBtns.forEach((btn, i) => {
+	btn.addEventListener("click", () => {
+		let data = "no=" + encodeURIComponent(btn.dataset.no);
+		let url = "zzimDelete.do";
+		hearts[i].classList.remove("fa");
+		hearts[i].classList.add("far");
+		fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+			},
+			body: data
+		})
+			.then(response => {
+				window.location.reload();
+			})
 	})
-}
+})
