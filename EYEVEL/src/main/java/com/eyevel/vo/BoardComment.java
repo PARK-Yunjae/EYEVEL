@@ -41,12 +41,12 @@ public class BoardComment {
 		this.member_id = member_id;
 	}
 
-	public String getReg_Datetime() {
+	public String getReg_datetime() {
 		return reg_datetime;
 	}
 
-	public void setReg_Datetime(String reg_Datetime) {
-		this.reg_datetime = reg_Datetime;
+	public void setReg_datetime(String reg_datetime) {
+		this.reg_datetime = reg_datetime;
 	}
 
 	@Override

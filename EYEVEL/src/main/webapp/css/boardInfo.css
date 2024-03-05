@@ -87,13 +87,14 @@ div.board_comment{
    padding:var(--padding);
    border-radius: var(--radius);
 }
-div.board_comment div{
+div.board_comment form{
    display: flex;
    justify-content: space-between;
    margin-bottom: var(--padding);
 }
-div.board_comment div input[type=text]{margin-right:40px;background: var(--white);border: none;}
-div.board_comment div input[type=button]{width: 20%;}
+div.board_comment form .board_info_comment{position: relative;}
+div.board_comment form .board_info_comment input[type=text]{margin-right:40px;background: var(--white);border: none;}
+div.board_comment form input[type=button]{width: 20%;}
 
 /* 댓글 목록 */
 ul.board_comment_list li{

@@ -1,17 +1,11 @@
 package com.eyevel.controller.area;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 
 import com.eyevel.dao.AreaDAO;
-import com.eyevel.dao.AreaImgDAO;
 import com.eyevel.frontController.Controller;
 import com.eyevel.util.FileUtil;
 import com.eyevel.vo.Area;
-import com.eyevel.vo.AreaImg;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

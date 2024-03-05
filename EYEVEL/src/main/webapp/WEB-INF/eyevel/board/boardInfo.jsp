@@ -50,10 +50,15 @@ pageContext.setAttribute("cn", "\n");
 			<div class="board_content">${fn:replace(board.contents, cn, br)}</div>
 		</div>
 		<div class="board_comment">
-			<div>
-				<input type="text" name="board_info_comment" id="board_info_comment" placeholder="댓글 입력...">
-				<input type="button" class="button btn" value="등록" onclick="boardCommentCheck('${loginId}','${board.no}')">
-			</div>
+			<form action="${ctx}/boardCommentInsert.do" name="board_comment_form" id="board_comment_form" method="post">
+				<input type="hidden" name="id" value="${loginId}"> 
+				<input type="hidden" name="no" value="${board.no}"> 
+				<div class="board_info_comment">
+					<input type="text" name="board_info_comment" id="board_info_comment" placeholder="댓글 입력...">
+					<p class="msg board_info_msg">내용을 입력해 주세요</p>
+				</div>
+				<input type="button" class="button btn" value="등록" onclick="boardCommentCheck(form)">
+			</form>
 			<ul class="board_comment_list">
 				<c:forEach var="bc" items="${bclist}">
 					<!-- 현재날짜 가져온 뒤에 비교 (아직 미적용) -->
@@ -73,9 +78,9 @@ pageContext.setAttribute("cn", "\n");
 								<h4 class="name">${bc.member_id}</h4>
 								<p>${bc.reg_datetime}</p>
 							</div>
-							<p>${fn:replace(bc.contents, cn, br)}</p>
+							<p>${bc.comment}</p>
 							<button
-								onclick="location.href='${ctx}/commentDelete.do?no=${bc.no}&board_id=${board_id}'"
+								onclick="location.href='${ctx}/boardCommentDelete.do?no=${bc.no}'"
 								<c:if test="${bc.member_id ne loginId}">style="display:none"</c:if>>삭제</button>
 						</div>
 					</li>

@@ -71,7 +71,7 @@ public class HandlerMapping {
 		mappings.put("/validDeleteBoardLike.do", new VaildDeleteBoardLikeController()); // 비동기 게시물 좋아요 삭제
 	
 		// boardComment
-		mappings.put("/vaildInsertBoardComment.do", new VaildInsertBoardCommentController()); // 게시글 댓글 추가
+		mappings.put("/boardCommentInsert.do", new BoardCommentInsertController()); // 게시글 댓글 추가
 	}
 	
 	public Controller getController(String key) {
