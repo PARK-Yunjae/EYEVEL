@@ -20,14 +20,14 @@
                <h2>${city.name}</h2>${city.contents}
             </div>
             <a class="image"  id="${city.name}" onclick="location.href='${ctx}/areaCity.do?no=${city.no }&loginId=${loginId}'" >
-               <img src="https://picsum.photos/200/200" alt="">
+               <img src="http://localhost:8080/IMAGES/area/${city.name}/${city.link_url}.jpg" alt="">
             </a>
 		</div>
 	</li>
 	</c:forEach>
 	</ul>
 	</div>
-		<img src="${ctx}/img/continent/${area}.png"/>
+		<img class="city_background_img" src="${ctx}/img/continent/${area}.png"/>
 	</div>
 </section>
 <%@ include file="../parts/footer.jsp"%>
