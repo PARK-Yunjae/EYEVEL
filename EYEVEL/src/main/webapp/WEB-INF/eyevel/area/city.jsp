@@ -135,7 +135,7 @@
 <div class="modal modal_panorama">
 	<h2 class="title">지역이름</h2>
 	<p>짧은 설명</p>
-	<div class="panorama"></div>
+	<div id ="panorama" class="panorama"></div>
 	<i class="fas fa-times" onclick="closePanorama()"></i>
 </div>
 <%@ include file="../parts/footer.jsp"%>

@@ -87,7 +87,15 @@ let modal_panorama = document.querySelector('.modal_panorama');
 let panorama_btn = document.querySelectorAll('.panorama_btn');
 
 // 파노라마 모달창 띄우기
-function openPanorama(){modal_panorama.classList.add('active');}
+function openPanorama(){modal_panorama.classList.add('active');
+modal_panorama.style.width =  "800px";
+}
+window.initialize = function () {
+  const map = new google.maps.Map(document.getElementById("panorama"), {
+    center: { lat: lat, lng: lon },
+    zoom: 10,
+  });
+};
 
 // 파노라마 모달창 닫기
 function closePanorama(){modal_panorama.classList.remove('active');}
