@@ -78,7 +78,10 @@
 										보러가기 <i class="fas fa-arrow-right"></i>
 									</a>
 									<span id="zzim_btn" onclick="zzimBtnCheck('${a.no}')">
-										<i id="heart" class=<c:if test="${empty zzim}">"fa-heart icon far"</c:if> <c:if test="${!empty zzim}">"fa-heart icon fa"</c:if>></i>
+										<i id="heart" class=
+											<c:if test="${empty zzim}">"fa-heart icon far"</c:if> 
+											<c:if test="${!empty zzim}">"fa-heart icon fa"</c:if>>
+										</i>
 									</span>
 								</div>
 							</div>
