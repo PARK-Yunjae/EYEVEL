@@ -13,30 +13,28 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 // 게시글 댓글
-public class VaildInsertBoardCommentController implements Controller{
+public class BoardCommentInsertController implements Controller{
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		String loginId = req.getParameter("loginId");
-		String board_no = req.getParameter("board_no");
-		String boardComment = req.getParameter("boardComment");
+		String id = req.getParameter("id");
+		String board_no = req.getParameter("no");
+		String boardComment = req.getParameter("board_info_comment");
 		BoardComment bc = new BoardComment();
-		
+
+		System.out.println("실행1?");
 		bc.setBoard_no(Integer.parseInt(board_no));
 		bc.setComment(boardComment);
-		bc.setMember_id(loginId);
+		bc.setMember_id(id);
 		
 		LocalDateTime now = LocalDateTime.now();
 		String fnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-		bc.setReg_Datetime(fnow);
+		bc.setReg_datetime(fnow);
 		
 		BoardCommentDAO.getInstance().insertBoardComment(bc);
-		
-		// 게시글 하나 가져와서 실어줘야 함
-		bc = BoardCommentDAO.getInstance().getLastBoardComment();
-		res.getWriter().print(bc);
-		
-		return null;
+		String ctx = req.getContextPath();
+		System.out.println("실행2?");
+		return "redirect:" + ctx + "/boardInfo.do?no=" + board_no;
 	}
 
 }

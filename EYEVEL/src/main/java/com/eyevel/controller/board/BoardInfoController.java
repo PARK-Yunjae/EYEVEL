@@ -1,8 +1,8 @@
 package com.eyevel.controller.board;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import com.eyevel.dao.BoardCommentDAO;
 import com.eyevel.dao.BoardDAO;
@@ -44,8 +44,9 @@ public class BoardInfoController implements Controller {
 		BoardLike bl = BoardLikeDAO.getInstance().getMyBoardLike(myLike);
 		if(bl != null) req.setAttribute("boardlike", bl);
 		// 댓글 리스트도 불러서 가자
-		ArrayList<BoardComment> list = BoardCommentDAO.getInstance().selectBoardComments(no);
+		List<BoardComment> list = BoardCommentDAO.getInstance().selectBoardComments(no);
 		req.setAttribute("bclist", list);
+		System.out.println(list.size());
 		return "eyevel/board/boardInfo";
 	}
 

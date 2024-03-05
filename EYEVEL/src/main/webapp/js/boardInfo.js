@@ -56,11 +56,11 @@ function boardCommentCheck(form){
 	console.log(form.id.value);
 	console.log(form.board_info_comment.value);
 	// 내용이 없는 경우
-	if(form.board_info_comment.value.trim() == ""){
+	if(!form.board_info_comment.value.trim()){
 		document.querySelector(".board_info_msg").style.display = "block";
 		return false;
 	}
-	form.submit();
+	form.submit(); 
 }
 
 // 댓글 입력란에서 엔터 시  

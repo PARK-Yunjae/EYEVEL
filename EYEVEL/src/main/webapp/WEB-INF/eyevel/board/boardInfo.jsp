@@ -50,7 +50,7 @@ pageContext.setAttribute("cn", "\n");
 			<div class="board_content">${fn:replace(board.contents, cn, br)}</div>
 		</div>
 		<div class="board_comment">
-			<form action="${ctx}/vaildInsertBoardComment.do" name="board_comment_form" id="board_comment_form" method="post">
+			<form action="${ctx}/boardCommentInsert.do" name="board_comment_form" id="board_comment_form" method="post">
 				<input type="hidden" name="id" value="${loginId}"> 
 				<input type="hidden" name="no" value="${board.no}"> 
 				<div class="board_info_comment">
@@ -78,9 +78,9 @@ pageContext.setAttribute("cn", "\n");
 								<h4 class="name">${bc.member_id}</h4>
 								<p>${bc.reg_datetime}</p>
 							</div>
-							<p>${fn:replace(bc.contents, cn, br)}</p>
+							<p>${bc.comment}</p>
 							<button
-								onclick="location.href='${ctx}/commentDelete.do?no=${bc.no}&board_id=${board_id}'"
+								onclick="location.href='${ctx}/boardCommentDelete.do?no=${bc.no}'"
 								<c:if test="${bc.member_id ne loginId}">style="display:none"</c:if>>삭제</button>
 						</div>
 					</li>
