@@ -31,7 +31,8 @@
 .city_content .video iframe{width: 100%; height: 100%;}
 /* 이 지역의 볼거리 */
 .tourist{
-   background: var(--white);
+   background: #ffffff99;
+   backdrop-filter: blur(10px);
    padding:20px;
    border-radius: var(--radius);
    box-shadow: 0 7px 10px 5px #2222221e;
@@ -76,7 +77,8 @@
 div.comment{
    width: 100%;
    margin-top: calc(var(--padding)*2);
-   background: var(--light-gray);
+   background: #a8a8a899;
+   backdrop-filter: blur(10px);
    padding:var(--padding);
    border-radius: var(--radius);
 }
@@ -115,7 +117,7 @@ ul.comment .content{
 
 ul.comment .content>div{display: flex;margin-bottom: 10px;align-items: center;justify-content: center;}
 ul.comment .content>div h4{margin-right: 10px;}
-ul.comment .content>div p{color:#777;}
+ul.comment .content>div p{color:var(--white);}
 ul.comment .content>p{padding-right:100px;}
 ul.comment button{align-self: flex-end;background: var(--red);color:var(--white)}
 ul.comment button:hover{align-self: flex-end;background: var(--dark-red);}

@@ -7,6 +7,7 @@
 <section class="earthSection">
 	<div class="innerBox">
 	<div class="citys">
+	<p class="city_notice">이미지를 누르시면 이동합니다.</p>
 	<ul>
 	<c:forEach var="city" items="${list}">
 	<div class="${city.name} lon" value="${city.lon}" ></div>
