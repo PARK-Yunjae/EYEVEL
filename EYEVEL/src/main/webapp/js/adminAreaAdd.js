@@ -39,6 +39,7 @@ function adminAreaAddCheck(form){
 	let amCheck = false;
 	
 	am_weather.forEach(e =>{
+		console.log(e.value);
 		if(!e.value.trim()){
 			amCheck = true;
 		}

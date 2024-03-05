@@ -28,17 +28,24 @@ pageContext.setAttribute("cn", "\n");
 				<div class="edit">
 					<p>조회수 : ${board.hits}</p>
 					<div class="like">
-						<span id="like_btn"><i class="far fa-heart icon"></i></span>
+						<span id="like_btn" onclick="likeBtnCheck('${board.no}')">
+							<i id="heart"class=
+							<c:if test="${empty boardlike}">"fa-heart icon far "</c:if>
+							<c:if test="${!empty boardlike}">"fa-heart icon fa "</c:if>
+							></i>
+						</span>
 						<p class="board_heart_count">${board.heart}</p>
 					</div>
-					<button id="board_info_option">
-						<i class="fas fa-ellipsis-v icon"></i>
-					</button>
-					<!-- class on 추가시 수정/삭제 보임 -->
-					<div class="edit_box">
-						<a href="${ctx}/boardUpdate.do?no=${board.no}">수정</a> <a
-							href="${ctx}/boardDelete.do?no=${board.no}">삭제</a>
-					</div>
+					<c:if test="${loginId eq board.member_id || loginId eq 'admin'}">
+						<button id="board_info_option" onclick="optionCheck()">
+							<i class="fas fa-ellipsis-v icon"></i>
+						</button>
+						<!-- class on 추가시 수정/삭제 보임 -->
+						<div class="edit_box">
+							<a href="${ctx}/boardUpdate.do?no=${board.no}">수정</a> <a
+								href="${ctx}/boardDelete.do?no=${board.no}">삭제</a>
+						</div>
+					</c:if>
 				</div>
 			</div>
 			<div class="board_content">${fn:replace(board.contents, cn, br)}</div>

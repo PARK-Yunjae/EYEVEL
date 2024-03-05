@@ -3,9 +3,11 @@ package com.eyevel.controller.board;
 import java.io.IOException;
 
 import com.eyevel.dao.BoardDAO;
+import com.eyevel.dao.BoardLikeDAO;
 import com.eyevel.dao.MemberDAO;
 import com.eyevel.frontController.Controller;
 import com.eyevel.vo.Board;
+import com.eyevel.vo.BoardLike;
 import com.eyevel.vo.Member;
 
 import jakarta.servlet.ServletException;
@@ -31,7 +33,10 @@ public class BoardInfoController implements Controller {
 		String id = (String)req.getSession().getAttribute("loginId");
 		Member m = MemberDAO.getInstance().memberContent(id);
 		req.setAttribute("member", m);
-
+		// 좋아요 버튼 눌렀으면 같이 보내주자
+		BoardLike bl = BoardLikeDAO.getInstance().getMyBoardLike(no);
+		if(bl != null) req.setAttribute("boardlike", bl);
+		
 		return "eyevel/board/boardInfo";
 	}
 

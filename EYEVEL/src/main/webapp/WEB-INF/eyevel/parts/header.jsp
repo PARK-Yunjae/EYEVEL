@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -11,8 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/css/style.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/header.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/modal.css">
-<link rel="stylesheet" type="text/css"
-	href="${ctx}/css/loginJoinModal.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/css/loginJoinModal.css">
 <script src="${ctx}/js/modal.js" defer></script>
 <script src="${ctx}/js/loginJoinModal.js" defer></script>
 <!-- 날씨 표시를 위한 라이브러리 -->
@@ -32,7 +30,6 @@
 		<div class="innerBox">
 			<ul class="top_nav">
 				<li class="logo_img" onclick="location.href='${ctx}/main.do'"></li>
-				<!--
 				<li>
 					<div style="color: #fff">
 						<div style="float: left;">
@@ -43,7 +40,6 @@
 				<li>
 					<div class="weather_description" style="font-size: 20pt"></div>
 				</li>
-				  -->
 				<li>
 					<ul class="member">
 						<li><c:if test="${empty loginId}">Guest 님</c:if> <c:if
@@ -63,14 +59,22 @@
 				</li>
 			</ul>
 			<ul class="gnb">
-				<li><a href="${ctx}/areaEarth.do">전체</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=asia">아시아</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=africa">아프리카</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=northAmerica">북아메리카</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=southAmerica">남아메리카</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=europe">유럽</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=oceania">오세아니아</a></li>
-				<li><a href="${ctx}/areaContinent.do?area=antarctica">남극</a></li>
+				<li <c:if test="${area eq 'all'}">class="on"</c:if>>
+				<a href="${ctx}/areaEarth.do?area=all">전체</a></li>
+				<li <c:if test="${area eq 'asia'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=asia">아시아</a></li>
+				<li <c:if test="${area eq 'africa'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=africa">아프리카</a></li>
+				<li <c:if test="${area eq 'northAmerica'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=northAmerica">북아메리카</a></li>
+				<li <c:if test="${area eq 'southAmerica'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=southAmerica">남아메리카</a></li>
+				<li <c:if test="${area eq 'europe'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=europe">유럽</a></li>
+				<li <c:if test="${area eq 'oceania'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=oceania">오세아니아</a></li>
+				<li <c:if test="${area eq 'antarctica'}">class="on"</c:if>>
+				<a href="${ctx}/areaContinent.do?area=antarctica">남극</a></li>
 			</ul>
 		</div>
 	</header>

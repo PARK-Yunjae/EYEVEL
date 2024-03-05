@@ -28,7 +28,7 @@
 					</select>
 					<div class="qna_select">
 						<input type="radio" name="qna" id="qna90" value="90"/>
-						<label class="qna_label" for="qna90" width="100px">전체</label>
+						<label class="qna_label" for="qna90">전체</label>
 						<input type="radio" name="qna" id="qna91" value="91"/>
 						<label class="qna_label" for="qna91">계정</label>
 						<input type="radio" name="qna" id="qna92" value="92"/>
@@ -62,7 +62,9 @@
 				</div>
 				<div class="input_member">
 					<label for="member">작성자</label><br>
-					<input type="text" name="member" id="member" value="${name}" readonly>
+					<input type="text" name="member" id="member" value=
+					<c:if test="${empty board.member_id}">"${name}"</c:if>
+					<c:if test="${!empty board.member_id}">"${board.member_id}"</c:if> readonly>
 				</div>
 			</div>
 			<label for="contents">내용</label>
