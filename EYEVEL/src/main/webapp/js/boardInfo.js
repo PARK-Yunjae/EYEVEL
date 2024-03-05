@@ -17,7 +17,7 @@ function optionCheck(){
 
 // 좋아요 버튼 눌렀을 시 
 function likeBtnCheck(no){
-	let heart = document.querySelector("#heart");
+	let heart = document.querySelector("#Zzim");
 	let heart_count = document.querySelector(".board_heart_count");
 	let url;
 	if(heart.classList.item(2) == "far"){

@@ -1,40 +1,27 @@
 <html>
   <head>
     <title>Street View split-map-panes</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-	<style>
-	html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#map,
-#pano {
-  float: left;
-  height: 100%;
-  width: 50%;
-}
-	
-	</style>
-    <script type="module" src="./street.js"></script>
-  </head>
-  <body>
+    <style>
+        /* 페이지에 맞게 스타일 조정 */
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
     <div id="map"></div>
-    <div id="pano"></div>
-
-    <!--
-      The `defer` attribute causes the callback to execute after the full HTML
-      document has been parsed. For non-blocking uses, avoiding race conditions,
-      and consistent behavior across browsers, consider loading using Promises.
-      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-      for more information.
-      -->
-	    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&callback=initialize&v=weekly"
-      defer
-    ></script>
+    <script>
+        function initMap() {
+            var location = {lat: -34.397, lng: 150.644}; // 여기에 위도와 경도 값을 입력하세요
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: location,
+                zoom: 18, // 줌 레벨을 조정하여 더 가까이 또는 멀리 볼 수 있습니다.
+                mapTypeId: 'satellite' // 위성 이미지 타입 설정
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&callback=initMap">
+    </script>
   </body>
 </html>
