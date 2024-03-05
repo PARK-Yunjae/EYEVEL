@@ -81,7 +81,7 @@
 								<h3>${area.name}</h3>
 								<p>${area.contents}</p>
 								<div>
-									<a href="javascript:void(0)" onclick="openPanorama()">파노라마
+									<a href="javascript:void(0)" onclick="openPanorama()" class="panorama_btn">파노라마
 										뷰 보러가기 <i class="fas fa-arrow-right"></i>
 									</a>
 								</div>
@@ -132,5 +132,11 @@
 		</div>
 	</div>
 </section>
+</div>
+<div class="modal modal_panorama">
+	<h2 class="title">지역이름</h2>
+	<p>짧은 설명</p>
+	<div class="panorama"></div>
+	<i class="fas fa-times" onclick="closePanorama()"></i>
 </div>
 <%@ include file="../parts/footer.jsp"%>
