@@ -24,39 +24,3 @@
     messageElement.textContent = `${sender}: ${message}`;
     chatMessages.prepend(messageElement);
   };
-
-  // Google AI API 요청 함수
-  async function fetchAIResponse(prompt) {
-    try {
-      const model = genAI.getGenerativeModel({model: "gemini-pro", generationConfig});
-      const result = await model.generateContentStream([prompt]);
-
-      let aiResponse = '';
-      for await (const chunk of result.stream) {
-        const chunkText = await chunk.text();
-        aiResponse += chunkText;
-      }
-
-      return aiResponse;
-    } catch (error) {
-      console.error('Google Generative AI API 호출 중 오류 발생:', error);
-      return 'Google Generative AI API 호출 중 오류 발생';
-    }
-  }
-
-  // 전송 버튼 클릭 이벤트 처리
-  sendButton.addEventListener('click', async () => {
-    const message = userInput.value.trim();
-    if (message.length === 0) return;
-    addMessage('나', message);
-    userInput.value = '';
-    const aiResponse = await fetchAIResponse(message);
-    addMessage('챗봇', aiResponse);
-  });
-
-  // 사용자 입력 필드에서 Enter 키 이벤트를 처리
-  userInput.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      sendButton.click();
-    }
-  });

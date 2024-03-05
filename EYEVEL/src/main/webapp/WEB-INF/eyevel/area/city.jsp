@@ -3,11 +3,13 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ include file="../parts/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/city.css">
-<script defer src="${ctx}/js/city.js" defer></script>
-<script defer src="${ctx}/js/panorama.js" async></script>
-<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&callback=initMap">
+<script defer src="${ctx}/js/city.js" ></script>
+<script defer src="${ctx}/js/panorama.js" ></script>
+<script async src="https://apis.google.com/js/api.js"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&callback=initMap"></script>
+<script defer src="${ctx}/js/cityYoutube.js" ></script>
 </script>
-<div class="location" data-lon="${area.lon}" data-lat="${area.lat}" data-name="${area.name}" ></div>
+<div class="location" data-lon="${area.lon}" data-lat="${area.lat}" data-name="${area.name}" data-word="${area.link_url}" ></div>
  <c:forEach var="w" items="${img}" >
 <div class="areaimg" data-img="${w.img}" data-weather="${w.weather}" ></div>
  </c:forEach>
@@ -31,9 +33,7 @@
 		</div>
 		<div class="city_content">
 			<div class="video">
-				<iframe
-					src="https://www.youtube.com/embed/${area.link_url}"
-					title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+				<iframe id="youtube-video" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 			<ul class="tourist">
 				<li>
