@@ -14,6 +14,10 @@
 		select * from area
 </select>
 
+<select id="areaListByZzim" parameterType="Integer" resultType="Area">
+		select * from area where no=#{area_no}
+</select>
+
 <select id="areaContinentList" parameterType="String" resultType="Area">
 select * from area where continent=#{area}
 </select>
