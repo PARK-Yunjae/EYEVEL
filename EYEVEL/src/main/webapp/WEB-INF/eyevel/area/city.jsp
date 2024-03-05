@@ -51,10 +51,11 @@
 			<h3>현재시간
 			<div id="localTime">Loading...</div></h3>
 			</div>
-			<c:if test="${loginId ne null}"> <a
-				href='${ctx}/<c:if test="${zzim eq null}">zzimAdd.do?no=${area.no}&id=${loginId}</c:if><c:if test="${zzim ne null}">zzimDelete.do?no=${area.no}&id=${loginId}</c:if>'>
-				<div class="zzimBtn">
-					<i class="fa<c:if test="${zzim eq null}">r</c:if> fa-heart"></i>
+			<c:if test="${loginId ne null}">
+			 <div class="zzimBtn" >
+			 <span onclick="likeBtnCheck('${area.no}')">
+					<i id="Zzim" class="fa-heart fa<c:if test="${zzim eq null}">r</c:if>"></i>			 
+			 </span>
 				</div></c:if>
 			</a>
 

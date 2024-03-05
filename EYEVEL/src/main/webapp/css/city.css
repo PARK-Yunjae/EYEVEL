@@ -10,7 +10,7 @@
 }
 .city_nav h2{font-size: var(--font-subTitle);margin-right: 40px;}
 .city_nav a{color:var(--white);text-shadow:0 0 5px #22222254;}
-.city_nav a:has(.zzimBtn){
+.zzimBtn{
    margin-left: auto;
    cursor: pointer;
    font-size: var(--font-subTitle);
