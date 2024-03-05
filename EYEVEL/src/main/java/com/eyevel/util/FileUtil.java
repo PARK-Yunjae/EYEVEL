@@ -94,7 +94,6 @@ public class FileUtil {
 			// 파일이 아니라면 업로드의 대상이 아니므로 무시 - indexOf 대신 equals 였음
 			if (part.getName().indexOf("weatherImg") == -1)
 				continue;
-
 			// Part 객체의 헤더값 중 content-disposition 읽어오기
 			String partHeader = part.getHeader("content-disposition");
 			// 출력결과 => form-data; name="attachedFile"; filename="파일명.jpg"
@@ -102,6 +101,10 @@ public class FileUtil {
 
 			// 헤더값에서 파일명 잘라내기
 			String[] phArr = partHeader.split("filename=");
+			if(phArr[1].equals("\"\"")) {
+				cnt++;
+				continue;
+			}
 			String originalFileName = phArr[1].trim().replace("\"", "");
 			originalFileName = renameFile(sDirectory,originalFileName,area_name,cnt);
 			// 전송된 파일이 있다면 디렉토리에 저장

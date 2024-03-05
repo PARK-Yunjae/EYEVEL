@@ -18,7 +18,6 @@
 		</c:if>
 		</h2>
 		<form action=<c:if test="${board.title eq null}">"${ctx}/boardAdd.do"</c:if> <c:if test="${board.title ne null}">"${ctx}/boardUpdate.do"</c:if> method="post" class="add_board">
-			<!-- class에 on 추가시 보임 -->
 			<c:if test="${loginId eq 'admin'}">
 				<div class="category_select">
 					<select name="category" class="category_select_option">

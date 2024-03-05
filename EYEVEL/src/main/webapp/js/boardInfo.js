@@ -45,3 +45,24 @@ function likeBtnCheck(no,loginId){
 		body: "no="+no
 	})
 }
+
+// 댓글 버튼 클릭 시 
+function boardCommentCheck(loginId,board_no){
+	// 로그인 안한 유저는 못함
+	if(loginId == ""){
+		modalCheck("경고", "로그인이 필요합니다",loginModal);
+		return false;
+	}
+	let boardComment = document.getElementById("board_info_comment");
+	fetch("vaildInsertBoardComment.do", {
+		method: "POST",
+		headers:{
+			"Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8"
+		},
+		body: "loginId="+loginId+"&board_no="+board_no+"&boardComment="+boardComment
+	})
+	.then(response => response.text())
+	.then(bc => {
+
+	})
+}

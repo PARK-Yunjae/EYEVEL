@@ -12,3 +12,9 @@
 .admin_list li:first-child{margin-right: 150px;}
 .admin_list li:hover{transform: translateY(-15px);}
 .admin_list li p{font-size: 24px;font-weight: bold;}
+
+@media screen and (max-width: 900px) {
+	.admin_list{flex-direction: column;width: 80%;}
+	.admin_list li{width: 80%;display: flex;align-items: center;justify-content: center;flex-direction: column;}
+	.admin_list li:first-child{margin-right: 0;margin-bottom: 40px;}
+}

@@ -20,7 +20,7 @@ public class CommentDeleteController implements Controller{
 		CommentDAO.getInstance().commentDelete(no);
 
 		String ctx = req.getContextPath();
-		return "redirect:" + ctx + "/areaCity.do?id="+req.getParameter("areaId");
+		return "redirect:" + ctx + "/areaCity.do?no="+req.getParameter("areaNo");
 	}
 
 }

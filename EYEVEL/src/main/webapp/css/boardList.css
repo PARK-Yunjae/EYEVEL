@@ -3,6 +3,7 @@
 .boardSection .category li{margin-right: var(--padding);font-weight: bold;color:var(--gray);cursor: pointer;}
 .boardSection .category li.on{color:var(--black)}
 .boardSection .category li:last-child{margin-right: 0;}
+.board_title{width: 40%;}
 .search{position: relative;align-self: flex-start;}
 .search input{
    width: 200px;
@@ -26,3 +27,6 @@
 	display: none;
 }
 
+@media screen and (max-width: 900px) {
+	.board_title{width: auto;}
+}

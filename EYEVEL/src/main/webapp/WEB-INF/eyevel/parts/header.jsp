@@ -59,7 +59,7 @@
 				</li>
 			</ul>
 			<ul class="gnb">
-				<li <c:if test="${area eq 'all'}">class="on"</c:if>>
+				<li class="mobildeNone"<c:if test="${area eq 'all'}">class="on mobildeNone"</c:if>>
 				<a href="${ctx}/areaEarth.do?area=all">전체</a></li>
 				<li <c:if test="${area eq 'asia'}">class="on"</c:if>>
 				<a href="${ctx}/areaContinent.do?area=asia">아시아</a></li>
