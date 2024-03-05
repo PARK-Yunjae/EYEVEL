@@ -3,41 +3,10 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ include file="../parts/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/city.css">
-<!-- suncalc 라이브러리. 일출일몰계산 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.8.0/suncalc.min.js"></script>
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a495181d358f544f386983af5609309d"></script>
-	    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&callback=initialize&v=weekly"
-      defer
-    ></script>
-	
-<script>
-	function openPanorama() {
-	    document.querySelector(".city_section").style.display = "none";
-	    let lat = parseFloat(document.querySelector(".location").dataset.lat);
-	    let lon = parseFloat(document.querySelector(".location").dataset.lon);
-	    
-	    const location = { lat: lat, lng: lon };
-	    const map = new google.maps.Map(document.getElementById("map"), {
-	      center: location,
-	      zoom: 14,
-	    });
-	    
-	    const panorama = new google.maps.StreetViewPanorama(
-	      document.getElementById("pano"), {
-	        position: location,
-	        pov: {
-	          heading: 34,
-	          pitch: 10,
-	        },
-	      }
-	    );
-
-	    map.setStreetView(panorama);
-	}
-</script>
 <script defer src="${ctx}/js/city.js" defer></script>
+<script defer src="${ctx}/js/panorama.js" async></script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&callback=initMap">
+</script>
 <div class="location" data-lon="${area.lon}" data-lat="${area.lat}" data-name="${area.name}" ></div>
  <c:forEach var="w" items="${img}" >
 <div class="areaimg" data-img="${w.img}" data-weather="${w.weather}" ></div>
@@ -80,7 +49,7 @@
 							<div class="content">
 								<h3>${area.name}</h3>
 								<p>${area.contents}</p>
-								<div>
+								<div onclick="initMap()">
 									<a href="javascript:void(0)" onclick="openPanorama()" class="panorama_btn">파노라마
 										뷰 보러가기 <i class="fas fa-arrow-right"></i>
 									</a>
@@ -104,14 +73,6 @@
 			</form>
 			<ul class="comment">
 				<c:forEach var="c" items="${clist}">
-					<!-- 현재날짜 가져온 뒤에 비교 (아직 미적용) -->
-					<%-- <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-					<jsp:useBean id="now" class="java.util.Date" />
-					<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="today" />
-					<fmt:parseDate var="dateFmt" pattern="yyyy-MM-dd HH:mm:ss"
-						value="${c.reg_datetime}" />
-					<fmt:formatDate var="dateTempParse" pattern="yyyy-MM-dd"
-						value="$dateFmt}" /> --%>
 					<li>
 						<div class="profile_image">
 							<img src="https://picsum.photos/100/100" alt="">
@@ -133,9 +94,9 @@
 </section>
 </div>
 <div class="modal modal_panorama">
-	<h2 class="title">지역이름</h2>
-	<p>짧은 설명</p>
+	<h2 class="title">${area.name}</h2>
+	<p>${area.contents}</p>
 	<div id ="panorama" class="panorama"></div>
-	<i class="fas fa-times" onclick="closePanorama()"></i>
+<i class="fas fa-times" onclick="closePanorama()"></i>
 </div>
 <%@ include file="../parts/footer.jsp"%>
