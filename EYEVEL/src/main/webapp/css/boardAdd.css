@@ -18,22 +18,56 @@
 
 /* 카테고리 선택 */
 .category_select{
-	display: flex;
+   display: flex;
+   margin-bottom: var(--padding);
+   width: 100%;
+   justify-content: flex-start;
+}
+.category_select_option{
+	border: 1px solid var(--gray);
+   background: inherit;
+   padding:10px;
+   border-radius:5px;
+   margin-right: var(--padding);
 }
 
 /* 글쓰기 관리자 모드 qna 클릭 시  */
 .qna_select{
 	display: none;
+   align-items: center;
 }
+.qna_select label{
+   border: 2px solid var(--gray);
+   border-radius: 5px;
+   color:var(--gray);
+   padding:5px 10px;
+   margin-right: 10px;
+   cursor: pointer;
+}
+.qna_select input:checked + label{color:var(--dark-green); border: 2px solid var(--green);}
+.qna_select input:checked + label::before{display: inline-block;}
+.qna_select label::before{
+   content:"\f00c";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   display: none;
+   margin-right: 5px;
+}
+.qna_select input{display: none;}
 .qna_select.on{
 	display: flex;
 }
-.qna_label{
-	width : 50px;
-}
-
 
 .add_board input[type=button]{
    width: 150px;
    align-self: flex-end;
+}
+
+@media screen and (max-width: 900px) {
+	.category_select{flex-direction: column;}
+	.qna_select{margin-top:20px;}
+	.category_select_option{width: 50%; margin-right: 0;}
+	.input_info{flex-wrap: wrap;}
+	.input_info>div{width: 45%;}
+	.input_info>div.input_title{width: 100%;}
 }

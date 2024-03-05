@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eyevel.mybatis.BoardCommentMapper">
+	
+	<!-- 게시글 댓글 조회 -->
+	<select id="selectBoardComments" parameterType="Integer" resultType="BoardComment">
+		SELECT * FROM boardComment WHERE board_no = #{no}
+	</select>
+
+	<!-- 게시글 댓글 추가 -->
+	<insert id="insertBoardComment" parameterType="BoardComment">
+		INSERT INTO boardComment (board_no, comment, member_id, reg_datetime)
+        VALUES (#{board_no}, #{comment}, #{member_id}, #{reg_datetime})
+	</insert>
+
+	<!-- 게시글 댓글 삭제 -->
+	<delete id="deleteBoardComment" parameterType="Integer">
+		DELETE FROM boardComment 
+		WHERE no = #{no}
+	</delete>
+	
+	<!-- 마지막으로 저장된 게시글 내보내기 -->
+	<select id="getLastBoardComment" resultType="BoardComment">
+		SELECT * FROM boardComment ORDER BY no DESC LIMIT 1;
+	</select>
+</mapper>

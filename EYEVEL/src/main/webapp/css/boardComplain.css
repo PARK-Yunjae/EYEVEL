@@ -58,3 +58,8 @@
 .complain_contents.on{
 	display: block;
 }
+
+@media screen and (max-width: 900px) {
+	.complain_category {font-size: 18px;}
+	.complain_title{font-size: 18px;}
+}

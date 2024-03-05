@@ -95,3 +95,8 @@ input.readonly:focus{outline: none;}
 .zzim_list .content span .fa-heart{transition: all .3s;}
 .zzim_list .content span .fa-heart:hover{transform: scale(1.1);}
 .zzim_list .content span .fa-heart:active{transform: scale(0.9);}
+
+@media screen and (max-width: 900px) {
+	.info_section .innerBox{flex-direction: column;}
+	.zzim_list{margin-left:0;margin-top:40px;}
+}

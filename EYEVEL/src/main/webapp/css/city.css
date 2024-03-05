@@ -27,10 +27,8 @@
 .city_content .video{
    width:850px;
    height: 476px;
-   background: skyblue;
-
 }
-
+.city_content .video iframe{width: 100%; height: 100%;}
 /* 이 지역의 볼거리 */
 .tourist{
    background: var(--white);
@@ -138,3 +136,10 @@ ul.comment .content>button{
 	font-size:20px;
 }
 .panorama{width: 100%;height: 90%;background: yellowgreen;}
+
+
+@media screen and (max-width: 1200px) {
+	.city_content{flex-direction: column;}
+	.city_content .video{width: 100%;margin-bottom: var(--padding);}
+	
+}
