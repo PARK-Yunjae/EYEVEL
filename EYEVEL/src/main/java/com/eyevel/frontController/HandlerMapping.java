@@ -5,6 +5,7 @@ import java.util.HashMap;
 import com.eyevel.controller.admin.*;
 import com.eyevel.controller.area.*;
 import com.eyevel.controller.board.*;
+import com.eyevel.controller.boardLike.*;
 import com.eyevel.controller.comment.*;
 import com.eyevel.controller.member.*;
 import com.eyevel.controller.zzim.*;
@@ -64,6 +65,9 @@ public class HandlerMapping {
 		mappings.put("/adminAreaInfo.do", new AdminAreaInfoControlle()); // 관광지 수정
 		mappings.put("/adminAreaSelect.do", new AdminAreaSelectController()); // 관광지 선택
 		
+		//boardLike
+		mappings.put("/validAddBoardLike.do", new VaildAddBoardLikeController()); // 비동기 게시물 좋아요 삭제
+		mappings.put("/validDeleteBoardLike.do", new VaildDeleteBoardLikeController()); // 비동기 게시물 좋아요 삭제
 	}
 	
 	public Controller getController(String key) {

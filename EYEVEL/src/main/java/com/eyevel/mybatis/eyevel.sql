@@ -209,7 +209,7 @@ insert into board values(null, 94, 1, 'admin', '질문8', '답변8', '2024-02-26
 
 -- 게시글 좋아요 테이블
 create table boardlike(
-	  board_no int not null, -- 관광지 고유 넘버
+	board_no int not null, -- 게시글 고유 넘버
     foreign key(board_no) references board(no),
     member_id varchar(20) not null, -- 유저 ID
     foreign key(member_id) references member(id)
