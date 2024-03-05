@@ -13,7 +13,7 @@
 		<form action="${ctx}/memberUpdate.do" method="post" enctype="multipart/form-data">
 			<ul class="member_info">
 				<li>
-					<label for="img" class="image"> 
+					<label for="img" class="image">
 						<img src='http://localhost:8080/IMAGES/profile/${member.img}' id="profileImg" alt="이미지">
 					</label>
 					<input type="file" name="img" id="img" accept="image/*" onchange="readURL(this)">
@@ -26,16 +26,19 @@
 					</a>
 				</li>
 				<li class="input">
-					<label for="">아이디</label><br>
+					<label for="">아이디</label>
+					<br>
 					<input type="text" name="id" class="readonly" value="${member.id}" readonly>
 				</li>
 				<li class="input">
-					<label for="">비밀번호</label><br>
+					<label for="">비밀번호</label>
+					<br>
 					<input type="password" placeholder="비밀번호 입력" name="pw">
 					<p class="msg info_pw_msg">비밀번호를 입력해주세요</p>
 				</li>
 				<li class="input">
-					<label for="">이메일</label><br>
+					<label for="">이메일</label>
+					<br>
 					<input type="text" name="email" class="readonly" value="${member.email}" readonly>
 				</li>
 				<li class="button_group">
@@ -47,7 +50,10 @@
 		<ul class="zzim_list">
 			<li>
 				<h2>
-					<span class="red" style="margin-right: 10px"> <i class="fas fa-heart"></i></span> 내가 마음에 들어한 관광지
+					<span class="red" style="margin-right: 10px">
+						<i class="fas fa-heart"></i>
+					</span>
+					내가 마음에 들어한 관광지
 				</h2>
 				<!-- slick 사용위치 -->
 				<div id="zzim_list">
@@ -71,7 +77,9 @@
 									<a href="해당 관광지(도시)페이지">
 										보러가기 <i class="fas fa-arrow-right"></i>
 									</a>
-									<span onclick="/*찜하고 취소하기*/"><i class="far fa-heart"></i></span>
+									<span id="zzim_btn" onclick="zzimBtnCheck('${a.no}')">
+										<i id="heart" class=<c:if test="${empty zzim}">"fa-heart icon far"</c:if> <c:if test="${!empty zzim}">"fa-heart icon fa"</c:if>></i>
+									</span>
 								</div>
 							</div>
 						</div>

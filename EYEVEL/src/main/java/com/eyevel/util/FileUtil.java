@@ -60,18 +60,22 @@ public class FileUtil {
 	}
 
 	// 파일명 변경
-	public static String renameFile(String sDirectory, String fileName) {
+	public static String renameFile(String sDirectory, String fileName, String area_name, int cnt) {
 		// 원본파일의 확장자 잘라내기
 		String ext = fileName.substring(fileName.lastIndexOf("."));
+		
+		String areaWeatherName = area_name + (cnt%4 == 0 ? "_sunny" : cnt%4==1 ? "_cloudy" : cnt%4==2 ? "_rainy" : "_snowy");
+		areaWeatherName += cnt>3 ? "_night" : "";
+		
 		// 날짜 및 시간을 통해 파일명 생성
-		String now = new SimpleDateFormat("yyyyMMdd_HmsS").format(new Date());
+		//String now = new SimpleDateFormat("yyyyMMdd_HmsS").format(new Date());
 		// "날짜_시간.확장자" 형태의 새로운 파일명 생성
-		String newFileName = now + ext;
+		String newFileName = areaWeatherName + ext;
 
 		// 기존 파일명을 새로운 파일명으로 변경
-		File oldFile = new File(sDirectory + File.separator + fileName);
-		File newFile = new File(sDirectory + File.separator + newFileName);
-		oldFile.renameTo(newFile);
+		//File oldFile = new File(sDirectory + File.separator + fileName);
+		//File newFile = new File(sDirectory + File.separator + newFileName);
+		//oldFile.renameTo(newFile);
 
 		// 변경된 파일명 반환
 		return newFileName;
@@ -85,6 +89,7 @@ public class FileUtil {
 
 		// Part 객체를 통해 서버로 전송된 파일명 읽어오기
 		Collection<Part> parts = req.getParts();
+		int cnt = 0;
 		for (Part part : parts) {
 			// 파일이 아니라면 업로드의 대상이 아니므로 무시 - indexOf 대신 equals 였음
 			if (part.getName().indexOf("weatherImg") == -1)
@@ -98,15 +103,18 @@ public class FileUtil {
 			// 헤더값에서 파일명 잘라내기
 			String[] phArr = partHeader.split("filename=");
 			String originalFileName = phArr[1].trim().replace("\"", "");
-			originalFileName = originalFileName.substring(0, originalFileName.length()-4);
-
+			originalFileName = renameFile(sDirectory,originalFileName,area_name,cnt);
 			// 전송된 파일이 있다면 디렉토리에 저장
 			if (!originalFileName.isEmpty()) {
 				part.write(sDirectory + File.separator + originalFileName);
 			}
+			originalFileName = originalFileName.substring(0, originalFileName.length()-4);
 
+			//originalFileName = renameFile(sDirectory,phArr[1],area_name,cnt);
+			
 			// 컬렉션에 추가
 			listFileName.add(originalFileName);
+			cnt++;
 		}
 
 		// 원본 파일명 반환

@@ -21,7 +21,6 @@ public class AreaImgDAO {
 	public void addAreaImg(ArrayList<AreaImg> aiList) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		for(AreaImg ai : aiList) {
-			System.out.println("아");
 			session.insert("addAreaImg",ai);
 			session.commit();
 		}

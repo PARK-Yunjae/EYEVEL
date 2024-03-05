@@ -40,13 +40,14 @@ public class AreaUpdateController implements Controller{
 			area_url = area_url.replace("https://youtu.be/", "");
 		}
 		ArrayList<String> imgs = FileUtil.multipleFile(req, saveDirectory, areaName);
+		int no = Integer.parseInt(req.getParameter("no"));
 		
 		Area a = new Area();
+		a.setNo(no);
 		a.setLink_url(area_url);
 		a.setContents(contents);
 		AreaDAO.getInstance().areaUpdate(a);
 		
-		int no = Integer.parseInt(req.getParameter("no"));
 		
 		ArrayList<AreaImg> aiList = new ArrayList<AreaImg>();
 		String[] weathers = {"Clear","Clouds","Snow","Rain"};

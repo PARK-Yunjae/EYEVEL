@@ -70,8 +70,9 @@ public class AdminAreaAddController implements Controller {
 			AreaDAO.getInstance().areaAdd(a);
 			
 			// 이미지 테이블에 넣기 - 임시
+			ArrayList<Area> areaList = (ArrayList<Area>) AreaDAO.getInstance().areaList();
 			
-			int area_no = AreaDAO.getInstance().areaList().size()-1;
+			int area_no = areaList.get(areaList.size()-1).getNo();
 			System.out.println(area_no);
 			
 			ArrayList<AreaImg> aiList = new ArrayList<AreaImg>();
