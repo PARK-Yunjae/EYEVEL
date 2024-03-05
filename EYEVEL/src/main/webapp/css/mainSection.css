@@ -20,3 +20,13 @@ section button:hover{
    background: var(--white);
    color:var(--black);
 }
+
+@media screen and (max-height: 800px) {
+	section h1{margin:70px 0;}
+	section button{margin: 60px auto;}
+}
+
+@media screen and (max-width: 900px) {
+	section h1{font-size: var(--font-subTitle);margin-bottom:50px;word-break:keep-all;}
+	section button{font-size: 18px;margin:50px auto;}
+}

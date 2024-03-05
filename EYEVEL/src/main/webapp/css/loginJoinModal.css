@@ -46,3 +46,13 @@
    background: var(--dark-green);
 }
 #join_terms{display: none;}
+
+@media screen and (max-height: 800px) {
+	.join_modal{height: 90%;overflow: auto;}
+	.join_modal::-webkit-scrollbar {width: 10px;}
+	.join_modal::-webkit-scrollbar-thumb {background-color: var(--gray);border-radius: 10px;}
+}
+
+@media screen and (max-width: 900px) {
+	.join_modal{padding: 30px 50px;}
+}

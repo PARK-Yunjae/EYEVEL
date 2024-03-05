@@ -106,6 +106,9 @@ td{
 table.less_padding td{padding:5px 10px;}
 td img{width:50px;margin:0;}
 td:last-child{border-right: none;}
+td a:hover{color:var(--gray)}
+.remove_icon{margin-left: 15px; color:#e63535;}
+.remove_icon:hover{color:var(--red);}
 
 /* paging */
 .paging{
@@ -123,9 +126,6 @@ td:last-child{border-right: none;}
 .paging .start, .paging .end{border-right: none;background: var(--black);color: var(--white);}
 .paging .start:hover, .paging .end:hover{background: var(--gray);}
 
-td a:hover{color:var(--gray)}
-.remove_icon{margin-left: 15px; color:#e63535;}
-.remove_icon:hover{color:var(--red);}
 
 textarea{
    font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -137,4 +137,13 @@ textarea{
    border: 1px solid var(--gray);
    border-radius: 5px;
    resize: none;
+}
+
+@media screen and (max-width: 1200px) {
+	th{padding:var(--padding) 0;}
+	.innerBox{width: 95%;}
+}
+@media screen and (max-width: 900px) {
+	.mobildeNone{display: none;}
+	.remove_icon{display:block; margin-left: 0;margin-top:10px;}
 }

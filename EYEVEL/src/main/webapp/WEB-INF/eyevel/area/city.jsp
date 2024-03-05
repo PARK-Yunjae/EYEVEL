@@ -31,7 +31,7 @@
 		</div>
 		<div class="city_content">
 			<div class="video">
-				<iframe width="850" height="476"
+				<iframe
 					src="https://www.youtube.com/embed/${area.link_url}"
 					title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 			</div>

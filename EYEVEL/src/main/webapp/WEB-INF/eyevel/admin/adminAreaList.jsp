@@ -16,7 +16,7 @@
                <th>No</th>
                <th>대륙</th>
                <th>이름</th>
-               <th>동영상 링크</th>
+               <th class="mobildeNone">동영상 링크</th>
                <th>관리</th>
             </tr>
             <c:forEach var="vo" items="${list}">
@@ -24,7 +24,7 @@
                <td>${vo.no}</td>
                <td>${vo.continent}</td>
                <td>${vo.name}</td>
-               <td>${vo.link_url}</td>
+               <td class="mobildeNone">${vo.link_url}</td>
                <td>
                   <a href="${ctx}/adminAreaInfo.do?no=${vo.no}"><i class="fas fa-pen"></i></a>
                   <a onclick="areaDelteModal(${vo.no})" class="remove_icon"><i class="fas fa-trash-alt"></i></a>

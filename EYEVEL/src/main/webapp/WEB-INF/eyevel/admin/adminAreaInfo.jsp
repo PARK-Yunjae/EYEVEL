@@ -7,7 +7,7 @@
 	</script>
 </c:if>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/adminAreaAdd.css">
-<script src="${ctx}/js/adminAreaAdd.js" defer></script>
+<script src="${ctx}/js/adminAreaUpdate.js" defer></script>
 <script>
 	document.querySelector('header').classList.add('black');
 	document.querySelector('html').style.background="none";

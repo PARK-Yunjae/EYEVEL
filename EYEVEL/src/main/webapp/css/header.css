@@ -47,3 +47,7 @@ header.black .top_nav .logo_img{background-image: url('../img/logo.png');}
 .gnb li.on:after{opacity: 1;}
 .gnb li:hover:after{opacity: 1;}
 header.black .gnb{display: none;}
+
+@media screen and (max-width: 1200px) {
+	.gnb li {font-size: 20px;}
+}

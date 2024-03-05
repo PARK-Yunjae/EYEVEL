@@ -11,7 +11,7 @@
 				<h2 class="title">유저 관리</h2>
 				<table class="less_padding">
 					<tr>
-						<th>프로필</th>
+						<th class="mobildeNone">프로필</th>
 						<th>이름</th>
 						<th>아이디</th>
 						<th>패스워드</th>
@@ -20,7 +20,7 @@
 					</tr>
 					<c:forEach var="vo" items="${list}">
 						<tr>
-							<td><img src="http://localhost:8080//IMAGES/profile/${vo.img}" alt="user profile image"></td>
+							<td class="mobildeNone"><img src="http://localhost:8080//IMAGES/profile/${vo.img}" alt="user profile image"></td>
 							<td>${vo.name}</td>
 							<td>${vo.id}</td>
 							<td>${vo.pw}</td>
