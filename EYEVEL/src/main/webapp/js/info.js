@@ -140,5 +140,4 @@ function zzimBtnCheck(no) {
 		},
 		body: "no=" + no
 	})
-		.then(response => response.text())
 }

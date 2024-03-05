@@ -1,5 +1,7 @@
 package com.eyevel.dao;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,6 +24,7 @@ public class BoardDAO {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		List<Board> list = session.selectList("boardList");
 		session.close();
+		list = formatBoardDate(list);
 		return list;
 	}
 
@@ -89,6 +92,7 @@ public class BoardDAO {
 			list = session.selectList("boardSearchCategoryList", strs);
 		}
 		session.close();
+		list = formatBoardDate(list);
 		return list;
 	}
 
@@ -106,5 +110,23 @@ public class BoardDAO {
 		session.update("deleteBoardHeart", no);
 		session.commit();
 		session.close();
+	}
+	
+//	게시판에서 보여지는 날짜 바꾸기
+	public List<Board> formatBoardDate(List<Board> list){
+		// 여기서 당일 이면 시간을 남기고 당일이 아니면 날짜를 남긴다
+		for(Board b : list) {
+			String date = b.getReg_date().substring(0, 10);
+	        LocalDate today = LocalDate.now();
+	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	        String formattedDate = today.format(formatter);
+	        
+	        if(date.equals(formattedDate)) {
+	        	b.setRegdate(b.getReg_date().substring(10, b.getReg_date().length()).trim());
+	        }else {
+	        	b.setRegdate(date.trim());
+	        }
+		}
+		return list;
 	}
 }

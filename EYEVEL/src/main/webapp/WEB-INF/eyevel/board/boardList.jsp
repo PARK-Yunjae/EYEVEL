@@ -32,16 +32,16 @@
 		<table>
 			<tr>
 				<th>No</th>
-				<th>카테고리</th>
+				<th class="mobileNone">카테고리</th>
 				<th style="width: 40%;">제목</th>
 				<th>작성자</th>
 				<th>작성일</th>
 				<th>조회수</th>
-				<th>좋아요</th>
+				<th class="mobileNone">좋아요</th>
 			</tr>
 			<c:if test="${empty list }">
 				<tr>
-					<td colspan="7">
+					<td colspan="5">
 						<h2>아무 글이 없습니다</h2>
 					</td>
 				</tr>
@@ -49,15 +49,15 @@
 			<c:forEach var="board" items="${list}">
 				<tr>
 					<td>${board.no}</td>
-					<td>
-					<c:if test="${board.category eq '0'}">공지</c:if>
-					<c:if test="${board.category eq '1'}">건의</c:if>
+					<td class="mobileNone">
+						<c:if test="${board.category eq '0'}">공지</c:if>
+						<c:if test="${board.category eq '1'}">건의</c:if>
 					</td>
 					<td><a href="${ctx}/boardInfo.do?no=${board.no}">${board.title}</a></td>
 					<td>${board.member_id}</td>
 					<td>${board.reg_date}</td>
 					<td>${board.hits}</td>
-					<td>${board.heart}</td>
+					<td class="mobileNone">${board.heart}</td>
 				</tr>
 			</c:forEach>
 		</table>

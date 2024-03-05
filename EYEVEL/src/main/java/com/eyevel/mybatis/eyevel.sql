@@ -214,3 +214,14 @@ create table boardlike(
     member_id varchar(20) not null, -- 유저 ID
     foreign key(member_id) references member(id)
 );
+
+-- 게시글 댓글 테이블
+create table boardComment(
+	no int auto_increment primary key not null, -- 게시글 댓글 고유 넘버
+	board_no int not null,	-- 게시글 번호
+	foreign key(board_no) references board(no),
+	comment varchar(1000) not null, -- 댓글 내용
+	member_id varchar(20) not null,
+    foreign key(member_id) references member(id),
+	reg_datetime datetime not null -- 작성일, 작성시간
+)

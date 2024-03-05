@@ -70,5 +70,3 @@ function boardAddCheck(loginId){
 		location.href = contextPath +"/boardAdd.do";
 	}
 }
-
-// 비 로그인시 글쓰기 버튼 클릭하면 보여주는 함수
