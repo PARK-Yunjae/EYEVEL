@@ -21,7 +21,6 @@ public class HandlerMapping {
 		mappings.put("/main.do", new MainController());
 		
 		// member
-		mappings.put("/memberList.do", new AdminMemberListController()); //회원목록
 		mappings.put("/memberJoin.do", new MemberJoinController()); //회원가입
 		mappings.put("/memberLogin.do", new MemberLoginController()); //로그인
 		mappings.put("/memberLogout.do", new MemberLogoutController()); //로그아웃
@@ -64,6 +63,7 @@ public class HandlerMapping {
 		mappings.put("/adminAreaAdd.do", new AdminAreaAddController()); // 관광지 추가
 		mappings.put("/adminAreaInfo.do", new AdminAreaInfoControlle()); // 관광지 수정
 		mappings.put("/adminAreaSelect.do", new AdminAreaSelectController()); // 관광지 선택
+		mappings.put("/adminMemberList.do", new AdminMemberListController()); //회원목록
 		
 		//boardLike
 		mappings.put("/validAddBoardLike.do", new VaildAddBoardLikeController()); // 비동기 게시물 좋아요 삭제

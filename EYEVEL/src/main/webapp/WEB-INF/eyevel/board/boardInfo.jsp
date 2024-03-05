@@ -50,6 +50,44 @@ pageContext.setAttribute("cn", "\n");
 			</div>
 			<div class="board_content">${fn:replace(board.contents, cn, br)}</div>
 		</div>
+		<div class="comment">
+			<h3>댓글 ${fn:length(clist)}개</h3>
+			<form name="commentform" action="${ctx}/commentAdd.do" method="post">
+				<input type="hidden" name="id" value="${loginId}"> <input
+					type="hidden" name="no" value="${area.no}"> <input
+					type="hidden" name="areaId" value="${area.id}"> <input
+					type="text" name="comment" id="" placeholder="댓글 입력..."> <input
+					type="submit" class="button btn" value="등록"
+					<c:if test="${loginId eq null }"> disabled="disabled"</c:if>>
+			</form>
+			<ul class="comment">
+				<c:forEach var="c" items="${clist}">
+					<!-- 현재날짜 가져온 뒤에 비교 (아직 미적용) -->
+					<%-- <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+					<jsp:useBean id="now" class="java.util.Date" />
+					<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="today" />
+					<fmt:parseDate var="dateFmt" pattern="yyyy-MM-dd HH:mm:ss"
+						value="${c.reg_datetime}" />
+					<fmt:formatDate var="dateTempParse" pattern="yyyy-MM-dd"
+						value="$dateFmt}" /> --%>
+					<li>
+						<div class="profile_image">
+							<img src="https://picsum.photos/100/100" alt="">
+						</div>
+						<div class="content">
+							<div>
+								<h4 class="name">${c.member_id}</h4>
+								<p>${c.reg_datetime}</p>
+							</div>
+							<p>${c.contents}</p>
+							<button
+								onclick="location.href='${ctx}/commentDelete.do?no=${c.no}&areaId=${area.id}'"
+								<c:if test="${c.member_id ne loginId}">style="display:none"</c:if>>삭제</button>
+						</div>
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
 	</div>
 </section>
 <%@ include file="../parts/footer.jsp"%>

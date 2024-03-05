@@ -78,3 +78,12 @@
 #board_info_option{
 	background: white;
 }
+
+/* 댓글 */
+.commentform{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: var(--padding);
+}
+.commentform input[type=text]{margin-right:40px;background: var(--white);border: none;}
+.commentform input[type=button]{width: 20%;}
