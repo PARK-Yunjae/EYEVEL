@@ -21,7 +21,6 @@ public class BoardListController implements Controller {
 		ArrayList<Board> list = null;
 		if(req.getParameter("category") == null) {
 			list = (ArrayList<Board>) BoardDAO.getInstance().boardList();
-			System.out.println("보드 목록 불러오기 완료");
 			req.setAttribute("list", list);
 		}
 // 		검색 값이 있는 페이지 필요 할 시
