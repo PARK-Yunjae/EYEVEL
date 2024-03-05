@@ -73,6 +73,24 @@ function fetchTimeZone(latitude, longitude) {
 
 	fetchTimeZone(lat, lon);
 
+let modal_panorama = document.querySelector('.modal_panorama');
+let panorama_btn = document.querySelectorAll('.panorama_btn');
+
+// 파노라마 모달창 띄우기
+function openPanorama(){modal_panorama.classList.add('active');}
+
+// 파노라마 모달창 닫기
+function closePanorama(){modal_panorama.classList.remove('active');}
+
+// 모달 창 밖을 눌렀을 때 꺼짐
+document.querySelector("body").addEventListener("click", e=> {
+	panorama_btn.forEach(en=>{
+	    if (!modal_panorama.contains(e.target) && !en.contains(e.target)) {
+	       modal_panorama.classList.remove('active');
+	    }
+	})
+})
+
 
 
 
