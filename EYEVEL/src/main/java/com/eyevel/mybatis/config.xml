@@ -13,6 +13,7 @@
       <typeAlias type="com.eyevel.vo.Zzim" alias="Zzim"/>     
       <typeAlias type="com.eyevel.vo.Comment" alias="Comment"/>     
       <typeAlias type="com.eyevel.vo.Board" alias="Board"/>     
+      <typeAlias type="com.eyevel.vo.BoardLike" alias="BoardLike"/>     
       <typeAlias type="com.eyevel.vo.AreaImg" alias="AreaImg"/>     
   </typeAliases> 
   
@@ -33,6 +34,7 @@
     <mapper resource="com/eyevel/mybatis/ZzimMapper.xml"/>
     <mapper resource="com/eyevel/mybatis/CommentMapper.xml"/>
     <mapper resource="com/eyevel/mybatis/BoardMapper.xml"/>
+    <mapper resource="com/eyevel/mybatis/BoardLikeMapper.xml"/>
     <mapper resource="com/eyevel/mybatis/AreaImgMapper.xml"/>
   </mappers>
 </configuration>

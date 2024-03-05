@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -11,8 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/css/style.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/header.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/modal.css">
-<link rel="stylesheet" type="text/css"
-	href="${ctx}/css/loginJoinModal.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/css/loginJoinModal.css">
 <script src="${ctx}/js/modal.js" defer></script>
 <script src="${ctx}/js/loginJoinModal.js" defer></script>
 <!-- 날씨 표시를 위한 라이브러리 -->
@@ -32,7 +30,6 @@
 		<div class="innerBox">
 			<ul class="top_nav">
 				<li class="logo_img" onclick="location.href='${ctx}/main.do'"></li>
-				<!--
 				<li>
 					<div style="color: #fff">
 						<div style="float: left;">
@@ -43,7 +40,6 @@
 				<li>
 					<div class="weather_description" style="font-size: 20pt"></div>
 				</li>
-				  -->
 				<li>
 					<ul class="member">
 						<li><c:if test="${empty loginId}">Guest 님</c:if> <c:if

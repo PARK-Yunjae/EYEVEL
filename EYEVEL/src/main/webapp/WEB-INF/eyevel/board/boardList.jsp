@@ -41,7 +41,7 @@
 			</tr>
 			<c:if test="${empty list }">
 				<tr>
-					<td>
+					<td colspan="7">
 						<h2>아무 글이 없습니다</h2>
 					</td>
 				</tr>
@@ -50,12 +50,8 @@
 				<tr>
 					<td>${board.no}</td>
 					<td>
-					<c:if test="${board.category eq '0'}">
-					공지
-					</c:if>
-					<c:if test="${board.category eq '1'}">
-					건의
-					</c:if>
+					<c:if test="${board.category eq '0'}">공지</c:if>
+					<c:if test="${board.category eq '1'}">건의</c:if>
 					</td>
 					<td><a href="${ctx}/boardInfo.do?no=${board.no}">${board.title}</a></td>
 					<td>${board.member_id}</td>

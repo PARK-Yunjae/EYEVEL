@@ -13,7 +13,8 @@
 		<form action="${ctx}/memberUpdate.do" method="post" enctype="multipart/form-data">
 			<ul class="member_info">
 				<li>
-					<label for="img" class="image"> <img src='http://localhost:8080/IMAGES/profile/${member.img}' id="profileImg" alt="이미지">
+					<label for="img" class="image"> 
+						<img src='http://localhost:8080/IMAGES/profile/${member.img}' id="profileImg" alt="이미지">
 					</label>
 					<input type="file" name="img" id="img" accept="image/*" onchange="readURL(this)">
 				</li>
