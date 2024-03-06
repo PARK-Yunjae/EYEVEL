@@ -59,24 +59,18 @@
 								class="fas fa-map-pin"></i></span>이 지역의 볼거리
 						</h2> <!-- slick 사용위치 -->
 						<div id="zzim_list">
+							<div class="content">
+								<p>${area.contents}</p>
+								<div onclick="initMap()">
+									<a href="javascript:void(0)" onclick="openPanorama()"
+										class="panorama_btn">파노라마 뷰 보러가기 <i
+										class="fas fa-arrow-right"></i>
+									</a>
+								</div>
+							</div>
 							<div>
-								<div class="image">
-									<img src="https://picsum.photos/310/310" alt="">
-								</div>
-								<div class="content">
-									<h3>${area.name}</h3>
-									<p>${area.contents}</p>
-									<div onclick="initMap()">
-										<a href="javascript:void(0)" onclick="openPanorama()"
-											class="panorama_btn">파노라마 뷰 보러가기 <i
-											class="fas fa-arrow-right"></i>
-										</a>
-									</div>
-									<p></p>
-					
-									<h3><b>AI 추천 관광지</b></h3>	
-									<div id="output">Loading...</div>
-								</div>
+								<h3>AI 추천 관광지</h3>	
+								<div id="output">Loading...</div>
 							</div>
 						</div>
 					</li>
