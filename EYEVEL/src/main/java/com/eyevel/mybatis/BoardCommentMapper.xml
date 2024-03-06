@@ -22,6 +22,12 @@
 	<delete id="deleteBoardComment" parameterType="Integer">
 		DELETE FROM boardComment 
 		WHERE no = #{no}
+	</delete>	
+	
+	<!-- 게시글 댓글 삭제 (게시글 삭제시 전부 삭제 -->
+	<delete id="deleteBoardCommentByBoard" parameterType="Integer">
+		DELETE FROM boardComment 
+		WHERE board_no = #{board_no}
 	</delete>
 	
 	<!-- 마지막으로 저장된 게시글 내보내기 -->

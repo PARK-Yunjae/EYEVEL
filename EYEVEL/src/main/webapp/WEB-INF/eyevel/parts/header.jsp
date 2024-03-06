@@ -144,7 +144,7 @@
 				</div>
 			</div>
 			<div class="input input_email_verification">
-				<input type="number" placeholder="인증 번호 입력" >
+				<input type="number" id="join_email_verification" placeholder="인증 번호 입력" >
 				<label class="email_time">시간</label>
 				<p class="msg email_msg_verification join_email_msg_verification">인증번호가 틀렸습니다</p>
 			</div>
