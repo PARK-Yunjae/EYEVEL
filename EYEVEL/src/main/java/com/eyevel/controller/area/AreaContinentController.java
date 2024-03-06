@@ -2,7 +2,6 @@ package com.eyevel.controller.area;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import com.eyevel.dao.AreaDAO;
 import com.eyevel.dao.AreaImgDAO;

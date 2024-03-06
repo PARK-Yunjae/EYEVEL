@@ -12,7 +12,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-// 게시글 댓글
+// 게시글 댓글 추가
 public class BoardCommentInsertController implements Controller{
 
 	@Override
@@ -22,7 +22,6 @@ public class BoardCommentInsertController implements Controller{
 		String boardComment = req.getParameter("board_info_comment");
 		BoardComment bc = new BoardComment();
 
-		System.out.println("실행1?");
 		bc.setBoard_no(Integer.parseInt(board_no));
 		bc.setComment(boardComment);
 		bc.setMember_id(id);
@@ -33,7 +32,6 @@ public class BoardCommentInsertController implements Controller{
 		
 		BoardCommentDAO.getInstance().insertBoardComment(bc);
 		String ctx = req.getContextPath();
-		System.out.println("실행2?");
 		return "redirect:" + ctx + "/boardInfo.do?no=" + board_no;
 	}
 
