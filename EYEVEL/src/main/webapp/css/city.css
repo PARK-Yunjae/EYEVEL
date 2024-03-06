@@ -29,46 +29,18 @@
    height: 476px;
 }
 .city_content .video iframe{width: 100%; height: 100%;}
-
-
-
-
 /* 이 지역의 볼거리 */
 .tourist{
+   width: 300px;
    background: #ffffff99;
    backdrop-filter: blur(10px);
    padding:20px;
    border-radius: var(--radius);
    box-shadow: 0 7px 10px 5px #2222221e;
    height: 476px;
-   width: 300px;
    overflow: auto;
    margin-left:10px;
 }
-.tourist h2{margin-bottom: calc(var(--padding));}
-.tourist #zzim_list>div{display: flex;}
-.tourist #zzim_list .image{
-   width: 100px;
-   height: 100px;
-   border-radius: 10px;
-   margin-right: 20px;
-   overflow: hidden;
-}
-.tourist #zzim_list .content h3{margin-bottom: 5px;}
-.tourist #zzim_list .content p{
-	margin-bottom: 15px;
-	width: 140px;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-}
-.tourist #zzim_list .fa-arrow-right{transition: all .3s;}
-.tourist #zzim_list a:hover{color:var(--dark-green);}
-.tourist #zzim_list a:hover .fa-arrow-right{transform: translateX(5px);}
-.tourist #zzim_list .content a{font-size: 14px;}
-
 .tourist::-webkit-scrollbar {
    width: 10px;
 }
@@ -76,8 +48,35 @@
    background-color: var(--gray);
    border-radius: 10px;
 }
-.tourist_content .image img{width: 100%;}
-
+.tourist .content{
+   display: flex;
+   flex-direction: column-reverse;
+   margin-bottom: 40px;
+}
+.panorama_btn{width: 100%;padding:15px 0;margin-bottom: var(--padding);}
+.AIcontent h3{
+   font-size: 24px;
+   margin-bottom: 25px;
+}
+.AIcontent h3::before{
+   content: "\f0eb";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 500;
+   color:var(--red);
+   margin-right: 10px;;
+}
+.AIcontent a:hover{color:var(--dark-green);}
+.AIcontent a::after{
+	display: inline-block;
+	content: "\f061";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   margin-left: 10px;
+   transition: all .3s;
+}
+.AIcontent a:hover:after{
+	transform: translateX(8px);
+}
 /* 댓글 */
 div.comment{
    width: 100%;
@@ -126,7 +125,7 @@ ul.comment .content{
 ul.comment .content>div{display: flex;margin-bottom: 10px;align-items: center;justify-content: center;}
 ul.comment .content>div h4{margin-right: 10px;}
 ul.comment .content>div p{color:#555;}
-ul.comment .content>p{width: 85%;word-break:break-all;text-overflow: ellipsis;}
+ul.comment .content>p{padding-right:100px;}
 ul.comment button{align-self: flex-end;background: var(--red);color:var(--white)}
 ul.comment button:hover{align-self: flex-end;background: var(--dark-red);}
 ul.comment .content>button{
@@ -134,38 +133,6 @@ ul.comment .content>button{
    right:0;
    top: 50%;
    transform: translateY(-50%);
-}
-
-/* 모달 창 열림 애니메이션 */
-@keyframes modalFadeIn {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-.modal_panorama.active {
-  animation: modalFadeIn 0.3s ease-out forwards;
-}
-/* 모달 창 닫힘 애니메이션 */
-@keyframes modalFadeOut {
-  from {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
-  }
-}
-
-/* 닫힘 애니메이션을 위한 클래스 추가 */
-.modal_panorama.closing {
-  animation: modalFadeOut 0.3s ease-out forwards;
 }
 
 .modal_panorama{z-index: 997;width: 70%;height: 90%;}
@@ -180,28 +147,16 @@ ul.comment .content>button{
 .panorama{width: 100%;height: 90%;}
 
 
-
 @media screen and (max-width: 1200px) {
 	.city_content{flex-direction: column;}
 	.city_content .video{width: 100%;margin-bottom: var(--padding);}
 	.modal_panorama{width: 90%;padding:30px 20px;}
-	
-	.tourist{width: 100%;margin-left: 0;}
-	.tourist #zzim_list .image{width: 200px;}
-	.tourist h2{text-align: center;margin-bottom: 40px;font-size: 30px;}
-   .tourist #zzim_list>div{width: 100%;padding: 20px 0; border-bottom: 1px dotted var(--gray);}
-   .tourist #zzim_list .content{display: flex;flex-direction: column;width: 100%;}
-   .tourist #zzim_list .content h3{font-size: 24px;margin-bottom: 20px;}
-   .tourist #zzim_list .content>div{align-self: flex-end;}
-   .tourist #zzim_list .content>div a{font-size: 18px;font-weight: bold;}
-   .tourist #zzim_list .content p{width: 90%;}
+   .tourist{width: 100%;}
 }
 
 @media screen and (max-width: 900px) {
 	.modal_panorama{width: 100%;padding:30px 20px;}
-   .tourist h2{text-align: center;margin-bottom: 40px;font-size: 30px;}
-   .tourist .image{display: none;}
-	.tourist{width: 100%;}
+
    /* 댓글 */
    div.comment form input[type=text]{margin-right: 0;}
    div.comment form{flex-wrap: wrap;}
@@ -210,6 +165,6 @@ ul.comment .content>button{
    ul.comment .profile_image{margin-bottom: 20px;}
    ul.comment .content>div h4{margin-right: 0;margin-bottom:5px;}
    ul.comment .content>div{flex-direction: column;align-items: flex-start;}
-   ul.comment .content>p{border-top: 1px dotted var(--gray);padding-top:10px;width: 100%;}
-   ul.comment .content>button{top:-90px;right:-40px;transform: translateX(0);padding:10px 20px}
+   ul.comment .content>p{border-top: 1px dotted var(--gray);padding-top:10px;}
+   ul.comment .content>button{top:-110%;right:-40px;transform: translateX(0);padding:10px 20px}
 }

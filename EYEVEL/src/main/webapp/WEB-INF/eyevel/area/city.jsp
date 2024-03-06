@@ -52,29 +52,21 @@
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
 				</div>
-				<ul class="tourist">
-					<li>
-						<h2>
-							<span class="red" style="margin-right: 10px"><i
-								class="fas fa-map-pin"></i></span>이 지역의 볼거리
-						</h2> <!-- slick 사용위치 -->
-						<div id="zzim_list">
-							<div class="content">
-								<p>${area.contents}</p>
-								<div onclick="initMap()">
-									<a href="javascript:void(0)" onclick="openPanorama()"
-										class="panorama_btn">파노라마 뷰 보러가기 <i
-										class="fas fa-arrow-right"></i>
-									</a>
-								</div>
-							</div>
-							<div>
-								<h3>AI 추천 관광지</h3>	
-								<div id="output">Loading...</div>
-							</div>
+				<div class="tourist">
+					<div class="content">
+						<p>${area.contents}</p>
+						<div onclick="initMap()">
+							<a href="javascript:void(0)" onclick="openPanorama()"
+								class="button btn1 panorama_btn">파노라마 뷰 보러가기 <i
+								class="fas fa-arrow-right"></i>
+							</a>
 						</div>
-					</li>
-				</ul>
+					</div>
+					<div class="AIcontent">
+						<h3>AI 추천 관광지</h3>	
+						<div id="output">Loading...</div>
+					</div>
+				</div>
 			</div>
 			<div id="roadview" style="display: none;"></div>
 			<div class="comment">
