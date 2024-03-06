@@ -19,6 +19,7 @@ function optionCheck(){
 function likeBtnCheck(no,loginId){
 	// 로그인 안한 유저는 못함
 	if(loginId == ""){
+		modalCheck("경고", "로그인이 필요합니다",loginModal);
 		return false;
 	}
 	let heart = document.querySelector("#heart");

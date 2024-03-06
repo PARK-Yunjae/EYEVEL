@@ -23,4 +23,9 @@
 	<delete id="deleteBoardLikeByBoard" parameterType="Integer">
 		delete from boardLike where board_no = #{board_no}
 	</delete>
+	
+	<!-- 좋아요 삭제 (유저 삭제시 좋아요 전부 삭제)-->
+	<delete id="deleteBoardLikeMemberId" parameterType="String">
+		delete from boardLike where member_id like #{member_id}
+	</delete>
 </mapper>

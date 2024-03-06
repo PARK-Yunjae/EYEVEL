@@ -17,7 +17,11 @@
 		delete from comment where no=#{no}
 	</delete>
 	
-	<delete id="araeCommentDelete" parameterType="Integer">
+	<delete id="areaCommentDelete" parameterType="Integer">
 		delete from comment where area_no=#{area_no}
+	</delete>
+	
+	<delete id="CommentDeleteMemberId" parameterType="String">
+		delete from comment where member_id like #{member_id}
 	</delete>
 </mapper>

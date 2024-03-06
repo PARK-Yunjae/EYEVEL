@@ -66,13 +66,13 @@
 					<c:forEach var="a" items="${area}">
 						<div>
 							<div class="image">
-								<img src="https://picsum.photos/310/310" alt="">
+								<img src="http://localhost:8080/IMAGES/area/${a.name}/${a.link_url}.jpg" alt="">
 							</div>
 							<div class="content">
 								<h3>${a.name}</h3>
 								<p>${a.contents}</p>
 								<div>
-									<a href="해당 관광지(도시)페이지">
+									<a href="${ctx}/areaCity.do?no=${a.no}&loginId=${loginId}">
 										보러가기 <i class="fas fa-arrow-right"></i>
 									</a>
 									<span data-no="${a.no}" class="zzim_btn">
