@@ -174,13 +174,13 @@ function joinCheck(form) {
 			document.querySelector(".join_pwCheck_msg").style.color = "#ff6969";
 			document.querySelector(".join_pw_msg").style.display = "none";
 			document.querySelector(".join_pwCheck_msg").style.display = "block";
-			return false;
 		} else {
 			document.querySelector(".join_pwCheck_msg").innerHTML = "사용 가능한 비밀번호 입니다.";
 			document.querySelector(".join_pwCheck_msg").style.color = "#41CE82";
 			document.querySelector(".join_pw_msg").style.display = "none";
 			document.querySelector(".join_pwCheck_msg").style.display = "block";
 		}
+		return false;
 	}
 	if (pwCheck === "") {
 		document.querySelector(".join_pwCheck_msg").style.display = "block";
@@ -199,6 +199,7 @@ function joinCheck(form) {
 	if(emailPass){
 		document.querySelector(".join_email_msg").innerHTML = "이메일 인증을 하셔야 합니다";
 		document.querySelector(".join_email_msg").style.display = "block";
+		return false;
 	}
 	if (terms === false) {
 		document.querySelector(".join_terms_msg").style.display = "block";
@@ -334,13 +335,15 @@ function emailVerification(){
 }
 
 // 이메일 인증번호에 키 입력값이 있으면
-document.getElementById("join_email_verification").addEventListener("keyup", e =>{
-	if(e.value == emailCode){
+document.getElementById("join_email_verification").addEventListener("keyup", () =>{
+	let myEmailCode = document.getElementById("join_email_verification");
+	if( myEmailCode.value == emailCode){
 		emailPass = false;
 		document.querySelector(".email_msg_verification").innerHTML = "인증 되었습니다.";
 		document.querySelector(".email_msg_verification").style.display = "block";
 		document.querySelector(".email_msg_verification").style.color = "#41CE82";
 	}else{
+		emailPass = true;
 		document.querySelector(".email_msg_verification").innerHTML = "인증번호가 맞지 않습니다";
 		document.querySelector(".email_msg_verification").style.display = "block";
 		document.querySelector(".email_msg_verification").style.color = "#ff6969";
