@@ -57,7 +57,7 @@ public class MemberUpdateController implements Controller {
 		
 		// 관리자 일때는 관리자 맴버 리스트로
 		if(req.getSession().getAttribute("loginId").equals("admin")) {
-			return "redirect:"+ctx+"/memberList.do";
+			return "redirect:"+ctx+"/adminMemberList.do";
 		}
 		// 아닐때는
 		return "eyevel/parts/main";

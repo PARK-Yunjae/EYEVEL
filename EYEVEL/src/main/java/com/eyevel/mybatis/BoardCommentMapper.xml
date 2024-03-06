@@ -30,6 +30,12 @@
 		WHERE board_no = #{board_no}
 	</delete>
 	
+		<!-- 게시글 댓글 삭제 (유저 삭제시 전부 삭제 -->
+	<delete id="deleteBoardCommentMemberId" parameterType="String">
+		DELETE FROM boardComment 
+		WHERE member_id like #{member_id}
+	</delete>
+	
 	<!-- 마지막으로 저장된 게시글 내보내기 -->
 	<select id="getLastBoardComment" resultType="BoardComment">
 		SELECT * FROM boardComment ORDER BY no DESC LIMIT 1;

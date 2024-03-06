@@ -65,6 +65,7 @@
    color:var(--red);
    margin-right: 10px;;
 }
+.AIcontent a{display: block; margin-top:10px;}
 .AIcontent a:hover{color:var(--dark-green);}
 .AIcontent a::after{
 	display: inline-block;
@@ -94,6 +95,7 @@ div.comment form{
 }
 div.comment form input[type=text]{margin-right:40px;background: var(--white);border: none;}
 div.comment form input[type=submit]{width: 20%;}
+div.comment form input[type=submit]:disabled{background: gray;cursor: default;color:var(--black)}
 
 /* 댓글 목록 */
 ul.comment li{
@@ -125,7 +127,7 @@ ul.comment .content{
 ul.comment .content>div{display: flex;margin-bottom: 10px;align-items: center;justify-content: center;}
 ul.comment .content>div h4{margin-right: 10px;}
 ul.comment .content>div p{color:#555;}
-ul.comment .content>p{padding-right:100px;}
+ul.comment .content>p{width: 85%;word-break:break-all;text-overflow: ellipsis;}
 ul.comment button{align-self: flex-end;background: var(--red);color:var(--white)}
 ul.comment button:hover{align-self: flex-end;background: var(--dark-red);}
 ul.comment .content>button{
@@ -134,6 +136,8 @@ ul.comment .content>button{
    top: 50%;
    transform: translateY(-50%);
 }
+
+
 
 /* 모달 창 열림 애니메이션 */
 @keyframes modalFadeIn {
@@ -198,6 +202,6 @@ ul.comment .content>button{
    ul.comment .profile_image{margin-bottom: 20px;}
    ul.comment .content>div h4{margin-right: 0;margin-bottom:5px;}
    ul.comment .content>div{flex-direction: column;align-items: flex-start;}
-   ul.comment .content>p{border-top: 1px dotted var(--gray);padding-top:10px;}
-   ul.comment .content>button{top:-110%;right:-40px;transform: translateX(0);padding:10px 20px}
+   ul.comment .content>p{border-top: 1px dotted var(--gray);padding-top:10px;width: 100%;}
+   ul.comment .content>button{top:-90px;right:-40px;transform: translateX(0);padding:10px 20px}
 }
