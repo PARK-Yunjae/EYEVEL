@@ -99,6 +99,9 @@ ul.comment li{
    align-items: flex-start;
    width: 100%;
    margin-bottom: 30px;
+   padding:10px 0;
+   background: #f8f8f855;
+   border-radius: 10px;
 }
 ul.comment li:last-child{margin-bottom: 0;}
 ul.comment .profile_image{
@@ -118,8 +121,8 @@ ul.comment .content{
 
 ul.comment .content>div{display: flex;margin-bottom: 10px;align-items: center;justify-content: center;}
 ul.comment .content>div h4{margin-right: 10px;}
-ul.comment .content>div p{color:var(--white);}
-ul.comment .content>p{padding-right:100px;}
+ul.comment .content>div p{color:#555;}
+ul.comment .content>p{width: 95%;word-break:break-all;text-overflow: ellipsis;}
 ul.comment button{align-self: flex-end;background: var(--red);color:var(--white)}
 ul.comment button:hover{align-self: flex-end;background: var(--dark-red);}
 ul.comment .content>button{
@@ -145,8 +148,29 @@ ul.comment .content>button{
 	.city_content{flex-direction: column;}
 	.city_content .video{width: 100%;margin-bottom: var(--padding);}
 	.modal_panorama{width: 90%;padding:30px 20px;}
+	.tourist #zzim_list .image{width: 200px;}
+	.tourist h2{text-align: center;margin-bottom: 40px;font-size: 30px;}
+   .tourist #zzim_list>div{width: 100%;padding: 20px 0; border-bottom: 1px dotted var(--gray);}
+   .tourist #zzim_list .content{display: flex;flex-direction: column;width: 100%;}
+   .tourist #zzim_list .content h3{font-size: 24px;margin-bottom: 20px;}
+   .tourist #zzim_list .content>div{align-self: flex-end;}
+   .tourist #zzim_list .content>div a{font-size: 18px;font-weight: bold;}
+   .tourist #zzim_list .content p{width: 90%;}
 }
 
 @media screen and (max-width: 900px) {
 	.modal_panorama{width: 100%;padding:30px 20px;}
+   .tourist h2{text-align: center;margin-bottom: 40px;font-size: 30px;}
+   .tourist .image{display: none;}
+
+   /* 댓글 */
+   div.comment form input[type=text]{margin-right: 0;}
+   div.comment form{flex-wrap: wrap;}
+   div.comment form input[type=submit]{width: 100%;}
+   ul.comment li{flex-direction: column;padding:20px;}
+   ul.comment .profile_image{margin-bottom: 20px;}
+   ul.comment .content>div h4{margin-right: 0;margin-bottom:5px;}
+   ul.comment .content>div{flex-direction: column;align-items: flex-start;}
+   ul.comment .content>p{border-top: 1px dotted var(--gray);padding-top:10px;}
+   ul.comment .content>button{top:-110%;right:-40px;transform: translateX(0);padding:10px 20px}
 }
