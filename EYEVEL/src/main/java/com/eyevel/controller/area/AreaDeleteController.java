@@ -29,11 +29,11 @@ public class AreaDeleteController implements Controller{
 		AreaImgDAO.getInstance().deleteAreaImg(no);
 		//찜목록 삭제
 		ZzimDAO.getInstance().zzimDeletebyNo(no);
+		//관광지 삭제
 		AreaDAO.getInstance().areaDelete(no);
 		
 		String ctx = req.getContextPath();
 		
 		return "redirect:"+ctx+"/adminAreaList.do";
 	}
-	
 }

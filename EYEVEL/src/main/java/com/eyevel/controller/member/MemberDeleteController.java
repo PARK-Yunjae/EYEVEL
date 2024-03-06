@@ -33,7 +33,7 @@ public class MemberDeleteController implements Controller {
 		MemberDAO.getInstance().memberDelete(id);
 		
 		if(session.getAttribute("loginId").equals("admin")) {
-			return "redirect:"+ctx+"/memberList.do";
+			return "redirect:"+ctx+"/adminMemberList.do";
 		}else {
 			session.setAttribute("loginId", null);			
 		}
