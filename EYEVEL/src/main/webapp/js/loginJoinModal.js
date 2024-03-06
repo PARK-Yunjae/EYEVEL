@@ -5,7 +5,6 @@ let contextPath = window.location.pathname.substring(0, window.location.pathname
 
 // 로그인 버튼 클릭 시 - 혹시 모르니 값 초기화
 function loginModal() {
-	console.log("로그인 모달 오픈 시도");
 	document.getElementById("login_id").value = "";
 	document.getElementById("login_pw").value = "";
 	document.querySelector(".login_id_msg").style.display = "none";
@@ -99,12 +98,14 @@ function joinModal() {
 	document.getElementById("join_pw").value = "";
 	document.getElementById("join_pwCheck").value = "";
 	document.getElementById("join_email").value = "";
+	document.getElementById("join_email_verification").value = "";
 	document.getElementById("join_terms").checked = false;
 	document.querySelector(".join_name_msg").style.display = "none";
 	document.querySelector(".join_id_msg").style.display = "none";
 	document.querySelector(".join_pw_msg").style.display = "none";
 	document.querySelector(".join_pwCheck_msg").style.display = "none";
 	document.querySelector(".join_email_msg").style.display = "none";
+	document.querySelector(".input_email_verification").style.display = "none";
 	document.querySelector(".join_terms_msg").style.display = "none";
 	document.getElementById("join_id").style.border = "1px solid #a8a8a8";
 	
@@ -133,7 +134,6 @@ function joinCheck(form) {
 	}
 	joinPass = false;
 
-	console.log("회원가입 체크");
 	let name = form.join_name.value.trim();
 	let id = form.join_id.value.trim();
 	let pw = form.join_pw.value.trim();
@@ -168,25 +168,24 @@ function joinCheck(form) {
 		return false;
 	}
 	if (pwCheck === pw) {
-		console.log(pwCheck);
 		if (!form.pw.value.match(/^(?=.*[a-zA-Z])(?=.*[0-9]).{4,25}$/)) {
 			document.querySelector(".join_pwCheck_msg").innerHTML = "비밀번호에 영어,숫자가 포함되어야 합니다.";
 			document.querySelector(".join_pwCheck_msg").style.color = "#ff6969";
 			document.querySelector(".join_pw_msg").style.display = "none";
 			document.querySelector(".join_pwCheck_msg").style.display = "block";
+			return false;
 		} else {
 			document.querySelector(".join_pwCheck_msg").innerHTML = "사용 가능한 비밀번호 입니다.";
 			document.querySelector(".join_pwCheck_msg").style.color = "#41CE82";
 			document.querySelector(".join_pw_msg").style.display = "none";
 			document.querySelector(".join_pwCheck_msg").style.display = "block";
 		}
-		return false;
 	}
 	if (pwCheck === "") {
 		document.querySelector(".join_pwCheck_msg").style.display = "block";
 		return false;
 	}
-	if (email === "") {
+	if (email.value == "") {
 		document.querySelector(".join_email_msg").innerHTML = "이메일을 입력해주세요";
 		document.querySelector(".join_email_msg").style.display = "block";
 		return false;
@@ -250,6 +249,23 @@ document.getElementById("join_email").addEventListener("keyup", () => {
 	document.querySelector(".join_email_msg").style.display = "none";
 })
 
+// 동의 버튼 체크 확인
+document.getElementById("join_terms").addEventListener('change', e => {
+	let terms = document.getElementById("join_terms");
+    console.log(terms.checked);
+    if (terms.checked == true) {
+		joinPass = true;
+        document.querySelector(".join_terms_msg").style.display = "block";
+        document.querySelector(".join_terms_msg").innerHTML="동의 확인 되었습니다";
+   		document.querySelector(".join_terms_msg").style.color = "#41CE82";
+    } else {
+		joinPass = true;
+        document.querySelector(".join_terms_msg").style.display = "block";
+        document.querySelector(".join_terms_msg").innerHTML="약관에 동의해주세요";
+		document.querySelector(".join_terms_msg").style.color = "#ff6969";
+		
+    }
+});
 // 중복 id 체크 - 비동기
 document.getElementById("join_idCheck").addEventListener("click", () => {
 	joinPass = true;
@@ -299,6 +315,8 @@ function logoutCheck(name) {
 }
 let emailCode;
 let emailInteval;
+let count = 180;
+let countPass = true;
 // 이메일 인증 테스트
 function emailVerification(){
 	let email = document.getElementById("join_email");
@@ -320,13 +338,28 @@ function emailVerification(){
     .then(data => {
 		emailCode = data;
         if(data) {
+			countPass = true;
 			document.querySelector(".input_email_verification").style.display = "block"
             document.querySelector(".email_msg_verification").innerHTML = "인증 메일이 발송되었습니다.";
 			document.querySelector(".email_msg_verification").style.display = "block";  
         	// 이때 인터벌
+        	let email_time = document.querySelector(".email_time");
         	emailInteval = setInterval( () =>{
+				let minutes = parseInt(count / 60, 10);
+                let seconds = parseInt(count % 60, 10);
+        
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
 				
-			})
+				email_time.innerHTML = minutes + " : " + seconds;
+				count -= 1;
+				if(count <= 0){
+					clearInterval(emailInteval);
+            		document.querySelector(".email_msg_verification").innerHTML = "시간초과 되었습니다";
+					document.querySelector(".email_msg_verification").style.display = "block";  
+					countPass = false;
+				}
+			}, 1000);
         } else {
 			document.querySelector(".join_email_msg").innerHTML = "이메일 발송에 실패했습니다.";
 			document.querySelector(".join_email_msg").style.display = "block";
@@ -337,8 +370,11 @@ function emailVerification(){
 // 이메일 인증번호에 키 입력값이 있으면
 document.getElementById("join_email_verification").addEventListener("keyup", () =>{
 	let myEmailCode = document.getElementById("join_email_verification");
-	if( myEmailCode.value == emailCode){
+	if( myEmailCode.value == emailCode && countPass){
 		emailPass = false;
+		joinPass = true;
+		clearInterval(emailInteval);
+		document.querySelector(".email_time").innerHTML = "";
 		document.querySelector(".email_msg_verification").innerHTML = "인증 되었습니다.";
 		document.querySelector(".email_msg_verification").style.display = "block";
 		document.querySelector(".email_msg_verification").style.color = "#41CE82";
