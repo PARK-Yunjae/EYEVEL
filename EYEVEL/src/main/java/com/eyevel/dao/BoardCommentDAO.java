@@ -24,7 +24,7 @@ public class BoardCommentDAO {
 		return list;
 	}
 	
-	// 게시글 추가
+	// 게시글 댓글 추가
 	public void insertBoardComment(BoardComment bc) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		session.insert("insertBoardComment", bc);
@@ -32,11 +32,19 @@ public class BoardCommentDAO {
 		session.close();
 	}
 	
-	// 마지막으로 저장된 게시글 댓글 가져오기
-	public BoardComment getLastBoardComment() {
+	// 게시글 댓글 삭제
+	public void deleteBoardComment(int no) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
-		BoardComment bc = session.selectOne("getLastBoardComment");
+		session.delete("deleteBoardComment", no);
+		session.commit();
 		session.close();
-		return bc;
 	}
+//	// 마지막으로 저장된 게시글 댓글 가져오기
+//	비동기 용이었는데 보류하기로 함
+//	public BoardComment getLastBoardComment() {
+//		SqlSession session = MybatisConfig.getInstance().openSession();
+//		BoardComment bc = session.selectOne("getLastBoardComment");
+//		session.close();
+//		return bc;
+//	}
 }

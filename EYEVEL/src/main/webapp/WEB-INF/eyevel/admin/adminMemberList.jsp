@@ -5,7 +5,7 @@
 				location.href = "${ctx}/main.do";
 			</script>
 		</c:if>
-<script src="${ctx}/js/adminMemberList.js" defer></script>
+		<script src="${ctx}/js/adminMemberList.js" defer></script>
 		<section>
 			<div class="innerBox">
 				<h2 class="title">유저 관리</h2>

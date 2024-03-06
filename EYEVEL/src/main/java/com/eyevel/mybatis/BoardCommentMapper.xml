@@ -4,9 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eyevel.mybatis.BoardCommentMapper">
 	
-	<!-- 게시글 댓글 조회 -->
+	<!-- 게시글 댓글 조회 + 맴버 이미지도 건드림-->
 	<select id="selectBoardComments" parameterType="Integer" resultType="BoardComment">
-		SELECT * FROM boardComment WHERE board_no = #{no}
+		SELECT boardComment.*, member.img
+		FROM boardComment
+		JOIN member ON boardComment.member_id = member.id
+		WHERE boardComment.board_no = #{no}
 	</select>
 
 	<!-- 게시글 댓글 추가 -->

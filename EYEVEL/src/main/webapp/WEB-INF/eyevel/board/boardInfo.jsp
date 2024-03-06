@@ -71,7 +71,7 @@ pageContext.setAttribute("cn", "\n");
 						value="$dateFmt}" /> --%>
 					<li>
 						<div class="profile_image">
-							<img src="https://picsum.photos/100/100" alt="">
+							<img src="http://localhost:8080//IMAGES/profile/${bc.img}" alt="">
 						</div>
 						<div class="content">
 							<div>
@@ -79,9 +79,12 @@ pageContext.setAttribute("cn", "\n");
 								<p>${bc.reg_datetime}</p>
 							</div>
 							<p>${bc.comment}</p>
-							<button
-								onclick="location.href='${ctx}/boardCommentDelete.do?no=${bc.no}'"
-								<c:if test="${bc.member_id ne loginId}">style="display:none"</c:if>>삭제</button>
+							<!-- no는 댓글 고유 번호, board_no는 게시글 번호  -->
+							<button 
+								onclick="location.href='${ctx}/boardCommentDelete.do?no=${bc.no}&board_no=${bc.board_no}'"
+								<c:if test="${bc.member_id ne loginId}">style="display:none"</c:if>>
+								삭제
+							</button>
 						</div>
 					</li>
 				</c:forEach>

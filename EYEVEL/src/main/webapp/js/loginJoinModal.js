@@ -291,3 +291,34 @@ function logoutCheck(name) {
 	alert(name + "님 로그아웃 되었습니다.");
 	location.href = contextPath + "/memberLogout.do";
 }
+
+// 이메일 인증 테스트
+function emailVerification(){
+	let email = document.getElementById("join_email");
+	
+	if (!email.value.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/)) {
+		document.querySelector(".join_email_msg").innerHTML = "이메일 형식이 다릅니다";
+		document.querySelector(".join_email_msg").style.display = "block";
+		return false;
+	}
+	
+	fetch("vaildEmailVerification.do", {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+        },
+        body: "email=" + email.value
+    })
+    .then(response => response.text())
+    .then(data => {
+		console.log(data);
+        if(data) {
+			document.querySelector(".input_email_verification").style.display = "block"
+            document.querySelector(".email_msg_verification").innerHTML = "인증 메일이 발송되었습니다.";
+			document.querySelector(".email_msg_verification").style.display = "block";  
+        } else {
+			document.querySelector(".join_email_msg").innerHTML = "이메일 발송에 실패했습니다.";
+			document.querySelector(".join_email_msg").style.display = "block";
+        }
+    }).catch(error => console.error('Error:', error));
+}
