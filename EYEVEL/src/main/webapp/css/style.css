@@ -144,6 +144,6 @@ textarea{
 	.innerBox{width: 95%;}
 }
 @media screen and (max-width: 900px) {
-	.mobildeNone{display: none;}
+	.mobileNone{display: none;}
 	.remove_icon{display:block; margin-left: 0;margin-top:10px;}
 }

@@ -82,7 +82,7 @@ input.readonly:focus{outline: none;}
 #zzim_list>div{
    display: flex;
    justify-content: space-between;
-   align-items: flex-end;
+   align-items: flex-start;
    margin-top: 35px;
 }
 
@@ -91,7 +91,20 @@ input.readonly:focus{outline: none;}
 .zzim_list p{margin-bottom: 15px;}
 #zzim_list .fa-arrow-right{transition: all .3s;}
 #zzim_list a:hover .fa-arrow-right{transform: translateX(5px);}
-.zzim_list .content {text-overflow: ellipsis;}
+.zzim_list .content {
+	text-overflow: ellipsis;
+	width: 135px;
+}
+.zzim_list .content p{
+	height: 38px;
+	width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.zzim_list .content>div{display: flex;align-items: center;justify-content: center;}
 .zzim_list .content span .fa-heart{transition: all .3s;}
 .zzim_list .content span .fa-heart:hover{transform: scale(1.1);}
 .zzim_list .content span .fa-heart:active{transform: scale(0.9);}

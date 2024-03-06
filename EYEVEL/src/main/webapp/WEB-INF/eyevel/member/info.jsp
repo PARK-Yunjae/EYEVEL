@@ -64,24 +64,16 @@
 							</div>
 							<div class="content">
 								<h3>${a.name}</h3>
-								<!-- 말줄임 -->
-								<c:choose>
-									<c:when test="${fn:length(a.contents) > 15}">
-										<c:out value="${fn:substring(a.contents, 0, 13)}" />...
-									</c:when>
-									<c:otherwise>
-										<c:out value="${a.contents}" />
-									</c:otherwise>
-								</c:choose>
+								<p>${a.contents}</p>
 								<div>
 									<a href="해당 관광지(도시)페이지">
 										보러가기 <i class="fas fa-arrow-right"></i>
 									</a>
 									<span data-no="${a.no}" class="zzim_btn">
 										<i id="heart" class=
-                       <c:if test="${empty zzim}">"fa-heart icon far"</c:if> 
-                       <c:if test="${!empty zzim}">"fa-heart icon fa"</c:if>>
-                    </i>
+					                       <c:if test="${empty zzim}">"fa-heart icon far"</c:if> 
+					                       <c:if test="${!empty zzim}">"fa-heart icon fa"</c:if>>
+				                    	</i>
 									</span>
 								</div>
 							</div>

@@ -17,11 +17,11 @@ header.black .top_nav .logo_img{background-image: url('../img/logo.png');}
 	cursor:pointer;
 	background-image: url('../img/logo_white.png');
 	background-repeat: no-repeat;
-   	background-position: center center;
-   	-webkit-background-size: contain;
-  	-moz-background-size: contain;
-  	-o-background-size: contain;
-   	background-size: contain;
+   background-position: center center;
+   -webkit-background-size: contain;
+   -moz-background-size: contain;
+   -o-background-size: contain;
+   background-size: contain;
 }
 .logo_img img{width: 100%;}
 
@@ -48,6 +48,80 @@ header.black .top_nav .logo_img{background-image: url('../img/logo.png');}
 .gnb li:hover:after{opacity: 1;}
 header.black .gnb{display: none;}
 
+.menuToggle::after{
+   content: "\f358";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   position: absolute;
+   top:30px;left:50%;
+   transform: translateX(-50%);
+   width: 50px;
+   text-align: center;
+   font-size: var(--font-subTitle);
+}
+.menuToggle{
+   display: none;
+   font-size: 24px;
+   color:var(--white);
+   text-shadow:0 0 5px #22222254;
+   position: absolute;
+   top:20px;left:50%;
+   transform: translateX(-50%);
+   cursor: pointer;
+   transition: all .3s;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none
+
+}
+.menuToggle:hover{transform: translateX(-50%) translateY(10px);}
+.menuToggle.on::after{content: "\f35b";}
+.menuToggle.on:hover{transform: translateX(-50%) translateY(-10px);}
+
 @media screen and (max-width: 1200px) {
 	.gnb li {font-size: 20px;}
+}
+@media screen and (max-width: 900px) {
+	header.black .menuToggle{display: none;}
+   .menuToggle{display: block;}
+   .top_nav{font-size: 20px;}
+   .top_nav .member>li:nth-child(3){margin-left: 15px;}
+	.gnb{
+		position: absolute;
+		z-index: 997;
+		width: 95%;
+		top:-100%;
+		left:50%;
+		transform: translateX(-50%);
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		border: 3px solid #f8f8f880;	
+		border-radius: 10px;
+		padding:20px 0;
+		backdrop-filter: blur(10px);
+		transition: all .8s;
+   }
+   .gnb.on{
+      top:100px;
+   }
+   .gnb li:first-child{display: none;}
+   .gnb li{
+      text-align: center;
+      width: 150px;
+      margin-top:0;
+      margin-right:0;
+      font-size: 24px;
+      font-weight:500;
+      position: relative;
+      cursor: pointer;
+   }
+   .gnb li::after{display: none;}
+   .gnb li a{
+      border-radius: 10px;
+      display: block;
+      padding:20px 10px;
+      font-weight: bold;
+   }
+   .gnb li a:hover{text-shadow:0 0 5px #41CE8280;}
 }

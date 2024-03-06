@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/css/header.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/modal.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/loginJoinModal.css">
+<script src="${ctx}/js/header.js" defer></script>
 <script src="${ctx}/js/modal.js" defer></script>
 <script src="${ctx}/js/loginJoinModal.js" defer></script>
 <!-- 날씨 표시를 위한 라이브러리 -->
@@ -58,6 +59,7 @@
 					</ul>
 				</li>
 			</ul>
+			<div class="menuToggle">메뉴</div>
 			<ul class="gnb">
 				<li class="mobildeNone"<c:if test="${area eq 'all'}">class="on mobildeNone"</c:if>>
 				<a href="${ctx}/areaEarth.do?area=all">전체</a></li>

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
 <script defer src="${ctx}/js/continent.js" defer></script>
-<link rel="stylesheet" type="text/css" href="${ctx}/css/earth.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/css/continent.css">
 <div id="arealist" data-user="${list}"></div>
 <section class="earthSection">
 	<div class="innerBox">
