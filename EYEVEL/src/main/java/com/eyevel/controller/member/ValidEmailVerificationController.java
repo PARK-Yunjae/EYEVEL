@@ -31,7 +31,7 @@ public class ValidEmailVerificationController implements Controller {
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.port", "465");
 
-		Session session = Session.getDefaultInstance(props, new jakarta.mail.Authenticator() {
+		Session session = jakarta.mail.Session.getDefaultInstance(props, new jakarta.mail.Authenticator() {
 			protected jakarta.mail.PasswordAuthentication getPasswordAuthentication() {
 				return new jakarta.mail.PasswordAuthentication(fromEmail, password);
 			}
