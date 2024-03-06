@@ -57,6 +57,12 @@
 				</h2>
 				<!-- slick 사용위치 -->
 				<div id="zzim_list">
+					<c:if test="${area.size()==0}">
+					<div class="zzim_empty">
+						<img alt="빈 이미지" src="${ctx}/img/shitsuren_heart.png">
+						<p>찜목록이 비어있습니다.</p>
+					</div>
+					</c:if>
 					<c:forEach var="a" items="${area}">
 						<div>
 							<div class="image">

@@ -38,4 +38,12 @@ public class BoardLikeDAO {
 		session.commit();
 		session.close();
 	}
+	
+	// 좋아요 삭제 (게시글 삭제시 게시글 관련 좋아요 전부 삭제
+	public void deleteBoardLikeByBoard(int board_no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.delete("deleteBoardLikeByBoard", board_no);
+		session.commit();
+		session.close();
+	}
 }
