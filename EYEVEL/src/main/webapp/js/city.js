@@ -18,6 +18,17 @@ const getWeather = (lat, lon) => {
 	}).then((json) => {
 		getdesc = json.weather[0].main;
 		desc.innerText = getdesc;
+
+		// 날씨 아이콘 URL 생성
+		const iconCode = json.weather[0].icon;
+		const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+
+		// 아이콘을 페이지에 표시
+		let weatherIcon = document.getElementById('weather-icon'); // 아이콘을 표시할 엘리먼트의 ID
+		if (weatherIcon) {
+			weatherIcon.src = iconUrl;
+		}
+
 		let areaimgs = document.querySelectorAll('.areaimg');
 		let selectedimg = '';
 		let index = 0;
@@ -75,20 +86,36 @@ fetchTimeZone(lat, lon);
 // 좋아요 버튼 클릭이벤트
 let modal_panorama = document.querySelector('.modal_panorama');
 let panorama_btn = document.querySelectorAll('.panorama_btn');
+let city_section = document.querySelector('.city_section');
 
 // 파노라마 모달창 띄우기
 function openPanorama() {
 	modal_panorama.classList.add('active');
-	//modal_panorama.style.width =  "800px";
+	city_section.style.display = 'none';
 }
 // 파노라마 모달창 닫기
-function closePanorama() { modal_panorama.classList.remove('active'); }
+function closePanorama() {
+	let modal_panorama = document.querySelector('.modal_panorama');
+	modal_panorama.classList.add('closing');
+	city_section.style.display = 'block';
+	// 애니메이션 종료 후 모달 창을 숨김
+	modal_panorama.addEventListener('animationend', function() {
+		modal_panorama.classList.remove('active');
+		modal_panorama.classList.remove('closing');
+	}, { once: true }); // 이벤트 리스너가 한 번만 실행되도록 설
+}
 
 // 모달 창 밖을 눌렀을 때 꺼짐
 document.querySelector("body").addEventListener("click", e => {
 	panorama_btn.forEach(en => {
 		if (!modal_panorama.contains(e.target) && !en.contains(e.target)) {
-			modal_panorama.classList.remove('active');
+			modal_panorama.classList.add('closing');
+			city_section.style.display = 'block';
+			// 애니메이션 종료 후 모달 창을 숨김
+			modal_panorama.addEventListener('animationend', function() {
+				modal_panorama.classList.remove('active');
+				modal_panorama.classList.remove('closing');
+			}, { once: true }); // 이벤트 리스너가 한 번만 실행되도록 설
 		}
 	})
 })

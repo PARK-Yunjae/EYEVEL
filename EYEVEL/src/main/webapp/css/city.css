@@ -29,6 +29,10 @@
    height: 476px;
 }
 .city_content .video iframe{width: 100%; height: 100%;}
+
+
+
+
 /* 이 지역의 볼거리 */
 .tourist{
    background: #ffffff99;
@@ -132,6 +136,38 @@ ul.comment .content>button{
    transform: translateY(-50%);
 }
 
+/* 모달 창 열림 애니메이션 */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.modal_panorama.active {
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+/* 모달 창 닫힘 애니메이션 */
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+
+/* 닫힘 애니메이션을 위한 클래스 추가 */
+.modal_panorama.closing {
+  animation: modalFadeOut 0.3s ease-out forwards;
+}
+
 .modal_panorama{z-index: 997;width: 70%;height: 90%;}
 .modal_panorama>.title{margin-bottom: 10px;}
 .modal_panorama>p{margin-bottom: var(--padding);}
@@ -144,10 +180,12 @@ ul.comment .content>button{
 .panorama{width: 100%;height: 90%;}
 
 
+
 @media screen and (max-width: 1200px) {
 	.city_content{flex-direction: column;}
 	.city_content .video{width: 100%;margin-bottom: var(--padding);}
 	.modal_panorama{width: 90%;padding:30px 20px;}
+	.tourist{width: 100%;}
 	.tourist #zzim_list .image{width: 200px;}
 	.tourist h2{text-align: center;margin-bottom: 40px;font-size: 30px;}
    .tourist #zzim_list>div{width: 100%;padding: 20px 0; border-bottom: 1px dotted var(--gray);}
@@ -162,7 +200,7 @@ ul.comment .content>button{
 	.modal_panorama{width: 100%;padding:30px 20px;}
    .tourist h2{text-align: center;margin-bottom: 40px;font-size: 30px;}
    .tourist .image{display: none;}
-
+	.tourist{width: 100%;}
    /* 댓글 */
    div.comment form input[type=text]{margin-right: 0;}
    div.comment form{flex-wrap: wrap;}

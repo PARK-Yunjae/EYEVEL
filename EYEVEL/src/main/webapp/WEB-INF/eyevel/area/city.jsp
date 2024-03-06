@@ -27,7 +27,8 @@
 	<section class="city_section">
 		<div class="innerBox">
 			<div class="city_nav">
-				<h2>${area.name}<div class="description"></div>
+				<h2>${area.name}<div class="description"></div><i id="weather-icon"></i>
+				
 				</h2>
 				<div>
 					<h3>
