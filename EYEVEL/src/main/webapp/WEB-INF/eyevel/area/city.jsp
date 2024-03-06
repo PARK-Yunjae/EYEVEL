@@ -27,7 +27,8 @@
 	<section class="city_section">
 		<div class="innerBox">
 			<div class="city_nav">
-				<h2>${area.name}<div class="description"></div>
+				<h2>${area.name}<div class="description"></div><i id="weather-icon"></i>
+				
 				</h2>
 				<div>
 					<h3>
@@ -73,8 +74,8 @@
 									</div>
 									<p></p>
 					
-									<h2><b>AI 추천 관광지</b></h2>	
-									<div id="output"></div>
+									<h3><b>AI 추천 관광지</b></h3>	
+									<div id="output">Loading...</div>
 								</div>
 							</div>
 						</div>
