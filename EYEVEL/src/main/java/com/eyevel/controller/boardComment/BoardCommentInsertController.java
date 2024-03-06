@@ -17,9 +17,14 @@ public class BoardCommentInsertController implements Controller{
 
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		String id = req.getParameter("id");
-		String board_no = req.getParameter("no");
-		String boardComment = req.getParameter("board_info_comment");
+		// 잘못된 접근 시 메인으로 보내기?
+		if (req.getSession().getAttribute("loginId") == null) {
+			return "eyevel/parts/main";
+		}
+		
+		String id = (String)req.getSession().getAttribute("loginId");
+		String board_no = req.getParameter("board_no");
+		String boardComment = req.getParameter("comment");
 		BoardComment bc = new BoardComment();
 
 		bc.setBoard_no(Integer.parseInt(board_no));

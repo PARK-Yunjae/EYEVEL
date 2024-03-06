@@ -50,15 +50,15 @@ pageContext.setAttribute("cn", "\n");
 			<div class="board_content">${fn:replace(board.contents, cn, br)}</div>
 		</div>
 		<div class="board_comment">
-			<form action="${ctx}/boardCommentInsert.do" name="board_comment_form" id="board_comment_form" method="post">
-				<input type="hidden" name="id" value="${loginId}"> 
-				<input type="hidden" name="no" value="${board.no}"> 
+			<div id="board_comment_form">
+				<input type="hidden" id="loginId" value="${loginId}"> 
+				<input type="hidden" id="board_no" value="${board.no}"> 
 				<div class="board_info_comment">
-					<input type="text" name="board_info_comment" id="board_info_comment" placeholder="댓글 입력...">
+					<input type="text" id="board_info_comment" placeholder="댓글 입력...">
 					<p class="msg board_info_msg">내용을 입력해 주세요</p>
 				</div>
-				<input type="button" class="button btn" value="등록" onclick="boardCommentCheck(form)">
-			</form>
+				<input type="button" class="button btn" value="등록" onclick="boardCommentCheck()">
+			</div>
 			<ul class="board_comment_list">
 				<c:forEach var="bc" items="${bclist}">
 					<!-- 현재날짜 가져온 뒤에 비교 (아직 미적용) -->
@@ -80,11 +80,13 @@ pageContext.setAttribute("cn", "\n");
 							</div>
 							<p>${bc.comment}</p>
 							<!-- no는 댓글 고유 번호, board_no는 게시글 번호  -->
-							<button 
-								onclick="location.href='${ctx}/boardCommentDelete.do?no=${bc.no}&board_no=${bc.board_no}'"
-								<c:if test="${bc.member_id ne loginId}">style="display:none"</c:if>>
-								삭제
-							</button>
+							<c:if test="${loginId eq bc.member_id || loginId eq 'admin'}">
+								<button 
+									onclick="location.href='${ctx}/boardCommentDelete.do?no=${bc.no}&board_no=${bc.board_no}'"
+									style="display:block">
+									삭제
+								</button>
+							</c:if>
 						</div>
 					</li>
 				</c:forEach>
