@@ -14,8 +14,8 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 const generationConfig = {
 	stopSequences: ["red"],
 	maxOutputTokens: 1024,
-	temperature: 0.1,
-	topP: 0.8,
+	temperature: 1,
+	topP: 1,
 	topK: 16,
 };
 
@@ -33,7 +33,7 @@ async function run() {
 	console.log("AI테스트중")
 	// For text-only input, use the gemini-pro model
 	const model = genAI.getGenerativeModel({ model: "gemini-pro", generationConfig });
-	const prompt = name + "색다른 관광명소 3개 추천. 광광지를 볼 수 있는 웹사이트 링크도 함께. 웹사이트 링크는 다음 예시처럼 작성해줘 예시는 포함하지 말고. 예시: **1. 팀랩 보더리스** : 몰입적이고 상호 작용적인 디지털 아트 박물관 <br><a href='https://www.google.com/search?q=팀랩+보더리스' target='blank'>구글검색결과 바로가기</a> "
+	const prompt = name + "색다른 관광명소 3개 추천. 관광지를 볼 수 있는 웹사이트 링크도 함께. 웹사이트 링크는 다음 예시처럼 작성해줘 예시는 포함하지 말고. 예시: **1. 팀랩 보더리스** : 몰입적이고 상호 작용적인 디지털 아트 박물관 <br><a href='https://www.google.com/search?q=팀랩+보더리스' target='blank'>구글검색결과 바로가기</a> "
 /*	const result = await model.generateContentStream([prompt]);
 
     let completeText = '';
