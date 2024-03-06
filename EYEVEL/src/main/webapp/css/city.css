@@ -135,6 +135,39 @@ ul.comment .content>button{
    transform: translateY(-50%);
 }
 
+/* 모달 창 열림 애니메이션 */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.modal_panorama.active {
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+/* 모달 창 닫힘 애니메이션 */
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+
+/* 닫힘 애니메이션을 위한 클래스 추가 */
+.modal_panorama.closing {
+  animation: modalFadeOut 0.3s ease-out forwards;
+}
+
+
 .modal_panorama{z-index: 997;width: 70%;height: 90%;}
 .modal_panorama>.title{margin-bottom: 10px;}
 .modal_panorama>p{margin-bottom: var(--padding);}
