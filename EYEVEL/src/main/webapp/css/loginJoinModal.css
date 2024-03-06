@@ -55,7 +55,7 @@
 /* 이메일 인증번호 */
 .input_email_verification{display: none;position: relative;}
 .input_email_verification label{position: absolute; right: 16px; top: 16px;}
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 850px) {
 	.join_modal{height: 90%;overflow: auto;}
 	.join_modal::-webkit-scrollbar {width: 10px;}
 	.join_modal::-webkit-scrollbar-thumb {background-color: var(--gray);border-radius: 10px;}

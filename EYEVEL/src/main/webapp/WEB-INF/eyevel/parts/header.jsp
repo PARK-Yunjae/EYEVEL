@@ -27,6 +27,9 @@
   -->
 </head>
 <body>
+	<div id="load">
+	    <img src="${ctx}/img/Circles-menu-3.gif" alt="loading">
+	</div>
 	<header>
 		<div class="innerBox">
 			<ul class="top_nav">

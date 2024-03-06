@@ -37,6 +37,11 @@
 		delete from board where
 		no=#{no}
 	</delete>
+	
+	<delete id="boardDeleteMemberId" parameterType="String">
+		delete from board where
+		member_id like #{member_id}
+	</delete>
 
 	<update id="boardUpdate" parameterType="Board">
 		update board set

@@ -52,6 +52,14 @@ public class BoardDAO {
 		session.commit();
 		session.close();
 	}
+	
+// 유저 아이디로 보드 삭제
+	public void boardDeleteMemberId(String member_id) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.selectOne("boardDeleteMemberId", member_id);
+		session.commit();
+		session.close();
+	}
 
 //	보드 수정
 	public void boardUpdate(int no, String title, String contents) {

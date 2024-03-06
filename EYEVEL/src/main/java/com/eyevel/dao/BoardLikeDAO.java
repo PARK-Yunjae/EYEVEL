@@ -46,4 +46,12 @@ public class BoardLikeDAO {
 		session.commit();
 		session.close();
 	}
+	
+	// 좋아요 삭제 (유저 삭제시 게시글 관련 좋아요 전부 삭제
+	public void deleteBoardLikeMemberId(String member_id) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.delete("deleteBoardLikeMemberId", member_id);
+		session.commit();
+		session.close();
+	}
 }

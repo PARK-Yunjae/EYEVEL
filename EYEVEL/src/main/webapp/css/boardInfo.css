@@ -123,7 +123,7 @@ ul.board_comment_list .content{
 ul.board_comment_list .content>div{display: flex;margin-bottom: 10px;align-items: center;justify-content: center;}
 ul.board_comment_list .content>div h4{margin-right: 10px;}
 ul.board_comment_list .content>div p{color:#777;}
-ul.board_comment_list .content>p{padding-right:100px;}
+ul.board_comment_list .content>p{width: 85%;word-break:break-all;text-overflow: ellipsis;}
 ul.board_comment_list button{align-self: flex-end;background: var(--red);color:var(--white)}
 ul.board_comment_list button:hover{align-self: flex-end;background: var(--dark-red);}
 ul.board_comment_list .content>button{
@@ -131,4 +131,19 @@ ul.board_comment_list .content>button{
    right:0;
    top: 50%;
    transform: translateY(-50%);
+}
+@media screen and (max-width: 900px) {
+	.board_nav{flex-direction: column;align-items: flex-start;}
+	.board_nav .edit{align-self: flex-end;}
+	.board_info>h2 {font-size: 30px;}
+	div.board_comment #board_comment_form .board_info_comment{width: 100%;margin-right: 0;}
+	div.board_comment #board_comment_form .board_info_comment input[type=text]{margin-right: 0;}
+   	div.board_comment #board_comment_form{flex-wrap: wrap;}
+   	div.board_comment #board_comment_form input[type=button]{width: 100%;}
+	ul.board_comment_list li{flex-direction: column;}
+   	ul.board_comment_list .profile_image{margin-bottom: 20px;}
+   	ul.board_comment_list .content>div h4{margin-right: 0;margin-bottom:5px;}
+   	ul.board_comment_list .content>div{flex-direction: column;align-items: flex-start;}
+   	ul.board_comment_list .content>p{border-top: 1px dotted var(--gray);padding-top:10px;width: 100%;}
+   	ul.board_comment_list .content>button{top:-90px;right:-40px;transform: translateX(0);padding:10px 20px}
 }

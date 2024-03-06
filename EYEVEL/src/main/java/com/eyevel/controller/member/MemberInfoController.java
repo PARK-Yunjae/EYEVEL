@@ -1,9 +1,11 @@
 package com.eyevel.controller.member;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.eyevel.dao.AreaDAO;
+import com.eyevel.dao.AreaImgDAO;
 import com.eyevel.dao.MemberDAO;
 import com.eyevel.dao.ZzimDAO;
 import com.eyevel.frontController.Controller;
@@ -35,7 +37,11 @@ public class MemberInfoController implements Controller {
 		Zzim checkZzim = new Zzim();
 		checkZzim.setMember_id((String) req.getSession().getAttribute("loginId"));
 		List<Zzim> z = ZzimDAO.getInstance().zzimMemberListById(checkZzim);
-		List<Area> a = AreaDAO.getInstance().areaListByZzim(z);
+		ArrayList<Area> a = (ArrayList<Area>) AreaDAO.getInstance().areaListByZzim(z);
+		for(int i=0; i<a.size(); i++) {
+			String img = AreaImgDAO.getInstance().getimg(a.get(i).getNo()).get(0).getImg();
+			a.get(i).setLink_url(img);
+		}
 		req.setAttribute("member", m);
 		req.setAttribute("zzim", z);
 		req.setAttribute("area", a);
