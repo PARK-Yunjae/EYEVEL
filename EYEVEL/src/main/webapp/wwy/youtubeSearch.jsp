@@ -15,10 +15,13 @@
 
 <script>
 // 유튜브 API를 불러오기
+
+// 윤재 API키 : 'AIzaSyB7zkEXbvS3IHoi2ApQWWbNMfJj4UEDXrU'
+// 우연 API키 : 'AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y'
 function loadYoutubeApi() {
     gapi.load('client', () => {
         gapi.client.init({
-            'apiKey': 'AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y'
+            'apiKey': 'AIzaSyB7zkEXbvS3IHoi2ApQWWbNMfJj4UEDXrU'
             // Add other init parameters here as needed.
         }).then(function() {
             return gapi.client.load('youtube', 'v3'); // Load the YouTube Data API v3 client library.
@@ -34,7 +37,7 @@ function searchYoutube(searchTerm) {
         part: 'snippet',
         type: 'video',
         q: searchTerm,
-        maxResults: 5 // 검색 결과 표시 갯수
+        maxResults: 3 // 검색 결과 표시 갯수
     });
 
     request.execute(function(response) {
