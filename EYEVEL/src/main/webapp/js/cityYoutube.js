@@ -27,7 +27,7 @@ function searchYoutube(searchTerm) {
 		part: 'snippet',
 		type: 'video',
 		q: searchTerm,
-		maxResults: 5 // 검색 결과 표시 갯수
+		maxResults: 1 // 검색 결과 표시 갯수 // 시연할때는 5개정도로 설정해줄 것 
 	});
 
 	request.execute(function(response) {
