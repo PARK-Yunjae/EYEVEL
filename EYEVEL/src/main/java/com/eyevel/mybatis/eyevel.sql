@@ -36,10 +36,10 @@ create table area(
 );
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
-VALUES("Seoul","한국 서울입니다","서울 여행","asia",335,770,126.976817,37.575856,1835847);
+VALUES("Seoul","한국 서울입니다","서울 여행","asia",770,335,126.976817,37.575856,1835847);
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
-VALUES("Tokyo","일본 도쿄입니다","도쿄 여행","asia",320,845,139.767107,35.681282,1850147);
+VALUES("Tokyo","일본 도쿄입니다","도쿄 여행","asia",845,320,139.767107,35.681282,1850147);
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
 VALUES("Delhi","인도 델리입니다","델리 여행","asia",500,353,78.042118,27.174992,1273294);

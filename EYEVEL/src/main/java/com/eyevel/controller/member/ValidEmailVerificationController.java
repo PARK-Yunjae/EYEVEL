@@ -11,6 +11,7 @@ import jakarta.mail.internet.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.websocket.Session;
 
 // 비동기 이메일 인증 - 회원가입
 public class ValidEmailVerificationController implements Controller {

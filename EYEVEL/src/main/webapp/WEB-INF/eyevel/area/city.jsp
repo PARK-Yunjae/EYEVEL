@@ -73,8 +73,8 @@
 									</div>
 									<p></p>
 					
-									<h2><b>AI 추천 관광지</b></h2>	
-									<div id="output"></div>
+									<h3><b>AI 추천 관광지</b></h3>	
+									<div id="output">Loading...</div>
 								</div>
 							</div>
 						</div>
