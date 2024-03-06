@@ -14,8 +14,8 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 const generationConfig = {
 	stopSequences: ["red"],
 	maxOutputTokens: 1024,
-	temperature: 0.1,
-	topP: 1,
+	temperature: 0.5,
+	topP: 0.8,
 	topK: 16,
 };
 
@@ -33,7 +33,7 @@ async function run() {
 	console.log("AI테스트중")
 	// For text-only input, use the gemini-pro model
 	const model = genAI.getGenerativeModel({ model: "gemini-pro", generationConfig });
-	const prompt = name + "가볼만한 곳 3개 추천 "
+	const prompt = name + "색다른 관광명소 3개 추천 "
 	const result = await model.generateContentStream([prompt]);
 
     let completeText = '';

@@ -72,7 +72,8 @@
 										</a>
 									</div>
 									<p></p>
-									<h2><b>추천 관광지</b></h2>		
+					
+									<h2><b>AI 추천 관광지</b></h2>	
 									<div id="output"></div>
 								</div>
 							</div>
