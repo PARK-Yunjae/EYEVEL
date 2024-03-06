@@ -125,6 +125,7 @@ function joinExitBtn() {
 }
 
 let joinPass = true;
+let emailPass = true;
 // 회원가입 버튼 클릭 시
 function joinCheck(form) {
 	if (!joinPass) {
@@ -194,6 +195,10 @@ function joinCheck(form) {
 		document.querySelector(".join_email_msg").innerHTML = "이메일 형식이 다릅니다";
 		document.querySelector(".join_email_msg").style.display = "block";
 		return false;
+	}
+	if(emailPass){
+		document.querySelector(".join_email_msg").innerHTML = "이메일 인증을 하셔야 합니다";
+		document.querySelector(".join_email_msg").style.display = "block";
 	}
 	if (terms === false) {
 		document.querySelector(".join_terms_msg").style.display = "block";
@@ -291,7 +296,8 @@ function logoutCheck(name) {
 	alert(name + "님 로그아웃 되었습니다.");
 	location.href = contextPath + "/memberLogout.do";
 }
-
+let emailCode;
+let emailInteval;
 // 이메일 인증 테스트
 function emailVerification(){
 	let email = document.getElementById("join_email");
@@ -311,14 +317,32 @@ function emailVerification(){
     })
     .then(response => response.text())
     .then(data => {
-		console.log(data);
+		emailCode = data;
         if(data) {
 			document.querySelector(".input_email_verification").style.display = "block"
             document.querySelector(".email_msg_verification").innerHTML = "인증 메일이 발송되었습니다.";
 			document.querySelector(".email_msg_verification").style.display = "block";  
+        	// 이때 인터벌
+        	emailInteval = setInterval( () =>{
+				
+			})
         } else {
 			document.querySelector(".join_email_msg").innerHTML = "이메일 발송에 실패했습니다.";
 			document.querySelector(".join_email_msg").style.display = "block";
         }
     }).catch(error => console.error('Error:', error));
 }
+
+// 이메일 인증번호에 키 입력값이 있으면
+document.getElementById("join_email_verification").addEventListener("keyup", e =>{
+	if(e.value == emailCode){
+		emailPass = false;
+		document.querySelector(".email_msg_verification").innerHTML = "인증 되었습니다.";
+		document.querySelector(".email_msg_verification").style.display = "block";
+		document.querySelector(".email_msg_verification").style.color = "#41CE82";
+	}else{
+		document.querySelector(".email_msg_verification").innerHTML = "인증번호가 맞지 않습니다";
+		document.querySelector(".email_msg_verification").style.display = "block";
+		document.querySelector(".email_msg_verification").style.color = "#ff6969";
+	}
+})

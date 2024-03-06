@@ -39,6 +39,14 @@ public class BoardCommentDAO {
 		session.commit();
 		session.close();
 	}
+	
+	// 게시글 댓글 삭제 ( 게시글 삭제시 전부 삭제)
+	public void deleteBoardCommentByBoard(int board_no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		session.delete("deleteBoardCommentByBoard", board_no);
+		session.commit();
+		session.close();
+	}
 //	// 마지막으로 저장된 게시글 댓글 가져오기
 //	비동기 용이었는데 보류하기로 함
 //	public BoardComment getLastBoardComment() {

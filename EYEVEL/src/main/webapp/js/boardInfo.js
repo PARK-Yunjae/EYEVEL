@@ -47,30 +47,36 @@ function likeBtnCheck(no,loginId){
 }
 
 // 댓글 버튼 클릭 시 
-function boardCommentCheck(form){
+function boardCommentCheck(){
+	let loginId = document.getElementById("loginId");
+	let board_no = document.getElementById("board_no");
+	let comment = document.getElementById("board_info_comment");
 	// 로그인 안한 유저는 못함
-	if(form.id.value == ""){
+	if(loginId.value == ""){
 		modalCheck("경고", "로그인이 필요합니다",loginModal);
 		return false;
 	}
-	console.log(form.id.value);
-	console.log(form.board_info_comment.value);
+	
+	console.log(board_no.value);
+	console.log(comment.value);
 	// 내용이 없는 경우
-	if(!form.board_info_comment.value.trim()){
+	if(!comment.value.trim()){
 		document.querySelector(".board_info_msg").style.display = "block";
 		return false;
 	}
-	form.submit(); 
+	
+	location.href = contextPath + "/boardCommentInsert.do?board_no="+board_no.value+"&comment="+comment.value; 
+
 }
 
-let enterPass = true
+let enterPass = true;
 // 댓글 입력란에서 엔터 시  
 document.getElementById("board_info_comment").addEventListener("keyup", e =>{
 	
 	if (e.code == "Enter" && enterPass) {
+		e.preventDefault(); // 엔터 키로 인한 폼 제출 기본 동작 방지
 		enterPass = false;
-		let form = document.getElementById("board_comment_form");
-		boardCommentCheck(form);
+		boardCommentCheck();
 	}else {
 		enterPass = true;
 		document.querySelector(".board_info_msg").style.display = "none";

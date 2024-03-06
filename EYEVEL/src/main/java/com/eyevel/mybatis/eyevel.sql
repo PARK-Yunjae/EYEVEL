@@ -36,10 +36,10 @@ create table area(
 );
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
-VALUES("Seoul","한국 서울입니다","서울 여행","asia",335,770,126.976817,37.575856,1835847);
+VALUES("Seoul","한국 서울입니다","서울 여행","asia",770,335,126.976817,37.575856,1835847);
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
-VALUES("Tokyo","일본 도쿄입니다","도쿄 여행","asia",320,845,139.767107,35.681282,1850147);
+VALUES("Tokyo","일본 도쿄입니다","도쿄 여행","asia",845,320,139.767107,35.681282,1850147);
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
 VALUES("Delhi","인도 델리입니다","델리 여행","asia",500,353,78.042118,27.174992,1273294);
@@ -72,19 +72,19 @@ INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id
 VALUES("Cascavel","브라질 카스카벨입니다","카스카벨 여행","southAmerica",744,280,-54.434885,-25.692329,3466779);
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
-VALUES("Nairobi","케냐 나이로비입니다","나이로비 여행","africa",670,280,36.861034,-1.382533,184745);
+VALUES("Nairobi","케냐 나이로비입니다","나이로비 여행","africa",730,280,36.861034,-1.382533,184745);
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
-VALUES("Cairo","이집트 카이로입니다","카이로 여행","africa",570,110,31.132487,29.977285,360630);
+VALUES("Cairo","이집트 카이로입니다","카이로 여행","africa",640,110,31.132487,29.977285,360630);
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
-VALUES("Cape Town","남아프리카공화국 케이프타운입니다","케이프타운 여행","africa",500,500,18.473985,-34.356829,3369157);
+VALUES("Cape Town","남아프리카공화국 케이프타운입니다","케이프타운 여행","africa",590,540,18.473985,-34.356829,3369157);
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
-VALUES("Sydney","호주 시드니입니다","시드니 여행","oceania",640,265,151.215339,-33.856775,2147714);
+VALUES("Sydney","호주 시드니입니다","시드니 여행","oceania",700,300,151.215339,-33.856775,2147714);
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
-VALUES("Christchurch","뉴질랜드 크라이스트처치입니다","크라이스트처치 여행","oceania",835,460,172.463070,-43.467099,2192362);
+VALUES("Christchurch","뉴질랜드 크라이스트처치입니다","크라이스트처치 여행","oceania",935,460,172.463070,-43.467099,2192362);
 
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
 VALUES("Antarctica","남극 펭귄입니다","남극 여행","antarctica",500,500,39.263208,-69.030411,6255152);
