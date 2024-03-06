@@ -33,7 +33,7 @@ async function run() {
 	console.log("AI테스트중")
 	// For text-only input, use the gemini-pro model
 	const model = genAI.getGenerativeModel({ model: "gemini-pro", generationConfig });
-	const prompt = name + "색다른 관광명소 3개 추천 "
+	const prompt = name + "색다른 관광명소 3개 추천. 광광지를 볼 수 있는 웹사이트 링크도 함께. 웹사이트 링크는 html형식으로 예: **1. 팀랩 보더리스**  * 몰입적이고 상호 작용적인 디지털 아트 박물관 * 웹사이트:<a href="https://borderless.teamlab.art/">웹사이트 </a> "
 	const result = await model.generateContentStream([prompt]);
 
     let completeText = '';
