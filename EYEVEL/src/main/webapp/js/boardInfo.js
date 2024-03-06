@@ -63,13 +63,16 @@ function boardCommentCheck(form){
 	form.submit(); 
 }
 
+let enterPass = true
 // 댓글 입력란에서 엔터 시  
 document.getElementById("board_info_comment").addEventListener("keyup", e =>{
 	
-	if (e.code == "Enter") {
+	if (e.code == "Enter" && enterPass) {
+		enterPass = false;
 		let form = document.getElementById("board_comment_form");
 		boardCommentCheck(form);
 	}else {
+		enterPass = true;
 		document.querySelector(".board_info_msg").style.display = "none";
 	}
 		

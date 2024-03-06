@@ -8,6 +8,7 @@ public class BoardComment {
 	private String comment;
 	private String member_id;
 	private String reg_datetime;
+	private String img;
 
 	public int getNo() {
 		return no;
@@ -47,6 +48,14 @@ public class BoardComment {
 
 	public void setReg_datetime(String reg_datetime) {
 		this.reg_datetime = reg_datetime;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	@Override

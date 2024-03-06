@@ -132,12 +132,20 @@
 					placeholder="비밀번호 확인" name="pwCheck" id="join_pwCheck">
 				<p class="msg pwCheck_msg join_pwCheck_msg">비밀번호를 확인해주세요</p>
 			</div>
-			<div class="input">
-				<label for="">email</label><br> <input type="email"
-					placeholder="이메일 입력" name="email" id="join_email">
-				<p class="msg email_msg join_email_msg">이메일을 입력해주세요</p>
+			<div class="input input_email">
+				<label for="">email</label><br>
+				<div>
+					 <input type="email"
+						placeholder="이메일 입력" name="email" id="join_email">
+					<p class="msg email_msg join_email_msg">이메일을 입력해주세요</p>
+					<input type="button" value="전송"  onclick="emailVerification()">
+				</div>
 			</div>
-
+			<div class="input input_email_verification">
+				<input type="number" placeholder="인증 번호 입력" >
+				<label class="email_time">시간</label>
+				<p class="msg email_msg_verification join_email_msg_verification">인증번호가 틀렸습니다</p>
+			</div>
 			<div class="input_terms input">
 				<input type="checkbox" name="terms" id="join_terms" value="동의">
 				<label for="join_terms" class="label_terms">개인정보 이용약관 동의</label>

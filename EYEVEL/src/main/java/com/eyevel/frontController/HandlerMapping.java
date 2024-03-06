@@ -31,6 +31,7 @@ public class HandlerMapping {
 		mappings.put("/memberUploadImg.do", new MemberUploadImgController()); //회원프로필 이미지 업데이트
 		mappings.put("/validIdCheck.do", new ValidIdCheckController()); // 비동기 중복 id 체크
 		mappings.put("/validLoginCheck.do", new ValidLoginCheckController()); // 비동기 로그인 체크
+		mappings.put("/vaildEmailVerification.do", new ValidEmailVerificationController()); // 비동기 로그인 체크
 
 		// area
 		mappings.put("/areaEarth.do", new AreaEarthController()); // 전체
@@ -72,6 +73,7 @@ public class HandlerMapping {
 	
 		// boardComment
 		mappings.put("/boardCommentInsert.do", new BoardCommentInsertController()); // 게시글 댓글 추가
+		mappings.put("/boardCommentDelete.do", new BoardCommentDeleteController()); // 게시글 댓글 삭제
 	}
 	
 	public Controller getController(String key) {
