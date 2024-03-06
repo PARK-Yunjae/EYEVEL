@@ -15,10 +15,15 @@ section button{
    border:2px solid var(--white);
    background: inherit;
    color:var(--white);
+   text-shadow: 0 0 10px #0000002d;
+   border: 3px solid #f8f8f880;
+   backdrop-filter: blur(10px);
+   font-weight: bold;
 }
 section button:hover{
-   background: var(--white);
-   color:var(--black);
+	padding:13px 33px;
+	border: none;
+   background: #f8f8f899;
 }
 
 @media screen and (max-height: 800px) {
