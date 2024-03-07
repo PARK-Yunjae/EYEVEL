@@ -43,7 +43,7 @@ async function run() {
 	// For text-only input, use the gemini-pro model
 	const model = genAI.getGenerativeModel({ model: "gemini-pro", generationConfig });
 
-	const prompt = name +"에서 방문하기 좋은 인기 명소 5곳을 추천해주세요. 각 장소는 도보나 대중교통으로 쉽게 접근할 수 있어야 하며, 구글 지도에서 검색할 때 정확한 위치를 찾을 수 있는 명확한 이름을 가지고 있어야 합니다. 각 추천 장소에는 방문자들에게 유용할 수 있는 간단한 설명과 함께, 왜 이 장소가 "+ name+" 방문 시 꼭 가봐야 하는지에 대한 정보를 포함해주세요. 출력 형식 예시: [장소 이름]: [장소에 대한 간단한 설명 및 특징]";
+	const prompt = name +"에서 방문하기 좋은 인기 명소 4곳을 추천해주세요. 각 장소는 도보나 대중교통으로 쉽게 접근할 수 있어야 하며, 구글 지도에서 검색할 때 정확한 위치를 찾을 수 있는 명확한 이름을 가지고 있어야 합니다. 각 추천 장소에는 방문자들에게 유용할 수 있는 간단한 설명과 함께, 왜 이 장소가 "+ name+" 방문 시 꼭 가봐야 하는지에 대한 정보를 포함해주세요. 출력 형식 예시: [장소 이름]: [장소에 대한 간단한 설명 및 특징]";
 
 
 	const result = await model.generateContent([prompt]); // 이 부분은 실제 API에 따라 달라질 수 있습니다.
