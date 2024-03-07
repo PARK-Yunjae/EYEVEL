@@ -27,6 +27,11 @@
 	display: none;
 }
 
+/* 다크모드 */
+html.dark_mode:has(header.black) .boardSection .category li.on{color:var(--white)}
+html.dark_mode:has(header.black) .boardSection .category li:hover{color:var(--white);}
+html.dark_mode:has(header.black) .search a:hover{color:var(--gray)}
+
 @media screen and (max-width: 900px) {
 	.board_title{width: auto;}
 }

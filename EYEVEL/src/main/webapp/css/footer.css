@@ -49,7 +49,8 @@ footer a:hover{color:var(--green)}
 @media screen and (max-width: 900px) {
 	footer .innerBox{flex-direction: column;}
 	.footer_logo .logo_img{margin-right: 0; margin-bottom: var(--padding);}
-	.footer_logo{flex-direction: column;align-items: start;margin-bottom:var(--padding);}
-	.footer_nav{display: flex;}
+	.footer_logo{flex-direction: column;align-items: start;margin-bottom:var(--padding);display: none;}
+	.footer_nav{display: flex;justify-content: center;}
 	.footer_nav li{margin-bottom: 0;margin-right: var(--padding);}
+	html.dark_mode:has(header.black) ooter .innerBox{border-top: 1px solid var(--white);}
 }
