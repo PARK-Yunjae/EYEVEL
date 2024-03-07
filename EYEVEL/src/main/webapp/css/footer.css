@@ -193,3 +193,11 @@ html.dark_mode:has(header.black) #chatMessage{color: var(--black);}
 	.footer_nav li{margin-bottom: 0;margin-right: var(--padding);}
 	html.dark_mode:has(header.black) ooter .innerBox{border-top: 1px solid var(--white);}
 }
+
+@media screen and (max-width: 600px) {
+	.chat_Main{bottom: -400px;right: 0;width: 100%;height: 400px;transform: scale(1);border-radius: 0;}
+	.chat_Main.on{bottom:0;right: 0;}
+	#chatWindow>div.myMsg::after {left:97%;}
+	#chatWindow{height: 100%;}
+	#chatMessageBar{height: 45px;}
+}
