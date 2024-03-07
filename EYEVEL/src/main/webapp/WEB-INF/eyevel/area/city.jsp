@@ -14,7 +14,7 @@
 <script defer src="${ctx}/js/panorama.js"></script>
 <script async src="https://apis.google.com/js/api.js"></script>
 <script async
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&callback=initMap"></script>
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&libraries=places&callback=initMap"></script>
 <script defer src="${ctx}/js/cityYoutube.js"></script>
 <script defer type="module" src="${ctx}/js/googleai.js"></script>
 </script>
@@ -27,8 +27,9 @@
 	<section class="city_section">
 		<div class="innerBox">
 			<div class="city_nav">
-				<h2>${area.name}<div class="description"></div><i id="weather-icon"></i>
-				
+				<h2>${area.name}<div class="description"></div>
+					<i id="weather-icon"></i>
+
 				</h2>
 				<div>
 					<h3>
@@ -63,12 +64,16 @@
 						</div>
 					</div>
 					<div class="AIcontent">
-						<h3>AI 추천 관광지</h3>	
+						<h3>AI 추천 관광지</h3>
 						<div id="output">Loading...</div>
+							<a href="javascript:void(0)"
+								onclick="openMapUrl('recommendPlaces.do')"
+								class="button btn1 map_btn"> 경로추천 보러가기 <i
+								class="fas fa-arrow-right"></i>
+							</a>
 					</div>
 				</div>
 			</div>
-			<div id="roadview" style="display: none;"></div>
 			<div class="comment">
 				<h3>댓글 ${fn:length(clist)}개</h3>
 				<form name="commentform" action="${ctx}/commentAdd.do" method="post">
@@ -108,4 +113,5 @@
 	<div id="panorama" class="panorama"></div>
 	<i class="fas fa-times" onclick="closePanorama()"></i>
 </div>
+
 <%@ include file="../parts/footer.jsp"%>

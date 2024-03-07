@@ -7,6 +7,14 @@ let name = document.querySelector(".location").dataset.name;
 const desc = document.querySelector(".description");
 let isDaytime; // 전역 변수로 선언
 
+//위도와 경도를 세션스토리지에 저장.
+function saveLocationToSessionStorage(lat, lon) {
+    sessionStorage.setItem('latitude', lat.toString());
+    sessionStorage.setItem('longitude', lon.toString());
+}
+
+// 저장 함수 호출
+saveLocationToSessionStorage(lat, lon);
 
 let getdesc = "";
 // 날씨정보를 웹이서 받아옴 
@@ -119,7 +127,10 @@ document.querySelector("body").addEventListener("click", e => {
 		}
 	})
 })
-
+function openMapUrl(url) {
+	// 새 창으로 URL 열기
+	window.open(url, '_blank');
+}
 
 // 좋아요 버튼 눌렀을 시 
 function likeBtnCheck(no) {
