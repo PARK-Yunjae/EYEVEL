@@ -137,6 +137,7 @@ footer a:hover{color:var(--green)}
 	transform: rotate(-45deg);
 }
 #chatWindow>div.myMsg{
+	margin-top: 10px;
 	margin-left: 0px;
 	margin-right: 10px;
 	align-self: flex-end;
