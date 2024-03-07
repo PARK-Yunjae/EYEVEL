@@ -9,6 +9,10 @@ let directionsService;
 let directionsRenderer;
 let infowindow; // infowindow 객체를 전역 변수로 선언
 let placeinfomations = [];
+let selectedPlaceDetails = [];
+
+
+
 function initMap() {
 	directionsService = new google.maps.DirectionsService();
 	directionsRenderer = new google.maps.DirectionsRenderer();
@@ -20,9 +24,10 @@ function initMap() {
 	infowindow = new google.maps.InfoWindow(); // infowindow 객체 초기화
 	// 마커를 추가하는 로직을 실행합니다.
 	// 마커를 추가하고 경로를 그리는 함수 호출
-	addPlacesMarkersAndDrawRoute();
+	//addPlacesMarkersAndDrawRoute();
 
 }
+
 
 
 // Google Places 서비스를 초기화합니다.
@@ -30,15 +35,49 @@ function initGoogleMaps() {
 	return new google.maps.places.PlacesService(map);
 }
 
+function populatePlacesSelection(placesNames) {
+    const form = document.getElementById('places-form');
+    placesNames.forEach((name, index) => {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = 'place' + index;
+        checkbox.value = name;
+        const label = document.createElement('label');
+        label.htmlFor = 'place' + index;
+        label.textContent = name;
+        form.appendChild(checkbox);
+        form.appendChild(label);
+        form.appendChild(document.createElement('br'));
+    });
+}
+
+populatePlacesSelection(placesNames); // placesNames는 서버로부터 받은 장소 이름 배열
+
+document.getElementById('calculate-route').addEventListener('click', () => {
+    const selectedPlaces = [];
+    const checkboxes = document.querySelectorAll('#places-form input[type="checkbox"]:checked');
+    checkboxes.forEach((checkbox) => {
+        selectedPlaces.push(checkbox.value);
+    });
+
+    if (selectedPlaces.length > 1) {
+        // 선택된 장소를 기반으로 경로 계산 및 지도에 표시하는 로직
+        addPlacesMarkersAndDrawRoute(selectedPlaces); // 선택된 장소만 포함하여 경로 계산 및 마커 추가
+    } else {
+        alert("적어도 두 개의 장소를 선택해야 경로를 계산할 수 있습니다.");
+    }
+});
+
 // 각 장소에 마커를 추가합니다.
-async function addPlacesMarkersAndDrawRoute() {
+async function addPlacesMarkersAndDrawRoute(selectedPlaces) {
 	const placesService = initGoogleMaps();
 	let placesDetails = [];
-	for (const placeName of placesNames) {
+
+	for (const placeName of selectedPlaces) {
 		try {
 			const placeDetail = await fetchPlaceDetails(placeName, placesService);
 			if (placeDetail) {
-				placeinfomations.push(placeDetail);
+				selectedPlaceDetails.push(placeDetail);
 				const location = placeDetail.geometry.location;
 				const latLng = {
 					lat: location.lat(), // 실제 위도 값 얻기
@@ -64,16 +103,20 @@ async function addPlacesMarkersAndDrawRoute() {
 					infowindow.setContent(contentString);
 					infowindow.open(map, marker);
 				});
-			}
+			}else {
+            // 장소를 찾지 못한 경우, 이를 로그로 기록하거나 사용자에게 알림
+            console.log(`${placeName} 장소 정보를 찾을 수 없습니다.`);
+        }
 		} catch (error) {
 			console.error(`Error fetching details for ${placeName}:`, error);
 		}
 	}
 
 	// 모든 장소의 상세 정보를 검색한 후, 경로를 그립니다.
+	console.log(selectedPlaceDetails);
 	drawRoute(placesDetails, 'DRIVING');
 	document.getElementById('mode').addEventListener('change', function() {
-		drawRoute(placesDetails, this.value);
+	drawRoute(placesDetails, this.value);
 	});
 
 }
@@ -105,8 +148,8 @@ function drawRoute(places, travelMode) {
 			const legs = response.routes[0].legs;
 			legs.forEach((leg, index) => {
 				// 각 leg의 이동 시간을 placeinfomations에 저장
-				if (placeinfomations[index]) {
-					placeinfomations[index].duration = leg.duration.text;
+				if (selectedPlaceDetails[index]) {
+					selectedPlaceDetails[index].duration = leg.duration.text;
 				}
 			});
 			let totalDuration = 0;
@@ -114,7 +157,7 @@ function drawRoute(places, travelMode) {
 			// 총 예상 이동 시간을 분 단위로 변환합니다.
 			const totalDurationInMinutes = Math.round(totalDuration / 60);
 			// 장소 상세 정보와 함께 updateInfoPanel 함수 호출
-			updateInfoPanel(placeinfomations);
+			updateInfoPanel(selectedPlaceDetails);
 			// 첫 번째 마커에 이동 시간을 표시합니다.
 			showDurationInfo(places[0], totalDurationInMinutes);
 		} else {
@@ -144,7 +187,8 @@ async function fetchPlaceDetails(placeName, placesService) {
 			if (status === google.maps.places.PlacesServiceStatus.OK && results && results.length > 0) {
 				resolve(results[0]);
 			} else {
-				reject('장소를 찾지 못했습니다.');
+				console.log(`장소를 찾지 못했습니다: ${placeName}`);
+				resolve(null); // 장소를 찾지 못했다면 null을 반환
 			}
 		});
 	});
@@ -155,17 +199,19 @@ function updateInfoPanel(placesDetails) {
 	infoPanel.innerHTML = ''; // 정보창 초기화
 
 	placesDetails.forEach((place, index) => {
-
-		let photoUrl = place.photos && place.photos.length > 0 ? place.photos[0].getUrl({ 'maxWidth': 100, 'maxHeight': 100 }) : '';
-
+     let photoUrl = place.photos && place.photos.length > 0
+            ? place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100})
+            : '';
 		// 각 장소의 정보를 HTML 요소로 추가
-		let placeInfo = `<div class="place-info">
-            <h3>${place.name}</h3>
-             ${photoUrl ? `<img src="${photoUrl}" alt="${place.name}">` : ''}
-            <p>주소: ${place.formatted_address}</p>
-            <p>평점: ${place.rating ? place.rating : 'N/A'}</p>
-            ${place.duration ? `<p>다음 장소까지 이동 시간: ${place.duration}</p>` : ''}
-        </div>`;
+     let placeInfo = `
+            <div class="place-info">
+                <h3>${place.name}</h3>
+                ${photoUrl ? `<img src="${photoUrl}" alt="${place.name}">` : ''}
+                <p>주소: ${place.formatted_address}</p>
+                <p>평점: ${place.rating ? place.rating : 'N/A'}</p>
+                ${place.duration ? `<p>다음 장소까지 이동 시간: ${place.duration}</p>` : ''}
+            </div>
+        `;
 		infoPanel.innerHTML += placeInfo;
 	});
 }
@@ -173,5 +219,18 @@ function updateInfoPanel(placesDetails) {
 // 페이지 로드 시 지도를 초기화합니다.
 window.onload = function() {
 	initMap();
-	document.getElementById("info-panel").classList.add("visible");
+	showPlacesSelection();
+	
 };
+
+function showPlacesSelection() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('places-selection').style.display = 'block';
+    document.getElementById("info-panel").classList.add("visible");
+}
+
+document.getElementById('calculate-route').addEventListener('click', () => {
+    // 선택 로직 처리 후
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('places-selection').style.display = 'none';
+});

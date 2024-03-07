@@ -132,9 +132,51 @@ select {
     display: block;
     transform: translateX(-50%) scale(1);
 }
+
+/* 장소 선택 모달 */
+#places-selection {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px; /* 최대 너비 설정 */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* overlay보다 앞에 위치 */
+ 	display: none; /* 기본적으로 숨겨져 있음 */ 
+}
+
+/* '경로 계산' 버튼 스타일 */
+#calculate-route {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0; /* 중앙 정렬 */
+}
+
+/* 배경 덮개 */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none; /* 기본적으로 숨겨져 있음 */
+}
 </style>
 </head>
 <body>
+<div id="overlay"></div>
+
 	<div id="info-panel">
 		<h2>장소 정보 및 이동 시간</h2>
 		<div id="place-details"></div>
@@ -148,7 +190,13 @@ select {
 			<option value="BICYCLING">자전거</option>
 		</select>
 	</div>
-<div id="custom-infowindow" class="custom-infowindow"></div>
+<div id="places-selection">
+    <h2>가고 싶은 장소 선택</h2>
+    <form id="places-form">
+        <!-- JavaScript를 통해 장소 체크박스가 동적으로 추가됩니다 -->
+    </form>
+    <button id="calculate-route">경로 계산</button>
+</div>
 
 </body>
 </html>
