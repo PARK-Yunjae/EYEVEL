@@ -44,8 +44,8 @@ function adminAreaAddCheck(form){
 	if(addPass){
 		console.log("여기 들어왔니");
 		console.log(form.area_name.value);
-		form.submit();
-		addPass = false;
+		let sendForm = function() { form.submit(); addPass = false;};
+		modalCheck("잠깐", "정말 수정하시겠습니까?<br>수정 전 정보는 사라지게 됩니다.", sendForm);
 	}
 }
 
