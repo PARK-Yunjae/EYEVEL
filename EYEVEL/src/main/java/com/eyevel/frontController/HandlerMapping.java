@@ -74,6 +74,9 @@ public class HandlerMapping {
 		// boardComment
 		mappings.put("/boardCommentInsert.do", new BoardCommentInsertController()); // 게시글 댓글 추가
 		mappings.put("/boardCommentDelete.do", new BoardCommentDeleteController()); // 게시글 댓글 삭제
+		
+		// naver
+		mappings.put("/naverLoginCallBack.do", new NaverLoginCallBackController()); // 네이버 콜백 페이지 이동 전용
 	}
 	
 	public Controller getController(String key) {
