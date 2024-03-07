@@ -102,12 +102,19 @@ function drawRoute(places, travelMode) {
 			directionsRenderer.setDirections(response);
 			// 전체 경로에 대한 총 예상 이동 시간을 계산합니다.
 			const route = response.routes[0];
+			const legs = response.routes[0].legs;
+			legs.forEach((leg, index) => {
+				// 각 leg의 이동 시간을 placeinfomations에 저장
+				if (placeinfomations[index]) {
+					placeinfomations[index].duration = leg.duration.text;
+				}
+			});
 			let totalDuration = 0;
 			route.legs.forEach(leg => totalDuration += leg.duration.value);
 			// 총 예상 이동 시간을 분 단위로 변환합니다.
 			const totalDurationInMinutes = Math.round(totalDuration / 60);
 			// 장소 상세 정보와 함께 updateInfoPanel 함수 호출
-			updateInfoPanel(placeinfomations, totalDurationInMinutes);
+			updateInfoPanel(placeinfomations);
 			// 첫 번째 마커에 이동 시간을 표시합니다.
 			showDurationInfo(places[0], totalDurationInMinutes);
 		} else {
@@ -129,7 +136,7 @@ function showDurationInfo(position, duration) {
 async function fetchPlaceDetails(placeName, placesService) {
 	const request = {
 		query: placeName,
-		fields: ['name', 'geometry', 'formatted_address', 'rating']
+		fields: ['name', 'geometry', 'formatted_address', 'rating', 'opening_hours', 'photos', 'price_level']
 	};
 
 	return new Promise((resolve, reject) => {
@@ -143,26 +150,28 @@ async function fetchPlaceDetails(placeName, placesService) {
 	});
 }
 
-function updateInfoPanel(placesDetails, totalDurationInMinutes) {
+function updateInfoPanel(placesDetails) {
 	const infoPanel = document.getElementById('place-details');
 	infoPanel.innerHTML = ''; // 정보창 초기화
 
 	placesDetails.forEach((place, index) => {
+
+		let photoUrl = place.photos && place.photos.length > 0 ? place.photos[0].getUrl({ 'maxWidth': 100, 'maxHeight': 100 }) : '';
+
 		// 각 장소의 정보를 HTML 요소로 추가
 		let placeInfo = `<div class="place-info">
             <h3>${place.name}</h3>
+             ${photoUrl ? `<img src="${photoUrl}" alt="${place.name}">` : ''}
             <p>주소: ${place.formatted_address}</p>
-            <p>평점: ${place.rating}</p>
+            <p>평점: ${place.rating ? place.rating : 'N/A'}</p>
+            ${place.duration ? `<p>다음 장소까지 이동 시간: ${place.duration}</p>` : ''}
         </div>`;
-
-		// 마지막 장소가 아니라면 다음 장소까지의 예상 이동 시간 추가
-		if (index < totalDurationInMinutes.length) {
-			placeInfo += `<p>다음 장소까지 예상 이동 시간: ${totalDurationInMinutes[index]} 분</p>`;
-		}
-
 		infoPanel.innerHTML += placeInfo;
 	});
 }
 
 // 페이지 로드 시 지도를 초기화합니다.
-window.onload = initMap;
+window.onload = function() {
+	initMap();
+	document.getElementById("info-panel").classList.add("visible");
+};
