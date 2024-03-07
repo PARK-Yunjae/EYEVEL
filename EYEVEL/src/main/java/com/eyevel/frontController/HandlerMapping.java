@@ -41,6 +41,7 @@ public class HandlerMapping {
 		mappings.put("/areaUpdate.do", new AreaUpdateController()); // 관광지 정보 업데이트 (관리자)
 		mappings.put("/areaUploadImg.do", new AreaUploadImgController()); // 관광지 이미지 업로드 (관리자)
 		mappings.put("/validAreaId.do", new ValidAreaIdController()); // 관광지 아이디 중복체크
+		mappings.put("/recommendPlaces.do", new AreaRecommendController()); // 관광지 AI 경로추천
 
 		// board
 		mappings.put("/boardAdd.do", new BoardAddController()); // 게시글 추가
@@ -75,6 +76,9 @@ public class HandlerMapping {
 		// boardComment
 		mappings.put("/boardCommentInsert.do", new BoardCommentInsertController()); // 게시글 댓글 추가
 		mappings.put("/boardCommentDelete.do", new BoardCommentDeleteController()); // 게시글 댓글 삭제
+		
+		// naver
+		mappings.put("/naverLoginCallBack.do", new NaverLoginCallBackController()); // 네이버 콜백 페이지 이동 전용
 	}
 	
 	public Controller getController(String key) {

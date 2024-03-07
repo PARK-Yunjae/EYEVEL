@@ -26,8 +26,8 @@
          </ul>
       </div>
    </footer>
-   <c:if test="${!empty loginId}">
-	   <div class="chat_Btn on" onclick="chatOpen('${loginId}')">채팅</div>
+   <c:if test="${!empty name}">
+	   <div class="chat_Btn" onclick="chatOpen('${name}')">채팅</div>
    </c:if>
    <div class="chat_Main">
 		<button id="closeBtn" onclick="disconnect();"><i class="fas fa-times"></i></button>

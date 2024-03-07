@@ -14,6 +14,9 @@
 <script src="${ctx}/js/header.js" defer></script>
 <script src="${ctx}/js/modal.js" defer></script>
 <script src="${ctx}/js/loginJoinModal.js" defer></script>
+<!-- 네이버 외부 로그인 -->
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <!-- 날씨 표시를 위한 라이브러리 -->
 <!--
 <script defer
@@ -108,6 +111,7 @@
 					onclick="joinModal()">
 			</div>
 		</form>
+  		<div id="naver_id_login"></div>
 	</div>
 	<div class="join_modal modal">
 		<div class="button_close">
