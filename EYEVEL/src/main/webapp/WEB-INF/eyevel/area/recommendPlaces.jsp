@@ -11,7 +11,9 @@
 <script async
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&libraries=places"></script>
 <script defer src="${ctx}/js/recommendPlaces.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+	rel="stylesheet">
 <style>
 body, html {
 	margin: 0;
@@ -29,7 +31,7 @@ body, html {
 	left: 0;
 	top: 0;
 	background-color: #f9f9f9; /* 밝은 회색 배경 */
-	box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* 그림자 효과 */
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
 	padding: 20px;
 	box-sizing: border-box;
 }
@@ -74,6 +76,33 @@ select {
 	font-size: 14px;
 	color: #666; /* 본문 글자 색상 */
 }
+#mode-selection {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 5;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 약간의 그림자 효과 추가 */
+}
+
+.mode-title {
+    font-size: 16px; /* 제목의 글자 크기 */
+    margin-bottom: 5px; /* 제목과 선택 옵션 사이의 간격 */
+    font-weight: bold; /* 글자 굵기 */
+    color: #333; /* 글자 색상 */
+}
+
+#mode {
+    width: 100%; /* 부모 요소인 #mode-selection의 너비에 맞춤 */
+    padding: 5px;
+    margin: 0; /* 기본 마진 제거 */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
 </style>
 </head>
 <body>
@@ -82,12 +111,16 @@ select {
 		<div id="place-details"></div>
 	</div>
 	<div id="map"></div>
-	<select id="mode">
-		<option value="DRIVING">자동차</option>
-		<option value="WALKING">도보</option>
-		<option value="BICYCLING">자전거</option>
-		<option value="TRANSIT">대중교통</option>
-	</select>
+	<div id="mode-selection">
+		<div class="mode-title">이동수단 선택</div>
+		<select id="mode">
+			<option value="DRIVING">자동차</option>
+			<option value="WALKING">도보</option>
+			<option value="BICYCLING">자전거</option>
+			<option value="TRANSIT">대중교통</option>
+		</select>
+	</div>
+
 </body>
 </html>
 
