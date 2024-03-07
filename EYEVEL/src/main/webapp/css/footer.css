@@ -16,20 +16,40 @@ footer .innerBox{display: flex;justify-content: space-between;}
 footer a{color:var(--white);}
 footer a:hover{color:var(--green)}
 
+/* 채팅창 테스트 */
+.chat_Btn{
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	width: 100px;
+	height: 100px;
+	background: Gray;
+}
+
+.chat_Main{
+	display: none;
+	flex-direction:column;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	width: 300px;
+	height: 400px;
+	background: Gray;
+}
+
+/* 대화창 스타일 지정 */
+#chatWindow{flex:10;width: 300px;overflow-y:scroll; overflow-x:hidden; padding:5px;}
+#chatMessageBar{flex:1;display:flex;}
+#chatMessage{width:70%; height: 100%; margin:0}
+#sendBtn{width:30%;height: auto;}
+#closeBtn{flex:1;margin-bottom:3px; position:relative; top:2px; left:-2px;}
+.myMsg{text-align:right;}
+
+/* footer 반응형 */
 @media screen and (max-width: 900px) {
 	footer .innerBox{flex-direction: column;}
 	.footer_logo .logo_img{margin-right: 0; margin-bottom: var(--padding);}
 	.footer_logo{flex-direction: column;align-items: start;margin-bottom:var(--padding);}
 	.footer_nav{display: flex;}
 	.footer_nav li{margin-bottom: 0;margin-right: var(--padding);}
-}
-
-/* 채팅창 테스트 */
-.chat_msg{
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	width: 100px;
-	height: 100px;
-	background: Gray;
 }
