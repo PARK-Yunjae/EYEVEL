@@ -14,7 +14,7 @@
 <script defer src="${ctx}/js/panorama.js"></script>
 <script async src="https://apis.google.com/js/api.js"></script>
 <script async
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&libraries=places&callback=initMap"></script>
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&libraries=places"></script>
 <script defer src="${ctx}/js/cityYoutube.js"></script>
 <script defer type="module" src="${ctx}/js/googleai.js"></script>
 </script>
