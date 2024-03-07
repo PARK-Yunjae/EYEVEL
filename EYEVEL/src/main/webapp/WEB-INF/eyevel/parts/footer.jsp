@@ -30,7 +30,7 @@
 	   <div class="chat_Btn" onclick="chatOpen('${name}')">채팅</div>
    </c:if>
    <div class="chat_Main">
-		<button id="closeBtn" onclick="disconnect();">채팅 종료</button>
+		<button id="closeBtn" onclick="disconnect();"><i class="fas fa-times"></i></button>
 		<div id="chatWindow"></div>
 		<div id="chatMessageBar">
 			<input type="text" id="chatMessage" onkeyup="enterKey();">

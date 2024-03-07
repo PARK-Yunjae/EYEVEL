@@ -82,4 +82,20 @@ public class AreaDAO {
 		session.commit();
 		session.close();
 	}
+	
+	//관광지 아이디 중복확인
+	public int checkAreaId(int area_id) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		int cnt = session.selectOne("validAreaId", area_id);
+		session.close();
+		return cnt;
+	}
+	
+	//관광지 이름 중복확인
+	public int checkAreaName(String area_name) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		int cnt = session.selectOne("validAreaName", area_name);
+		session.close();
+		return cnt;
+	}
 }

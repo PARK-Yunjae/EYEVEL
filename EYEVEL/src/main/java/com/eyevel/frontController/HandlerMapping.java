@@ -40,6 +40,7 @@ public class HandlerMapping {
 		mappings.put("/areaDelete.do", new AreaDeleteController()); // 관광지 삭제 (관리자)
 		mappings.put("/areaUpdate.do", new AreaUpdateController()); // 관광지 정보 업데이트 (관리자)
 		mappings.put("/areaUploadImg.do", new AreaUploadImgController()); // 관광지 이미지 업로드 (관리자)
+		mappings.put("/validAreaId.do", new ValidAreaIdController()); // 관광지 아이디 중복체크
 		mappings.put("/recommendPlaces.do", new AreaRecommendController()); // 관광지 AI 경로추천
 
 		// board

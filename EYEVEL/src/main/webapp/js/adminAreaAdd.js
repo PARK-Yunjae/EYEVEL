@@ -55,12 +55,29 @@ function adminAreaAddCheck(form){
 		return false;
 	}
 	
-	if(addPass){
-		console.log("여기 들어왔니");
-		console.log(form.area_name.value);
-		form.submit();
-		addPass = false;
-	}
+	fetch("validAreaId.do", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+		},
+		body: "area_name=" + form.area_name.value + "&area_id=" + form.area_id.value
+	})
+		.then(response => response.text())
+		.then(data => {
+			if (data === "중복") {
+				modalMsgWarning("등록 실패", "이름과 아이디 중에<br>이미 등록된 값이 있습니다",false);
+				return false;
+			}
+			else if (data === "중복아님") {
+				if(addPass){
+					console.log("여기 들어왔니");
+					console.log(form.area_name.value);
+					form.submit();
+					addPass = false;
+				}
+			}
+		})
+	
 }
 
 // 관광지 이름 값 변경될 때

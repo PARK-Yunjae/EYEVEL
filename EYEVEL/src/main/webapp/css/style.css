@@ -199,4 +199,5 @@ html.dark_mode:has(header.black) .paging .start:hover,html.dark_mode:has(header.
 @media screen and (max-width: 900px) {
 	.mobileNone{display: none;}
 	.remove_icon{display:block; margin-left: 0;margin-top:10px;}
+	html.dark_mode:has(header.black) .remove_icon{display:block; margin-left: 0;margin-top:10px;}
 }

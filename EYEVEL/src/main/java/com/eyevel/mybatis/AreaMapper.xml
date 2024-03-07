@@ -41,4 +41,12 @@ select * from area where continent=#{area}
 	link_url=#{link_url}, contents=#{contents}
 	where no=#{no}
 </update>
+
+<select id="validAreaId" parameterType="Integer" resultType="Integer">
+		select count(*) from area where id = #{area_id}
+</select>
+
+<select id="validAreaName" parameterType="String" resultType="Integer">
+		select count(*) from area where name like #{area_name}
+</select>
 </mapper>
