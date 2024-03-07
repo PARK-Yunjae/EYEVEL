@@ -28,7 +28,7 @@
 }
 
 /* 다크 모드 */
-.modal{background: var(--black);}
+html.dark_mode:has(header.black) .modal{background: var(--black);}
 
 @media screen and (max-width: 900px) {
 	.modal{width: 80%;}
