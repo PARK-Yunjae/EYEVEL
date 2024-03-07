@@ -68,8 +68,7 @@
 						<div id="output">Loading...</div>
 							<a href="javascript:void(0)"
 								onclick="openMapUrl('recommendPlaces.do')"
-								class="button btn1 map_btn"> 경로추천 보러가기 <i
-								class="fas fa-arrow-right"></i>
+								class="button btn1 map_btn"> 경로추천 보러가기 
 							</a>
 					</div>
 				</div>
