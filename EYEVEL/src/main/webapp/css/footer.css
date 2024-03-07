@@ -183,6 +183,7 @@ footer a:hover{color:var(--green)}
 /* 다크모드 */
 html.dark_mode:has(header.black) #chatWindow{background:rgb(51, 51, 51);color:var(--white);}
 html.dark_mode:has(header.black) #chatMessage{color: var(--black);}
+html.dark_mode:has(header.black) #chatWindow>div p{color:var(--white)}
 
 /* footer 반응형 */
 @media screen and (max-width: 900px) {
