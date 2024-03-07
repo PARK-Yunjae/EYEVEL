@@ -4,7 +4,6 @@ input.readonly{
    border-bottom: 1px solid var(--gray);
    border-radius: 0;
 }
-.info_section{background:white;} /* 개발용 백그라운드 */
 .info_section .image{margin-bottom: 0;}
 
 /* 이미지 수정 */
@@ -119,6 +118,9 @@ input.readonly:focus{outline: none;}
 .zzim_list .content span .fa-heart{transition: all .3s;}
 .zzim_list .content span .fa-heart:hover{transform: scale(1.1);}
 .zzim_list .content span .fa-heart:active{transform: scale(0.9);}
+
+/* 다크모드 */
+html.dark_mode:has(header.black) .zzim_list{background-color: #f8f8f810; box-shadow: 0 7px 10px 5px #00000055;}
 
 @media screen and (max-width: 900px) {
 	.info_section .innerBox{flex-direction: column;}

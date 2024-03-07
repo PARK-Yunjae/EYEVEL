@@ -13,6 +13,9 @@
 .admin_list li:hover{transform: translateY(-15px);}
 .admin_list li p{font-size: 24px;font-weight: bold;}
 
+/* 다크모드 */
+html.dark_mode:has(header.black) .admin_list li{background-color: #f8f8f810; box-shadow: 0 6px 10px 1px #00000055;}
+
 @media screen and (max-width: 900px) {
 	.admin_list{flex-direction: column;width: 80%;}
 	.admin_list li{width: 80%;display: flex;align-items: center;justify-content: center;flex-direction: column;}

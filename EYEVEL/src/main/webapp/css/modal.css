@@ -27,6 +27,9 @@
 	z-index: 998;
 }
 
+/* 다크 모드 */
+.modal{background: var(--black);}
+
 @media screen and (max-width: 900px) {
 	.modal{width: 80%;}
 }
