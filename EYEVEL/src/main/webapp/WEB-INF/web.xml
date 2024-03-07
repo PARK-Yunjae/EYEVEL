@@ -45,4 +45,6 @@
     <servlet-name>AdminAreaSelectController</servlet-name>
     <url-pattern>/AdminAreaSelectController</url-pattern>
   </servlet-mapping>
+  <!-- 채팅창 테스트 -->
+  
 </web-app>

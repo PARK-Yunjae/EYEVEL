@@ -22,5 +22,8 @@
          </ul>
       </div>
    </footer>
+   <div class="chat_msg">
+   		채팅창
+   </div>
 </body>
 </html>
