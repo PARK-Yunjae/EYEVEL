@@ -45,7 +45,7 @@ dark_mode_check.addEventListener('click', () => {
 // 네이버 로그인 테스트
 var naver_id_login = new naver_id_login("oGNX9QOxYIFOMWmA4o5u", "http://localhost:8080/EYEVEL/naverLoginCallBack.jsp");
 var state = naver_id_login.getUniqState();
-naver_id_login.setButton("white", 1, 70);
+naver_id_login.setButton("white", 3, 40);
 naver_id_login.setDomain("http://localhost:8080");
 naver_id_login.setState(state);
 naver_id_login.init_naver_id_login();
