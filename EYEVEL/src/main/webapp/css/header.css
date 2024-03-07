@@ -79,6 +79,65 @@ header.black .gnb{display: none;}
 .menuToggle.on::after{content: "\f35b";}
 .menuToggle.on:hover{transform: translateX(-50%) translateY(-10px);}
 
+/* 다크모드 스위치 */
+header.black .dark_mode_switch{display: inline-block;}
+
+#dark_mode_check{display: none;}
+.dark_mode_switch{
+	display: none;
+   position: absolute;
+   width: 60px;
+   top:40px;left:50%;
+   transform: translateX(-50%);
+   padding:15px 5px;
+   border: 1px solid var(--black);
+   border-radius: 20px;
+   overflow: hidden;
+   transition: all .3s;
+   cursor: pointer;
+}
+.dark_mode_switch::after{
+   content: "\f185";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   position: absolute;
+   text-align: center;
+   line-height: 20px;
+   color:var(--black);
+   top:5px;left:5px;
+   display: block;
+   width: 20px;height: 20px;
+   background:none;
+   transition: all .3s;
+}
+.dark_mode_switch::before{
+   content: "\f186";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   position: absolute;
+   text-align: center;
+   line-height: 20px;
+   color:var(--white);
+   top:5px;right:-20px;
+   display: block;
+   width: 20px;height: 20px;
+   background:none;
+   transform: rotate(30deg);
+   transition: all .3s;
+}
+#dark_mode_check:checked + .dark_mode_switch{background: var(--black);}
+#dark_mode_check:checked + .dark_mode_switch::after{left:-20px;transform: rotate(30deg);}
+#dark_mode_check:checked + .dark_mode_switch::before{right:5px;}
+
+/* 다크모드 */
+html.dark_mode:has(header.black) .top_nav .logo_img{background-image: url('../img/logo_white.png');}
+html.dark_mode:has(header.black) header.black .innerBox>ul{color:var(--white)}
+
+html.dark_mode:has(header.black) .dark_mode_switch{border: 1px solid var(--white);}
+html.dark_mode:has(header.black) .dark_mode_switch::after{color:var(--white);}
+html.dark_mode:has(header.black) .dark_mode_switch::before{color: var(--black);}
+html.dark_mode:has(header.black) #dark_mode_check:checked + .dark_mode_switch{background: var(--gray);}
+
 @media screen and (max-width: 1200px) {
 	.gnb li {font-size: 20px;}
 }

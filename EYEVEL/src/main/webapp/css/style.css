@@ -31,7 +31,7 @@ html{
    -o-background-size: cover;
    background-size: cover;
 }
-html,body{height: 100%;}
+html,body{height: 100%; transition: all .3s;}
 body{
    color:var(--black);
    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -161,6 +161,36 @@ textarea{
    border-radius: 5px;
    resize: none;
 }
+
+/* 다크모드 */
+html.dark_mode:has(header.black){background: var(--black);}
+html.dark_mode:has(header.black) body{color:var(--white);background: var(--black);}
+html.dark_mode:has(header.black) a{color:var(--white);}
+
+/* 다크모드 input */
+html.dark_mode:has(header.black) input{color:var(--white);}
+html.dark_mode:has(header.black) textarea{background:#f8f8f810; color:var(--white)}
+html.dark_mode:has(header.black) select{color:var(--white);}
+html.dark_mode:has(header.black) option{color:var(--black);background: var(--gray);}
+
+/* 다크모드 버튼 */
+html.dark_mode:has(header.black) .btn{color:var(--black);}
+html.dark_mode:has(header.black) .btn1{color:var(--black);}
+html.dark_mode:has(header.black) .btn2{color:var(--black);}
+
+/* 다크모드 table */
+/* table */
+html.dark_mode:has(header.black) table{color:var(--light-gray)}
+html.dark_mode:has(header.black) th{border-bottom: 2px solid var(--white);}
+html.dark_mode:has(header.black) td a:hover{color:var(--gray)}
+html.dark_mode:has(header.black) .remove_icon{margin-left: 15px; color:#e63535;}
+html.dark_mode:has(header.black) .remove_icon:hover{color:var(--red);}
+
+/* 다크모드 paging */
+html.dark_mode:has(header.black) .paging li.on{color:var(--black);}
+html.dark_mode:has(header.black) .paging li:hover{background: var(--light-gray);color:var(--black);}
+html.dark_mode:has(header.black) .paging li.start,html.dark_mode:has(header.black) .paging li.end{background: var(--gray);color: var(--white);}
+html.dark_mode:has(header.black) .paging .start:hover,html.dark_mode:has(header.black) .paging .end:hover{background: var(--light-gray);color:var(--black)}
 
 @media screen and (max-width: 1200px) {
 	th{padding:var(--padding) 0;}

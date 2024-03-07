@@ -89,15 +89,14 @@ VALUES("Christchurch","뉴질랜드 크라이스트처치입니다","크라이�
 INSERT INTO area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
 VALUES("Antarctica","남극 펭귄입니다","남극 여행","antarctica",500,500,39.263208,-69.030411,6255152);
 
-
 select * from area;
 
 create table comment(
 	no int auto_increment primary key not null, -- 댓글 고유 넘버
     member_id varchar(20) not null, -- 유저 ID
-    foreign key(member_id) references member(id),
+    foreign key(member_id) references member(id) on delete cascade on update cascade,
     area_no int not null, -- 관광지 고유 넘버
-    foreign key(area_no) references area(no),
+    foreign key(area_no) references area(no) on delete cascade on update cascade,
     reg_datetime datetime not null, -- 작성일, 작성시간
     contents varchar(1000) not null -- 내용
 );
@@ -109,7 +108,7 @@ insert into comment values(null, 'qwer', '1', '2024-03-01', '서울은 또한 �
 insert into comment values(null, 'test1', '2', '2024-02-27', '도쿄의 역사적인 명소들은 정말로 인상적이었습니다. 아사쿠사의 센소지텐은 오래된 시장과 절을 포함한 역사적인 지역으로, 그곳을 방문하면서 과거의 일본을 느낄 수 있었습니다. 또한, 메이지 신궁과 에도 성은 전통적인 일본 건축물의 아름다움을 감상할 수 있는 곳으로, 그 곳에서의 산책은 정말로 특별한 경험이었습니다. 도쿄는 또한 음식 문화로도 유명합니다. 현지 음식점에서 맛본 일본 요리들은 정말로 풍부하고 맛있었는데, 특히 라멘과 초밥은 정말로 인상적이었습니다.');
 insert into comment values(null, 'test1', '3', '2024-02-27', '타지마할은 정말로 아름다운 건축물입니다. 백석으로 만들어진 그 흰색의 외관은 태양의 빛에 의해 다양한 색깔로 빛나며, 그 아름다움은 정말로 인상적이었습니다. 특히, 일몰이나 일출 때의 타지마할은 그 아름다움이 한층 더 빛을 발하며, 그 순간은 정말로 잊지 못할 순간이었습니다.');
 insert into comment values(null, 'qwer', '4', '2024-02-01', '파리는 음식 문화가 다양하고 특색 있어요. 특히 현지의 맛집을 찾아 다니면서 현지인들의 문화를 느낄 수 있었습니다. 그러나 외국인 관광객을 위한 안내가 부족한 점이 아쉽습니다.');
-insert into comment values(null, 'qwer', '5', '2024-02-02', '* 비밀 댓글입니다.');
+insert into comment values(null, 'qwer', '5', '2024-02-02', '비밀 댓글입니다.');
 insert into comment values(null, 'qwer', '6', '2024-02-03', '저는 퀘벡에서 유명한 관광 명소들을 방문했는데, 특히 도심에 위치한 공원이 정말 멋졌어요. 자연과 도시의 조화가 아름답게 어우러져 있어서 시간 가는 줄 모르고 머물고 싶었습니다.');
 insert into comment values(null, 'qwer', '7', '2024-02-04', '도시 전체적으로 안전한 분위기를 느낄 수 있었고, 특히 밤에도 거리를 두루 둘러보는 것이 안전해서 좋았습니다. 현지인들의 친절함과 안전한 분위기가 도시를 여행하는데 큰 장점이었습니다.');
 insert into comment values(null, 'qwer', '8', '2024-02-05', 'LA 는 교통 체계가 잘 되어 있어 이동이 편리하고, 특히 대중 교통 시스템이 효율적이에요. 하지만 최근에는 인프라 문제로 교통 체증이 심해지고 있다는 점이 아쉽습니다. 이에 대한 개선이 시급하다고 생각합니다.');
@@ -128,9 +127,9 @@ select * from comment;
 
 create table zzim(
 	area_no int not null, -- 관광지 고유 넘버
-    foreign key(area_no) references area(no),
+    foreign key(area_no) references area(no) on delete cascade on update cascade,
     member_id varchar(20) not null, -- 유저 ID
-    foreign key(member_id) references member(id)
+    foreign key(member_id) references member(id) on delete cascade on update cascade
 );
 
 -- 찜 목록 더미 데이터
@@ -143,7 +142,7 @@ select * from zzim;
 
 create table area_img(
 	area_no int not null, -- 관광지 고유 넘버
-    foreign key(area_no) references area(no),
+    foreign key(area_no) references area(no) on delete cascade on update cascade,
     weather varchar(10) not null, -- 날씨 속성값
     img varchar(255) not null -- 이미지 파일명
 );
@@ -228,7 +227,7 @@ create table board(
     category int not null, -- 게시글 종류 (공지, 건의)
     is_private int not null, -- 공개 여부
     member_id varchar(20) not null, -- 유저 ID
-    foreign key(member_id) references member(id),
+    foreign key(member_id) references member(id) on delete cascade on update cascade,
     title varchar(255) not null, -- 제목
     contents varchar(1000) not null, -- 내용
     reg_date datetime not null, -- 작성일
@@ -269,9 +268,9 @@ select * from board;
 -- 게시글 좋아요 테이블
 create table boardlike(
 	board_no int not null, -- 게시글 고유 넘버
-    foreign key(board_no) references board(no),
+    foreign key(board_no) references board(no) on delete cascade on update cascade,
     member_id varchar(20) not null, -- 유저 ID
-    foreign key(member_id) references member(id)
+    foreign key(member_id) references member(id) on delete cascade on update cascade
 );
 
 select * from boardlike;
@@ -280,10 +279,10 @@ select * from boardlike;
 create table boardComment(
 	no int auto_increment primary key not null, -- 게시글 댓글 고유 넘버
 	board_no int not null,	-- 게시글 번호
-	foreign key(board_no) references board(no),
+	foreign key(board_no) references board(no) on delete cascade on update cascade,
 	comment varchar(1000) not null, -- 댓글 내용
 	member_id varchar(20) not null,
-    foreign key(member_id) references member(id),
+    foreign key(member_id) references member(id) on delete cascade on update cascade,
 	reg_datetime datetime not null -- 작성일, 작성시간
 );
 

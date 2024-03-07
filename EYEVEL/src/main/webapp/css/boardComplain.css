@@ -59,6 +59,14 @@
 	display: block;
 }
 
+/* 다크모드 */
+html.dark_mode:has(header.black) #categoryList {border-bottom: 3px solid var(--white);}
+html.dark_mode:has(header.black) .complain_category.on{color: var(--white);}
+html.dark_mode:has(header.black) .complain_category:hover {color:  var(--white);}
+
+html.dark_mode:has(header.black) .complain_contents{color: var(--black);background-color: var(--gray);}
+
+
 @media screen and (max-width: 900px) {
 	.complain_category {font-size: 18px;}
 	.complain_title{font-size: 18px;}

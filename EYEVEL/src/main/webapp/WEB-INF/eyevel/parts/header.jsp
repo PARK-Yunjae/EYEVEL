@@ -62,6 +62,8 @@
 					</ul>
 				</li>
 			</ul>
+			<input type="checkBox" id="dark_mode_check">
+         	<label for="dark_mode_check" class="dark_mode_switch"></label>
 			<div class="menuToggle">메뉴</div>
 			<ul class="gnb">
 				<li class="mobildeNone"<c:if test="${area eq 'all'}">class="on mobildeNone"</c:if>>

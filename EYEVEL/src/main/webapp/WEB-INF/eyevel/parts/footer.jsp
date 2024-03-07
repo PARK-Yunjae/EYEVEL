@@ -3,6 +3,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <link rel="stylesheet" type="text/css" href="${ctx}/css/footer.css">
+<script type="text/javascript">
+	var chatAddr = '<%= application.getInitParameter("CHAT_ADDR") %>';
+</script>
+<script src="${ctx}/js/footer.js" defer></script>
 <footer>
       <div class="innerBox">
          <div class="footer_logo">
@@ -22,8 +26,16 @@
          </ul>
       </div>
    </footer>
-   <div class="chat_msg">
-   		채팅창
-   </div>
+   <c:if test="${!empty loginId}">
+	   <div class="chat_Btn" onclick="chatOpen('${loginId}')">채팅</div>
+   </c:if>
+   <div class="chat_Main">
+		<button id="closeBtn" onclick="disconnect();">채팅 종료</button>
+		<div id="chatWindow"></div>
+		<div id="chatMessageBar">
+			<input type="text" id="chatMessage" onkeyup="enterKey();">
+			<button id="sendBtn" onclick="sendMessage();">전송</button>
+		</div>
+	</div>
 </body>
 </html>
