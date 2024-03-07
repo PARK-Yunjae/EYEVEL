@@ -143,7 +143,7 @@
 					 <input type="email"
 						placeholder="이메일 입력" name="email" id="join_email">
 					<p class="msg email_msg join_email_msg">이메일을 입력해주세요</p>
-					<input type="button" value="전송"  onclick="emailVerification()">
+					<input type="button" value="전송"  onclick="emailVerification()" class="button btn">
 				</div>
 			</div>
 			<div class="input input_email_verification">
