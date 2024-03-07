@@ -23,3 +23,13 @@ footer a:hover{color:var(--green)}
 	.footer_nav{display: flex;}
 	.footer_nav li{margin-bottom: 0;margin-right: var(--padding);}
 }
+
+/* 채팅창 테스트 */
+.chat_msg{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 100px;
+	height: 100px;
+	background: Gray;
+}
