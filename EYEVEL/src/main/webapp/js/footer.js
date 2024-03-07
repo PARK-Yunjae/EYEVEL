@@ -8,8 +8,8 @@ let chatId;
 
 // 채팅창이 열리면 대화창, 메시지 입력창, 대화명 표시란으로 사용할 DOM 객체 저장
 function chatOpen(loginId){
-	document.querySelector(".chat_Btn").style.display = "none";
-	document.querySelector(".chat_Main").style.display = "flex";
+	document.querySelector(".chat_Btn").classList.remove('on');
+	document.querySelector(".chat_Main").classList.add('on');
     chatId = loginId;    
 }
 
@@ -24,8 +24,8 @@ function sendMessage() {
 
 // 서버와의 연결 종료
 function disconnect() {
-	document.querySelector(".chat_Btn").style.display = "block";
-	document.querySelector(".chat_Main").style.display = "none";
+	document.querySelector(".chat_Btn").classList.add('on');
+	document.querySelector(".chat_Main").classList.remove('on');
 
     /*webSocket.close();*/
 }
@@ -66,7 +66,7 @@ webSocket.onmessage = function(event) {
             }
         }
         else {  // 일반 대화
-            chatWindow.innerHTML += "<div>" + sender + " : " + content + "</div>";
+            chatWindow.innerHTML += "<div><p>" + sender + "</p>" + content + "</div>";
         }
     }
     chatWindow.scrollTop = chatWindow.scrollHeight; 
