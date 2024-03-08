@@ -47,7 +47,7 @@ public class MemberDeleteController implements Controller {
 		if (session.getAttribute("loginId").equals("admin")) {
 			return "redirect:" + ctx + "/adminMemberList.do";
 		} else {
-			session.setAttribute("loginId", null);
+			session.invalidate();
 		}
 		return "eyevel/parts/main";
 	}
