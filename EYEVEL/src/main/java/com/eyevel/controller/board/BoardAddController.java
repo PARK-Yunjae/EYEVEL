@@ -14,14 +14,12 @@ import jakarta.servlet.http.HttpServletResponse;
 
 // CLS-046 : 게시글 추가
 public class BoardAddController implements Controller {
-
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// 잘못된 접근 시 메인으로 보내기?
 		if (req.getSession().getAttribute("loginId") == null) {
 			return "eyevel/parts/main";
 		}
-
 		String ctx = req.getContextPath();
 		if (req.getParameter("title") == null) {
 			LocalDateTime now = LocalDateTime.now();
@@ -50,11 +48,21 @@ public class BoardAddController implements Controller {
 		// 자주 묻는 질문
 		else {
 			switch (req.getParameter("qna")) {
-			case "90": category = 90; break;
-			case "91": category = 91; break; 
-			case "92": category = 92; break;
-			case "93": category = 93; break;
-			case "94": category = 94; break;
+				case "90":
+					category = 90;
+					break;
+				case "91":
+					category = 91;
+					break;
+				case "92":
+					category = 92;
+					break;
+				case "93":
+					category = 93;
+					break;
+				case "94":
+					category = 94;
+					break;
 			}
 		}
 		Board b = new Board();
@@ -73,5 +81,4 @@ public class BoardAddController implements Controller {
 
 		return "redirect:" + ctx + "/boardList" + ".do";
 	}
-
 }

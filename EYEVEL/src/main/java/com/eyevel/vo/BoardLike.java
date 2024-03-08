@@ -25,5 +25,4 @@ public class BoardLike {
 	public String toString() {
 		return "BoardLike [board_no=" + board_no + ", member_id=" + member_id + "]";
 	}
-
 }

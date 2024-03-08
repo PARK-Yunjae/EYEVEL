@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%
@@ -27,10 +26,10 @@ pageContext.setAttribute("cn", "\n");
 				<div class="edit">
 					<p>조회수 : ${board.hits}</p>
 					<div class="like">
-						<span id="like_btn" onclick="likeBtnCheck('${board.no}','${loginId}')"> 
+						<span id="like_btn" onclick="likeBtnCheck('${board.no}','${loginId}')">
 							<i id="heart" class=
-								<c:if test="${empty boardlike}">"fa-heart icon far "</c:if>
-								<c:if test="${!empty boardlike}">"fa-heart icon fa "</c:if>>
+							<c:if test="${empty boardlike}">"fa-heart icon far "</c:if> 
+							<c:if test="${!empty boardlike}">"fa-heart icon fa "</c:if>> 
 							</i>
 						</span>
 						<p class="board_heart_count">${board.heart}</p>
@@ -41,7 +40,7 @@ pageContext.setAttribute("cn", "\n");
 						</button>
 						<!-- class on 추가시 수정/삭제 보임 -->
 						<div class="edit_box">
-							<a href="${ctx}/boardUpdate.do?no=${board.no}">수정</a> 
+							<a href="${ctx}/boardUpdate.do?no=${board.no}">수정</a>
 							<a href="${ctx}/boardDelete.do?no=${board.no}">삭제</a>
 						</div>
 					</c:if>
@@ -51,8 +50,8 @@ pageContext.setAttribute("cn", "\n");
 		</div>
 		<div class="board_comment">
 			<div id="board_comment_form">
-				<input type="hidden" id="loginId" value="${loginId}"> 
-				<input type="hidden" id="board_no" value="${board.no}"> 
+				<input type="hidden" id="loginId" value="${loginId}">
+				<input type="hidden" id="board_no" value="${board.no}">
 				<div class="board_info_comment">
 					<input type="text" id="board_info_comment" placeholder="댓글 입력...">
 					<p class="msg board_info_msg">내용을 입력해 주세요</p>
@@ -81,11 +80,7 @@ pageContext.setAttribute("cn", "\n");
 							<p>${bc.comment}</p>
 							<!-- no는 댓글 고유 번호, board_no는 게시글 번호  -->
 							<c:if test="${loginId eq bc.member_id || loginId eq 'admin'}">
-								<button 
-									onclick="location.href='${ctx}/boardCommentDelete.do?no=${bc.no}&board_no=${bc.board_no}'"
-									style="display:block">
-									삭제
-								</button>
+								<button onclick="location.href='${ctx}/boardCommentDelete.do?no=${bc.no}&board_no=${bc.board_no}'" style="display: block">삭제</button>
 							</c:if>
 						</div>
 					</li>

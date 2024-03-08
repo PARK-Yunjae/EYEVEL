@@ -1,8 +1,7 @@
 package com.eyevel.vo;
 
-//CLS-001 유저 테이블
+// CLS-001 유저 테이블
 public class Member {
-
 	private String id;
 	private String pw;
 	private String name;
@@ -53,5 +52,4 @@ public class Member {
 	public String toString() {
 		return "Member [id=" + id + ", pw=" + pw + ", name=" + name + ", email=" + email + ", img=" + img + "]";
 	}
-
 }

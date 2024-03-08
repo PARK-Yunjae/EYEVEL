@@ -1,8 +1,7 @@
 package com.eyevel.vo;
 
-//CLS-004 댓글 테이블
+// CLS-004 댓글 테이블
 public class Comment {
-
 	private int no;
 	private String member_id;
 	private int area_no;
@@ -51,8 +50,6 @@ public class Comment {
 
 	@Override
 	public String toString() {
-		return "Comment [no=" + no + ", member_id=" + member_id + ", area_no=" + area_no + ", reg_datetime="
-				+ reg_datetime + ", contents=" + contents + "]";
+		return "Comment [no=" + no + ", member_id=" + member_id + ", area_no=" + area_no + ", reg_datetime=" + reg_datetime + ", contents=" + contents + "]";
 	}
-
 }

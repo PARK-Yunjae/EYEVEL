@@ -15,5 +15,4 @@ public class AreaRecommendController implements Controller {
 
 		return "eyevel/area/recommendPlaces";
 	}
-
 }

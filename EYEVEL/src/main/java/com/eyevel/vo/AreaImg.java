@@ -2,11 +2,9 @@ package com.eyevel.vo;
 
 //CLS-006 관광지 이미지 테이블
 public class AreaImg {
-
 	private int area_no;
 	private String weather;
 	private String img;
-
 
 	public int getArea_no() {
 		return area_no;
@@ -36,5 +34,4 @@ public class AreaImg {
 	public String toString() {
 		return "AreaImg [area_no=" + area_no + ", weather=" + weather + ", img=" + img + "]";
 	}
-
 }

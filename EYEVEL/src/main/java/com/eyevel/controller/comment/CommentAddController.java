@@ -13,8 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 // CLS-054 : 댓글 추가
-public class CommentAddController implements Controller{
-
+public class CommentAddController implements Controller {
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String memberId = req.getParameter("id");
@@ -31,9 +30,8 @@ public class CommentAddController implements Controller{
 		c.setContents(contents);
 		System.out.println(c);
 		CommentDAO.getInstance().commentAdd(c);
-		
-		String ctx = req.getContextPath();
-		return "redirect:" + ctx + "/areaCity.do?no="+areaNo;
-	}
 
+		String ctx = req.getContextPath();
+		return "redirect:" + ctx + "/areaCity.do?no=" + areaNo;
+	}
 }

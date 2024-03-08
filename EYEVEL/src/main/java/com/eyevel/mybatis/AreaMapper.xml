@@ -5,48 +5,54 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eyevel.mybatis.AreaMapper">
-
-<select id="areaContent" parameterType="Integer" resultType="Area">
+	<select id="areaContent" parameterType="Integer"
+		resultType="Area">
 		select * from area where no=#{no}
-</select>
+	</select>
 
-<select id="areaList" resultType="Area">
+	<select id="areaList" resultType="Area">
 		select * from area
-</select>
+	</select>
 
-<select id="areaListByZzim" parameterType="Integer" resultType="Area">
+	<select id="areaListByZzim" parameterType="Integer"
+		resultType="Area">
 		select * from area where no=#{area_no}
-</select>
+	</select>
 
-<select id="areaContinentList" parameterType="String" resultType="Area">
-select * from area where continent=#{area}
-</select>
+	<select id="areaContinentList" parameterType="String"
+		resultType="Area">
+		select * from area where continent=#{area}
+	</select>
 
-<insert id="areaAdd" parameterType="Area">
-	insert into area(name, contents, link_url, continent, dir_X, dir_Y, lon, lat, id) 
-	values(#{name},#{contents},#{link_url},#{continent},#{dir_X},#{dir_Y},#{lon},#{lat},#{id});
-</insert>
+	<insert id="areaAdd" parameterType="Area">
+		insert into area(name, contents, link_url, continent, dir_X, dir_Y, lon,
+		lat, id)
+		values(#{name},#{contents},#{link_url},#{continent},#{dir_X},#{dir_Y},#{lon},#{lat},#{id});
+	</insert>
 
-<select id="areaGetNo" parameterType="Integer" resultType="Integer">
-	select no from area where id = #{id}
-</select>
+	<select id="areaGetNo" parameterType="Integer"
+		resultType="Integer">
+		select no from area where id = #{id}
+	</select>
 
-<delete id="areaDelete" parameterType="Integer">
-	delete from area where no=#{no}
-</delete>
+	<delete id="areaDelete" parameterType="Integer">
+		delete from area where no=#{no}
+	</delete>
 
-<update id="areaUpdate" parameterType="Area">
-	update area
-	set
-	link_url=#{link_url}, contents=#{contents}
-	where no=#{no}
-</update>
+	<update id="areaUpdate" parameterType="Area">
+		update area
+		set
+		link_url=#{link_url}, contents=#{contents}
+		where no=#{no}
+	</update>
 
-<select id="validAreaId" parameterType="Integer" resultType="Integer">
+	<select id="validAreaId" parameterType="Integer"
+		resultType="Integer">
 		select count(*) from area where id = #{area_id}
-</select>
+	</select>
 
-<select id="validAreaName" parameterType="String" resultType="Integer">
+	<select id="validAreaName" parameterType="String"
+		resultType="Integer">
 		select count(*) from area where name like #{area_name}
-</select>
+	</select>
 </mapper>

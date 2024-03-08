@@ -4,13 +4,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eyevel.mybatis.MemberMapper">
-
 	<select id="memberList" resultType="member">
 		select * from member
 	</select>
 
 	<insert id="memberInsert" parameterType="member">
-		insert into member(id, pw, name, email, img)
+		insert into member(id,
+		pw, name, email, img)
 		values(
 		#{id},
 		#{pw},
@@ -20,11 +20,13 @@
 		)
 	</insert>
 
-	<select id="validMemberId" parameterType="String" resultType="Integer">
+	<select id="validMemberId" parameterType="String"
+		resultType="Integer">
 		select count(*) from member where id=#{id}
 	</select>
 
-	<select id="checkLogin" parameterType="String" resultType="String">
+	<select id="checkLogin" parameterType="String"
+		resultType="String">
 		select name from member where id=#{id} and pw=#{pw};
 	</select>
 
@@ -50,7 +52,8 @@
 		img=#{img}, where id=#{id}
 	</update>
 
-	<select id="memberLogin" parameterType="member" resultType="String">
+	<select id="memberLogin" parameterType="member"
+		resultType="String">
 		select name from member where id=#{id} and pw=#{pw}
 	</select>
 </mapper>

@@ -1,8 +1,7 @@
 package com.eyevel.vo;
 
-//CLS-003 찜 테이블
+// CLS-003 찜 테이블
 public class Zzim {
-
 	private int area_no;
 	private String member_id;
 
@@ -26,5 +25,4 @@ public class Zzim {
 	public String toString() {
 		return "Zzim [areaNo=" + area_no + ", memberId=" + member_id + "]";
 	}
-
 }

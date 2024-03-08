@@ -2,7 +2,6 @@ package com.eyevel.vo;
 
 //CLS-002 관광지 테이블
 public class Area {
-
 	private int no;
 	private String name;
 	private String contents;
@@ -96,9 +95,6 @@ public class Area {
 
 	@Override
 	public String toString() {
-		return "Area [no=" + no + ", name=" + name + ", contents=" + contents + ", link_url=" + link_url
-				+ ", continent=" + continent + ", dir_X=" + dir_X + ", dir_Y=" + dir_Y + ", lon=" + lon + ", lat=" + lat
-				+ ", id=" + id + "]";
+		return "Area [no=" + no + ", name=" + name + ", contents=" + contents + ", link_url=" + link_url + ", continent=" + continent + ", dir_X=" + dir_X + ", dir_Y=" + dir_Y + ", lon=" + lon + ", lat=" + lat + ", id=" + id + "]";
 	}
-
 }

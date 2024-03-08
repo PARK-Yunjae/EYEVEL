@@ -17,9 +17,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-//CLS-030 : 회원정보
+// CLS-030 : 회원정보
 public class MemberInfoController implements Controller {
-
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// 잘못된 접근 시 메인으로 보내기?
@@ -38,7 +37,7 @@ public class MemberInfoController implements Controller {
 		checkZzim.setMember_id((String) req.getSession().getAttribute("loginId"));
 		List<Zzim> z = ZzimDAO.getInstance().zzimMemberListById(checkZzim);
 		ArrayList<Area> a = (ArrayList<Area>) AreaDAO.getInstance().areaListByZzim(z);
-		for(int i=0; i<a.size(); i++) {
+		for (int i = 0; i < a.size(); i++) {
 			String img = AreaImgDAO.getInstance().getimg(a.get(i).getNo()).get(0).getImg();
 			a.get(i).setLink_url(img);
 		}
@@ -48,5 +47,4 @@ public class MemberInfoController implements Controller {
 
 		return "eyevel/member/info";
 	}
-
 }

@@ -19,24 +19,23 @@ public class EyevelFrontController extends HttpServlet {
 		String URI = req.getRequestURI();
 		String ctx = req.getContextPath();
 		String command = URI.substring(ctx.length());
-		
+
 		Controller controller = null;
 		String nextPage = null;
 		HandlerMapping mapping = new HandlerMapping();
 		controller = mapping.getController(command);
 		nextPage = controller.requestHandler(req, res);
-		
-		System.out.println("nextPage = "+nextPage);
-		if(nextPage != null) {
-			if(nextPage.indexOf("redirect:") != -1) {
+
+		System.out.println("nextPage = " + nextPage);
+		if (nextPage != null) {
+			if (nextPage.indexOf("redirect:") != -1) {
 				res.sendRedirect(nextPage.split(":")[1]);
-			}else {
+			} else {
 				RequestDispatcher rd = req.getRequestDispatcher(ViewResolver.makeView(nextPage));
 				rd.forward(req, res);
 			}
-		}else {
+		} else {
 			System.out.println("비동기도 들어오나");
 		}
 	}
-
 }
