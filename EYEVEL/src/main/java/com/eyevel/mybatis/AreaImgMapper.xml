@@ -4,23 +4,25 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eyevel.mybatis.AreaImgMapper">
-	
 	<insert id="addAreaImg" parameterType="AreaImg">
-		insert into area_img(area_no, weather, img)
+		insert into
+		area_img(area_no, weather, img)
 		value(#{area_no},#{weather},#{img});
 	</insert>
-	
 
-	<select id="getAreaimgList" parameterType="Integer" resultType="AreaImg">
-	select * from area_img where area_no=#{no}
+	<select id="getAreaimgList" parameterType="Integer"
+		resultType="AreaImg">
+		select * from area_img where area_no=#{no}
 	</select>
 
 	<delete id="deleteAreaImg" parameterType="Integer">
-		delete from area_img where area_no=#{area_no}
+		delete from area_img
+		where area_no=#{area_no}
 	</delete>
 
-	<select id="getAreaImgListWithoutNight" parameterType="Integer" resultType="AreaImg">
-	select distinct * from area_img where area_no =#{no} and img not like '%_night';
+	<select id="getAreaImgListWithoutNight" parameterType="Integer"
+		resultType="AreaImg">
+		select distinct * from area_img where area_no =#{no} and img not like
+		'%_night';
 	</select>
-	
 </mapper>

@@ -12,22 +12,18 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 //비동기로 좋아요 삭제
-public class VaildDeleteBoardLikeController implements Controller{
-
+public class VaildDeleteBoardLikeController implements Controller {
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// boardLike
 		int no = Integer.parseInt(req.getParameter("no"));
-		String id = (String)req.getSession().getAttribute("loginId");
-		
+		String id = (String) req.getSession().getAttribute("loginId");
 		BoardLike bl = new BoardLike();
 		bl.setBoard_no(no);
 		bl.setMember_id(id);
 		BoardLikeDAO.getInstance().deleteBoardLike(bl);
-		
 		// board
 		BoardDAO.getInstance().deleteBoardLike(bl.getBoard_no());
 		return null;
 	}
-
 }

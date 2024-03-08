@@ -26,15 +26,15 @@
 						<option value="qna">자주하는질문</option>
 					</select>
 					<div class="qna_select">
-						<input type="radio" name="qna" id="qna90" value="90"/>
+						<input type="radio" name="qna" id="qna90" value="90" />
 						<label class="qna_label" for="qna90">전체</label>
-						<input type="radio" name="qna" id="qna91" value="91"/>
+						<input type="radio" name="qna" id="qna91" value="91" />
 						<label class="qna_label" for="qna91">계정</label>
-						<input type="radio" name="qna" id="qna92" value="92"/>
+						<input type="radio" name="qna" id="qna92" value="92" />
 						<label class="qna_label" for="qna92">게시판</label>
-						<input type="radio" name="qna" id="qna93" value="93"/>
+						<input type="radio" name="qna" id="qna93" value="93" />
 						<label class="qna_label" for="qna93">관광지</label>
-						<input type="radio" name="qna" id="qna94" value="94"/>
+						<input type="radio" name="qna" id="qna94" value="94" />
 						<label class="qna_label" for="qna94">기타</label>
 					</div>
 				</div>
@@ -44,7 +44,8 @@
 			<input type="hidden" name="no" id="no" value="${board.no}" />
 			<div class="input_info">
 				<div class="input_title">
-					<label for="title">제목</label><br>
+					<label for="title">제목</label>
+					<br>
 					<c:if test="${board.title eq null}">
 						<input type="text" name="title" placeholder="제목을 입력해주세요" id="title">
 					</c:if>
@@ -53,16 +54,17 @@
 					</c:if>
 				</div>
 				<div class="input_date">
-					<label for="date">작성일</label><br>
+					<label for="date">작성일</label>
+					<br>
 					<input type="text" name="date" id="date" value=
-					<c:if test="${empty board.reg_date}">"${date}"</c:if>
-					<c:if test="${!empty board.reg_date}">"${board.reg_date}"</c:if>
-					readonly>
+					<c:if test="${empty board.reg_date}">"${date}"</c:if> 
+					<c:if test="${!empty board.reg_date}">"${board.reg_date}"</c:if> readonly>
 				</div>
 				<div class="input_member">
-					<label for="member">작성자</label><br>
+					<label for="member">작성자</label>
+					<br>
 					<input type="text" name="member" id="member" value=
-					<c:if test="${empty board.member_id}">"${name}"</c:if>
+					<c:if test="${empty board.member_id}">"${name}"</c:if> 
 					<c:if test="${!empty board.member_id}">"${board.member_id}"</c:if> readonly>
 				</div>
 			</div>

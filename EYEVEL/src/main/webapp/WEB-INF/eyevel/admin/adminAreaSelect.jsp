@@ -1,16 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
 <c:if test="${empty loginId || loginId ne 'admin'}">
 	<script>
-		location.href="${ctx}/main.do";
+		location.href = "${ctx}/main.do";
 	</script>
 </c:if>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/adminAreaSelect.css">
 <script src="${ctx}/js/adminAreaSelect.js" defer></script>
 <script>
 	document.querySelector('header').classList.add('black');
-	document.querySelector('html').style.background="none";
+	document.querySelector('html').style.background = "none";
 </script>
 <section class="adminSelectSection">
 	<div class="innerBox">

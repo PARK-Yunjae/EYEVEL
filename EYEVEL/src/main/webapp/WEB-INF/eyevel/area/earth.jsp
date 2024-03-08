@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx}/css/earth.css">
 <section class="earthSection">
@@ -12,7 +11,7 @@
 		<button id="europe" onclick="location.href='${ctx}/areaContinent.do?area=europe'">유럽</button>
 		<button id="oceania" onclick="location.href='${ctx}/areaContinent.do?area=oceania'">오세아니아</button>
 		<button id="antarctica" onclick="location.href='${ctx}/areaContinent.do?area=antarctica'">남극</button>
-		<img src="${ctx}/img/worldmap1.png"/>
+		<img src="${ctx}/img/worldmap1.png" />
 	</div>
 </section>
 <%@ include file="../parts/footer.jsp"%>

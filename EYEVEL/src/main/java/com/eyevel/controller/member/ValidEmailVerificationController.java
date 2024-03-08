@@ -14,10 +14,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 // 비동기 이메일 인증 - 회원가입
 public class ValidEmailVerificationController implements Controller {
-
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
 		String email = req.getParameter("email");
 
 		final String fromEmail = "dbswoql0712@gmail.com"; // 수정: 이메일 발신자 주소
@@ -41,14 +39,11 @@ public class ValidEmailVerificationController implements Controller {
 			message.setFrom(new InternetAddress(fromEmail));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(email)); // 받는 사람 이메일
 			message.setSubject("이메일 인증번호"); // 이메일 제목
-
 			// 인증번호 생성
 			String authCode = generateVerificationCode();
 			message.setText("귀하의 인증번호는 " + authCode + " 입니다."); // 이메일 내용
-
 			// 이메일 전송
 			Transport.send(message);
-
 			res.getWriter().write(authCode);
 		} catch (MessagingException e) {
 			e.printStackTrace();

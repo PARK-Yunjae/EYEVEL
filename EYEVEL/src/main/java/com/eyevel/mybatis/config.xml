@@ -5,38 +5,40 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-  <properties resource="com/eyevel/mybatis/db.properties"/> 
-  
-  <typeAliases>
-      <typeAlias type="com.eyevel.vo.Member" alias="Member"/>    
-      <typeAlias type="com.eyevel.vo.Area" alias="Area"/>     
-      <typeAlias type="com.eyevel.vo.Zzim" alias="Zzim"/>     
-      <typeAlias type="com.eyevel.vo.Comment" alias="Comment"/>     
-      <typeAlias type="com.eyevel.vo.Board" alias="Board"/>     
-      <typeAlias type="com.eyevel.vo.BoardComment" alias="BoardComment"/>     
-      <typeAlias type="com.eyevel.vo.BoardLike" alias="BoardLike"/>     
-      <typeAlias type="com.eyevel.vo.AreaImg" alias="AreaImg"/>     
-  </typeAliases> 
-  
-  <environments default="development">
-    <environment id="development">
-      <transactionManager type="JDBC"/>
-      <dataSource type="POOLED">
-        <property name="driver" value="${driver}"/>
-        <property name="url" value="${url}"/>
-        <property name="username" value="${username}"/>
-        <property name="password" value="${password}"/>
-      </dataSource>
-    </environment>
-  </environments>
-  <mappers>
-    <mapper resource="com/eyevel/mybatis/MemberMapper.xml"/>
-    <mapper resource="com/eyevel/mybatis/AreaMapper.xml"/>
-    <mapper resource="com/eyevel/mybatis/ZzimMapper.xml"/>
-    <mapper resource="com/eyevel/mybatis/CommentMapper.xml"/>
-    <mapper resource="com/eyevel/mybatis/BoardMapper.xml"/>
-    <mapper resource="com/eyevel/mybatis/BoardCommentMapper.xml"/>
-    <mapper resource="com/eyevel/mybatis/BoardLikeMapper.xml"/>
-    <mapper resource="com/eyevel/mybatis/AreaImgMapper.xml"/>
-  </mappers>
+	<properties resource="com/eyevel/mybatis/db.properties" />
+
+	<typeAliases>
+		<typeAlias type="com.eyevel.vo.Member" alias="Member" />
+		<typeAlias type="com.eyevel.vo.Area" alias="Area" />
+		<typeAlias type="com.eyevel.vo.Zzim" alias="Zzim" />
+		<typeAlias type="com.eyevel.vo.Comment" alias="Comment" />
+		<typeAlias type="com.eyevel.vo.Board" alias="Board" />
+		<typeAlias type="com.eyevel.vo.BoardComment"
+			alias="BoardComment" />
+		<typeAlias type="com.eyevel.vo.BoardLike" alias="BoardLike" />
+		<typeAlias type="com.eyevel.vo.AreaImg" alias="AreaImg" />
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/eyevel/mybatis/MemberMapper.xml" />
+		<mapper resource="com/eyevel/mybatis/AreaMapper.xml" />
+		<mapper resource="com/eyevel/mybatis/ZzimMapper.xml" />
+		<mapper resource="com/eyevel/mybatis/CommentMapper.xml" />
+		<mapper resource="com/eyevel/mybatis/BoardMapper.xml" />
+		<mapper resource="com/eyevel/mybatis/BoardCommentMapper.xml" />
+		<mapper resource="com/eyevel/mybatis/BoardLikeMapper.xml" />
+		<mapper resource="com/eyevel/mybatis/AreaImgMapper.xml" />
+	</mappers>
 </configuration>

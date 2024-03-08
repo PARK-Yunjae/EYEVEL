@@ -15,7 +15,6 @@ public class AdminAreaSelectController implements Controller {
 		if (!req.getSession().getAttribute("loginId").equals("admin")) {
 			return "eyevel/parts/main";
 		}
-
 		return "eyevel/admin/adminAreaSelect";
 	}
 }

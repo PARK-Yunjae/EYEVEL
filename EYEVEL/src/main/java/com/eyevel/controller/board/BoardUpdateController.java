@@ -12,7 +12,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 // CLS-050 : 게시글 정보 수정
 public class BoardUpdateController implements Controller {
-
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// 잘못된 접근 시 메인으로 보내기?
@@ -35,5 +34,4 @@ public class BoardUpdateController implements Controller {
 
 		return "redirect:" + ctx + "/boardList" + ".do";
 	}
-
 }

@@ -33,8 +33,7 @@ public class FileUtil {
 	}
 
 	// 파일 업로드
-	public static String uploadFile(HttpServletRequest req, String sDirectory, String id)
-			throws ServletException, IOException {
+	public static String uploadFile(HttpServletRequest req, String sDirectory, String id) throws ServletException, IOException {
 		// Part 객체를 통해 서버로 전송된 파일명 읽어오기
 		Part part = req.getPart("img");
 
@@ -44,15 +43,14 @@ public class FileUtil {
 		System.out.println("partHeader=" + partHeader);
 
 		// 헤더값에서 파일명 잘라내기
-        String[] phArr = partHeader.split("filename=");
+		String[] phArr = partHeader.split("filename=");
 		String originalFileName = phArr[1].trim().replace("\"", "");
-//		String originalFileName = id + ".png";
+		// String originalFileName = id + ".png";
 
 		// 전송된 파일이 있다면 디렉토리에 저장
 		if (!originalFileName.isEmpty()) {
 			part.write(sDirectory + File.separator + id + ".png");
 		}
-
 		// 원본 파일명 반환
 		return id + ".png";
 	}
@@ -61,10 +59,10 @@ public class FileUtil {
 	public static String renameFile(String sDirectory, String fileName, String area_name, int cnt) {
 		// 원본파일의 확장자 잘라내기
 		String ext = fileName.substring(fileName.lastIndexOf("."));
-		
-		String areaWeatherName = area_name + (cnt%4 == 0 ? "_sunny" : cnt%4==1 ? "_cloudy" : cnt%4==2 ? "_rainy" : "_snowy");
-		areaWeatherName += cnt>3 ? "_night" : "";
-		
+
+		String areaWeatherName = area_name + (cnt % 4 == 0 ? "_sunny" : cnt % 4 == 1 ? "_cloudy" : cnt % 4 == 2 ? "_rainy" : "_snowy");
+		areaWeatherName += cnt > 3 ? "_night" : "";
+
 		// 날짜 및 시간을 통해 파일명 생성
 		//String now = new SimpleDateFormat("yyyyMMdd_HmsS").format(new Date());
 		// "날짜_시간.확장자" 형태의 새로운 파일명 생성
@@ -80,8 +78,7 @@ public class FileUtil {
 	}
 
 	// multiple 속성 추가로 2개 이상의 파일 업로드
-	public static ArrayList<String> multipleFile(HttpServletRequest req, String sDirectory, String area_name)
-			throws ServletException, IOException {
+	public static ArrayList<String> multipleFile(HttpServletRequest req, String sDirectory, String area_name) throws ServletException, IOException {
 		// 파일명 저장을 위한 컬렉션 생성
 		ArrayList<String> listFileName = new ArrayList<>();
 
@@ -99,38 +96,35 @@ public class FileUtil {
 
 			// 헤더값에서 파일명 잘라내기
 			String[] phArr = partHeader.split("filename=");
-			if(phArr[1].equals("\"\"")) {
+			if (phArr[1].equals("\"\"")) {
 				cnt++;
 				continue;
 			}
 			String originalFileName = phArr[1].trim().replace("\"", "");
-			originalFileName = renameFile(sDirectory,originalFileName,area_name,cnt);
+			originalFileName = renameFile(sDirectory, originalFileName, area_name, cnt);
 			// 전송된 파일이 있다면 디렉토리에 저장
 			if (!originalFileName.isEmpty()) {
 				part.write(sDirectory + File.separator + originalFileName);
 			}
-			originalFileName = originalFileName.substring(0, originalFileName.length()-4);
+			originalFileName = originalFileName.substring(0, originalFileName.length() - 4);
 
 			//originalFileName = renameFile(sDirectory,phArr[1],area_name,cnt);
-			
+
 			// 컬렉션에 추가
 			listFileName.add(originalFileName);
 			cnt++;
 		}
-
 		// 원본 파일명 반환
 		return listFileName;
 	}
 
 	// 파일 다운로드
-	public static void download(HttpServletRequest req, HttpServletResponse resp, String directory, String sfileName,
-			String ofileName) {
+	public static void download(HttpServletRequest req, HttpServletResponse resp, String directory, String sfileName, String ofileName) {
 		String sDirectory = req.getServletContext().getRealPath(directory);
 		try {
 			// 파일을 찾아 입력 스트림 생성
 			File file = new File(sDirectory, sfileName);
 			InputStream iStream = new FileInputStream(file);
-
 			// 한글 파일명 깨짐 방지
 			String client = req.getHeader("User-Agent");
 			if (client.indexOf("WOW64") == -1) {
@@ -138,7 +132,6 @@ public class FileUtil {
 			} else {
 				ofileName = new String(ofileName.getBytes("KSC5601"), "ISO-8859-1");
 			}
-
 			// 파일 다운로드용 응답 헤더 설정
 			resp.reset();
 			resp.setContentType("application/octet-stream");
@@ -156,7 +149,6 @@ public class FileUtil {
 			while ((readBuffer = iStream.read(b)) > 0) {
 				oStream.write(b, 0, readBuffer);
 			}
-
 			// 입/출력 스트림 닫음
 			iStream.close();
 			oStream.close();
@@ -183,7 +175,6 @@ public class FileUtil {
 		if (!targetFolder.exists()) {
 			return false;
 		}
-
 		File[] files = targetFolder.listFiles();
 		for (File file : files) {
 			if (file.isDirectory()) {
@@ -191,7 +182,6 @@ public class FileUtil {
 			}
 			file.delete();
 		}
-
 		return targetFolder.delete();
 	}
 
@@ -201,5 +191,4 @@ public class FileUtil {
 		File file = new File(sDirectory + File.separator);
 		deleteDirectoryAndFiles(file);
 	}
-
 }

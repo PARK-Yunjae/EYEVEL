@@ -2,7 +2,6 @@ package com.eyevel.vo;
 
 // 게시글 댓글 테이블
 public class BoardComment {
-
 	private int no;
 	private int board_no;
 	private String comment;
@@ -60,8 +59,6 @@ public class BoardComment {
 
 	@Override
 	public String toString() {
-		return "BoardComment [no=" + no + ", board_no=" + board_no + ", comment=" + comment + ", member_id=" + member_id
-				+ ", regDatetime=" + reg_datetime + "]";
+		return "BoardComment [no=" + no + ", board_no=" + board_no + ", comment=" + comment + ", member_id=" + member_id + ", regDatetime=" + reg_datetime + "]";
 	}
-
 }

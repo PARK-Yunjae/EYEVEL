@@ -2,7 +2,6 @@ package com.eyevel.vo;
 
 //CLS-005 게시판 테이블
 public class Board {
-
 	private int no;
 	private int category;
 	private int is_private;
@@ -96,9 +95,6 @@ public class Board {
 
 	@Override
 	public String toString() {
-		return "Board [no=" + no + ", category=" + category + ", is_private=" + is_private + ", member_id=" + member_id
-				+ ", title=" + title + ", contents=" + contents + ", reg_date=" + reg_date + ", hits=" + hits
-				+ ", heart=" + heart + ", admin_check=" + admin_check + "]";
+		return "Board [no=" + no + ", category=" + category + ", is_private=" + is_private + ", member_id=" + member_id + ", title=" + title + ", contents=" + contents + ", reg_date=" + reg_date + ", hits=" + hits + ", heart=" + heart + ", admin_check=" + admin_check + "]";
 	}
-
 }

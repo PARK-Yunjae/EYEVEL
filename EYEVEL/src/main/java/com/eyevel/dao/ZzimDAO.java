@@ -7,9 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import com.eyevel.util.MybatisConfig;
 import com.eyevel.vo.Zzim;
 
-//CLS-009 찜테이블 에서 값을 가져오는 클래스
+// CLS-009 찜테이블 에서 값을 가져오는 클래스
 public class ZzimDAO {
-
 	private static ZzimDAO instance = new ZzimDAO();
 
 	public static ZzimDAO getInstance() {
@@ -54,12 +53,11 @@ public class ZzimDAO {
 
 	}
 
-	//관광지 넘버로 찜목록 삭제
+	// 관광지 넘버로 찜목록 삭제
 	public void zzimDeletebyNo(int area_no) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		session.delete("ZzimDeleteByNo", area_no);
 		session.commit();
 		session.close();
 	}
-
 }

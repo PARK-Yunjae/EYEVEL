@@ -18,12 +18,11 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-//CLS-049 : 게시글 확인
+// CLS-049 : 게시글 확인
 public class BoardInfoController implements Controller {
-
 	@Override
 	public String requestHandler(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		
+
 		int no = -1;
 		if (req.getParameter("no") == null) {
 			return "eyevel/board/boardList";
@@ -40,14 +39,14 @@ public class BoardInfoController implements Controller {
 		// 좋아요 버튼 눌렀으면 같이 보내주자 - 여기는 로그인을 한 유저
 		HashMap<String, String> myLike = new HashMap<String, String>();
 		myLike.put("board_no", no + "");
-		myLike.put("member_id", (String)req.getSession().getAttribute("loginId"));
+		myLike.put("member_id", (String) req.getSession().getAttribute("loginId"));
 		BoardLike bl = BoardLikeDAO.getInstance().getMyBoardLike(myLike);
-		if(bl != null) req.setAttribute("boardlike", bl);
+		if (bl != null)
+			req.setAttribute("boardlike", bl);
 		// 댓글 리스트도 불러서 가자
 		List<BoardComment> list = BoardCommentDAO.getInstance().selectBoardComments(no);
 		req.setAttribute("bclist", list);
 		System.out.println(list.size());
 		return "eyevel/board/boardInfo";
 	}
-
 }

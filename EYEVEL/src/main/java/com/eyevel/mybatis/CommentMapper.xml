@@ -8,20 +8,25 @@
 		resultType="Comment">
 		select * from comment where area_no=#{no}
 	</select>
+	
 	<insert id="commentAdd" parameterType="Comment">
 		insert into
 		comment(member_id,area_no,reg_datetime,contents)
 		values(#{member_id},#{area_no},#{reg_datetime},#{contents})
 	</insert>
+	
 	<delete id="commentDelete" parameterType="Integer">
-		delete from comment where no=#{no}
+		delete from comment
+		where no=#{no}
 	</delete>
-	
+
 	<delete id="areaCommentDelete" parameterType="Integer">
-		delete from comment where area_no=#{area_no}
+		delete from comment
+		where area_no=#{area_no}
 	</delete>
-	
+
 	<delete id="CommentDeleteMemberId" parameterType="String">
-		delete from comment where member_id like #{member_id}
+		delete from
+		comment where member_id like #{member_id}
 	</delete>
 </mapper>
