@@ -83,15 +83,15 @@ select {
 }
 
 #mode-selection {
-	position: absolute;
-	bottom: 20px;
-	left: 20px;
-	background-color: #ffffff;
-	padding: 10px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-	width: calc(30% - 40px); /* #info-panel의 너비에 맞춤 */
+    position: absolute;
+    top: 20px;
+    left: 300px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    max-width: 100px; /* 최대 너비 설정 */
 }
 
 .mode-title {
