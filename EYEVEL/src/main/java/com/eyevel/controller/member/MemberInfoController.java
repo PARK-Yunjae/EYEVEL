@@ -34,7 +34,7 @@ public class MemberInfoController implements Controller {
 		Member m = MemberDAO.getInstance().memberContent(id);
 
 		Zzim checkZzim = new Zzim();
-		checkZzim.setMember_id((String) req.getSession().getAttribute("loginId"));
+		checkZzim.setMember_id(id);
 		List<Zzim> z = ZzimDAO.getInstance().zzimMemberListById(checkZzim);
 		ArrayList<Area> a = (ArrayList<Area>) AreaDAO.getInstance().areaListByZzim(z);
 		for (int i = 0; i < a.size(); i++) {
