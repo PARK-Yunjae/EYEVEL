@@ -1,4 +1,5 @@
 const placesNames = JSON.parse(sessionStorage.getItem('placesNames'));
+const cityName = sessionStorage.getItem('cityName');
 console.log(placesNames); // ["장소1", "장소2", "장소3"]
 const lat = parseFloat(sessionStorage.getItem('latitude'));
 const lon = parseFloat(sessionStorage.getItem('longitude'));
@@ -22,9 +23,7 @@ function initMap() {
 	});
 	directionsRenderer.setMap(map);
 	infowindow = new google.maps.InfoWindow(); // infowindow 객체 초기화
-	// 마커를 추가하는 로직을 실행합니다.
-	// 마커를 추가하고 경로를 그리는 함수 호출
-	//addPlacesMarkersAndDrawRoute();
+
 
 }
 
@@ -36,36 +35,36 @@ function initGoogleMaps() {
 }
 
 function populatePlacesSelection(placesNames) {
-    const form = document.getElementById('places-form');
-    placesNames.forEach((name, index) => {
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.id = 'place' + index;
-        checkbox.value = name;
-        const label = document.createElement('label');
-        label.htmlFor = 'place' + index;
-        label.textContent = name;
-        form.appendChild(checkbox);
-        form.appendChild(label);
-        form.appendChild(document.createElement('br'));
-    });
+	const form = document.getElementById('places-form');
+	placesNames.forEach((name, index) => {
+		const checkbox = document.createElement('input');
+		checkbox.type = 'checkbox';
+		checkbox.id = 'place' + index;
+		checkbox.value = name;
+		const label = document.createElement('label');
+		label.htmlFor = 'place' + index;
+		label.textContent = name;
+		form.appendChild(checkbox);
+		form.appendChild(label);
+		form.appendChild(document.createElement('br'));
+	});
 }
 
 populatePlacesSelection(placesNames); // placesNames는 서버로부터 받은 장소 이름 배열
 
 document.getElementById('calculate-route').addEventListener('click', () => {
-    const selectedPlaces = [];
-    const checkboxes = document.querySelectorAll('#places-form input[type="checkbox"]:checked');
-    checkboxes.forEach((checkbox) => {
-        selectedPlaces.push(checkbox.value);
-    });
+	const selectedPlaces = [];
+	const checkboxes = document.querySelectorAll('#places-form input[type="checkbox"]:checked');
+	checkboxes.forEach((checkbox) => {
+		selectedPlaces.push(checkbox.value);
+	});
 
-    if (selectedPlaces.length > 1) {
-        // 선택된 장소를 기반으로 경로 계산 및 지도에 표시하는 로직
-        addPlacesMarkersAndDrawRoute(selectedPlaces); // 선택된 장소만 포함하여 경로 계산 및 마커 추가
-    } else {
-        alert("적어도 두 개의 장소를 선택해야 경로를 계산할 수 있습니다.");
-    }
+	if (selectedPlaces.length > 1) {
+		// 선택된 장소를 기반으로 경로 계산 및 지도에 표시하는 로직
+		addPlacesMarkersAndDrawRoute(selectedPlaces); // 선택된 장소만 포함하여 경로 계산 및 마커 추가
+	} else {
+		alert("적어도 두 개의 장소를 선택해야 경로를 계산할 수 있습니다.");
+	}
 });
 
 // 각 장소에 마커를 추가합니다.
@@ -103,10 +102,10 @@ async function addPlacesMarkersAndDrawRoute(selectedPlaces) {
 					infowindow.setContent(contentString);
 					infowindow.open(map, marker);
 				});
-			}else {
-            // 장소를 찾지 못한 경우, 이를 로그로 기록하거나 사용자에게 알림
-            console.log(`${placeName} 장소 정보를 찾을 수 없습니다.`);
-        }
+			} else {
+				// 장소를 찾지 못한 경우, 이를 로그로 기록하거나 사용자에게 알림
+				console.log(`${placeName} 장소 정보를 찾을 수 없습니다.`);
+			}
 		} catch (error) {
 			console.error(`Error fetching details for ${placeName}:`, error);
 		}
@@ -116,11 +115,73 @@ async function addPlacesMarkersAndDrawRoute(selectedPlaces) {
 	console.log(selectedPlaceDetails);
 	drawRoute(placesDetails, 'DRIVING');
 	document.getElementById('mode').addEventListener('change', function() {
-	drawRoute(placesDetails, this.value);
+		drawRoute(placesDetails, this.value);
 	});
 
-}
+}/*
+function drawRoute(places, travelMode) {
+  console.log(places);
+  if (places.length < 2) {
+    console.error("적어도 두개이상의 장소가 있어야만 경로를 그릴 수 있습니다.");
+    return;
+  }
 
+  const waypoints = places.slice(1, -1).map(location => ({
+    location: location,
+    stopover: true,
+  }));
+
+  const routeRequests = [];
+  const legs = [];
+
+  // 시작점과 끝점을 제외한 모든 경로 조합을 생성합니다.
+  for (let i = 0; i < waypoints.length; i++) {
+    const start = i === 0 ? places[0] : waypoints[i - 1].location;
+    const end = i === waypoints.length - 1 ? places[places.length - 1] : waypoints[i + 1].location;
+    routeRequests.push({
+      origin: start,
+      destination: end,
+      travelMode: google.maps.TravelMode[travelMode],
+    });
+  }
+
+  // 모든 경로 조합에 대한 경로 계산 요청을 합칩니다.
+  Promise.all(routeRequests.map(request => new Promise((resolve, reject) => {
+    directionsService.route(request, (response, status) => {
+      if (status === google.maps.DirectionsStatus.OK) {
+        resolve(response);
+      } else {
+        console.error(`Directions request failed due to ${status}`);
+        resolve(null); // 경로 계산에 실패한 경우 null을 반환합니다.
+      }
+    });
+  })))
+  .then(responses => {
+    const validResponses = responses.filter(response => response !== null);
+    if (validResponses.length > 0) {
+      validResponses.forEach(response => {
+        directionsRenderer.setDirections(response);
+        legs.push(...response.routes[0].legs);
+      });
+
+      // 전체 경로에 대한 총 예상 이동 시간을 계산합니다.
+      let totalDuration = 0;
+      legs.forEach(leg => totalDuration += leg.duration.value);
+      const totalDurationInMinutes = Math.round(totalDuration / 60);
+
+      // 장소 상세 정보와 함께 updateInfoPanel 함수 호출
+      updateInfoPanel(selectedPlaceDetails);
+
+      // 첫 번째 마커에 이동 시간을 표시합니다.
+      showDurationInfo(places[0], totalDurationInMinutes);
+    } else {
+      window.alert('모든 경로 계산에 실패했습니다.');
+    }
+  })
+  .catch(error => {
+    console.error('경로 계산 중 오류 발생:', error);
+  });
+}*/
 // 경로를 계산하고 지도에 표시하는 함수
 function drawRoute(places, travelMode) {
 	console.log(places);
@@ -178,14 +239,23 @@ function showDurationInfo(position, duration) {
 // Google Places API를 사용하여 장소의 상세 정보를 검색합니다.
 async function fetchPlaceDetails(placeName, placesService) {
 	const request = {
-		query: placeName,
+		query: cityName +" "+ placeName,
 		fields: ['name', 'geometry', 'formatted_address', 'rating', 'opening_hours', 'photos', 'price_level']
 	};
 
 	return new Promise((resolve, reject) => {
-		placesService.findPlaceFromQuery(request, (results, status) => {
+		/*		placesService.findPlaceFromQuery(request, (results, status) => {
+					if (status === google.maps.places.PlacesServiceStatus.OK && results && results.length > 0) {
+						resolve(results[0]);
+					} else {
+						console.log(`장소를 찾지 못했습니다: ${placeName}`);
+						resolve(null); // 장소를 찾지 못했다면 null을 반환
+					}*/
+		placesService.textSearch(request, (results, status) => {
 			if (status === google.maps.places.PlacesServiceStatus.OK && results && results.length > 0) {
+				// textSearch는 여러 결과를 반환할 수 있으므로, 가장 관련성 높은 첫 번째 결과를 선택합니다.
 				resolve(results[0]);
+				console.log(results[0]);
 			} else {
 				console.log(`장소를 찾지 못했습니다: ${placeName}`);
 				resolve(null); // 장소를 찾지 못했다면 null을 반환
@@ -199,11 +269,11 @@ function updateInfoPanel(placesDetails) {
 	infoPanel.innerHTML = ''; // 정보창 초기화
 
 	placesDetails.forEach((place, index) => {
-     let photoUrl = place.photos && place.photos.length > 0
-            ? place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100})
-            : '';
+		let photoUrl = place.photos && place.photos.length > 0
+			? place.photos[0].getUrl({ 'maxWidth': 100, 'maxHeight': 100 })
+			: '';
 		// 각 장소의 정보를 HTML 요소로 추가
-     let placeInfo = `
+		let placeInfo = `
             <div class="place-info">
                 <h3>${place.name}</h3>
                 ${photoUrl ? `<img src="${photoUrl}" alt="${place.name}">` : ''}
@@ -220,17 +290,17 @@ function updateInfoPanel(placesDetails) {
 window.onload = function() {
 	initMap();
 	showPlacesSelection();
-	
+
 };
 
 function showPlacesSelection() {
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('places-selection').style.display = 'block';
-    document.getElementById("info-panel").classList.add("visible");
+	document.getElementById('overlay').style.display = 'block';
+	document.getElementById('places-selection').style.display = 'block';
+	document.getElementById("info-panel").classList.add("visible");
 }
 
 document.getElementById('calculate-route').addEventListener('click', () => {
-    // 선택 로직 처리 후
-    document.getElementById('overlay').style.display = 'none';
-    document.getElementById('places-selection').style.display = 'none';
+	// 선택 로직 처리 후
+	document.getElementById('overlay').style.display = 'none';
+	document.getElementById('places-selection').style.display = 'none';
 });
