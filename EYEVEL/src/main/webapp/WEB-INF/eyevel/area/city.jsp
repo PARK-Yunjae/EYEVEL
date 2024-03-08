@@ -15,8 +15,10 @@
 <script async src="https://apis.google.com/js/api.js"></script>
 <script async
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y&libraries=places"></script>
+<script defer src="https://unpkg.com/@openai/gpt@0.7.0/dist/gpt.min.js"></script>
 <script defer src="${ctx}/js/cityYoutube.js"></script>
 <script defer type="module" src="${ctx}/js/googleai.js"></script>
+<%-- <script defer type="module" src="${ctx}/js/openai.js"></script> --%>
 </script>
 <div class="location" data-lon="${area.lon}" data-lat="${area.lat}"
 	data-name="${area.name}" data-word="${area.link_url}"></div>
