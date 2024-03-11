@@ -47,10 +47,10 @@ public class FileUtil {
 		String originalFileName = phArr[1].trim().replace("\"", "");
 		// String originalFileName = id + ".png";
 
-		// 전송된 파일이 있다면 디렉토리에 저장
-		if (!originalFileName.isEmpty()) {
-			part.write(sDirectory + File.separator + id + ".png");
-		}
+//		// 전송된 파일이 있다면 디렉토리에 저장
+//		if (!originalFileName.isEmpty()) {
+//			part.write(sDirectory + File.separator + id + ".png");
+//		}
 		// 원본 파일명 반환
 		return id + ".png";
 	}
@@ -103,9 +103,9 @@ public class FileUtil {
 			String originalFileName = phArr[1].trim().replace("\"", "");
 			originalFileName = renameFile(sDirectory, originalFileName, area_name, cnt);
 			// 전송된 파일이 있다면 디렉토리에 저장
-			if (!originalFileName.isEmpty()) {
-				part.write(sDirectory + File.separator + originalFileName);
-			}
+//			if (!originalFileName.isEmpty()) {
+//				part.write(sDirectory + File.separator + originalFileName);
+//			}
 			originalFileName = originalFileName.substring(0, originalFileName.length() - 4);
 
 			//originalFileName = renameFile(sDirectory,phArr[1],area_name,cnt);

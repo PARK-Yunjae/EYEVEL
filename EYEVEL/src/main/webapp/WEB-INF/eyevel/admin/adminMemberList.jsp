@@ -21,7 +21,12 @@
 			<c:forEach var="vo" items="${list}">
 				<tr>
 					<td class="mobileNone">
-						<img src="http://localhost:8080//IMAGES/profile/${vo.img}" alt="user profile image">
+						<c:if test="${empty vo.img}">
+							<img src='${ctx}/img/profile/profile.png' id="profileImg" alt="이미지">
+						</c:if>
+						<c:if test="${!empty vo.img}">
+							<img src='${ctx}/img/profile/${vo.img}' id="profileImg" alt="이미지">
+						</c:if>
 					</td>
 					<td>${vo.name}</td>
 					<td>${vo.id}</td>

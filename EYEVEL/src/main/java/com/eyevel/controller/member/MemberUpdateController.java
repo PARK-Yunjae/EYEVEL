@@ -27,10 +27,10 @@ public class MemberUpdateController implements Controller {
 		HttpSession session = req.getSession();
 		String saveDirectory = req.getServletContext().getInitParameter("saveDirectory") + "/profile/"; //add?파일?
 		// 해당 경로에 폴더가 없으면 만들어줌 Uploads로 
-		Path saveDirPath = Paths.get(saveDirectory);
-		if (!Files.isDirectory(saveDirPath)) {
-			Files.createDirectories(saveDirPath);
-		}
+//		Path saveDirPath = Paths.get(saveDirectory);
+//		if (!Files.isDirectory(saveDirPath)) {
+//			Files.createDirectories(saveDirPath);
+//		}
 		System.out.println("saveDirectory = " + saveDirectory);
 
 		String id = req.getParameter("id");

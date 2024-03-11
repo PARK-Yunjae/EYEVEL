@@ -20,7 +20,7 @@
 								<h2>${city.name}</h2>${city.contents}
 							</div>
 							<a class="image" id="${city.name}" onclick="location.href='${ctx}/areaCity.do?no=${city.no}&loginId=${loginId}'">
-								<img src="http://localhost:8080/IMAGES/area/${city.name}/${city.link_url}.jpg" alt="">
+								<img src="${ctx}/img/weather/${city.name}/${city.link_url}.jpg" alt="">
 							</a>
 						</div>
 					</li>

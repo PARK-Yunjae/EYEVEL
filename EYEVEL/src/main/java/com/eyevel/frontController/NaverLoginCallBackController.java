@@ -23,7 +23,7 @@ public class NaverLoginCallBackController implements Controller {
 		if (m == null) {
 			m = new Member();
 			m.setId(id);
-			m.setPw(id + "!@#$");
+			m.setPw(id);
 			m.setName(name);
 			m.setEmail(email);
 			m.setImg("profile.png");

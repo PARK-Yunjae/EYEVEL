@@ -34,25 +34,25 @@
 				<div class="image_am">
 					<label for="weatherImg am_weather_clear">
 						<div class="image">
-							<img src="http://localhost:8080/IMAGES/area/${vo.name}/${imgList.get(0).img}.jpg" alt="am_weather_clear" class="weather_img">
+							<img src="${ctx}/img/weather/${vo.name}/${imgList.get(0).img}.jpg" alt="am_weather_clear" class="weather_img">
 						</div>
 					</label>
 					<input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg am_weather_clear" onchange="readURL(this, '0')">
 					<label for="weatherImg am_weather_cloudy" class="cloudy">
 						<div class="image">
-							<img src="http://localhost:8080/IMAGES/area/${vo.name}/${imgList.get(1).img}.jpg" alt="am_weather_cloudy" class="weather_img">
+							<img src="${ctx}/img/weather/${vo.name}/${imgList.get(1).img}.jpg" alt="am_weather_cloudy" class="weather_img">
 						</div>
 					</label>
 					<input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg am_weather_cloudy" onchange="readURL(this, '1')">
 					<label for="weatherImg am_weather_rain" class="rain">
 						<div class="image">
-							<img src="http://localhost:8080/IMAGES/area/${vo.name}/${imgList.get(2).img}.jpg" alt="am_weather_rain" class="weather_img">
+							<img src="${ctx}/img/weather/${vo.name}/${imgList.get(2).img}.jpg" alt="am_weather_rain" class="weather_img">
 						</div>
 					</label>
 					<input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg am_weather_rain" onchange="readURL(this, '2')">
 					<label for="weatherImg am_weather_snow" class="snow">
 						<div class="image">
-							<img src="http://localhost:8080/IMAGES/area/${vo.name}/${imgList.get(3).img}.jpg" alt="am_weather_snow" class="weather_img">
+							<img src="${ctx}/img/weather/${vo.name}/${imgList.get(3).img}.jpg" alt="am_weather_snow" class="weather_img">
 						</div>
 					</label>
 					<input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg am_weather_snow" onchange="readURL(this, '3')">
@@ -60,25 +60,25 @@
 				<div class="image_pm">
 					<label for="weatherImg pm_weather_clear">
 						<div class="image">
-							<img src="http://localhost:8080/IMAGES/area/${vo.name}/${imgList.get(0).img}_night.jpg" alt="pm_weather_clear" class="weather_img">
+							<img src="${ctx}/img/weather/${vo.name}/${imgList.get(0).img}_night.jpg" alt="pm_weather_clear" class="weather_img">
 						</div>
 					</label>
 					<input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg pm_weather_clear" onchange="readURL(this, '4')">
 					<label for="weatherImg pm_weather_cloudy" class="cloudy">
 						<div class="image">
-							<img src="http://localhost:8080/IMAGES/area/${vo.name}/${imgList.get(1).img}_night.jpg" alt="pm_weather_cloudy" class="weather_img">
+							<img src="${ctx}/img/weather/${vo.name}/${imgList.get(1).img}_night.jpg" alt="pm_weather_cloudy" class="weather_img">
 						</div>
 					</label>
 					<input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg pm_weather_cloudy" onchange="readURL(this, '5')">
 					<label for="weatherImg pm_weather_rain" class="rain">
 						<div class="image">
-							<img src="http://localhost:8080/IMAGES/area/${vo.name}/${imgList.get(2).img}_night.jpg" alt="pm_weather_rain" class="weather_img">
+							<img src="${ctx}/img/weather/${vo.name}/${imgList.get(2).img}_night.jpg" alt="pm_weather_rain" class="weather_img">
 						</div>
 					</label>
 					<input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg pm_weather_rain" onchange="readURL(this, '6')">
 					<label for="weatherImg pm_weather_snow" class="snow">
 						<div class="image">
-							<img src="http://localhost:8080/IMAGES/area/${vo.name}/${imgList.get(3).img}_night.jpg" alt="pm_weather_snow" class="weather_img">
+							<img src="${ctx}/img/weather/${vo.name}/${imgList.get(3).img}_night.jpg" alt="pm_weather_snow" class="weather_img">
 						</div>
 					</label>
 					<input type="file" name="weatherImg" accept="image/*" class="am_weather" id="weatherImg pm_weather_snow" onchange="readURL(this, '7')">
