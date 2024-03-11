@@ -16,7 +16,12 @@ pageContext.setAttribute("cn", "\n");
 			<div class="board_nav">
 				<div class="m_info">
 					<div class="profile_img">
-						<img src="http://localhost:8080/IMAGES/profile/${member.img}" alt="프로필이미지">
+						<c:if test="${empty member.img}">
+							<img src='${ctx}/img/profile/profile.png' id="profileImg" alt="이미지">
+						</c:if>
+						<c:if test="${!empty member.img}">
+							<img src='${ctx}/img/profile/${member.img}' id="profileImg" alt="이미지">
+						</c:if>
 					</div>
 					<div>
 						<h4>${board.member_id}</h4>
@@ -70,7 +75,12 @@ pageContext.setAttribute("cn", "\n");
 						value="$dateFmt}" /> --%>
 					<li>
 						<div class="profile_image">
-							<img src="http://localhost:8080//IMAGES/profile/${bc.img}" alt="">
+							<c:if test="${empty bc.img}">
+								<img src='${ctx}/img/profile/profile.png' id="profileImg" alt="이미지">
+							</c:if>
+							<c:if test="${!empty bc.img}">
+								<img src='${ctx}/img/profile/${bc.img}' id="profileImg" alt="이미지">
+							</c:if>
 						</div>
 						<div class="content">
 							<div>

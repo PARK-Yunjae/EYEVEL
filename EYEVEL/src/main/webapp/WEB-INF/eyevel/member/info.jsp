@@ -14,7 +14,12 @@
 			<ul class="member_info">
 				<li>
 					<label for="img" class="image">
-						<img src='http://localhost:8080/IMAGES/profile/${member.img}' id="profileImg" alt="이미지">
+						<c:if test="${empty member.img}">
+							<img src='${ctx}/img/profile/profile.png' id="profileImg" alt="이미지">
+						</c:if>
+						<c:if test="${!empty member.img}">
+							<img src='${ctx}/img/profile/${member.img}' id="profileImg" alt="이미지">
+						</c:if>
 					</label>
 					<input type="file" name="img" id="img" accept="image/*" onchange="readURL(this)">
 				</li>
@@ -66,7 +71,7 @@
 					<c:forEach var="a" items="${area}">
 						<div>
 							<div class="image">
-								<img src="http://localhost:8080/IMAGES/area/${a.name}/${a.link_url}.jpg" alt="">
+								<img src="${ctx}/img/weather/${a.name}/${a.link_url}.jpg" alt="">
 							</div>
 							<div class="content">
 								<h3>${a.name}</h3>

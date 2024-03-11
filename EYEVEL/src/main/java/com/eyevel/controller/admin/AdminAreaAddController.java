@@ -39,10 +39,10 @@ public class AdminAreaAddController implements Controller {
 			String area_name = req.getParameter("area_name");
 			String saveDirectory = req.getServletContext().getInitParameter("saveDirectory") + "/area/" + area_name + "/"; // add?파일?
 			// 해당 경로에 폴더가 없으면 만들어줌 Uploads로
-			Path saveDirPath = Paths.get(saveDirectory);
-			if (!Files.isDirectory(saveDirPath)) {
-				Files.createDirectories(saveDirPath);
-			}
+//			Path saveDirPath = Paths.get(saveDirectory);
+//			if (!Files.isDirectory(saveDirPath)) {
+//				Files.createDirectories(saveDirPath);
+//			}
 			System.out.println("saveDirectory = " + saveDirectory);
 
 			int area_id = Integer.parseInt(req.getParameter("area_id"));
