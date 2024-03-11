@@ -12,7 +12,7 @@ console.log(word);
 function loadYoutubeApi() {
 	gapi.load('client', () => {
 		gapi.client.init({
-			'apiKey': 'AIzaSyB7zkEXbvS3IHoi2ApQWWbNMfJj4UEDXrU'
+			'apiKey': 'AIzaSyCfsi8KnJIWbseOCy2kEuaFLeG7pNpr36Y'
 			// Add other init parameters here as needed.
 		}).then(function() {
 			return gapi.client.load('youtube', 'v3'); // Load the YouTube Data API v3 client library.
@@ -27,7 +27,7 @@ function searchYoutube(searchTerm) {
 		part: 'snippet',
 		type: 'video',
 		q: searchTerm,
-		maxResults: 1 // 검색 결과 표시 갯수 // 시연할때는 5개정도로 설정해줄 것 
+		maxResults: 5 // 검색 결과 표시 갯수 // 시연할때는 5개정도로 설정해줄 것 
 	});
 
 	request.execute(function(response) {
