@@ -42,16 +42,16 @@
 		</table>
 		<ul class="paging">
 			<c:if test="${startPage>3}">
-				<li class="start" onclick="location.href='${ctx}/memberList.do?page=${startPage-3}&start=${startPage-3}'">
+				<li class="start" onclick="location.href='${ctx}/adminMemberList.do?page=${startPage-3}&start=${startPage-3}'">
 					<i class="fas fa-chevron-left"></i>
 				</li>
 			</c:if>
 			<c:forEach var="i" begin="${startPage}" end="${endPage}">
-				<li onclick="location.href='${ctx}/memberList.do?page=${i}&start=${startPage}'" 
+				<li onclick="location.href='${ctx}/adminMemberList.do?page=${i}&start=${startPage}'" 
 				<c:if test="${i == page}">class="on"</c:if>>${i}</li>
 			</c:forEach>
 			<c:if test="${totalPage>endPage}">
-				<li class="end" onclick="location.href='${ctx}/memberList.do?page=${startPage+3}&start=${startPage+3}'">
+				<li class="end" onclick="location.href='${ctx}/adminMemberList.do?page=${startPage+3}&start=${startPage+3}'">
 					<i class="fas fa-chevron-right"></i>
 				</li>
 			</c:if>
