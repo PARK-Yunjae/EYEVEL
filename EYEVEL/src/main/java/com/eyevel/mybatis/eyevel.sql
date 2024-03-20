@@ -276,7 +276,7 @@ create table boardlike(
 select * from boardlike;
 
 -- 게시글 댓글 테이블
-create table boardComment(
+create table boardcomment(
 	no int auto_increment primary key not null, -- 게시글 댓글 고유 넘버
 	board_no int not null,	-- 게시글 번호
 	foreign key(board_no) references board(no) on delete cascade on update cascade,
@@ -300,4 +300,4 @@ insert into boardcomment values(null, 10, '안녕하세요', 'qwer', '2024-03-06
 insert into boardcomment values(null, 11, '안녕하세요', 'qwer', '2024-03-06');
 insert into boardcomment values(null, 14, '공지 사항을 안 읽어봤었네요. 죄송합니다', 'qwer', '2024-03-01');
 
-select * from boardComment;
+select * from boardcomment;
