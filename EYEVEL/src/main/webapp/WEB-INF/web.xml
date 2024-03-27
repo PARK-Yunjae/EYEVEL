@@ -24,13 +24,13 @@
 		<error-code>404</error-code>
 		<location>/WEB-INF/eyevel/error/404.jsp</location>
 	</error-page>
-	<error-page>
+ 	<error-page>
 		<error-code>500</error-code>
 		<location>/WEB-INF/eyevel/error/500.jsp</location>
 	</error-page>
 	<!-- 채팅창 테스트 -->
 	<context-param>
 		<param-name>CHAT_ADDR</param-name>
-		<param-value>ws://34.64.112.158:8080/EYEVEL</param-value>
+		<param-value>ws://34.47.92.129:8080/EYEVEL</param-value>
 	</context-param>
 </web-app>

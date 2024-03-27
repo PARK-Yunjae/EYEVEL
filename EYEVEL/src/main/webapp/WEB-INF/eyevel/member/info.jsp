@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
 <c:if test="${empty loginId}">
 	<script>
 		location.href = "${ctx}/main.do";

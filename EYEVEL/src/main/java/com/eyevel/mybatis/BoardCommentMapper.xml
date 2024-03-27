@@ -1,50 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eyevel.mybatis.BoardCommentMapper">
 	<!-- 게시글 댓글 조회 + 멤버 이미지도 건드림 -->
 	<select id="selectBoardComments" parameterType="Integer"
 		resultType="BoardComment">
-		SELECT boardComment.*, member.img
-		FROM boardComment
+		SELECT boardcomment.*, member.img
+		FROM boardcomment
 		JOIN
-		member ON boardComment.member_id = member.id
+		member ON boardcomment.member_id = member.id
 		WHERE
-		boardComment.board_no = #{no}
+		boardcomment.board_no = #{no}
 	</select>
 
 	<!-- 게시글 댓글 추가 -->
 	<insert id="insertBoardComment" parameterType="BoardComment">
 		INSERT INTO
-		boardComment (board_no, comment, member_id, reg_datetime)
+		boardcomment (board_no, comment, member_id, reg_datetime)
 		VALUES (#{board_no}, #{comment}, #{member_id}, #{reg_datetime})
 	</insert>
 
 	<!-- 게시글 댓글 삭제 -->
 	<delete id="deleteBoardComment" parameterType="Integer">
 		DELETE FROM
-		boardComment
+		boardcomment
 		WHERE no = #{no}
 	</delete>
 
 	<!-- 게시글 댓글 삭제 (게시글 삭제시 전부 삭제) -->
 	<delete id="deleteBoardCommentByBoard" parameterType="Integer">
 		DELETE FROM
-		boardComment
+		boardcomment
 		WHERE board_no = #{board_no}
 	</delete>
 
 	<!-- 게시글 댓글 삭제 (유저 삭제시 전부 삭제) -->
 	<delete id="deleteBoardCommentMemberId" parameterType="String">
 		DELETE
-		FROM boardComment
+		FROM boardcomment
 		WHERE member_id like #{member_id}
 	</delete>
 
 	<!-- 마지막으로 저장된 게시글 내보내기 -->
 	<select id="getLastBoardComment" resultType="BoardComment">
 		SELECT * FROM
-		boardComment ORDER BY no DESC LIMIT 1;
+		boardcomment ORDER BY no DESC LIMIT 1;
 	</select>
 </mapper>

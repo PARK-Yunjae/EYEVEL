@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <link rel="stylesheet" type="text/css" href="${ctx}/css/footer.css">
 <script type="text/javascript">
@@ -31,16 +31,16 @@
 </footer>
 <c:if test="${!empty name}">
 	<div class="chat_Btn on" onclick="chatOpen('${name}')">채팅</div>
-</c:if>
-<div class="chat_Main">
-	<button id="closeBtn" onclick="disconnect();">
-		<i class="fas fa-times"></i>
-	</button>
-	<div id="chatWindow"></div>
-	<div id="chatMessageBar">
-		<input type="text" id="chatMessage" onkeyup="enterKey();">
-		<button id="sendBtn" onclick="sendMessage();">전송</button>
+	<div class="chat_Main">
+		<button id="closeBtn" onclick="disconnect();">
+			<i class="fas fa-times"></i>
+		</button>
+		<div id="chatWindow"></div>
+		<div id="chatMessageBar">
+			<input type="text" id="chatMessage" onkeyup="enterKey();">
+			<button id="sendBtn" onclick="sendMessage();">전송</button>
+		</div>
 	</div>
-</div>
+</c:if>
 </body>
 </html>

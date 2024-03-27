@@ -1,4 +1,3 @@
-
 // openai.js 파일 내부
 import { ChatGPTAPI } from "@openai/gpt";
 // Fetch your API_KEY

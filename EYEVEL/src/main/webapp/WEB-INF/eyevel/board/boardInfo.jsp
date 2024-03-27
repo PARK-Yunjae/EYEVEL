@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>  
 <%
 // 줄바꿈
 pageContext.setAttribute("br", "<br/>");
@@ -16,12 +16,7 @@ pageContext.setAttribute("cn", "\n");
 			<div class="board_nav">
 				<div class="m_info">
 					<div class="profile_img">
-						<c:if test="${empty member.img}">
-							<img src='${ctx}/img/profile/profile.png' id="profileImg" alt="이미지">
-						</c:if>
-						<c:if test="${!empty member.img}">
-							<img src='${ctx}/img/profile/${member.img}' id="profileImg" alt="이미지">
-						</c:if>
+						<img src='${ctx}/img/profile/profile.png' id="profileImg" alt="이미지">
 					</div>
 					<div>
 						<h4>${board.member_id}</h4>
@@ -51,7 +46,7 @@ pageContext.setAttribute("cn", "\n");
 					</c:if>
 				</div>
 			</div>
-			<div class="board_content">${fn:replace(board.contents, cn, br)}</div>
+			<div class="board_content">${fn:replace(board.contents, cn, br)}</div>  
 		</div>
 		<div class="board_comment">
 			<div id="board_comment_form">
@@ -75,12 +70,7 @@ pageContext.setAttribute("cn", "\n");
 						value="$dateFmt}" /> --%>
 					<li>
 						<div class="profile_image">
-							<c:if test="${empty bc.img}">
-								<img src='${ctx}/img/profile/profile.png' id="profileImg" alt="이미지">
-							</c:if>
-							<c:if test="${!empty bc.img}">
-								<img src='${ctx}/img/profile/${bc.img}' id="profileImg" alt="이미지">
-							</c:if>
+							<img src='${ctx}/img/profile/profile.png' id="profileImg" alt="이미지">
 						</div>
 						<div class="content">
 							<div>

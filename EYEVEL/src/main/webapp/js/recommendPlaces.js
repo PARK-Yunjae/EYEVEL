@@ -12,7 +12,7 @@ let infowindow; // infowindow 객체를 전역 변수로 선언
 let placeinfomations = [];
 let selectedPlaceDetails = [];
 
-
+ 
 
 function initMap() {
 	directionsService = new google.maps.DirectionsService();
